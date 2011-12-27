@@ -18,7 +18,14 @@ loop do
     command = "wget \"#{u}\" -O#{f}"
     puts command
     `#{command}`
-    `mv "#{f}" "#{fn}"`
+
+    if File.size(f) > 0
+      puts "moving #{f} to #{fn}"
+      `mv "#{f}" "#{fn}"`
+    else
+      puts "removing #{f}, file size = 0"
+      `rm "#{f}"`
+    end
   end
 
   puts "all is done, sleeping, stage #{j += 1}"
