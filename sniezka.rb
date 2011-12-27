@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 j = 0
 loop do
   urls = [
@@ -6,7 +8,6 @@ loop do
     "http://kamery.humlnet.cz/images/webcams/snezka/2048x1536.jpg"
   ]
 
-
   urls.each_with_index do |u,i|
     command = "wget \"#{u}\" -Osniezka_#{i}_#{Time.now.to_i}.jpg"
     puts command
@@ -14,5 +15,5 @@ loop do
   end
 
   puts "all is done, sleeping, stage #{j += 1}"
-  sleep 3600
+  sleep 120
 end
