@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+# making a movie http://electron.mit.edu/~gsteele/ffmpeg/
+
 j = 0
 loop do
   urls = [
