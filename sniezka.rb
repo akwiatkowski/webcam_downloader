@@ -22,5 +22,5 @@ loop do
   end
 
   puts "all is done, sleeping, stage #{j += 1}"
-  sleep 1200
+  sleep 120
 end
