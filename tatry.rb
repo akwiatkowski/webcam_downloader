@@ -2,7 +2,11 @@ urls = {
     :moko => "http://kamery.topr.pl/moko/moko_01.jpg",
     :goryczkowa => "http://kamery.topr.pl/goryczkowa/gorycz.jpg",
     :moko2 => "http://kamery.topr.pl/moko_TPN/moko_02.jpg",
-    :stawy => "http://kamery.topr.pl/stawy1/stawy1.jpg"
+    :stawy => "http://kamery.topr.pl/stawy1/stawy1.jpg",
+    :zakopane => "http://www.zakopaneonline.eu/webcam/duze/zakopane.jpg",
+    :koscielisko => "http://www.zakopaneonline.eu/webcam6/koscielisko.jpg",
+    :krupowki => "http://www.zakopaneonline.eu/webcam9/krupowki.jpg",
+    :zakopianka => "http://www.zakopaneonline.eu/webcam8/zakopianka.jpg"
   }
 urls.keys.each_with_index do |u,i|
   f = "tatry_#{u}"
