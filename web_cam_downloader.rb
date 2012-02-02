@@ -7,7 +7,7 @@ class WebCamDownloader
     @jpeg_quality = 82
 
     #@sleep_interval = 5*60
-    @sleep_interval = 2*60
+    @sleep_interval = 90
   end
 
   # Prepare directories for images
@@ -100,7 +100,8 @@ class WebCamDownloader
     u[:new_mtime] = f.mtime
 
     # compare only data in buffer because image can be processed
-    if u[:old_size].nil? or u[:old_mtime].nil? or u[:old_downloaded].nil? or not File.exists?(u[:old_downloaded])
+    if u[:old_size].nil? or u[:old_mtime].nil? or u[:old_downloaded].nil? or not File.exists?(u[:old_downloaded]) or
+      not u[:old_size] == u[:new_size] or not u[:old_mtime] = u[:old_mtime]
       u[:old_size] = u[:new_size]
       u[:old_mtime] = u[:new_mtime]
       u[:old_downloaded] = u[:now_downloaded]
