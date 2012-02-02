@@ -7,7 +7,7 @@ class WebCamDownloader
     @jpeg_quality = 82
 
     #@sleep_interval = 5*60
-    @sleep_interval = 5*60
+    @sleep_interval = 2*60
   end
 
   # Prepare directories for images
@@ -68,7 +68,8 @@ class WebCamDownloader
           # remove if file is identical to downloaded before
           if remove_if_exist(u) == false
             # file wasn't removed
-            resize_down_image_if_needed(u)
+            #resize_down_image_if_needed(u)
+            resize_down_image(u) if u[:resize] == true
           end
         end
 
@@ -116,21 +117,26 @@ class WebCamDownloader
   def resize_down_image_if_needed(u)
     fs = File.size(u[:now_downloaded])
     if fs > @max_size
-      # resizing
-      puts "resizing image #{u[:now_downloaded]} because size #{fs} > #{@max_size}"
-      command = "convert \"#{u[:now_downloaded]}\" -resize '1920x1080>' -quality #{@jpeg_quality}% \"#{image_store_path_processed(u)}\""
-      `#{command}`
-
-      # remove original
-      `rm #{u[:now_downloaded]}`
+      resize_down_image(u)
     end
+  end
+
+  # resize down image
+  def resize_down_image(u)
+    # resizing
+    puts "resizing image #{u[:now_downloaded]}"
+    command = "convert \"#{u[:now_downloaded]}\" -resize '1920x1080>' -quality #{@jpeg_quality}% \"#{image_store_path_processed(u)}\""
+    `#{command}`
+
+    # remove original
+    `rm #{u[:now_downloaded]}`
   end
 
 end
 
 wd = WebCamDownloader.new
 wd.urls = [
-  { :desc => "zakopane_big", :url => "http://www.zakopaneonline.eu/webcam/duze/zakopane.jpg", :pre_url => "http://www.zol.pl/webcam/" },
+  { :desc => "zakopane", :url => "http://www.zakopaneonline.eu/webcam/zakopane.jpg", :pre_url => "http://www.zol.pl/webcam/", :resize => false },
   { :desc => 'moko', :url => "http://kamery.topr.pl/moko/moko_01.jpg" },
   { :desc => 'goryczkowa', :url => "http://kamery.topr.pl/goryczkowa/gorycz.jpg" },
   { :desc => 'moko2', :url => "http://kamery.topr.pl/moko_TPN/moko_02.jpg" },
@@ -148,10 +154,16 @@ wd.urls = [
   { :desc => 'bisk2', :url => "http://cedr.irsm.cas.cz/rinex/meteo/webcam_photo.php?station=bisk2" },
   { :desc => 'bisk3', :url => "http://cedr.irsm.cas.cz/rinex/meteo/webcam_photo.php?station=bisk3" },
   { :desc => 'bisk4', :url => "http://cedr.irsm.cas.cz/rinex/meteo/webcam_photo.php?station=bisk4" },
-  { :desc => 'szyndzielnia', :url => "http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_szyndzielnia/A-hi.jpg" },
-  { :desc => 'liwocz', :url => "http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_liwocz/A-hi.jpg" },
-  { :desc => 'widnica', :url => "http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_widnica/A-hi.jpg" },
-  { :desc => 'mikolow', :url => "http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_mikolow/A-hi.jpg" },
+  { :desc => 'szyndzielnia', :url => "http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_szyndzielnia/A-hi.jpg", :resize => true },
+  { :desc => 'liwocz', :url => "http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_liwocz/A-hi.jpg", :resize => true },
+  { :desc => 'widnica', :url => "http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_widnica/A-hi.jpg", :resize => true },
+  { :desc => 'mikolow', :url => "http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_mikolow/A-hi.jpg", :resize => true },
+
+  # Śnieżka
+  { :desc => 'sniezka0', :url => "http://kamery.humlnet.cz/images/webcams/snezka3/2048x1536.jpg", :resize => true },
+  { :desc => 'sniezka1', :url => "http://kamery.humlnet.cz/images/webcams/snezka2/2048x1536.jpg", :resize => true },
+  { :desc => 'sniezka2', :url => "http://kamery.humlnet.cz/images/webcams/snezka/2048x1536.jpg", :resize => true },
+
 #{:desc => '', :url => ""},
 ]
 wd.make_it_so
