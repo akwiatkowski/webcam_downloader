@@ -38,6 +38,7 @@ def clean_directory(d)
   to_delete.each do |df|
     fd.puts "rm \"#{df}\""
   end
+  fd.close
 
   return to_delete
 end
