@@ -197,6 +197,7 @@ wd.urls = [
   { :desc => 'bisk4', :url => "http://cedr.irsm.cas.cz/rinex/meteo/webcam_photo.php?station=bisk4", :interval => 2*60 },
 
   # Dalekieobserwacje
+  { :desc => 'skrzyczne', :url => "http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_skrzyczne/A-hi.jpg", :resize => true, :interval => 4*60 },
   { :desc => 'szyndzielnia', :url => "http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_szyndzielnia/A-hi.jpg", :resize => true, :interval => 4*60 },
   { :desc => 'liwocz', :url => "http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_liwocz/A-hi.jpg", :resize => true, :interval => 4*60 },
   { :desc => 'widnica', :url => "http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_widnica/A-hi.jpg", :resize => true, :interval => 4*60 },
