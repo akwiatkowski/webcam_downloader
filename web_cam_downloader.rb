@@ -208,6 +208,12 @@ wd.urls = [
   { :desc => 'sniezka1', :url => "http://kamery.humlnet.cz/images/webcams/snezka2/2048x1536.jpg", :resize => true, :interval => 2*60 },
   { :desc => 'sniezka2', :url => "http://kamery.humlnet.cz/images/webcams/snezka/2048x1536.jpg", :resize => true, :interval => 2*60 },
 
+  # YuZ
+  { :desc => 'chorzow_stadion', :url => "http://www.slaskie.pl/slaski2012/camera/chorzow_aktualny_1024.jpg", :resize => true, :interval => 5*60 },
+
+  { :desc => 'lysa_hora', :url => "http://portal.chmi.cz/files/portal/docs/meteo/kam/lysa_hora3.jpg", :interval => 2*60 },
+
+
 #{:desc => '', :url => ""},
 ]
 wd.make_it_so
