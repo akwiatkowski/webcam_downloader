@@ -6,7 +6,7 @@ urls.each do |u|
   flat_urls += u[:array]
 end
 
-require 'web_cam_downloader'
+load 'web_cam_downloader.rb'
 wd = WebCamDownloader.new
 wd.urls = flat_urls
 wd.make_it_so
