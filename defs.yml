@@ -1,0 +1,429 @@
+--- 
+- :group: tatry
+  :array: 
+  - :url: http://www.zakopaneonline.eu/webcam/zakopane.jpg
+    :pre_url: http://www.zol.pl/webcam/
+    :interval: 180
+    :desc: zakopane
+  - :url: http://www.zakopaneonline.eu/webcam2/zakopane.jpg
+    :pre_url: http://www.zol.pl/webcam/
+    :interval: 180
+    :desc: zakopane2
+  - :url: http://www.zakopaneonline.eu/webcam3/zakopane.jpg
+    :pre_url: http://www.zol.pl/webcam/
+    :interval: 180
+    :desc: zakopane3
+  - :url: http://kamery.topr.pl/moko/moko_01.jpg
+    :interval: 180
+    :desc: moko
+  - :url: http://kamery.topr.pl/goryczkowa/gorycz.jpg
+    :interval: 180
+    :desc: goryczkowa
+  - :url: http://kamery.topr.pl/moko_TPN/moko_02.jpg
+    :interval: 180
+    :desc: moko2
+  - :url: http://kamery.topr.pl/stawy1/stawy1.jpg
+    :interval: 180
+    :desc: stawy
+  - :url: http://www.zakopaneonline.eu/webcam6/koscielisko.jpg
+    :interval: 180
+    :desc: koscielisko
+  - :url: http://www.zakopaneonline.eu/webcam9/krupowki.jpg
+    :interval: 180
+    :desc: krupowki
+  - :url: http://www.zakopaneonline.eu/webcam8/zakopianka.jpg
+    :interval: 180
+    :desc: zakopianka
+  - :url: http://www.kamera.zadzial.pl/cam_1.jpg
+    :interval: 180
+    :desc: beskid1
+  - :url: http://www.zakopaneonline.eu/webcam4/bukowina.jpg
+    :interval: 180
+    :desc: bukowina
+  - :url: http://www.zakopaneonline.eu/webcams/kubik.jpg
+    :interval: 180
+    :desc: willa_kubik
+  - :url: http://z-ne.pl/kamery/giewont_zakopane.jpg
+    :interval: 180
+    :desc: giewont_zakopane
+- :group: poland_other
+  :array: 
+  - :url: http://www.pieninyportal.com/images/stories/webcamera/pieninyportal.jpg
+    :interval: 120
+    :desc: trzy_korony
+#  - :url: http://www.niedzica.pl/uploads/webcam/niedzica6.jpg
+#    :interval: 120
+#    :desc: niedzica
+#  - :url: http://cedr.irsm.cas.cz/rinex/meteo/webcam_photo.php?station=bisk
+#    :interval: 120
+#    :desc: bisk
+#  - :url: http://cedr.irsm.cas.cz/rinex/meteo/webcam_photo.php?station=bisk2
+#    :interval: 120
+#    :desc: bisk2
+#  - :url: http://cedr.irsm.cas.cz/rinex/meteo/webcam_photo.php?station=bisk3
+#    :interval: 120
+#    :desc: bisk3
+#  - :url: http://cedr.irsm.cas.cz/rinex/meteo/webcam_photo.php?station=bisk4
+#    :interval: 120
+#    :desc: bisk4
+- :group: dalekie_obserwacje
+  :array: 
+  - :resize: true
+    :url: http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_skrzyczne/A-hi.jpg
+    :interval: 240
+    :desc: skrzyczne
+  - :resize: true
+    :url: http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_szyndzielnia/A-hi.jpg
+    :interval: 240
+    :desc: szyndzielnia
+  - :resize: true
+    :url: http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_liwocz/A-hi.jpg
+    :interval: 240
+    :desc: liwocz
+  - :resize: true
+    :url: http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_widnica/A-hi.jpg
+    :interval: 240
+    :desc: widnica
+  - :resize: true
+    :url: http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_mikolow/A-hi.jpg
+    :interval: 240
+    :desc: mikolow
+- :group: sniezka
+  :array: 
+  - :resize: true
+    :url: http://kamery.humlnet.cz/images/webcams/snezka3/2048x1536.jpg
+    :interval: 120
+    :desc: sniezka0
+  - :resize: true
+    :url: http://kamery.humlnet.cz/images/webcams/snezka2/2048x1536.jpg
+    :interval: 120
+    :desc: sniezka1
+  - :resize: true
+    :url: http://kamery.humlnet.cz/images/webcams/snezka/2048x1536.jpg
+    :interval: 120
+    :desc: sniezka2
+- :group: yuz
+  :array: 
+  - :resize: true
+    :url: http://www.slaskie.pl/slaski2012/camera/chorzow_aktualny_1024.jpg
+    :interval: 300
+    :desc: chorzow_stadion
+  - :url: http://portal.chmi.cz/files/portal/docs/meteo/kam/lysa_hora3.jpg
+    :interval: 120
+    :desc: lysa_hora
+- :group: usa
+  :array: 
+  - :url: http://www.sunvalley.com/assets/images/cams/wclouds_full.jpg
+    :ingterval: 300
+    :desc: usa_sunvalley1
+  - :url: http://www.sunvalley.com/assets/images/cams/clubhouse_full.jpg
+    :interval: 300
+    :desc: usa_sunvalley2
+  - :url: http://www.sunvalley.com/assets/images/cams/bowls_full.jpg
+    :interval: 300
+    :desc: usa_sunvalley3
+  - :url: http://www.ridehunter.com/cam3.jpg
+    :interval: 300
+    :desc: usa_ridehunter1
+  - :url: http://www.ridehunter.com/cam1.jpg
+    :interval: 300
+    :desc: usa_ridehunter2
+  - :url: http://www.ridehunter.com/cam2.jpg
+    :interval: 300
+    :desc: usa_ridehunter3
+  - :url: http://www.mountainwebcams.com/Qx4F8e21/netcam2.jpg
+    :interval: 300
+    :desc: usa_lake_arrowhead
+  - :url: http://www.dot.ca.gov/dist8/tmc/snapshots/hwy18_lkgreg.jpg
+    :interval: 300
+    :desc: usa_lake_gregory
+#  - :url: http://green-valley-lake.com/webcam/bob.jpg
+#    :interval: 300
+#    :desc: usa_green_valley
+#  - :url: http://www.mountainwebcams.com/f4Rxv23a/netcam.jpg
+#    :interval: 300
+#    :desc: usa_crestline
+  - :url: http://www.methow.com/sunmtncam/viewpic.jpg
+    :interval: 300
+    :desc: usa_sun_mnt_lodge
+  - :url: http://www.stevenspass.com/Stevens/SiteAssets/_ftp/webcam/stevenspass.jpg
+    :interval: 300
+    :desc: usa_stevens1
+  - :url: http://www.stevenspass.com/Stevens/SiteAssets/_ftp/webcam/stevenspass2.jpg
+    :interval: 300
+    :desc: usa_stevens2
+#  - :url: http://www.instacam.com/instacamimg/CRYMB/CRYMB_s.jpg
+#    :interval: 240
+#    :desc: usa_crystal_gondola
+#  - :url: http://www.crystalmountainresort.com/images/webcams/cmsnowcam2.jpg
+#    :interval: 240
+#    :desc: usa_crystal_hill
+  - :url: http://www.tacomaweathercam.com/rainier.jpg
+    :interval: 300
+    :desc: usa_tacoma_rainier
+  - :url: http://www.nps.gov/webcams-mora/mountain.jpg
+    :interval: 300
+    :desc: usa_paradise_mountain
+  - :url: http://www.nps.gov/webcams-mora/west.jpg?1802716
+    :interval: 300
+    :desc: usa_paradise_west
+  - :url: http://www.haarp.alaska.edu/data/haarpcam/images/latest.jpg
+    :interval: 300
+    :desc: usa_haarp
+  - :url: http://cws2vm.integra.net/~nsps/weather2c.jpg
+    :interval: 300
+    :desc: usa_hoodoo_2c
+  - :url: http://cws2vm.integra.net/~nsps/weather3b.jpg
+    :interval: 300
+    :desc: usa_hoodoo_3b
+  - :url: http://www.cfht.hawaii.edu/webcams/c4/c4.jpg
+    :interval: 60
+    :desc: usa_canada_telescope_nnw
+  - :url: http://www.nps.gov/webcams-yell/mammothcam2.jpg
+    :interval: 120
+    :desc: usa_y_mammoth_hot_spr2
+  - :url: http://www.nps.gov/webcams-yell/mtwashburn.jpg
+    :interval: 300
+    :desc: usa_mnt_washburn
+  - :url: http://cws2vm.integra.net/~nsps/weather2a.jpg
+    :interval: 300
+    :desc: usa_mnt_jefferson
+  - :resize: true
+    :url: http://snow.whistler-blackcomb.com/catskinner/fissile.jpg
+    :interval: 120
+    :desc: usa_whistler_fissile
+#  - :url: http://www.avo.alaska.edu/webcam/a-spurr.jpg
+#    :interval: 300
+#    :desc: usa_alaska_spurr
+  - :url: http://www.avo.alaska.edu/webcam/redoubt.jpg
+    :interval: 300
+    :desc: usa_alaska_redoubt
+  - :url: http://volcanoes.usgs.gov/hvo/cams/MLcam/images/E.jpg
+    :interval: 300
+    :desc: usa_mauna_lao
+  - :resize: true
+    :url: http://www.jach.hawaii.edu/weather/images/ukirt.jpg
+    :interval: 120
+    :desc: usa_infrared_telescope
+- :group: cold
+  :array: 
+  - :url: http://www.summitcamp.org/static/images/status/view/webcam.jpg
+    :interval: 120
+    :desc: greenland
+  - :url: http://icons.wunderground.com/webcamramdisk/a/l/alfis/1/current.jpg
+    :interval: 300
+    :desc: greenland_tasiilaq
+  - :url: http://www.antarcticanz.govt.nz/webcam/webcam32.jpg
+    :interval: 300
+    :desc: antarc_scott
+  - :url: http://www.antarcticanz.govt.nz/ahnetcam/netcam.jpg
+    :interval: 300
+    :desc: antarc_arr_h
+  - :url: http://www.esrl.noaa.gov/gmd/webdata/spo/webcam/cmdlfullsize.jpg
+    :interval: 600
+    :desc: antarc_south_pole
+  - :url: http://212.86.4.14/camera_image/kauppatori.jpg
+    :interval: 120
+    :desc: finland_kauppatori
+  - :url: http://www.andreassen.gl/andreassen/video.jpg
+    :interval: 900
+    :desc: greenland_1
+
+- :group: norway
+  :array: 
+  - :url: http://ekstra.htg.no/webcam/img/tromso_fullsize.jpg
+    :interval: 300
+    :desc: no_tromso
+  - :url: http://weather.cs.uit.no/wcam0_snapshots/wcam0_latest_medium.jpg
+    :interval: 120
+    :desc: no_tromso_univ
+#  - :url: http://213.184.198.16/info/kamerabilder/k11/pos3.jpg
+#    :interval: 300
+#    :desc: norway_llesund_port1
+  - :url: http://fevik.axiscam.net/axis-cgi/jpg/image.cgi?resolution=640x360
+    :interval: 60
+    :desc: norway_fevik
+  - :url: http://www.flaamsbana.no/images/flaam_4.jpg
+    :interval: 300
+    :desc: norway_flaams
+  - :url: http://ekstra.htg.no/webcam/img/harstad_fullsize.jpg
+    :interval: 300
+    :desc: norway_harstad
+  - :url: http://ekstra.htg.no/webcam/img/alta_fullsize.jpg
+    :interval: 300
+    :desc: norway_alta
+  - :url: http://www.hlk.no/webkamera/images//pos3.jpg
+    :interval: 300
+    :desc: norway_sama
+#  - :url: http://www.hlk.no/webkamera/images//pos2.jpg
+#    :interval: 300
+#    :desc: norway_hardstad2
+  - :url: http://www.lofot-tidende.no/static/local/webcam/cubus.jpg
+    :interval: 300
+    :desc: norway_leknes
+  - :url: http://home.online.no/~abjoernv/kamera/kam2.jpg
+    :interval: 300
+    :desc: norway_arne
+  - :url: http://home.custompublish.com/snsk/lyb_big.jpg
+    :interval: 300
+    :desc: norway_longyearbyen
+  - :resize: true
+    :url: http://www.svein-nordahl.com/01-gruvedalen.jpg
+    :interval: 300
+    :desc: norway_gruvedalen
+  - :url: http://www.promonorge.no/webcam/kamera.jpg
+    :interval: 300
+    :desc: norway_utsikt_s
+  - :url: http://www.amihotel.no/webcamera/broadcast.jpg
+    :interval: 300
+    :desc: norway_tromso3
+  - :url: http://www.arcticutleie.no/webkamera.jpg
+    :interval: 120
+    :desc: norwa_skjervoy
+  - :url: http://ekstra.htg.no/webcam/img/sjovegan_fullsize.jpg
+    :interval: 120
+    :desc: norwa_sjovegan
+  - :url: http://nordkapp.livecam360.com/cam3/php/show_lq_last.php
+    :interval: 300
+    :desc: norwa_north_cap
+  - :interval: 300
+    :desc: norway_lofoten
+    :url: http://www.lofoten-golf.no/webcam/Lgolf.jpg
+  - :interval: 300
+    :desc: norway_fjellet
+    :url: http://nktv.edbc.no/fjellet.jpg
+  - :interval: 300
+    :desc: norway_kabelvag
+    :url: http://www.promonorge.no/webcam/kabelvag.jpg
+
+- :group: hot
+  :array: 
+  - :url: http://cam.sheratonsomabayview.com/view_live1.jpg
+    :interval: 600
+    :desc: egypt
+  - :url: http://crest.ernet.in/webcam/images/latest.jpg
+    :interval: 300
+    :desc: himalayan_chandra
+
+- :group: world
+  :array:
+  - :url: http://www.monopol-andermatt.ch/cam/webcam.jpg
+    :interval: 120
+    :desc: switz_andermatt
+  - :url: http://www.appenzell-ai.ch/appenzell_fotoold.jpg
+    :interval: 120
+    :desc: switz_appenzell
+  - :url: http://www.obergoms.ch/tourismus/service/webcams/obergesteln.php?e_12_14_getimage=1
+    :interval: 120
+    :desc: switz_obergoms
+  - :url: http://webcam.21.by/pub/webcam/148/size_0.jpg
+    :interval: 300
+    :desc: minsk
+  - :resize: true
+    :url: http://camera.kemernet.ru/cam_huge.jpg
+    :interval: 120
+    :desc: russia_1
+  - :url: http://www.norilsk-zv.ru/webcam/cam1.jpg
+    :interval: 300
+    :desc: russia_norilsk
+  - :url: http://62.182.141.132/jpg/image.jpg
+    :interval: 300
+    :desc: russia_sochi
+  - :resize: true
+    :url: http://www.liveevent.se/webbkamera/tv4/goteborg/tv4_goteborg_1_1280.jpg
+    :interval: 180
+    :desc: sweden_goteborg
+  - :url: http://www.gehammar.se/not001.jpg
+    :interval: 300
+    :desc: sweden_hjalmo
+  - :resize: true
+    :url: http://www.liveevent.se/webbkamera/ca-kalmar/ca_kalmar_1_1280.jpg
+    :interval: 180
+    :desc: sweden_kalmar
+  - :resize: true
+    :url: http://www.venjan.se/cam/kupan_cam.jpg
+    :interval: 300
+    :desc: sweden_kupan
+  - :resize: true
+    :url: http://livecam.mora.se/imageb.jpg
+    :interval: 300
+    :desc: sweden_vosalo
+  - :resize: true
+    :url: http://87.237.210.145/~checkpoi/webcam/klappen/webcam_10_1280.jpg
+    :interval: 300
+    :desc: sweden_klappen
+  - :resize: true
+    :url: http://www.hamrafjallet.se/kamera/webbkamror/topmega.jpg
+    :interval: 600
+    :desc: sweden_tandallen
+  - :resize: true
+    :url: http://www.liveevent.se/webbkamera/tv4/sundsvall/tv4_sundsvall_1_1280.jpg
+    :interval: 300
+    :desc: sweden_tvn4
+  - :resize: true
+    :url: http://dedi68.aname.net/~checkpoi/webcam/unostorn/webcam_6_1280.jpg
+    :interval: 300
+    :desc: sweden_unostorm
+  - :resize: true
+    :url: http://87.237.210.145/~checkpoi/webcam/visby_stora_torget/webcam_10_1280.jpg
+    :interval: 300
+    :desc: swedeb_visby
+  - :interval: 300
+    :desc: finland_koppola
+    :url: http://85.157.217.2/-wvhttp-01-/GetStillImage
+  - :interval: 300
+    :desc: austria_kargogel
+    :url: http://karkogel.it-wms.com/big_current4.jpg
+  - :interval: 300
+    :desc: austria_aflenz
+    :url: http://www.aflenz-outdoorpark.at/webcam/webcam.jpg
+  - :interval: 300
+    :desc: austria_blumental
+    :url: http://www.blumentalcam.at/cam_1.jpg
+  - :interval: 300
+    :resize: true
+    :desc: austria_silvretta1
+    :url: http://www.silvretta-montafon.at/webcam/image1_text.jpg
+  - :interval: 300
+    :resize: true
+    :desc: austria_silvretta2
+    :url: http://www.silvretta-montafon.at/webcam/image2_text.jpg
+  - :interval: 300
+    :desc: austria_mondi
+    :url: http://91.112.132.150/record/current.jpg
+
+  - :interval: 300
+    :desc: antar_neumayeriT
+    :url: http://www.awi.de/NM_WebCam/neumayerT.last.jpg
+  - :interval: 300
+    :desc: troyes
+    :url: http://www.vision-environnement.com/webcams/Troyes2/image/webcam.jpg
+  - :interval: 300
+    :desc: antar_neumayerP
+    :url: http://www.awi.de/NM_WebCam/neumayerP.last.jpg
+  - :interval: 300
+    :desc: antar_neumayer
+    :url: http://www.awi.de/NM_WebCam/neumayer.last.jpg
+  - :interval: 150
+    :desc: de_mount1
+    :url: http://cms.zugspitze.de/static/webcams/k02.jpg
+  - :interval: 200
+    :desc: de_mount2
+    :url: http://cms.zugspitze.de/static/webcams/k04.jpg
+
+  - :interval: 300
+    :desc: usa_san_francisco
+    :url: http://wwc.instacam.com/instacamimg/SANFR/SANFR_l.jpg
+  - :interval: 300
+    :desc: italy_mount1
+    :url: http://www.ras.bz.it/img_webcams/scheibe/scheibe_P1.jpg
+  - :interval: 300
+    :desc: hahnenkoepfle
+    :url: http://tramino.s3.amazonaws.com/s/das-hoechste/webcams/ifen-hahnenkoepfle.jpg
+  - :interval: 300
+    :desc: ch_birkli
+    :url: http://www.birkli.ch/webcam/bildgross/aktuell_gross.jpg
+  - :interval: 300
+    :desc: ischl
+    :url: http://www.weti.net/cam/ischl.jpg
+
