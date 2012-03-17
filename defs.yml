@@ -427,3 +427,39 @@
     :desc: ischl
     :url: http://www.weti.net/cam/ischl.jpg
 
+  - :interval: 300
+    :desc: hsb_broken
+    :url: http://webcam.netco.de/bilder/hsb-brocken/brocken-bhf.jpg
+  - :interval: 300
+    :desc: italy_caorle
+    :url: http://webcam.caorle.com/webcam-spiaggia-ponente/current.jpg
+  - :interval: 300
+    :desc: italy_caorle_centro
+    :url: http://webcam.caorle.com/webcam-centro-storico/current.jpg
+  - :interval: 300
+    :desc: italy_lago
+    :url: http://webcam.molveno.it/webcam/current_grande.jpg
+  - :interval: 300
+    :desc: germany_halle
+    :url: http://217.89.96.98/vhughsize.jpg
+  - :interval: 300
+    :desc: cannobio
+    :url: http://www.cannobio.net/resizeimgpiazza.asp?dimensioni=800
+  - :interval: 300
+    :desc: villas_on_great_bay
+    :url: http://www.thevillasongreatbay.com/images/netcam.jpg
+  - :interval: 300
+    :desc: arolla_collonx
+    :url: http://www.arolla.com/mt-collon/mtcollonx.jpg
+    :resize: true
+  - :interval: 300
+    :desc: arolla_widex
+    :url: http://www.arolla.com/webcam_kurhaus/widex.jpg
+    :resize: true
+  - :interval: 300
+    :desc: bavaria_bergen
+    :url: http://www.bayernwebcam.de/bilder/bergen.jpg
+  - :interval: 300
+    :desc: bavaria_marquartstein
+    :url: http://www.bayernwebcam.de/bilder/marquartstein.jpg
+
