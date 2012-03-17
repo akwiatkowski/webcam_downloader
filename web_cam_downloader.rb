@@ -3,7 +3,7 @@ require 'digest/md5'
 class WebCamDownloader
   attr_accessor :urls
 
-  def initialize(_options={})
+  def initialize(_options={ })
     @options = _options
 
     # not used
@@ -20,6 +20,9 @@ class WebCamDownloader
 
     Dir.mkdir('tmp') if not File.exist?('tmp')
     Dir.mkdir('data') if not File.exist?('data')
+
+    # time cost of all cycles, for stats and optim. only
+    @time_stats = Array.new
   end
 
   def verbose?
@@ -51,7 +54,7 @@ class WebCamDownloader
     u[:store_path_pre_process] = "tmp/#{u[:desc]}_#{u[:desc]}_#{Time.now.to_i}_pre_proc.jpg.tmp"
     u[:store_path] = "pix/#{u[:desc]}/#{u[:desc]}_#{Time.now.to_i}.jpg"
     u[:store_path_processed] = "pix/#{u[:desc]}/#{u[:desc]}_#{Time.now.to_i}_proc.jpg"
-    
+
 
     # stored in other location for easier rsync usage
     if u[:resize] == true
@@ -65,6 +68,8 @@ class WebCamDownloader
 
     j = 0
     loop do
+      pre_loop_time = Time.now
+
       # super loop
       self.urls.each_with_index do |u, i|
         if (Time.now.to_i - u[:last_downloaded_time].to_i >= u[:interval].to_i)
@@ -79,7 +84,10 @@ class WebCamDownloader
           end
 
           # download image
+          time_pre = Time.now
           download_file(u[:url], u[:temporary])
+          u[:download_count] = u[:download_count].to_i + 1 # nil safe
+          u[:download_time_cost] = Time.now - time_pre
           u[:last_downloaded_time] = Time.now.to_i
 
           # check file size, remove empty files
@@ -100,6 +108,18 @@ class WebCamDownloader
           end
 
         end
+      end
+
+      # add time stat
+      @time_stats << (Time.now - pre_loop_time)
+
+      # write some debug information
+      File.open('data/debug.yaml', "w") do |fd|
+        fd.write(self.urls.to_yaml)
+      end
+
+      File.open('data/time_stats.yaml', "w") do |fd|
+        fd.write(@time_stats.to_yaml)
       end
 
       puts "all is done, sleeping, stage #{j += 1}"
@@ -141,6 +161,7 @@ class WebCamDownloader
     else
       puts "removing identical new image #{u[:store_path]} as #{u[:old_downloaded]}"
       `rm #{u[:store_path]}`
+      u[:remove_identical_count] = u[:remove_identical_count].to_i + 1 # nil safe
       return true
     end
   end
@@ -167,7 +188,9 @@ class WebCamDownloader
     puts "resizing image #{u[:store_path]}"
     u[:new_proc_filename] = u[:store_path_processed]
     command = "convert \"#{u[:store_path]}\" -resize '1920x1080>' -quality #{@jpeg_quality}% \"#{u[:new_proc_filename]}\""
+    time_pre = Time.now
     `#{command}`
+    u[:process_time_cost] = Time.now - time_pre
 
     # remove original
     `rm #{u[:store_path]}`
@@ -183,6 +206,7 @@ class WebCamDownloader
       # remove new file and return
       puts "removing processed identical #{u[:new_proc_filename]}, digests are equal"
       `rm #{u[:new_proc_filename]}`
+      u[:remove_identical_count] = u[:remove_identical_count].to_i + 1 # nil safe
       return
     else
       # a new file
