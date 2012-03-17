@@ -14,9 +14,9 @@ class WebCamDownloader
 
     @sleep_interval = 5
 
-    @dns_timeout = 4 # --dns-timeout
-    @connect_timeout = 5 # --connect-timeout
-    @read_timeout = 10 # --read-timeout
+    @dns_timeout = 2 # --dns-timeout
+    @connect_timeout = 3 # --connect-timeout
+    @read_timeout = 3 # --read-timeout
 
     Dir.mkdir('tmp') if not File.exist?('tmp')
     Dir.mkdir('data') if not File.exist?('data')
