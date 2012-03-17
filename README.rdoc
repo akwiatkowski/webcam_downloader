@@ -1,0 +1,9 @@
+== Webcam downloader
+
+My personal script for downloading webcams from various sources. Currently there are some predefined nice urls.
+
+Keep in mind that this is my script and I don't know when it will be documented, but if you have any question just ask.
+
+= Competition
+
+Check this https://github.com/jflalonde/WebcamDownload :)
