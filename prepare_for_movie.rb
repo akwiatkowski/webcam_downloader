@@ -2,7 +2,7 @@ require 'rubygems'
 require 'solareventcalculator'
 require 'yaml'
 
-class KickAssAwesoeTimelapseGenerator
+class KickAssAwesomeTimelapseGenerator
 
   PATH = '/home/olek/pliki.big/webcam_downloader/pulling/webcam_downloader'
 
@@ -159,12 +159,24 @@ class KickAssAwesoeTimelapseGenerator
     end
     f.close
 
-    #command = "mencoder \"mf://@tmp/timelapse/list.txt\" -mf fps=25:w=800:h=600 -sws 9 -vf pullup,harddup -ovc xvid -xvidencopts noqpel:nogmc:trellis:nocartoon:nochroma_me:chroma_opt:lumi_mask:max_iquant=7:max_pquant=7:max_bquant=7:bitrate=6000:threads=120 -o video.avi -oac copy"
-    command = "mencoder \"mf://@tmp/timelapse/list.txt\" -mf fps=25:w=800:h=600 -sws 9 -vf scale=800:600 -aspect 1.77777 -ovc xvid -xvidencopts noqpel:nogmc:trellis:nocartoon:nochroma_me:chroma_opt:lumi_mask:max_iquant=7:max_pquant=7:max_bquant=7:bitrate=6000:threads=120 -o video.avi -oac copy"
-    puts command
-    #`#{command}`
+    width = 1280
+    height = 720
+    ratio = width.to_f / height.to_f
+    bitrate = 6000
 
-    # mencoder "mf://@tmp/timelapse/list.txt" -mf fps=25:w=800:h=600 -sws 9 -vf scale=800:600 -ovc xvid -xvidencopts noqpel:nogmc:trellis:nocartoon:nochroma_me:chroma_opt:lumi_mask:max_iquant=7:max_pquant=7:max_bquant=7:bitrate=6000:threads=120 -aspect 1.77777 -o video.avi -oac copy
+    command_youtube = "mencoder \"mf://@tmp/timelapse/list.txt\" -mf fps=25:w=#{width}:h=#{height} -sws 9 -vf scale=#{width}:#{height} -aspect #{ratio} -ovc xvid -xvidencopts noqpel:nogmc:trellis:nocartoon:nochroma_me:chroma_opt:lumi_mask:max_iquant=7:max_pquant=7:max_bquant=7:bitrate=#{bitrate}:threads=120 -o video_1.avi -oac copy"
+    puts "# youtbe hd", command_youtube
+
+    width = 854
+    height = 480
+    ratio = width.to_f / height.to_f
+    bitrate = 4000
+
+    command_vimeo = "mencoder \"mf://@tmp/timelapse/list.txt\" -mf fps=25:w=#{width}:h=#{height} -profile x264-vimeo -o video_vimeo.avi"
+    puts "# youube 480p", command_youtube
+
+    command_youtube = "mencoder \"mf://@tmp/timelapse/list.txt\" -mf fps=25:w=#{width}:h=#{height} -sws 9 -vf scale=#{width}:#{height} -aspect #{ratio} -ovc xvid -xvidencopts noqpel:nogmc:trellis:nocartoon:nochroma_me:chroma_opt:lumi_mask:max_iquant=7:max_pquant=7:max_bquant=7:bitrate=#{bitrate}:threads=120 -o video_1.avi -oac copy"
+    puts "# vimeo", command_vimeo
 
   end
 
@@ -173,7 +185,7 @@ end
 # take some time, load images info and check sunrise/sunset
 process = false
 
-t = KickAssAwesoeTimelapseGenerator.new
+t = KickAssAwesomeTimelapseGenerator.new
 if process
   t.import_files
   t.save
