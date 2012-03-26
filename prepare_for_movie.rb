@@ -18,7 +18,7 @@ class KickAssAwesomeTimelapseGenerator
 
   def import_files
     # select only defs with coords
-    us = defs.select { |u| not u[:coord].nil? }
+    us = defs.select { |u| not u[:coord].nil? and u[:coord][:enabled] == true }
     puts "Only #{us.size} webcams has coords from #{defs.size}"
 
     puts "Importing webcams"

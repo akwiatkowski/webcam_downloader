@@ -8,6 +8,7 @@
     :coord:
       :lat: 49.304778
       :lon: 19.916832
+      :enabled: true
   - :url: http://www.zakopaneonline.eu/webcam2/zakopane.jpg
     :pre_url: http://www.zol.pl/webcam/
     :interval: 180
@@ -15,6 +16,7 @@
     :coord:
       :lat: 49.304778
       :lon: 19.916832
+      :enabled: true
   - :url: http://www.zakopaneonline.eu/webcam3/zakopane.jpg
     :pre_url: http://www.zol.pl/webcam/
     :interval: 180
@@ -22,72 +24,80 @@
     :coord:
       :lat: 49.304778
       :lon: 19.916832
+      :enabled: true
   - :url: http://kamery.topr.pl/moko/moko_01.jpg
     :interval: 180
     :desc: moko
     :coord:
       :lat: 49.304778
       :lon: 19.916832
+      :enabled: true
   - :url: http://kamery.topr.pl/goryczkowa/gorycz.jpg
     :interval: 180
     :desc: goryczkowa
     :coord:
       :lat: 49.304778
       :lon: 19.916832
+      :enabled: true
   - :url: http://kamery.topr.pl/moko_TPN/moko_02.jpg
     :interval: 180
     :desc: moko2
     :coord:
       :lat: 49.304778
       :lon: 19.916832
+      :enabled: true
   - :url: http://kamery.topr.pl/stawy1/stawy1.jpg
     :interval: 180
     :desc: stawy
     :coord:
       :lat: 49.304778
       :lon: 19.916832
+      :enabled: true
   - :url: http://www.zakopaneonline.eu/webcam6/koscielisko.jpg
     :interval: 180
     :desc: koscielisko
     :coord:
       :lat: 49.304778
       :lon: 19.916832
+      :enabled: true
   - :url: http://www.zakopaneonline.eu/webcam9/krupowki.jpg
     :interval: 180
     :desc: krupowki
     :coord:
       :lat: 49.304778
       :lon: 19.916832
+      :enabled: true
   - :url: http://www.zakopaneonline.eu/webcam8/zakopianka.jpg
     :interval: 180
     :desc: zakopianka
     :coord:
       :lat: 49.304778
       :lon: 19.916832
+      :enabled: true
   - :url: http://www.kamera.zadzial.pl/cam_1.jpg
     :interval: 180
     :desc: beskid1
-    :coord:
-      :lat: 49.304778
-      :lon: 19.916832
   - :url: http://www.zakopaneonline.eu/webcam4/bukowina.jpg
     :interval: 180
     :desc: bukowina
     :coord:
       :lat: 49.304778
       :lon: 19.916832
+      :enabled: false
   - :url: http://www.zakopaneonline.eu/webcams/kubik.jpg
     :interval: 180
     :desc: willa_kubik
     :coord:
       :lat: 49.304778
       :lon: 19.916832
+      :enabled: true
   - :url: http://z-ne.pl/kamery/giewont_zakopane.jpg
     :interval: 180
     :desc: giewont_zakopane
     :coord:
       :lat: 49.304778
       :lon: 19.916832
+      :enabled: true
 - :group: poland_other
   :array: 
   - :url: http://www.pieninyportal.com/images/stories/webcamera/pieninyportal.jpg
@@ -150,13 +160,6 @@
       :lat: 50.166667
       :lon: 18.9
       :enabled: false
-
-# ------------------
-    :coord_:
-      :lat:
-      :lon:
-      :enabled: false
-
 - :group: sniezka
   :array: 
   - :resize: true
