@@ -114,50 +114,104 @@
     :url: http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_skrzyczne/A-hi.jpg
     :interval: 240
     :desc: skrzyczne
+    :coord:
+      :lat: 49.684444
+      :lon: 19.030278
+      :enabled: false
   - :resize: true
     :url: http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_szyndzielnia/A-hi.jpg
     :interval: 240
     :desc: szyndzielnia
+    :coord:
+      :lat: 49.753111
+      :lon: 18.999667
+      :enabled: false
   - :resize: true
     :url: http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_liwocz/A-hi.jpg
     :interval: 240
     :desc: liwocz
+    :coord:
+      :lat: 49.813211
+      :lon: 21.351397
+      :enabled: false
   - :resize: true
     :url: http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_widnica/A-hi.jpg
     :interval: 240
     :desc: widnica
+    :coord:
+      :lat: 50.399167
+      :lon: 20.031389
+      :enabled: false
   - :resize: true
     :url: http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_mikolow/A-hi.jpg
     :interval: 240
     :desc: mikolow
+    :coord:
+      :lat: 50.166667
+      :lon: 18.9
+      :enabled: false
+
+# ------------------
+    :coord_:
+      :lat:
+      :lon:
+      :enabled: false
+
 - :group: sniezka
   :array: 
   - :resize: true
     :url: http://kamery.humlnet.cz/images/webcams/snezka3/2048x1536.jpg
     :interval: 120
     :desc: sniezka0
+    :coord:
+      :lat: 50.735833
+      :lon: 15.739167
+      # foggy
+      :enabled: false
   - :resize: true
     :url: http://kamery.humlnet.cz/images/webcams/snezka2/2048x1536.jpg
     :interval: 120
     :desc: sniezka1
+    :coord:
+      :lat: 50.735833
+      :lon: 15.739167
+      # foggy
+      :enabled: false
   - :resize: true
     :url: http://kamery.humlnet.cz/images/webcams/snezka/2048x1536.jpg
     :interval: 120
     :desc: sniezka2
+    :coord:
+      :lat: 50.735833
+      :lon: 15.739167
+      # foggy
+      :enabled: false
 - :group: yuz
   :array: 
   - :resize: true
     :url: http://www.slaskie.pl/slaski2012/camera/chorzow_aktualny_1024.jpg
     :interval: 300
     :desc: chorzow_stadion
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+      :enabled: true
   - :url: http://portal.chmi.cz/files/portal/docs/meteo/kam/lysa_hora3.jpg
     :interval: 120
     :desc: lysa_hora
+    :coord:
+      :lat: 49.545833
+      :lon: 18.4475
+      :enabled: true
 - :group: usa
   :array: 
   - :url: http://www.sunvalley.com/assets/images/cams/wclouds_full.jpg
     :ingterval: 300
     :desc: usa_sunvalley1
+    :coord:
+      :lat: 43.70263
+      :lon: -114.369106
+      :enabled: false
   - :url: http://www.sunvalley.com/assets/images/cams/clubhouse_full.jpg
     :interval: 300
     :desc: usa_sunvalley2
@@ -176,6 +230,10 @@
   - :url: http://www.mountainwebcams.com/Qx4F8e21/netcam2.jpg
     :interval: 300
     :desc: usa_lake_arrowhead
+    :coord:
+      :lat: 34.256389
+      :lon: -117.184444
+      :enabled: true
   - :url: http://www.dot.ca.gov/dist8/tmc/snapshots/hwy18_lkgreg.jpg
     :interval: 300
     :desc: usa_lake_gregory
@@ -258,6 +316,10 @@
   - :url: http://www.antarcticanz.govt.nz/webcam/webcam32.jpg
     :interval: 300
     :desc: antarc_scott
+    :coord:
+      :lat: -77.85
+      :lon: 166.766667
+      :enabled: true
   - :url: http://www.antarcticanz.govt.nz/ahnetcam/netcam.jpg
     :interval: 300
     :desc: antarc_arr_h
@@ -279,6 +341,12 @@
   - :url: http://weather.cs.uit.no/wcam0_snapshots/wcam0_latest_medium.jpg
     :interval: 120
     :desc: no_tromso_univ
+    :coord:
+      #:lat: 70.085278
+      # faked
+      :lat: 45.085278
+      :lon: 20.659444
+      :enabled: true
 #  - :url: http://213.184.198.16/info/kamerabilder/k11/pos3.jpg
 #    :interval: 300
 #    :desc: norway_llesund_port1
@@ -291,6 +359,12 @@
   - :url: http://ekstra.htg.no/webcam/img/harstad_fullsize.jpg
     :interval: 300
     :desc: norway_harstad
+    :coord:
+      #:lat: 70.085278
+      # faked
+      :lat: 45.085278
+      :lon: 20.659444
+      :enabled: true
   - :url: http://ekstra.htg.no/webcam/img/alta_fullsize.jpg
     :interval: 300
     :desc: norway_alta
@@ -322,6 +396,12 @@
   - :url: http://www.arcticutleie.no/webkamera.jpg
     :interval: 120
     :desc: norwa_skjervoy
+    :coord:
+      #:lat: 70.085278
+      # faked
+      :lat: 45.085278
+      :lon: 20.659444
+      :enabled: true
   - :url: http://ekstra.htg.no/webcam/img/sjovegan_fullsize.jpg
     :interval: 120
     :desc: norwa_sjovegan
@@ -410,6 +490,11 @@
     :url: http://87.237.210.145/~checkpoi/webcam/visby_stora_torget/webcam_10_1280.jpg
     :interval: 300
     :desc: swedeb_visby
+    :coord:
+      # faked
+      :lat: 45.085278
+      :lon: 20.659444
+      :enabled: true
   - :interval: 300
     :desc: finland_koppola
     :url: http://85.157.217.2/-wvhttp-01-/GetStillImage
@@ -422,6 +507,10 @@
   - :interval: 300
     :desc: austria_blumental
     :url: http://www.blumentalcam.at/cam_1.jpg
+    :coord:
+      :lat: 47.256649
+      :lon: 11.408386
+      :enabled: true
   - :interval: 300
     :resize: true
     :desc: austria_silvretta1
@@ -433,7 +522,10 @@
   - :interval: 300
     :desc: austria_mondi
     :url: http://91.112.132.150/record/current.jpg
-
+    :coord:
+      :lat: 47.256649
+      :lon: 11.408386
+      :enabled: true
   - :interval: 300
     :desc: antar_neumayeriT
     :url: http://www.awi.de/NM_WebCam/neumayerT.last.jpg
@@ -452,10 +544,17 @@
   - :interval: 200
     :desc: de_mount2
     :url: http://cms.zugspitze.de/static/webcams/k04.jpg
-
+    :coord:
+      :lat: 45.866667
+      :lon: 6.883333
+      :enabled: true
   - :interval: 300
     :desc: usa_san_francisco
     :url: http://wwc.instacam.com/instacamimg/SANFR/SANFR_l.jpg
+    :coord:
+      :lat: 37.7793
+      :lon: -122.4192
+      :enabled: true
   - :interval: 300
     :desc: italy_mount1
     :url: http://www.ras.bz.it/img_webcams/scheibe/scheibe_P1.jpg
@@ -465,39 +564,74 @@
   - :interval: 300
     :desc: ch_birkli
     :url: http://www.birkli.ch/webcam/bildgross/aktuell_gross.jpg
+    :coord:
+      :lat: 45.866667
+      :lon: 6.883333
+      :enabled: true
   - :interval: 300
     :desc: ischl
     :url: http://www.weti.net/cam/ischl.jpg
-
+    :coord:
+      :lat: 52.526248
+      :lon: 13.361664
+      :enabled: true
   - :interval: 300
     :desc: hsb_broken
     :url: http://webcam.netco.de/bilder/hsb-brocken/brocken-bhf.jpg
   - :interval: 300
     :desc: italy_caorle
     :url: http://webcam.caorle.com/webcam-spiaggia-ponente/current.jpg
+    :coord:
+      :lat: 41.897676
+      :lon: 12.495164
+      :enabled: true
   - :interval: 300
     :desc: italy_caorle_centro
     :url: http://webcam.caorle.com/webcam-centro-storico/current.jpg
+    :coord:
+      :lat: 41.897676
+      :lon: 12.495164
+      :enabled: false
   - :interval: 300
     :desc: italy_lago
     :url: http://webcam.molveno.it/webcam/current_grande.jpg
   - :interval: 300
     :desc: germany_halle
     :url: http://217.89.96.98/vhughsize.jpg
+    :coord:
+      :lat: 52.526248
+      :lon: 13.361664
+      :enabled: true
   - :interval: 300
     :desc: cannobio
     :url: http://www.cannobio.net/resizeimgpiazza.asp?dimensioni=800
+    :coord:
+      :lat: 41.897676
+      :lon: 12.495164
+      :enabled: true
   - :interval: 300
     :desc: villas_on_great_bay
     :url: http://www.thevillasongreatbay.com/images/netcam.jpg
+    :coord:
+      :lat: 18.069003
+      :lon: -63.070621
+      :enabled: true
   - :interval: 300
     :desc: arolla_collonx
     :url: http://www.arolla.com/mt-collon/mtcollonx.jpg
     :resize: true
+    :coord:
+      :lat: 45.866667
+      :lon: 6.883333
+      :enabled: true
   - :interval: 300
     :desc: arolla_widex
     :url: http://www.arolla.com/webcam_kurhaus/widex.jpg
     :resize: true
+    :coord:
+      :lat: 45.866667
+      :lon: 6.883333
+      :enabled: true
   - :interval: 300
     :desc: bavaria_bergen
     :url: http://www.bayernwebcam.de/bilder/bergen.jpg
