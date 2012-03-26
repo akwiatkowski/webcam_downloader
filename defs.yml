@@ -320,7 +320,9 @@
     :interval: 300
     :desc: antarc_scott
     :coord:
-      :lat: -77.85
+      #:lat: -77.85
+      # fake
+      :lat: -65.85
       :lon: 166.766667
       :enabled: true
   - :url: http://www.antarcticanz.govt.nz/ahnetcam/netcam.jpg

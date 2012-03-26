@@ -18,7 +18,7 @@ class KickAssAwesomeTimelapseGenerator
 
   def import_files
     # select only defs with coords
-    us = defs.select { |u| not u[:coord].nil? and u[:coord][:enabled] == true }
+    us = defs.select { |u| not u[:coord].nil? and u[:coord][:enabled] == true and not u[:coord][:lat].nil? and not u[:coord][:lon].nil? }
     puts "Only #{us.size} webcams has coords from #{defs.size}"
 
     puts "Importing webcams"
@@ -54,6 +54,7 @@ class KickAssAwesomeTimelapseGenerator
   end
 
   def sunrise(lat, lon, time)
+    #puts "#{lat} #{lon} #{time}"
     calc = SolarEventCalculator.new(time, BigDecimal.new(lat.to_s), BigDecimal.new(lon.to_s))
     return calc.compute_utc_civil_sunrise.localtime
   end
@@ -183,7 +184,7 @@ class KickAssAwesomeTimelapseGenerator
 end
 
 # take some time, load images info and check sunrise/sunset
-process = false
+process = true
 
 t = KickAssAwesomeTimelapseGenerator.new
 if process
@@ -195,35 +196,3 @@ end
 
 t.generate_timelapse_script
 
-
-exit(0)
-
-lat = 49.304778
-lon = 19.916832
-
-@date = Time.now
-@date = Date.parse('2012-03-03')
-@calc = SolarEventCalculator.new(@date, BigDecimal.new(lat.to_s), BigDecimal.new(lon.to_s))
-
-puts @calc.compute_utc_civil_sunset.localtime
-puts @calc.compute_utc_official_sunset.localtime
-puts @calc.compute_utc_nautical_sunset.localtime
-puts @calc.compute_utc_astronomical_sunset.localtime
-
-puts "*"
-
-puts @calc.compute_utc_civil_sunrise.localtime
-puts @calc.compute_utc_official_sunrise.localtime
-puts @calc.compute_utc_nautical_sunrise.localtime
-puts @calc.compute_utc_astronomical_sunrise.localtime
-
-#puts @calc.inspect
-
-# algorithm
-#
-# 1. choose nice providers
-# 2. add coords to them
-# 3. get all images grouped by providers
-# 4. resize when creating movie
-# 5. script will create symlinks in temp directory in proper order
-# 6. 
