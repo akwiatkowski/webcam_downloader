@@ -371,7 +371,7 @@
       # faked
       :lat: 45.085278
       :lon: 20.659444
-    :use_in_timelapse: true
+    :use_in_timelapse: false
   - :url: http://ekstra.htg.no/webcam/img/alta_fullsize.jpg
     :interval: 300
     :desc: norway_alta
