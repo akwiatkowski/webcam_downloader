@@ -202,6 +202,7 @@
   - :url: http://portal.chmi.cz/files/portal/docs/meteo/kam/lysa_hora3.jpg
     :interval: 120
     :desc: lysa_hora
+    :resize: true
     :coord:
       :lat: 49.545833
       :lon: 18.4475

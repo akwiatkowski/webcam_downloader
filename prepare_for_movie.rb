@@ -5,6 +5,10 @@ require 'yaml'
 class KickAssAwesomeTimelapseGenerator
 
   PATH = '/home/olek/pliki.big/webcam_downloader/pulling/webcam_downloader'
+  #TYPE = :civil # normal day
+  #TYPE = :official # shortest day
+  TYPE = :nautical # day is longer than :civil
+  #TYPE = :astronomical # longest day
 
   def initialize
     urls = YAML::load(File.open('defs.yml'))
@@ -56,12 +60,38 @@ class KickAssAwesomeTimelapseGenerator
   def sunrise(lat, lon, time)
     #puts "#{lat} #{lon} #{time}"
     calc = SolarEventCalculator.new(time, BigDecimal.new(lat.to_s), BigDecimal.new(lon.to_s))
-    return calc.compute_utc_civil_sunrise.localtime
+    stime = case TYPE
+             when :civil then
+               calc.compute_utc_civil_sunrise
+             when :official then
+               calc.compute_utc_official_sunrise
+             when :nautical then
+               calc.compute_utc_nautical_sunrise
+             when :astronomical then
+               calc.compute_utc_astronomical_sunrise
+             else
+               calc.compute_utc_civil_sunrise
+           end
+    return stime.localtime if not stime.nil?
+    return Time.mktime(time.year, time.month, time.day, 0)
   end
 
   def sunset(lat, lon, time)
     calc = SolarEventCalculator.new(time, BigDecimal.new(lat.to_s), BigDecimal.new(lon.to_s))
-    return calc.compute_utc_civil_sunset.localtime
+    stime = case TYPE
+             when :civil then
+               calc.compute_utc_civil_sunset
+             when :official then
+               calc.compute_utc_official_sunset
+             when :nautical then
+               calc.compute_utc_nautical_sunset
+             when :astronomical then
+               calc.compute_utc_astronomical_sunset
+             else
+               calc.compute_utc_civil_sunset
+           end
+    return stime.localtime if not stime.nil?
+    return Time.mktime(time.year, time.month, time.day, 0) + 24*3600
   end
 
   def is_day_now?(lat, lon, time)
