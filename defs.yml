@@ -8,7 +8,7 @@
     :coord:
       :lat: 49.304778
       :lon: 19.916832
-      :enabled: true
+    :use_in_timelapse: true
   - :url: http://www.zakopaneonline.eu/webcam2/zakopane.jpg
     :pre_url: http://www.zol.pl/webcam/
     :interval: 180
@@ -16,7 +16,7 @@
     :coord:
       :lat: 49.304778
       :lon: 19.916832
-      :enabled: true
+    :use_in_timelapse: true
   - :url: http://www.zakopaneonline.eu/webcam3/zakopane.jpg
     :pre_url: http://www.zol.pl/webcam/
     :interval: 180
@@ -24,56 +24,56 @@
     :coord:
       :lat: 49.304778
       :lon: 19.916832
-      :enabled: true
+    :use_in_timelapse: true
   - :url: http://kamery.topr.pl/moko/moko_01.jpg
     :interval: 180
     :desc: moko
     :coord:
       :lat: 49.304778
       :lon: 19.916832
-      :enabled: true
+    :use_in_timelapse: true
   - :url: http://kamery.topr.pl/goryczkowa/gorycz.jpg
     :interval: 180
     :desc: goryczkowa
     :coord:
       :lat: 49.304778
       :lon: 19.916832
-      :enabled: true
+    :use_in_timelapse: true
   - :url: http://kamery.topr.pl/moko_TPN/moko_02.jpg
     :interval: 180
     :desc: moko2
     :coord:
       :lat: 49.304778
       :lon: 19.916832
-      :enabled: true
+    :use_in_timelapse: true
   - :url: http://kamery.topr.pl/stawy1/stawy1.jpg
     :interval: 180
     :desc: stawy
     :coord:
       :lat: 49.304778
       :lon: 19.916832
-      :enabled: true
+    :use_in_timelapse: true
   - :url: http://www.zakopaneonline.eu/webcam6/koscielisko.jpg
     :interval: 180
     :desc: koscielisko
     :coord:
       :lat: 49.304778
       :lon: 19.916832
-      :enabled: true
+    :use_in_timelapse: true
   - :url: http://www.zakopaneonline.eu/webcam9/krupowki.jpg
     :interval: 180
     :desc: krupowki
     :coord:
       :lat: 49.304778
       :lon: 19.916832
-      :enabled: true
+    :use_in_timelapse: true
   - :url: http://www.zakopaneonline.eu/webcam8/zakopianka.jpg
     :interval: 180
     :desc: zakopianka
     :coord:
       :lat: 49.304778
       :lon: 19.916832
-      :enabled: true
+    :use_in_timelapse: true
   - :url: http://www.kamera.zadzial.pl/cam_1.jpg
     :interval: 180
     :desc: beskid1
@@ -83,21 +83,21 @@
     :coord:
       :lat: 49.304778
       :lon: 19.916832
-      :enabled: false
+    :use_in_timelapse: false
   - :url: http://www.zakopaneonline.eu/webcams/kubik.jpg
     :interval: 180
     :desc: willa_kubik
     :coord:
       :lat: 49.304778
       :lon: 19.916832
-      :enabled: true
+    :use_in_timelapse: true
   - :url: http://z-ne.pl/kamery/giewont_zakopane.jpg
     :interval: 180
     :desc: giewont_zakopane
     :coord:
       :lat: 49.304778
       :lon: 19.916832
-      :enabled: true
+    :use_in_timelapse: true
 - :group: poland_other
   :array: 
   - :url: http://www.pieninyportal.com/images/stories/webcamera/pieninyportal.jpg
@@ -127,7 +127,7 @@
     :coord:
       :lat: 49.684444
       :lon: 19.030278
-      :enabled: false
+    :use_in_timelapse: false
   - :resize: true
     :url: http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_szyndzielnia/A-hi.jpg
     :interval: 240
@@ -135,7 +135,7 @@
     :coord:
       :lat: 49.753111
       :lon: 18.999667
-      :enabled: false
+    :use_in_timelapse: false
   - :resize: true
     :url: http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_liwocz/A-hi.jpg
     :interval: 240
@@ -143,7 +143,7 @@
     :coord:
       :lat: 49.813211
       :lon: 21.351397
-      :enabled: false
+    :use_in_timelapse: false
   - :resize: true
     :url: http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_widnica/A-hi.jpg
     :interval: 240
@@ -151,7 +151,7 @@
     :coord:
       :lat: 50.399167
       :lon: 20.031389
-      :enabled: false
+    :use_in_timelapse: false
   - :resize: true
     :url: http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_mikolow/A-hi.jpg
     :interval: 240
@@ -159,7 +159,7 @@
     :coord:
       :lat: 50.166667
       :lon: 18.9
-      :enabled: false
+    :use_in_timelapse: false
 - :group: sniezka
   :array: 
   - :resize: true
@@ -170,7 +170,7 @@
       :lat: 50.735833
       :lon: 15.739167
       # foggy
-      :enabled: false
+    :use_in_timelapse: false
   - :resize: true
     :url: http://kamery.humlnet.cz/images/webcams/snezka2/2048x1536.jpg
     :interval: 120
@@ -179,7 +179,7 @@
       :lat: 50.735833
       :lon: 15.739167
       # foggy
-      :enabled: false
+    :use_in_timelapse: false
   - :resize: true
     :url: http://kamery.humlnet.cz/images/webcams/snezka/2048x1536.jpg
     :interval: 120
@@ -188,7 +188,7 @@
       :lat: 50.735833
       :lon: 15.739167
       # foggy
-      :enabled: false
+    :use_in_timelapse: false
 - :group: yuz
   :array: 
   - :resize: true
@@ -198,7 +198,7 @@
     :coord:
       :lat: 50.288333
       :lon: 18.973611
-      :enabled: true
+    :use_in_timelapse: true
   - :url: http://portal.chmi.cz/files/portal/docs/meteo/kam/lysa_hora3.jpg
     :interval: 120
     :desc: lysa_hora
@@ -206,7 +206,8 @@
     :coord:
       :lat: 49.545833
       :lon: 18.4475
-      :enabled: true
+    # some issues with mencoder
+    :use_in_timelapse: false
 - :group: usa
   :array: 
   - :url: http://www.sunvalley.com/assets/images/cams/wclouds_full.jpg
@@ -215,7 +216,7 @@
     :coord:
       :lat: 43.70263
       :lon: -114.369106
-      :enabled: false
+    :use_in_timelapse: false
   - :url: http://www.sunvalley.com/assets/images/cams/clubhouse_full.jpg
     :interval: 300
     :desc: usa_sunvalley2
@@ -237,7 +238,7 @@
     :coord:
       :lat: 34.256389
       :lon: -117.184444
-      :enabled: true
+    :use_in_timelapse: true
   - :url: http://www.dot.ca.gov/dist8/tmc/snapshots/hwy18_lkgreg.jpg
     :interval: 300
     :desc: usa_lake_gregory
@@ -325,7 +326,7 @@
       # fake
       :lat: -65.85
       :lon: 166.766667
-      :enabled: true
+    :use_in_timelapse: true
   - :url: http://www.antarcticanz.govt.nz/ahnetcam/netcam.jpg
     :interval: 300
     :desc: antarc_arr_h
@@ -352,7 +353,7 @@
       # faked
       :lat: 45.085278
       :lon: 20.659444
-      :enabled: true
+    :use_in_timelapse: true
 #  - :url: http://213.184.198.16/info/kamerabilder/k11/pos3.jpg
 #    :interval: 300
 #    :desc: norway_llesund_port1
@@ -370,7 +371,7 @@
       # faked
       :lat: 45.085278
       :lon: 20.659444
-      :enabled: true
+    :use_in_timelapse: true
   - :url: http://ekstra.htg.no/webcam/img/alta_fullsize.jpg
     :interval: 300
     :desc: norway_alta
@@ -407,7 +408,7 @@
       # faked
       :lat: 45.085278
       :lon: 20.659444
-      :enabled: true
+    :use_in_timelapse: true
   - :url: http://ekstra.htg.no/webcam/img/sjovegan_fullsize.jpg
     :interval: 120
     :desc: norwa_sjovegan
@@ -500,7 +501,7 @@
       # faked
       :lat: 45.085278
       :lon: 20.659444
-      :enabled: true
+    :use_in_timelapse: true
   - :interval: 300
     :desc: finland_koppola
     :url: http://85.157.217.2/-wvhttp-01-/GetStillImage
@@ -516,7 +517,7 @@
     :coord:
       :lat: 47.256649
       :lon: 11.408386
-      :enabled: true
+    :use_in_timelapse: true
   - :interval: 300
     :resize: true
     :desc: austria_silvretta1
@@ -531,7 +532,7 @@
     :coord:
       :lat: 47.256649
       :lon: 11.408386
-      :enabled: true
+    :use_in_timelapse: true
   - :interval: 300
     :desc: antar_neumayeriT
     :url: http://www.awi.de/NM_WebCam/neumayerT.last.jpg
@@ -553,14 +554,14 @@
     :coord:
       :lat: 45.866667
       :lon: 6.883333
-      :enabled: true
+    :use_in_timelapse: true
   - :interval: 300
     :desc: usa_san_francisco
     :url: http://wwc.instacam.com/instacamimg/SANFR/SANFR_l.jpg
     :coord:
       :lat: 37.7793
       :lon: -122.4192
-      :enabled: true
+    :use_in_timelapse: true
   - :interval: 300
     :desc: italy_mount1
     :url: http://www.ras.bz.it/img_webcams/scheibe/scheibe_P1.jpg
@@ -573,14 +574,14 @@
     :coord:
       :lat: 45.866667
       :lon: 6.883333
-      :enabled: true
+    :use_in_timelapse: true
   - :interval: 300
     :desc: ischl
     :url: http://www.weti.net/cam/ischl.jpg
     :coord:
       :lat: 52.526248
       :lon: 13.361664
-      :enabled: true
+    :use_in_timelapse: true
   - :interval: 300
     :desc: hsb_broken
     :url: http://webcam.netco.de/bilder/hsb-brocken/brocken-bhf.jpg
@@ -590,14 +591,14 @@
     :coord:
       :lat: 41.897676
       :lon: 12.495164
-      :enabled: true
+    :use_in_timelapse: true
   - :interval: 300
     :desc: italy_caorle_centro
     :url: http://webcam.caorle.com/webcam-centro-storico/current.jpg
     :coord:
       :lat: 41.897676
       :lon: 12.495164
-      :enabled: false
+    :use_in_timelapse: false
   - :interval: 300
     :desc: italy_lago
     :url: http://webcam.molveno.it/webcam/current_grande.jpg
@@ -607,21 +608,21 @@
     :coord:
       :lat: 52.526248
       :lon: 13.361664
-      :enabled: true
+    :use_in_timelapse: true
   - :interval: 300
     :desc: cannobio
     :url: http://www.cannobio.net/resizeimgpiazza.asp?dimensioni=800
     :coord:
       :lat: 41.897676
       :lon: 12.495164
-      :enabled: true
+    :use_in_timelapse: true
   - :interval: 300
     :desc: villas_on_great_bay
     :url: http://www.thevillasongreatbay.com/images/netcam.jpg
     :coord:
       :lat: 18.069003
       :lon: -63.070621
-      :enabled: true
+    :use_in_timelapse: true
   - :interval: 300
     :desc: arolla_collonx
     :url: http://www.arolla.com/mt-collon/mtcollonx.jpg
@@ -629,7 +630,7 @@
     :coord:
       :lat: 45.866667
       :lon: 6.883333
-      :enabled: true
+    :use_in_timelapse: true
   - :interval: 300
     :desc: arolla_widex
     :url: http://www.arolla.com/webcam_kurhaus/widex.jpg
@@ -637,7 +638,7 @@
     :coord:
       :lat: 45.866667
       :lon: 6.883333
-      :enabled: true
+    :use_in_timelapse: true
   - :interval: 300
     :desc: bavaria_bergen
     :url: http://www.bayernwebcam.de/bilder/bergen.jpg

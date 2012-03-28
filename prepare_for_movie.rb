@@ -22,8 +22,10 @@ class KickAssAwesomeTimelapseGenerator
 
   def import_files
     # select only defs with coords
-    us = defs.select { |u| not u[:coord].nil? and u[:coord][:enabled] == true and not u[:coord][:lat].nil? and not u[:coord][:lon].nil? }
-    puts "Only #{us.size} webcams has coords from #{defs.size}"
+    us_tmp = defs.select { |u| not u[:coord].nil? and not u[:coord][:lat].nil? and not u[:coord][:lon].nil? }
+    us = us_tmp.select { |u| u[:use_in_timelapse] == true }
+    @us = us
+    puts "Only #{us_tmp.size} has coords from #{defs.size}, and only #{us.size} are enabled"
 
     puts "Importing webcams"
     @stored_webcams = Hash.new
@@ -61,17 +63,17 @@ class KickAssAwesomeTimelapseGenerator
     #puts "#{lat} #{lon} #{time}"
     calc = SolarEventCalculator.new(time, BigDecimal.new(lat.to_s), BigDecimal.new(lon.to_s))
     stime = case TYPE
-             when :civil then
-               calc.compute_utc_civil_sunrise
-             when :official then
-               calc.compute_utc_official_sunrise
-             when :nautical then
-               calc.compute_utc_nautical_sunrise
-             when :astronomical then
-               calc.compute_utc_astronomical_sunrise
-             else
-               calc.compute_utc_civil_sunrise
-           end
+              when :civil then
+                calc.compute_utc_civil_sunrise
+              when :official then
+                calc.compute_utc_official_sunrise
+              when :nautical then
+                calc.compute_utc_nautical_sunrise
+              when :astronomical then
+                calc.compute_utc_astronomical_sunrise
+              else
+                calc.compute_utc_civil_sunrise
+            end
     return stime.localtime if not stime.nil?
     return Time.mktime(time.year, time.month, time.day, 0)
   end
@@ -79,17 +81,17 @@ class KickAssAwesomeTimelapseGenerator
   def sunset(lat, lon, time)
     calc = SolarEventCalculator.new(time, BigDecimal.new(lat.to_s), BigDecimal.new(lon.to_s))
     stime = case TYPE
-             when :civil then
-               calc.compute_utc_civil_sunset
-             when :official then
-               calc.compute_utc_official_sunset
-             when :nautical then
-               calc.compute_utc_nautical_sunset
-             when :astronomical then
-               calc.compute_utc_astronomical_sunset
-             else
-               calc.compute_utc_civil_sunset
-           end
+              when :civil then
+                calc.compute_utc_civil_sunset
+              when :official then
+                calc.compute_utc_official_sunset
+              when :nautical then
+                calc.compute_utc_nautical_sunset
+              when :astronomical then
+                calc.compute_utc_astronomical_sunset
+              else
+                calc.compute_utc_civil_sunset
+            end
     return stime.localtime if not stime.nil?
     return Time.mktime(time.year, time.month, time.day, 0) + 24*3600
   end
@@ -122,7 +124,10 @@ class KickAssAwesomeTimelapseGenerator
     last_time = nil
     puts "Getting first and last time"
 
-    @stored_webcams.keys.each do |k|
+    keys_ordered = @us.sort { |a, b| a[:coord][:lon] <=> b[:coord][:lon] }.collect { |a| a[:desc] }
+
+    #@stored_webcams.keys.each do |k|
+    keys_ordered.each do |k|
       sw = @stored_webcams[k]
       if sw.size > 0
         # some providers has no images
@@ -190,24 +195,46 @@ class KickAssAwesomeTimelapseGenerator
     end
     f.close
 
+    # HD
     width = 1280
     height = 720
     ratio = width.to_f / height.to_f
+    # ratio - "16:9"
     bitrate = 6000
+    fps = 25
 
-    command_youtube = "mencoder \"mf://@tmp/timelapse/list.txt\" -mf fps=25:w=#{width}:h=#{height} -sws 9 -vf scale=#{width}:#{height} -aspect #{ratio} -ovc xvid -xvidencopts noqpel:nogmc:trellis:nocartoon:nochroma_me:chroma_opt:lumi_mask:max_iquant=7:max_pquant=7:max_bquant=7:bitrate=#{bitrate}:threads=120 -o video_1.avi -oac copy"
-    puts "# youtbe hd", command_youtube
+    # -1 true aspect ratio
+    # -2 fit into movie size, aspect not maintained
+    aspect_ratio_type = -2
 
+    scale_crop_string = "-aspect #{ratio} -vf scale=#{aspect_ratio_type}:#{height},crop=#{width}:#{height} -sws 9 "
+    input_string = "\"mf://@tmp/timelapse/list.txt\" "
+    fps_string = "-mf fps=#{fps} "
+    youtube_string = "-ovc xvid -xvidencopts noqpel:nogmc:trellis:nocartoon:nochroma_me:chroma_opt:lumi_mask:max_iquant=7:max_pquant=7:max_bquant=7:bitrate=#{bitrate}:threads=120 "
+    youtube_output_string = "-o video_yhd.avi -oac copy "
+
+    command_youtube = "mencoder #{input_string}#{fps_string}#{scale_crop_string}#{youtube_string}#{youtube_output_string}"
+    puts "# youtube hd", command_youtube
+
+    # 480p
     width = 854
     height = 480
     ratio = width.to_f / height.to_f
     bitrate = 4000
 
-    command_vimeo = "mencoder \"mf://@tmp/timelapse/list.txt\" -mf fps=25:w=#{width}:h=#{height} -profile x264-vimeo -o video_vimeo.avi"
-    puts "# youube 480p", command_youtube
+    scale_crop_string = "-aspect #{ratio} -vf scale=#{aspect_ratio_type}:#{height},crop=#{width}:#{height} -sws 9 "
+    youtube_string = "-ovc xvid -xvidencopts noqpel:nogmc:trellis:nocartoon:nochroma_me:chroma_opt:lumi_mask:max_iquant=7:max_pquant=7:max_bquant=7:bitrate=#{bitrate}:threads=120 "
+    youtube_output_string = "-o video_1.avi -oac copy "
 
-    command_youtube = "mencoder \"mf://@tmp/timelapse/list.txt\" -mf fps=25:w=#{width}:h=#{height} -sws 9 -vf scale=#{width}:#{height} -aspect #{ratio} -ovc xvid -xvidencopts noqpel:nogmc:trellis:nocartoon:nochroma_me:chroma_opt:lumi_mask:max_iquant=7:max_pquant=7:max_bquant=7:bitrate=#{bitrate}:threads=120 -o video_1.avi -oac copy"
-    puts "# vimeo", command_vimeo
+    command_youtube = "mencoder #{input_string}#{fps_string}#{scale_crop_string}#{youtube_string}#{youtube_output_string}"
+    puts "# youtube 480p", command_youtube
+
+
+    #command_vimeo = "mencoder \"mf://@tmp/timelapse/list.txt\" -mf fps=25:w=#{width}:h=#{height} -profile x264-vimeo -o video_vimeo.avi"
+    #puts "# youube 480p", command_youtube
+
+    #command_youtube = "mencoder \"mf://@tmp/timelapse/list.txt\" -mf fps=25:w=#{width}:h=#{height} -sws 9 -vf scale=#{width}:#{height} -aspect #{ratio} -ovc xvid -xvidencopts noqpel:nogmc:trellis:nocartoon:nochroma_me:chroma_opt:lumi_mask:max_iquant=7:max_pquant=7:max_bquant=7:bitrate=#{bitrate}:threads=120 -o video_1.avi -oac copy"
+    #puts "# vimeo", command_vimeo
 
   end
 
