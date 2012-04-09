@@ -701,3 +701,14 @@
       :lon: 11.44407
     :use_in_timelapse: false
 
+  - :interval: 300
+    :desc: tatry_chocholowska
+    :url: http://kamery.topr.pl/chocholowska/chocholow.jpg
+    :resize: false
+    :coord:
+      :lat: 49.221369
+      :lon: 19.780973
+    :use_in_timelapse: true
+
+
+
