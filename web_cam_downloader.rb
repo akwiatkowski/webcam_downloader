@@ -10,7 +10,7 @@ class WebCamDownloader
     @max_size = 400_000
 
     # processing image
-    @jpeg_quality = 82
+    @jpeg_quality = 77
 
     @sleep_interval = 5
 

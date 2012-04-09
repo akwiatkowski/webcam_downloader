@@ -4,7 +4,9 @@ require 'yaml'
 
 class KickAssAwesomeTimelapseGenerator
 
-  PATH = '/home/olek/pliki.big/webcam_downloader/pulling/webcam_downloader'
+  #PATH = '/home/olek/pliki.big/webcam_downloader/pulling/webcam_downloader'
+  PATH = '.'
+
   #TYPE = :civil # normal day
   #TYPE = :official # shortest day
   TYPE = :nautical # day is longer than :civil

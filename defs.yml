@@ -646,3 +646,58 @@
     :desc: bavaria_marquartstein
     :url: http://www.bayernwebcam.de/bilder/marquartstein.jpg
 
+# 2012-04-09
+  - :interval: 300
+    :desc: austria_schruns
+    :url: http://schruns-tschagguns.at/kamera/kamera/aktuell.jpg
+    :resize: false
+    :coord:
+      :lat: 47.080048
+      :lon: 9.920596
+    :use_in_timelapse: false
+
+  - :interval: 300
+    :desc: austria_tschagguns
+    :url: http://webcams.salmhofer.at/webcam/tschagguns.jpg
+    :resize: false
+    :coord:
+      :lat: 47.080008
+      :lon: 9.901684
+    :use_in_timelapse: false
+
+  - :interval: 300
+    :desc: austria_bezaus
+    :url: http://www.hotelpostbezau.com/webcam/live/live.jpg
+    :resize: false
+    :coord:
+      :lat: 47.385427
+      :lon: 9.90251
+    :use_in_timelapse: false
+
+  - :interval: 300
+    :desc: austria_schruns_ferienhotel
+    :url: http://www.ferienhotel.at/kamera/kamera/aktuell.jpg
+    :resize: false
+    :coord:
+      :lat: 47.385427
+      :lon: 9.90251
+    :use_in_timelapse: false
+
+  - :interval: 300
+    :desc: italy_liqueria_serra
+    :url: http://www.meteolaserra.it/images/webcam/test/webcam2.php
+    :resize: true
+    :coord:
+      :lat: 43.122804
+      :lon: 13.232452
+    :use_in_timelapse: false
+
+  - :interval: 300
+    :desc: italy_pfosl
+    :url: http://zeppelinmedia.org/hotelpfoesl/webcam.jpg
+    :resize: false
+    :coord:
+      :lat: 46.407371
+      :lon: 11.44407
+    :use_in_timelapse: false
+
