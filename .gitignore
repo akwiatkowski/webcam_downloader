@@ -1,5 +1,7 @@
 .idea
 pix
+pix_part_1
+**/*.jpg
 tmp
 data
 latest

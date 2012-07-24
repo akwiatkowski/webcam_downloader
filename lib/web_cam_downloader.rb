@@ -6,9 +6,6 @@ class WebCamDownloader
   def initialize(_options={ })
     @options = _options
 
-    # not used
-    @max_size = 400_000
-
     # processing image
     @jpeg_quality = 77
 
@@ -57,7 +54,6 @@ class WebCamDownloader
     u[:new_downloaded] = "pix/#{u[:desc]}/#{u[:desc]}_#{Time.now.to_i}.jpg"
     u[:new_downloaded_processed] = "pix/#{u[:desc]}/#{u[:desc]}_#{Time.now.to_i}_proc.jpg"
 
-
     # stored in other location for easier rsync usage
     if u[:resize] == true
       u[:new_downloaded] = u[:new_downloaded_pre_process]
@@ -101,7 +97,6 @@ class WebCamDownloader
             # remove if file is identical to downloaded before
             if remove_if_exist(u) == false
               # file wasn't removed
-              #resize_down_image_if_needed(u)
               if u[:resize] == true
                 proc_image(u)
                 remove_proc_if_exist(u)
@@ -186,7 +181,7 @@ class WebCamDownloader
     end
   end
 
-# some images are big
+  # some images are big
   def resize_down_image_if_needed(u)
     fs = File.size(u[:new_downloaded])
     if fs > @max_size
@@ -194,7 +189,7 @@ class WebCamDownloader
     end
   end
 
-  def digest_for_file(f)
+  def file_digest(f)
     begin
       Digest::MD5.hexdigest(File.read(f))
     rescue
@@ -202,7 +197,7 @@ class WebCamDownloader
     end
   end
 
-# resize down image
+  # resize down image
   def proc_image(u)
     # resizing
     puts "resizing image #{u[:new_downloaded]}"
@@ -216,10 +211,10 @@ class WebCamDownloader
     `rm #{u[:new_downloaded]}`
   end
 
-# remove processed image which was already downloaded
+  # remove processed image which was already downloaded
   def remove_proc_if_exist(u)
     # calculate digest
-    new_digest = digest_for_file(u[:new_proc_filename])
+    new_digest = file_digest(u[:new_proc_filename])
     u[:new_proc_digest] = new_digest if not new_digest.nil?
     # check with old digest
     if u[:old_proc_digest] == u[:new_proc_digest]
