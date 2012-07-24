@@ -33,6 +33,8 @@ class WebCamDownloader
   def prepare_directories
     f = 'pix'
     Dir.mkdir(f) unless File.exists?(f)
+    # latest
+    Dir.mkdir('latest') unless File.exists?('latest')
 
     urls.each_with_index do |u, i|
       f = "pix/#{u[:desc]}"
@@ -51,14 +53,14 @@ class WebCamDownloader
 
   def image_set_paths(u)
     u[:temporary] = "tmp/#{u[:desc]}_#{u[:desc]}_#{Time.now.to_i}.jpg.tmp"
-    u[:store_path_pre_process] = "tmp/#{u[:desc]}_#{u[:desc]}_#{Time.now.to_i}_pre_proc.jpg.tmp"
-    u[:store_path] = "pix/#{u[:desc]}/#{u[:desc]}_#{Time.now.to_i}.jpg"
-    u[:store_path_processed] = "pix/#{u[:desc]}/#{u[:desc]}_#{Time.now.to_i}_proc.jpg"
+    u[:new_downloaded_pre_process] = "tmp/#{u[:desc]}_#{u[:desc]}_#{Time.now.to_i}_pre_proc.jpg.tmp"
+    u[:new_downloaded] = "pix/#{u[:desc]}/#{u[:desc]}_#{Time.now.to_i}.jpg"
+    u[:new_downloaded_processed] = "pix/#{u[:desc]}/#{u[:desc]}_#{Time.now.to_i}_proc.jpg"
 
 
     # stored in other location for easier rsync usage
     if u[:resize] == true
-      u[:store_path] = u[:store_path_pre_process]
+      u[:new_downloaded] = u[:new_downloaded_pre_process]
     end
   end
 
@@ -93,8 +95,8 @@ class WebCamDownloader
           # check file size, remove empty files
           if remove_empty_file(u[:temporary]) == false
             # move image to downloaded
-            puts "moving #{u[:temporary]} to #{u[:store_path]}"
-            `mv "#{u[:temporary]}" "#{u[:store_path]}"`
+            puts "moving #{u[:temporary]} to #{u[:new_downloaded]}"
+            `mv "#{u[:temporary]}" "#{u[:new_downloaded]}"`
 
             # remove if file is identical to downloaded before
             if remove_if_exist(u) == false
@@ -106,6 +108,9 @@ class WebCamDownloader
               end
             end
           end
+
+          # create symlink for latest
+          create_latest_symlink(u)
 
         end
       end
@@ -129,7 +134,7 @@ class WebCamDownloader
 
   end
 
-  # remove image which file size is 0
+# remove image which file size is 0
   def remove_empty_file(f)
     if File.size(f) == 0
       puts "removing #{f}, file size = 0"
@@ -140,11 +145,24 @@ class WebCamDownloader
     end
   end
 
-  # remove image which was already downloaded
+# create symlink for "latest"
+  def create_latest_symlink(u)
+    _file = u[:old_downloaded]
+    _file = u[:old_proc_filename] if u[:resize]
+    _file = "#{_file}"
+    _output = "latest/#{u[:desc]}.jpg"
+
+    # if something go wrong, we
+    File.rm(_output) rescue nil #if File.exists?(_output)
+    command = "ln -s \"../#{_file}\" \"#{_output}\""
+    `#{command}`
+  end
+
+# remove image which was already downloaded
   def remove_if_exist(u)
-    f = File.new(u[:store_path])
-    u[:new_digest] = Digest::MD5.hexdigest(File.read(u[:store_path]))
-    u[:new_size] = File.size(u[:store_path])
+    f = File.new(u[:new_downloaded])
+    u[:new_digest] = Digest::MD5.hexdigest(File.read(u[:new_downloaded]))
+    u[:new_size] = File.size(u[:new_downloaded])
     u[:new_mtime] = f.mtime
 
     # compare only data in buffer because image can be processed
@@ -154,21 +172,21 @@ class WebCamDownloader
 
       u[:old_size] = u[:new_size]
       u[:old_mtime] = u[:new_mtime]
-      u[:old_downloaded] = u[:store_path]
+      u[:old_downloaded] = u[:new_downloaded]
       u[:old_digest] = u[:new_digest]
 
       return false
     else
-      puts "removing identical new image #{u[:store_path]} as #{u[:old_downloaded]}"
-      `rm #{u[:store_path]}`
+      puts "removing identical new image #{u[:new_downloaded]} as #{u[:old_downloaded]}"
+      `rm #{u[:new_downloaded]}`
       u[:remove_identical_count] = u[:remove_identical_count].to_i + 1 # nil safe
       return true
     end
   end
 
-  # some images are big
+# some images are big
   def resize_down_image_if_needed(u)
-    fs = File.size(u[:store_path])
+    fs = File.size(u[:new_downloaded])
     if fs > @max_size
       proc_image(u)
     end
@@ -182,21 +200,21 @@ class WebCamDownloader
     end
   end
 
-  # resize down image
+# resize down image
   def proc_image(u)
     # resizing
-    puts "resizing image #{u[:store_path]}"
-    u[:new_proc_filename] = u[:store_path_processed]
-    command = "convert \"#{u[:store_path]}\" -resize '1920x1080>' -quality #{@jpeg_quality}% \"#{u[:new_proc_filename]}\""
+    puts "resizing image #{u[:new_downloaded]}"
+    u[:new_proc_filename] = u[:new_downloaded_processed]
+    command = "convert \"#{u[:new_downloaded]}\" -resize '1920x1080>' -quality #{@jpeg_quality}% \"#{u[:new_proc_filename]}\""
     time_pre = Time.now
     `#{command}`
     u[:process_time_cost] = Time.now - time_pre
 
     # remove original
-    `rm #{u[:store_path]}`
+    `rm #{u[:new_downloaded]}`
   end
 
-  # remove processed image which was already downloaded
+# remove processed image which was already downloaded
   def remove_proc_if_exist(u)
     # calculate digest
     new_digest = digest_for_file(u[:new_proc_filename])
@@ -211,6 +229,7 @@ class WebCamDownloader
     else
       # a new file
       u[:old_proc_digest] = u[:new_proc_digest]
+      u[:old_proc_filename] = u[:new_proc_filename]
       return
     end
   end
