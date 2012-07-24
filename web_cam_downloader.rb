@@ -149,13 +149,15 @@ class WebCamDownloader
   def create_latest_symlink(u)
     _file = u[:old_downloaded]
     _file = u[:old_proc_filename] if u[:resize]
-    _file = "#{_file}"
-    _output = "latest/#{u[:desc]}.jpg"
+    if _file.to_s =~ /\.jpg$/i
+      _file = "#{_file}"
+      _output = "latest/#{u[:desc]}.jpg"
 
-    # if something go wrong, we
-    File.rm(_output) rescue nil #if File.exists?(_output)
-    command = "ln -s \"../#{_file}\" \"#{_output}\""
-    `#{command}`
+      # if something go wrong, we
+      #command = "ln -f \"#{_file}\" \"#{_output}\""
+      command = "ln -sf \"../#{_file}\" \"#{_output}\""
+      `#{command}`
+    end
   end
 
 # remove image which was already downloaded
