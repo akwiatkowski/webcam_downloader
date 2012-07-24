@@ -3,63 +3,77 @@ require 'solareventcalculator'
 require 'yaml'
 
 class KickAssAwesomeTimelapseGenerator
-  @@path = '.'
   # :civil # normal day
   # :official # shortest day
   # :nautical # day is longer than :civil
   # :astronomical # longest day
   @@sunset_type = :nautical
 
-  def self.path=(_path)
-    @@path = _path
-  end
-
   def initialize
-    urls = YAML::load(File.open('defs.yml'))
     @defs = Array.new
-    urls.each do |u|
-      @defs += u[:array]
-    end
+    # this places will be checked for importing images
+    @import_paths = Array.new
+    @import_paths << '.'
+    @import_paths << 'pix'
+
+    @stored_webcams = Hash.new
   end
 
   attr_reader :defs
 
-  def import_files
-    # select only defs with coords
-    us_tmp = defs.select { |u| not u[:coord].nil? and not u[:coord][:lat].nil? and not u[:coord][:lon].nil? }
-    us = us_tmp.select { |u| u[:use_in_timelapse] == true }
-    @us = us
-    puts "Only #{us_tmp.size} has coords from #{defs.size}, and only #{us.size} are enabled"
+  # load webcam configuration from config file
+  def load_config(_filename = 'config/defs.yml')
+    urls = YAML::load(File.open(_filename))
+    urls.each do |u|
+      @defs += u[:array]
+    end
+    @defs.uniq!
+    puts "Config file #{_filename} loaded, now #{@defs.size} webcams"
+  end
 
-    puts "Importing webcams"
-    @stored_webcams = Hash.new
+  def only_with_coords!
+    @defs = @defs.select { |u| not u[:coord].nil? and not u[:coord][:lat].nil? and not u[:coord][:lon].nil? }
+    puts "There are only #{@defs.size} webcams with coords (usable for dawn/sunset calculation)"
+  end
 
-    us.each do |u|
-      desc = u[:desc]
-      # here will be Array of webcams
-      @stored_webcams[desc] = Array.new
-      not_stored_count = 0
+  def only_enabled_for_timelapse!
+    @defs = @defs.select { |u| u[:use_in_timelapse] == true }
+    puts "There are only #{@defs.size} enabled for timelapse"
+  end
 
-      Dir[File.join(PATH, "pix", desc, "*.jpg")].each do |f|
-        h = Hash.new
-        h[:filename] = f
-        # supa-dupa-lazy
-        h[:time] = Time.at(f[/\d{4,20}/].to_i)
+  # importer can search thought many paths for downloaded images
+  def add_to_import_paths(_new_path = '.')
+    @import_paths << _new_path
+    @import_paths.uniq!
+    puts "Path '#{_new_path}' added to list, now #{@import_paths.size} paths"
+  end
 
-        # normally only day images are interesting
-        # unless there is :night => true in defs
+  def import_all_files
+    @import_paths.each do |path|
+      puts "Searching throught '#{path}'"
 
-        if u[:night] or is_day_now?(u[:coord][:lat], u[:coord][:lon], h[:time])
-          @stored_webcams[desc] << h
-        else
-          not_stored_count += 1
+      # import
+      @defs.each do |u|
+        desc = u[:desc]
+        base_path = File.join(path, desc)
+        # only search if this path exists
+        if File.exists?(base_path)
+          # here will be Array of webcams
+          @stored_webcams[desc] ||= Array.new
+          stored_count = 0
+
+          Dir[File.join(base_path, "*.jpg")].each do |f|
+            h = Hash.new
+            h[:filename] = f
+            # supa-dupa-lazy
+            h[:time] = Time.at(f[/\d{4,20}/].to_i)
+            @stored_webcams[desc] << h
+            stored_count += 1
+          end
+          puts " #{stored_count.to_s.rjust(10)}     #{base_path}"
         end
 
       end
-
-      # must be sorted
-      @stored_webcams[desc] = @stored_webcams[desc].sort { |a, b| a[:time] <=> b[:time] }
-      puts "Imported for #{desc} #{@stored_webcams[desc].size}, not imported #{not_stored_count}"
     end
   end
 
@@ -103,9 +117,13 @@ class KickAssAwesomeTimelapseGenerator
   def is_day_now?(lat, lon, time)
     _sunrise = sunrise(lat, lon, time)
     _sunset = sunset(lat, lon, time)
-    # puts "  #{_sunrise} - #{_sunset}"
     return (time >= _sunrise and time <= _sunset)
   end
+
+
+  # to refactor
+  # if u[:night] or is_day_now?(u[:coord][:lat], u[:coord][:lon], h[:time])
+
 
   def save
     d = Hash.new
@@ -243,17 +261,17 @@ class KickAssAwesomeTimelapseGenerator
   end
 
 end
-
-# take some time, load images info and check sunrise/sunset
-process = true
-
-t = KickAssAwesomeTimelapseGenerator.new
-if process
-  t.import_files
-  t.save
-else
-  t.reload
-end
-
-t.generate_timelapse_script
+#
+## take some time, load images info and check sunrise/sunset
+#process = true
+#
+#t = KickAssAwesomeTimelapseGenerator.new
+#if process
+#  t.import_files
+#  t.save
+#else
+#  t.reload
+#end
+#
+#t.generate_timelapse_script
 
