@@ -11,4 +11,5 @@ t.calculate_extreme_times
 t.desc_sorted_by_coords
 
 t.generate_day_timelapse
-t.create_scripts
+t.create_images_list
+t.create_render_command

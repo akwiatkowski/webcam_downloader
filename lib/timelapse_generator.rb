@@ -219,137 +219,67 @@ class KickAssAwesomeTimelapseGenerator
     end
   end
 
-  def create_scripts(absolute_path = true)
-    name = Time.now.to_i.to_s
-
+  def create_images_list(absolute_path = true)
     # create symlinks
     Dir.mkdir 'tmp' if not File.exist?('tmp')
     Dir.mkdir 'tmp/timelapse' if not File.exist?('tmp/timelapse')
 
-    f = File.new("tmp/timelapse/list.txt_#{name}", 'w')
+    @timelapse_output_name = Time.now.to_i.to_s
+    @timelapse_output_file = File.absolute_path("tmp/timelapse/video_#{@timelapse_output_name}.avi")
+    @timelapse_images_list_file = File.absolute_path("tmp/timelapse/list_#{@timelapse_output_name}.txt")
+
+    f = File.new(@timelapse_images_list_file, 'w')
     @frames.each_with_index do |t, i|
       _file = t[:filename]
-      _file = File.absolute_path() if absolute_path
+      _file = File.absolute_path(_file) if absolute_path
       f.puts _file
     end
     f.close
   end
 
-  # to refactor
-  # if u[:night] or is_day_now?(u[:coord][:lat], u[:coord][:lon], h[:time])
-
-
-  def generate_timelapse_script
-    keys_ordered.each do |k|
+  def create_render_command(_options = { }, preset = nil)
+    if preset.to_s == 'HD'
+      _options = _options.merge(
+        {
+          width: 1280,
+          height: 720,
+          bitrate: 6000
+        }
+      )
     end
 
-
-    # TODO maybe something to sort by providers/webcams?
-
-    finished = false
-    day = 0
-    while not finished do
-      # loop by time/days, from first_time to
-
-      @stored_webcams.keys.each do |k|
-        # loop by provider
-
-        # calculate sunrise and sunset
-        webcam_def = @defs.select { |d| d[:desc] == k }.first
-        lat = webcam_def[:coord][:lat]
-        lon = webcam_def[:coord][:lon]
-        time = first_time + day * 24*3600
-        _sunrise = sunrise(lat, lon, time)
-        _sunset = sunset(lat, lon, time)
-
-        puts "Adding photos from #{k} from #{_sunrise} to #{_sunset}"
-        webcams_partial = @stored_webcams[k].select { |w| w[:time] >= _sunrise and w[:time] <= _sunset }
-        webcams_partial = webcams_partial.sort { |a, b| a[:time] <=> b[:time] }
-        puts "...added #{webcams_partial.size} images"
-
-        @frames += webcams_partial.collect { |w| w[:filename] }
-      end
-
-      # next day
-      day += 1
-
-      # end condition
-      if first_time + day * 24*3600 > last_time
-        finished = true
-      end
+    if preset.to_s == '480p'
+      _options = _options.merge(
+        {
+          width: 854,
+          height: 480,
+          bitrate: 4000
+        }
+      )
     end
 
-    puts "Finished with #{@frames.size} images"
-    File.open('timelapse_frames.yml', 'w') do |f|
-      f.puts @frames.to_yaml
-    end
-    puts "Frames saved"
-
-    # create symlinks
-    Dir.mkdir 'tmp' if not File.exist?('tmp')
-    Dir.mkdir 'tmp/timelapse' if not File.exist?('tmp/timelapse')
-
-    f = File.new('tmp/timelapse/list.txt', 'w')
-    @frames.each_with_index do |t, i|
-      f.puts t
-    end
-    f.close
-
-    # HD
-    width = 1280
-    height = 720
+    width = _options[:width] || 1280
+    height = _options[:height] || 720
     ratio = width.to_f / height.to_f
-    # ratio - "16:9"
-    bitrate = 6000
-    fps = 25
+    bitrate = _options[:bitrate] || 6000
+    fps = _options[:fps] || 25
+    file_list = _options[:file_list] || @timelapse_images_list_file
+    output = _options[:output] || @timelapse_output_file
 
     # -1 true aspect ratio
     # -2 fit into movie size, aspect not maintained
-    aspect_ratio_ @@sunset_type = -2
+    aspect_ratio_type = _options[:aspect] || -2
 
-    scale_crop_string = "-aspect #{ratio} -vf scale=#{aspect_ratio_ @@sunset_type}:#{height},crop=#{width}:#{height} -sws 9 "
-    input_string = "\"mf://@tmp/timelapse/list.txt\" "
+    scale_crop_string = "-aspect #{ratio} -vf scale=#{aspect_ratio_type}:#{height},crop=#{width}:#{height} -sws 9 "
+    input_string = "\"mf://@#{file_list}\" "
     fps_string = "-mf fps=#{fps} "
-    youtube_string = "-ovc xvid -xvidencopts noqpel:nogmc:trellis:nocartoon:nochroma_me:chroma_opt:lumi_mask:max_iquant=7:max_pquant=7:max_bquant=7:bitrate=#{bitrate}:threads=120 "
-    youtube_output_string = "-o video_yhd.avi -oac copy "
+    options_string = "-ovc xvid -xvidencopts noqpel:nogmc:trellis:nocartoon:nochroma_me:chroma_opt:lumi_mask:max_iquant=7:max_pquant=7:max_bquant=7:bitrate=#{bitrate}:threads=120 "
+    output_string = "-o \"#{output}\" -oac copy "
+    command_youtube = "mencoder #{input_string}#{fps_string}#{scale_crop_string}#{options_string}#{output_string}"
 
-    command_youtube = "mencoder #{input_string}#{fps_string}#{scale_crop_string}#{youtube_string}#{youtube_output_string}"
-    puts "# youtube hd", command_youtube
-
-    # 480p
-    width = 854
-    height = 480
-    ratio = width.to_f / height.to_f
-    bitrate = 4000
-
-    scale_crop_string = "-aspect #{ratio} -vf scale=#{aspect_ratio_ @@sunset_type}:#{height},crop=#{width}:#{height} -sws 9 "
-    youtube_string = "-ovc xvid -xvidencopts noqpel:nogmc:trellis:nocartoon:nochroma_me:chroma_opt:lumi_mask:max_iquant=7:max_pquant=7:max_bquant=7:bitrate=#{bitrate}:threads=120 "
-    youtube_output_string = "-o video_1.avi -oac copy "
-
-    command_youtube = "mencoder #{input_string}#{fps_string}#{scale_crop_string}#{youtube_string}#{youtube_output_string}"
-    puts "# youtube 480p", command_youtube
-
-
-    #command_vimeo = "mencoder \"mf://@tmp/timelapse/list.txt\" -mf fps=25:w=#{width}:h=#{height} -profile x264-vimeo -o video_vimeo.avi"
-    #puts "# youube 480p", command_youtube
-
-    #command_youtube = "mencoder \"mf://@tmp/timelapse/list.txt\" -mf fps=25:w=#{width}:h=#{height} -sws 9 -vf scale=#{width}:#{height} -aspect #{ratio} -ovc xvid -xvidencopts noqpel:nogmc:trellis:nocartoon:nochroma_me:chroma_opt:lumi_mask:max_iquant=7:max_pquant=7:max_bquant=7:bitrate=#{bitrate}:threads=120 -o video_1.avi -oac copy"
-    #puts "# vimeo", command_vimeo
-
+    @timelapse_script_file = File.absolute_path("tmp/timelapse/video_#{@timelapse_output_name}.sh")
+    File.open(@timelapse_script_file, 'w') do |f|
+      f.puts command_youtube
+    end
   end
-
 end
-#
-## take some time, load images info and check sunrise/sunset
-#process = true
-#
-#t = KickAssAwesomeTimelapseGenerator.new
-#if process
-#  t.import_files
-#  t.save
-#else
-#  t.reload
-#end
-#
-#t.generate_timelapse_script
-
