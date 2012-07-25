@@ -75,12 +75,20 @@ class KickAssAwesomeTimelapseGenerator
 
       end
     end
+
+    sort_imported_webcams
+  end
+
+  def sort_imported_webcams
+    @stored_webcams.keys.each do |desc|
+      @stored_webcams[desc] = @stored_webcams[desc].sort{|a,b| a[:time] <=> b[:time]}
+    end
   end
 
   def sunrise(lat, lon, time)
     #puts "#{lat} #{lon} #{time}"
     calc = SolarEventCalculator.new(time, BigDecimal.new(lat.to_s), BigDecimal.new(lon.to_s))
-    stime = case TYPE
+    stime = case @@sunset_type
               when :civil then
                 calc.compute_utc_civil_sunrise
               when :official then
@@ -98,7 +106,7 @@ class KickAssAwesomeTimelapseGenerator
 
   def sunset(lat, lon, time)
     calc = SolarEventCalculator.new(time, BigDecimal.new(lat.to_s), BigDecimal.new(lon.to_s))
-    stime = case TYPE
+    stime = case @@sunset_type
               when :civil then
                 calc.compute_utc_civil_sunset
               when :official then
@@ -120,26 +128,42 @@ class KickAssAwesomeTimelapseGenerator
     return (time >= _sunrise and time <= _sunset)
   end
 
-
-  # to refactor
-  # if u[:night] or is_day_now?(u[:coord][:lat], u[:coord][:lon], h[:time])
-
-
   def save
     d = Hash.new
     d["@stored_webcams"] = @stored_webcams
 
-    File.open('timelapse.yml', 'w') do |f|
+    File.open('data/timelapse.yml', 'w') do |f|
       f.puts d.to_yaml
     end
     puts "Saved"
   end
 
   def reload
-    d = YAML::load(File.open('timelapse.yml'))
+    d = YAML::load(File.open('data/timelapse.yml'))
     @stored_webcams = d["@stored_webcams"]
     puts "Loaded"
   end
+
+  # calculate min/max time for every webcam and for all
+  def calculate_extreme_times
+    @min_times = Hash.new
+    @max_times = Hash.new
+    @defs.each do |d|
+      desc = d[:desc]
+      if @stored_webcams[desc].size > 0
+        @min_times[desc] = @stored_webcams[desc].first[:time]
+        @max_times[desc] = @stored_webcams[desc].last[:time]
+      end
+    end
+    # calculate for all
+    @min_time = @min_times.values.min
+    @max_time = @max_times.values.max
+    puts "Min time #{@min_time}, max time #{@max_time}"
+  end
+
+  # to refactor
+  # if u[:night] or is_day_now?(u[:coord][:lat], u[:coord][:lon], h[:time])
+
 
   def generate_timelapse_script
     first_time = nil
@@ -227,9 +251,9 @@ class KickAssAwesomeTimelapseGenerator
 
     # -1 true aspect ratio
     # -2 fit into movie size, aspect not maintained
-    aspect_ratio_type = -2
+    aspect_ratio_ @@sunset_type = -2
 
-    scale_crop_string = "-aspect #{ratio} -vf scale=#{aspect_ratio_type}:#{height},crop=#{width}:#{height} -sws 9 "
+    scale_crop_string = "-aspect #{ratio} -vf scale=#{aspect_ratio_ @@sunset_type}:#{height},crop=#{width}:#{height} -sws 9 "
     input_string = "\"mf://@tmp/timelapse/list.txt\" "
     fps_string = "-mf fps=#{fps} "
     youtube_string = "-ovc xvid -xvidencopts noqpel:nogmc:trellis:nocartoon:nochroma_me:chroma_opt:lumi_mask:max_iquant=7:max_pquant=7:max_bquant=7:bitrate=#{bitrate}:threads=120 "
@@ -244,7 +268,7 @@ class KickAssAwesomeTimelapseGenerator
     ratio = width.to_f / height.to_f
     bitrate = 4000
 
-    scale_crop_string = "-aspect #{ratio} -vf scale=#{aspect_ratio_type}:#{height},crop=#{width}:#{height} -sws 9 "
+    scale_crop_string = "-aspect #{ratio} -vf scale=#{aspect_ratio_ @@sunset_type}:#{height},crop=#{width}:#{height} -sws 9 "
     youtube_string = "-ovc xvid -xvidencopts noqpel:nogmc:trellis:nocartoon:nochroma_me:chroma_opt:lumi_mask:max_iquant=7:max_pquant=7:max_bquant=7:bitrate=#{bitrate}:threads=120 "
     youtube_output_string = "-o video_1.avi -oac copy "
 
