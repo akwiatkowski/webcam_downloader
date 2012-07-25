@@ -425,7 +425,8 @@ class KickAssAwesomeTimelapseGenerator
         @command += render_command(_options[:mencoder_options])
         @command += "\n\n"
       else
-        # TODO not implemented
+        # how it should be implemented?
+        raise NotImplementedError
       end
     end
 
