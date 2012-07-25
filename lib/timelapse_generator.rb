@@ -187,6 +187,15 @@ class KickAssAwesomeTimelapseGenerator
     @stored_webcams[_desc].select { |w| w[:time] >= _time_from and w[:time] <= _time_to }.sort { |a, b| a[:time] <=> b[:time] }
   end
 
+  # i'm too lazy to document it :]
+  def select_images_most_accurate(_desc, _time, _time_range = 10*60, _limit = 100)
+    _images = select_images_by_desc_and_times(_desc, _time - _time_range, _time + _time_range)
+    _images = _images.sort { |a, b| (a[:time] - _time).abs <=> (b[:time] - _time).abs }
+    _images = _images[0, _limit]
+    _images = _images.sort { |a, b| a[:time] <=> b[:time] }
+    return _images
+  end
+
   # create timelapse using all images, only during the day
   def generate_day_timelapse
     # movie frames
@@ -217,6 +226,40 @@ class KickAssAwesomeTimelapseGenerator
       end
       @log.info "Added #{@frames.size} images"
     end
+  end
+
+  # create timelapse using couple of images during noon
+  def generate_noon_everyday_timelapse(limit = 1)
+    # movie frames
+    @frames = Array.new
+
+    finished = false
+    day = 0
+    while not finished do
+      # loop by time/days, from first_time to
+
+      @stored_webcams.keys.each do |_desc|
+        # loop by provider
+        _time = @min_time + day * 24*3600
+        _sunrise, _sunset = sunrise_and_sunset_by_desc_and_time(_desc, _time)
+        _noon = Time.at( (_sunrise.to_i + _sunset.to_i) / 2 )
+        @log.debug "Adding some photos from #{_desc} from noon #{_noon}"
+
+        webcams_partial = select_images_most_accurate(_desc, _noon, 3600, limit)
+        @log.debug "...added #{webcams_partial.size} images"
+        @frames += webcams_partial
+      end
+
+      # next day
+      day += 1
+
+      # end condition
+      if @min_time + day * 24*3600 > @max_time
+        finished = true
+      end
+    end
+
+    @log.info "Added #{@frames.size} images"
   end
 
   def create_images_list(absolute_path = true)

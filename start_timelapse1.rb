@@ -10,6 +10,9 @@ t.import_all_files
 t.calculate_extreme_times
 t.desc_sorted_by_coords
 
-t.generate_day_timelapse
+# many timelapse types
+#t.generate_day_timelapse
+t.generate_noon_everyday_timelapse
+
 t.create_images_list
 t.create_render_command
