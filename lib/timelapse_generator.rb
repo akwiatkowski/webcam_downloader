@@ -21,6 +21,8 @@ class KickAssAwesomeTimelapseGenerator
 
     @log = Logger.new(STDOUT)
     @log.level = Logger::INFO
+
+    reset_frames
   end
 
   attr_accessor :log
@@ -43,6 +45,11 @@ class KickAssAwesomeTimelapseGenerator
 
   def only_enabled_for_timelapse!
     @defs = @defs.select { |u| u[:use_in_timelapse] == true }
+    @log.info "There are only #{@defs.size} enabled for timelapse"
+  end
+
+  def only_this!(_desc)
+    @defs = @defs.select { |u| u[:desc] == _desc }
     @log.info "There are only #{@defs.size} enabled for timelapse"
   end
 
@@ -167,7 +174,8 @@ class KickAssAwesomeTimelapseGenerator
 
   # sort coords according to time of dawn
   def desc_sorted_by_coords
-    @desc_sorted = @defs.sort { |a, b| a[:coord][:lon] <=> b[:coord][:lon] }.collect { |a| a[:desc] }
+    _sorted = @defs.sort { |a, b| a[:coord][:lon] <=> b[:coord][:lon] } rescue @defs
+    @desc_sorted = _sorted.collect { |a| a[:desc] }
   end
 
   # get webcam definition by desc
@@ -183,11 +191,12 @@ class KickAssAwesomeTimelapseGenerator
     return [_sunrise, _sunset]
   end
 
+  # get images from one webcam within time range
   def select_images_by_desc_and_times(_desc, _time_from, _time_to)
     @stored_webcams[_desc].select { |w| w[:time] >= _time_from and w[:time] <= _time_to }.sort { |a, b| a[:time] <=> b[:time] }
   end
 
-  # i'm too lazy to document it :]
+  # get the '_limit' of images nearest to '_time'
   def select_images_most_accurate(_desc, _time, _time_range = 10*60, _limit = 100)
     _images = select_images_by_desc_and_times(_desc, _time - _time_range, _time + _time_range)
     _images = _images.sort { |a, b| (a[:time] - _time).abs <=> (b[:time] - _time).abs }
@@ -196,72 +205,12 @@ class KickAssAwesomeTimelapseGenerator
     return _images
   end
 
-  # create timelapse using all images, only during the day
-  def generate_day_timelapse
-    # movie frames
-    @frames = Array.new
-
-    finished = false
-    day = 0
-    while not finished do
-      # loop by time/days, from first_time to
-
-      @stored_webcams.keys.each do |_desc|
-        # loop by provider
-        _time = @min_time + day * 24*3600
-        _sunrise, _sunset = sunrise_and_sunset_by_desc_and_time(_desc, _time)
-        @log.debug "Adding photos from #{_desc} from #{_sunrise} to #{_sunset}"
-
-        webcams_partial = select_images_by_desc_and_times(_desc, _sunrise, _sunset)
-        @log.debug "...added #{webcams_partial.size} images"
-        @frames += webcams_partial
-      end
-
-      # next day
-      day += 1
-
-      # end condition
-      if @min_time + day * 24*3600 > @max_time
-        finished = true
-      end
-      @log.info "Added #{@frames.size} images"
-    end
+  # clear frame tables
+  def reset_frames
+    @frames ||= Array.new
   end
 
-  # create timelapse using couple of images during noon
-  def generate_noon_everyday_timelapse(limit = 1)
-    # movie frames
-    @frames = Array.new
-
-    finished = false
-    day = 0
-    while not finished do
-      # loop by time/days, from first_time to
-
-      @stored_webcams.keys.each do |_desc|
-        # loop by provider
-        _time = @min_time + day * 24*3600
-        _sunrise, _sunset = sunrise_and_sunset_by_desc_and_time(_desc, _time)
-        _noon = Time.at( (_sunrise.to_i + _sunset.to_i) / 2 )
-        @log.debug "Adding some photos from #{_desc} from noon #{_noon}"
-
-        webcams_partial = select_images_most_accurate(_desc, _noon, 3600, limit)
-        @log.debug "...added #{webcams_partial.size} images"
-        @frames += webcams_partial
-      end
-
-      # next day
-      day += 1
-
-      # end condition
-      if @min_time + day * 24*3600 > @max_time
-        finished = true
-      end
-    end
-
-    @log.info "Added #{@frames.size} images"
-  end
-
+  ## -- rendering output
   def create_images_list(absolute_path = true)
     # create symlinks
     Dir.mkdir 'tmp' if not File.exist?('tmp')
@@ -280,7 +229,7 @@ class KickAssAwesomeTimelapseGenerator
     f.close
   end
 
-  def create_render_command(_options = { }, preset = nil)
+  def render_command(_options = { }, preset = nil)
     if preset.to_s == 'HD'
       _options = _options.merge(
         {
@@ -318,11 +267,156 @@ class KickAssAwesomeTimelapseGenerator
     fps_string = "-mf fps=#{fps} "
     options_string = "-ovc xvid -xvidencopts noqpel:nogmc:trellis:nocartoon:nochroma_me:chroma_opt:lumi_mask:max_iquant=7:max_pquant=7:max_bquant=7:bitrate=#{bitrate}:threads=120 "
     output_string = "-o \"#{output}\" -oac copy "
-    command_youtube = "mencoder #{input_string}#{fps_string}#{scale_crop_string}#{options_string}#{output_string}"
+    command = "mencoder #{input_string}#{fps_string}#{scale_crop_string}#{options_string}#{output_string}"
+
+    return command
+  end
+
+  def create_render_command(_options = { }, preset = nil)
+    command = render_command(_options, preset)
 
     @timelapse_script_file = File.absolute_path("tmp/timelapse/video_#{@timelapse_output_name}.sh")
     File.open(@timelapse_script_file, 'w') do |f|
-      f.puts command_youtube
+      f.puts command
     end
+  end
+
+  ## -- end of rendering output code
+
+  # add images for timelapse using all images, all webcams, only during the day, day by day
+  def add_images_daily_timelapse
+    add_images_for_webcams_during_day(@stored_webcams.keys)
+  end
+
+  # add images for timelapse using selected webcams, only during the day, day by day
+  def add_images_for_webcams_during_day(_descs)
+    _descs = [_descs] unless _descs.kind_of?(Array)
+
+    finished = false
+    day = 0
+    while not finished do
+      # loop by time/days, from first_time to
+
+      _descs.keys.each do |_desc|
+        # loop by provider
+        _time = @min_time + day * 24*3600
+        _sunrise, _sunset = sunrise_and_sunset_by_desc_and_time(_desc, _time)
+        @log.debug "Adding photos from #{_desc} from #{_sunrise} to #{_sunset}"
+
+        webcams_partial = select_images_by_desc_and_times(_desc, _sunrise, _sunset)
+        @log.debug "...added #{webcams_partial.size} images"
+        @frames += webcams_partial
+      end
+
+      # next day
+      day += 1
+
+      # end condition
+      if @min_time + day * 24*3600 > @max_time
+        finished = true
+      end
+      @log.info "Added #{@frames.size} images"
+    end
+  end
+
+  # add images for timelapse using a few (ex. 1) images during noon
+  def add_images_noon_everyday_for_webcam(_desc, limit = 1)
+    finished = false
+    day = 0
+    while not finished do
+      # loop by time/days, from first_time to
+
+      # loop by provider
+      _time = @min_time + day * 24*3600
+      _sunrise, _sunset = sunrise_and_sunset_by_desc_and_time(_desc, _time)
+      _noon = Time.at((_sunrise.to_i + _sunset.to_i) / 2)
+      @log.debug "Adding some photos from #{_desc} from noon #{_noon}"
+
+      webcams_partial = select_images_most_accurate(_desc, _noon, 3600, limit)
+      @log.debug "...added #{webcams_partial.size} images"
+      @frames += webcams_partial
+
+      # next day
+      day += 1
+
+      # end condition
+      if @min_time + day * 24*3600 > @max_time
+        finished = true
+      end
+    end
+
+    @log.info "Added #{@frames.size} images"
+  end
+
+  # add all images from one webcam, even night shots
+  def add_images_for_webcam_whole_day(_desc)
+    @frames += select_images_by_desc_and_times(_desc, @min_time, @max_time)
+    @log.info "Added #{@frames.size} images"
+  end
+
+
+  ## -- one method to generate timelapse
+  # create everything for making separated timelapse per webcam
+  #
+  # types:
+  # * :separated - if true every webcam has separated output video file
+  # * :day - if true only images during the day
+  # * :all - if true ignore :use_in_timelapse flag in definition
+  # * :descs - Array of webcam desc used only
+  def generate_separated_movies(_options = { })
+    load_config
+
+    only_with_coords! if _options[:only_with_coords!] or _options[:day]
+    only_enabled_for_timelapse! if _options[:only_enabled_for_timelapse] or not _options[:all]
+
+    _separated = _options[:separated]
+    _only_day = _options[:day] || _options[:only_day]
+
+    # only selected webcams
+    if _options[:descs]
+      new_defs = Array.new
+      _options[:descs].each do |_desc|
+        new_defs << def_by_desc(_desc)
+      end
+      @defs = new_defs
+    end
+
+    # adding optional paths
+    _options[:paths] ||= Array.new
+    _options[:paths].each do |path|
+      add_to_import_paths(path)
+    end
+
+    # mencoder options
+    _options[:mencoder_options] ||= Hash.new
+
+    # import images and initial processing
+    import_all_files
+    calculate_extreme_times
+    desc_sorted_by_coords
+
+    @command = ""
+
+    if _separated
+      @defs.each do |webcam|
+        reset_frames
+        _desc = webcam[:desc]
+
+        if _only_day
+          add_images_for_webcams_during_day(_desc)
+        else
+          add_images_for_webcam_whole_day(_desc)
+        end
+
+        # create list, command, ...
+        create_images_list
+        @command += render_command(_options[:mencoder_options])
+
+      end
+    end
+
+
+    puts @command
+
   end
 end
