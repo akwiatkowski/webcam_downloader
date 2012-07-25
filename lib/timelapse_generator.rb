@@ -207,16 +207,16 @@ class KickAssAwesomeTimelapseGenerator
 
   # clear frame tables
   def reset_frames
-    @frames ||= Array.new
+    @frames = Array.new
   end
 
   ## -- rendering output
-  def create_images_list(absolute_path = true)
+  def create_images_list(output_name = nil, absolute_path = true)
     # create symlinks
     Dir.mkdir 'tmp' if not File.exist?('tmp')
     Dir.mkdir 'tmp/timelapse' if not File.exist?('tmp/timelapse')
 
-    @timelapse_output_name = Time.now.to_i.to_s
+    @timelapse_output_name = output_name || Time.now.to_i.to_s
     @timelapse_output_file = File.absolute_path("tmp/timelapse/video_#{@timelapse_output_name}.avi")
     @timelapse_images_list_file = File.absolute_path("tmp/timelapse/list_#{@timelapse_output_name}.txt")
 
@@ -274,9 +274,12 @@ class KickAssAwesomeTimelapseGenerator
 
   def create_render_command(_options = { }, preset = nil)
     command = render_command(_options, preset)
+    save_command_to_file(command, @timelapse_output_name)
+  end
 
-    @timelapse_script_file = File.absolute_path("tmp/timelapse/video_#{@timelapse_output_name}.sh")
-    File.open(@timelapse_script_file, 'w') do |f|
+  def save_command_to_file(command, name)
+    _script_file = File.absolute_path("tmp/timelapse/video_#{name}.sh")
+    File.open(_script_file, 'w') do |f|
       f.puts command
     end
   end
@@ -387,8 +390,9 @@ class KickAssAwesomeTimelapseGenerator
       add_to_import_paths(path)
     end
 
-    # mencoder options
     _options[:mencoder_options] ||= Hash.new
+    _options[:name] ||= Time.now.strftime('%m_%d__%H_%m')
+    _name = _options[:name]
 
     # import images and initial processing
     import_all_files
@@ -409,14 +413,22 @@ class KickAssAwesomeTimelapseGenerator
         end
 
         # create list, command, ...
-        create_images_list
+        create_images_list("#{_name}_#{_desc}")
         @command += render_command(_options[:mencoder_options])
-
+        @command += "\n\n"
+      end
+    else
+      # in one file
+      if _only_day
+        add_images_daily_timelapse
+        create_images_list(_name)
+        @command += render_command(_options[:mencoder_options])
+        @command += "\n\n"
+      else
+        # TODO not implemented
       end
     end
 
-
-    puts @command
-
+    save_command_to_file(@command, _name)
   end
 end

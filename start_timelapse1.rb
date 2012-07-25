@@ -3,7 +3,7 @@ t = KickAssAwesomeTimelapseGenerator.new
 t.generate_separated_movies(
   {
     all: true,
-    descs: ['stawy'],
+    #descs: ['stawy'],
     separated: true,
     day: false,
     paths: [
