@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'solareventcalculator'
 require 'yaml'
+require 'logger'
 
 class KickAssAwesomeTimelapseGenerator
   # :civil # normal day
@@ -17,8 +18,12 @@ class KickAssAwesomeTimelapseGenerator
     @import_paths << 'pix'
 
     @stored_webcams = Hash.new
+
+    @log = Logger.new(STDOUT)
+    @log.level = Logger::INFO
   end
 
+  attr_accessor :log
   attr_reader :defs
 
   # load webcam configuration from config file
@@ -28,29 +33,29 @@ class KickAssAwesomeTimelapseGenerator
       @defs += u[:array]
     end
     @defs.uniq!
-    puts "Config file #{_filename} loaded, now #{@defs.size} webcams"
+    @log.info "Config file #{_filename} loaded, now #{@defs.size} webcams"
   end
 
   def only_with_coords!
     @defs = @defs.select { |u| not u[:coord].nil? and not u[:coord][:lat].nil? and not u[:coord][:lon].nil? }
-    puts "There are only #{@defs.size} webcams with coords (usable for dawn/sunset calculation)"
+    @log.info "There are only #{@defs.size} webcams with coords (usable for dawn/sunset calculation)"
   end
 
   def only_enabled_for_timelapse!
     @defs = @defs.select { |u| u[:use_in_timelapse] == true }
-    puts "There are only #{@defs.size} enabled for timelapse"
+    @log.info "There are only #{@defs.size} enabled for timelapse"
   end
 
   # importer can search thought many paths for downloaded images
   def add_to_import_paths(_new_path = '.')
     @import_paths << _new_path
     @import_paths.uniq!
-    puts "Path '#{_new_path}' added to list, now #{@import_paths.size} paths"
+    @log.debug "Path '#{_new_path}' added to list, now #{@import_paths.size} paths"
   end
 
   def import_all_files
     @import_paths.each do |path|
-      puts "Searching throught '#{path}'"
+      @log.info "Searching thought '#{path}'"
 
       # import
       @defs.each do |u|
@@ -70,7 +75,7 @@ class KickAssAwesomeTimelapseGenerator
             @stored_webcams[desc] << h
             stored_count += 1
           end
-          puts " #{stored_count.to_s.rjust(10)}     #{base_path}"
+          @log.info " #{stored_count.to_s.rjust(10)}     #{base_path}"
         end
 
       end
@@ -81,12 +86,11 @@ class KickAssAwesomeTimelapseGenerator
 
   def sort_imported_webcams
     @stored_webcams.keys.each do |desc|
-      @stored_webcams[desc] = @stored_webcams[desc].sort{|a,b| a[:time] <=> b[:time]}
+      @stored_webcams[desc] = @stored_webcams[desc].sort { |a, b| a[:time] <=> b[:time] }
     end
   end
 
   def sunrise(lat, lon, time)
-    #puts "#{lat} #{lon} #{time}"
     calc = SolarEventCalculator.new(time, BigDecimal.new(lat.to_s), BigDecimal.new(lon.to_s))
     stime = case @@sunset_type
               when :civil then
@@ -135,13 +139,13 @@ class KickAssAwesomeTimelapseGenerator
     File.open('data/timelapse.yml', 'w') do |f|
       f.puts d.to_yaml
     end
-    puts "Saved"
+    @log.debug "Saved"
   end
 
   def reload
     d = YAML::load(File.open('data/timelapse.yml'))
     @stored_webcams = d["@stored_webcams"]
-    puts "Loaded"
+    @log.debug "Loaded"
   end
 
   # calculate min/max time for every webcam and for all
@@ -158,7 +162,77 @@ class KickAssAwesomeTimelapseGenerator
     # calculate for all
     @min_time = @min_times.values.min
     @max_time = @max_times.values.max
-    puts "Min time #{@min_time}, max time #{@max_time}"
+    @log.info "Min time #{@min_time}, max time #{@max_time}"
+  end
+
+  # sort coords according to time of dawn
+  def desc_sorted_by_coords
+    @desc_sorted = @defs.sort { |a, b| a[:coord][:lon] <=> b[:coord][:lon] }.collect { |a| a[:desc] }
+  end
+
+  # get webcam definition by desc
+  def def_by_desc(_desc)
+    @defs.select { |d| d[:desc] == _desc }.first
+  end
+
+  # calculate sunrise/sunset by desc for one day
+  def sunrise_and_sunset_by_desc_and_time(_desc, _time)
+    webcam_def = def_by_desc(_desc)
+    _sunrise = sunrise(webcam_def[:coord][:lat], webcam_def[:coord][:lon], _time)
+    _sunset = sunset(webcam_def[:coord][:lat], webcam_def[:coord][:lon], _time)
+    return [_sunrise, _sunset]
+  end
+
+  def select_images_by_desc_and_times(_desc, _time_from, _time_to)
+    @stored_webcams[_desc].select { |w| w[:time] >= _time_from and w[:time] <= _time_to }.sort { |a, b| a[:time] <=> b[:time] }
+  end
+
+  # create timelapse using all images, only during the day
+  def generate_day_timelapse
+    # movie frames
+    @frames = Array.new
+
+    finished = false
+    day = 0
+    while not finished do
+      # loop by time/days, from first_time to
+
+      @stored_webcams.keys.each do |_desc|
+        # loop by provider
+        _time = @min_time + day * 24*3600
+        _sunrise, _sunset = sunrise_and_sunset_by_desc_and_time(_desc, _time)
+        @log.debug "Adding photos from #{_desc} from #{_sunrise} to #{_sunset}"
+
+        webcams_partial = select_images_by_desc_and_times(_desc, _sunrise, _sunset)
+        @log.debug "...added #{webcams_partial.size} images"
+        @frames += webcams_partial
+      end
+
+      # next day
+      day += 1
+
+      # end condition
+      if @min_time + day * 24*3600 > @max_time
+        finished = true
+      end
+      @log.info "Added #{@frames.size} images"
+    end
+  end
+
+  def create_scripts(absolute_path = true)
+    name = Time.now.to_i.to_s
+
+    # create symlinks
+    Dir.mkdir 'tmp' if not File.exist?('tmp')
+    Dir.mkdir 'tmp/timelapse' if not File.exist?('tmp/timelapse')
+
+    f = File.new("tmp/timelapse/list.txt_#{name}", 'w')
+    @frames.each_with_index do |t, i|
+      _file = t[:filename]
+      _file = File.absolute_path() if absolute_path
+      f.puts _file
+    end
+    f.close
   end
 
   # to refactor
@@ -166,29 +240,9 @@ class KickAssAwesomeTimelapseGenerator
 
 
   def generate_timelapse_script
-    first_time = nil
-    last_time = nil
-    puts "Getting first and last time"
-
-    keys_ordered = @us.sort { |a, b| a[:coord][:lon] <=> b[:coord][:lon] }.collect { |a| a[:desc] }
-
-    #@stored_webcams.keys.each do |k|
     keys_ordered.each do |k|
-      sw = @stored_webcams[k]
-      if sw.size > 0
-        # some providers has no images
-        first_time = sw.first[:time] if first_time.nil?
-        first_time = sw.first[:time] if first_time > sw.first[:time]
-
-        last_time = sw.last[:time] if last_time.nil?
-        last_time = sw.last[:time] if last_time < sw.last[:time]
-      end
     end
-    puts "First time at #{first_time}"
-    puts "Last time at #{last_time}"
 
-    # movie frames
-    @frames = Array.new
 
     # TODO maybe something to sort by providers/webcams?
 
