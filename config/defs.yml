@@ -137,6 +137,14 @@
       :lon: 18.999667
     :use_in_timelapse: false
   - :resize: true
+    :url: http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_rysianka/A-hi.jpg
+    :interval: 240
+    :desc: rysianka
+    :coord:
+      :lat: 49.536111
+      :lon: 19.234444
+    :use_in_timelapse: false
+  - :resize: true
     :url: http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_liwocz/A-hi.jpg
     :interval: 240
     :desc: liwocz
