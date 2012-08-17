@@ -76,19 +76,41 @@ class WebCamDownloader
 
   # sort files in proper dirs
   def relocate_files
-    _files = Array.new
+    _count = 0
+    _interval = 1000
+
     Dir['./**/*.jpg'].each do |f|
       if f =~ /\/latest\//
         # symlink - ignore
       elsif f =~ /\/([^\/]+)_(\d+)(_proc)*\.jpg/
         # proper filename
         if $1.size > 0 and $2.size > 0
-          _files << { filename: f, desc: $1, time: Time.at($2.to_i), proc: $3 }
+          fh = { filename: f, desc: $1, time: Time.at($2.to_i), proc: $3 }
 
-          # some verbose
-          if (_files.size % 10000) == 0
-            puts "imported #{_files.size} files"
+          dn = "pix/#{fh[:time].strftime('%Y_%m')}"
+          Dir.mkdir(dn) unless File.exists?(dn)
+          dn = "pix/#{fh[:time].strftime('%Y_%m')}/#{fh[:desc]}"
+          Dir.mkdir(dn) unless File.exists?(dn)
+
+          file_from = fh[:filename]
+          file_to = "#{dn}/#{fh[:desc]}_#{fh[:time].to_i}#{fh[:proc]}.jpg"
+
+          if File.absolute_path(file_from) == File.absolute_path(file_to)
+            # do nothing
+          else
+            command = "mv \"#{file_from}\" \"#{file_to}\" "
+            res = `#{command}`
+            if res.size > 0
+              puts res, command
+            else
+              _count += 1
+            end
           end
+
+          if (_count % _interval) == 0
+            puts "moved #{_count} files"
+          end
+
         else
           puts "ERROR1 #{f}"
         end
@@ -96,37 +118,6 @@ class WebCamDownloader
         puts "ERROR2 #{f}"
       end
 
-    end
-
-    _count = 0
-
-    _files.each do |fh|
-      dn = "pix/#{fh[:time].strftime('%Y_%m')}"
-      Dir.mkdir(dn) unless File.exists?(dn)
-      dn = "pix/#{fh[:time].strftime('%Y_%m')}/#{fh[:desc]}"
-      Dir.mkdir(dn) unless File.exists?(dn)
-
-      file_from = fh[:filename]
-      file_to = "#{dn}/#{fh[:desc]}_#{fh[:time].to_i}#{fh[:proc]}.jpg"
-
-      if File.absolute_path(file_from) == File.absolute_path(file_to)
-        # do nothing
-        #puts "abso #{file_from} == #{file_to}"
-      else
-        command = "mv \"#{file_from}\" \"#{file_to}\" "
-        res = `#{command}`
-        if res.size > 0
-          puts res, command
-        else
-          _count += 1
-        end
-
-      end
-
-      # some verbose
-      if (_count % 10000) == 0
-        puts "moved #{_count} files"
-      end
     end
 
     puts "done #{_count} files"
