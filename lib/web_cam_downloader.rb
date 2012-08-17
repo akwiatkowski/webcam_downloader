@@ -84,12 +84,18 @@ class WebCamDownloader
         # proper filename
         if $1.size > 0 and $2.size > 0
           _files << { filename: f, desc: $1, time: Time.at($2.to_i), proc: $3 }
+
+          # some verbose
+          if (_files.size % 10000) == 0
+            puts "imported #{_files.size} files"
+          end
         else
           puts "ERROR1 #{f}"
         end
       else
         puts "ERROR2 #{f}"
       end
+
     end
 
     _count = 0
@@ -116,10 +122,14 @@ class WebCamDownloader
         end
 
       end
+
+      # some verbose
+      if (_count % 10000) == 0
+        puts "moved #{_count} files"
+      end
     end
 
     puts "done #{_count} files"
-
   end
 
   # Start downloading images
