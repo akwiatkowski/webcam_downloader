@@ -9,4 +9,4 @@ end
 load 'lib/web_cam_downloader.rb'
 wd = WebCamDownloader.new
 wd.urls = flat_urls
-wd.relocate_files
+wd.relocate_files2

@@ -77,53 +77,77 @@ class WebCamDownloader
   # sort files in proper dirs
   def relocate_files
     _count = 0
-    _interval = 1000
+    _interval = 100
 
     Dir['./**/*.jpg'].each do |f|
-      if f =~ /\/latest\//
-        # symlink - ignore
-      elsif f =~ /\/([^\/]+)_(\d+)(_proc)*\.jpg/
-        # proper filename
-        if $1.size > 0 and $2.size > 0
-          fh = { filename: f, desc: $1, time: Time.at($2.to_i), proc: $3 }
+      res = relocate_filename(f)
+      count += 1 if res == true
 
-          dn = "pix/#{fh[:time].strftime('%Y_%m')}"
-          Dir.mkdir(dn) unless File.exists?(dn)
-          dn = "pix/#{fh[:time].strftime('%Y_%m')}/#{fh[:desc]}"
-          Dir.mkdir(dn) unless File.exists?(dn)
-
-          file_from = fh[:filename]
-          file_to = "#{dn}/#{fh[:desc]}_#{fh[:time].to_i}#{fh[:proc]}.jpg"
-
-          if File.absolute_path(file_from) == File.absolute_path(file_to)
-            # do nothing
-          else
-            command = "mv \"#{file_from}\" \"#{file_to}\" "
-            res = `#{command}`
-            if res.size > 0
-              puts res, command
-            else
-              _count += 1
-            end
-          end
-
-          if (_count % _interval) == 0
-            puts "moved #{_count} files"
-          end
-
-        else
-          puts "ERROR1 #{f}"
-        end
-      else
-        puts "ERROR2 #{f}"
+      if (_count % _interval) == 0
+        puts "moved #{_count} files"
       end
-
     end
 
     puts "done #{_count} files"
   end
 
-  # Start downloading images
+  # sort files in proper dirs
+  def relocate_files2(path = 'pix')
+    _count = 0
+    _interval = 100
+
+    self.urls.each_with_index do |u, i|
+      base_path = File.join(path, u[:desc])
+      puts "processing #{u[:desc]}"
+      Dir[File.join(base_path, "*.jpg")].each do |f|
+        res = relocate_filename(f)
+        count += 1 if res == true
+
+        if (_count % _interval) == 0
+          puts "moved #{_count} files"
+        end
+      end
+    end
+  end
+
+  def relocate_filename(f)
+    if f =~ /\/latest\//
+      # symlink - ignore
+    elsif f =~ /\/([^\/]+)_(\d+)(_proc)*\.jpg/
+      # proper filename
+      if $1.size > 0 and $2.size > 0
+        fh = { filename: f, desc: $1, time: Time.at($2.to_i), proc: $3 }
+
+        dn = "pix/#{fh[:time].strftime('%Y_%m')}"
+        Dir.mkdir(dn) unless File.exists?(dn)
+        dn = "pix/#{fh[:time].strftime('%Y_%m')}/#{fh[:desc]}"
+        Dir.mkdir(dn) unless File.exists?(dn)
+
+        file_from = fh[:filename]
+        file_to = "#{dn}/#{fh[:desc]}_#{fh[:time].to_i}#{fh[:proc]}.jpg"
+
+        if File.absolute_path(file_from) == File.absolute_path(file_to)
+          # do nothing
+        else
+          command = "mv \"#{file_from}\" \"#{file_to}\" "
+          res = `#{command}`
+          if res.size > 0
+            puts res, command
+          else
+            return true
+          end
+        end
+      else
+        puts "ERROR1 #{f}"
+        return false
+      end
+    else
+      puts "ERROR2 #{f}"
+      return false
+    end
+  end
+
+# Start downloading images
   def make_it_so
     prepare_directories
 
@@ -247,7 +271,7 @@ class WebCamDownloader
     end
   end
 
-  # some images are big
+# some images are big
   def resize_down_image_if_needed(u)
     fs = File.size(u[:new_downloaded])
     if fs > @max_size
@@ -263,7 +287,7 @@ class WebCamDownloader
     end
   end
 
-  # resize down image
+# resize down image
   def proc_image(u)
     # resizing
     puts "resizing image #{u[:new_downloaded]}"
@@ -277,7 +301,7 @@ class WebCamDownloader
     `rm #{u[:new_downloaded]}`
   end
 
-  # remove processed image which was already downloaded
+# remove processed image which was already downloaded
   def remove_proc_if_exist(u)
     # calculate digest
     new_digest = file_digest(u[:new_proc_filename])
