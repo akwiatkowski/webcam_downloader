@@ -101,7 +101,7 @@ class WebCamDownloader
       puts "processing #{u[:desc]}"
       Dir[File.join(base_path, "*.jpg")].each do |f|
         res = relocate_filename(f)
-        count += 1 if res == true
+        _count += 1 if res == true
 
         if (_count % _interval) == 0
           puts "moved #{_count} files"
