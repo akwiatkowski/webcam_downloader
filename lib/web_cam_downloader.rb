@@ -74,6 +74,54 @@ class WebCamDownloader
     end
   end
 
+  # sort files in proper dirs
+  def relocate_files
+    _files = Array.new
+    Dir['./**/*.jpg'].each do |f|
+      if f =~ /\/latest\//
+        # symlink - ignore
+      elsif f =~ /\/([^\/]+)_(\d+)(_proc)*\.jpg/
+        # proper filename
+        if $1.size > 0 and $2.size > 0
+          _files << { filename: f, desc: $1, time: Time.at($2.to_i), proc: $3 }
+        else
+          puts "ERROR1 #{f}"
+        end
+      else
+        puts "ERROR2 #{f}"
+      end
+    end
+
+    _count = 0
+
+    _files.each do |fh|
+      dn = "pix/#{fh[:time].strftime('%Y_%m')}"
+      Dir.mkdir(dn) unless File.exists?(dn)
+      dn = "pix/#{fh[:time].strftime('%Y_%m')}/#{fh[:desc]}"
+      Dir.mkdir(dn) unless File.exists?(dn)
+
+      file_from = fh[:filename]
+      file_to = "#{dn}/#{fh[:desc]}_#{fh[:time].to_i}#{fh[:proc]}.jpg"
+
+      if File.absolute_path(file_from) == File.absolute_path(file_to)
+        # do nothing
+        #puts "abso #{file_from} == #{file_to}"
+      else
+        command = "mv \"#{file_from}\" \"#{file_to}\" "
+        res = `#{command}`
+        if res.size > 0
+          puts res, command
+        else
+          _count += 1
+        end
+
+      end
+    end
+
+    puts "done #{_count} files"
+
+  end
+
   # Start downloading images
   def make_it_so
     prepare_directories
@@ -82,7 +130,7 @@ class WebCamDownloader
     loop do
       # super monthly separation
       prepare_monthly_directories
-      
+
       pre_loop_time = Time.now
 
       # super loop
