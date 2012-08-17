@@ -33,10 +33,24 @@ class WebCamDownloader
     # latest
     Dir.mkdir('latest') unless File.exists?('latest')
 
+    prepare_monthly_directories
+  end
+
+  def prepare_monthly_directories
+    mp = Time.now.strftime('%Y_%m')
+    return if @monthly_prefix == mp
+
+    # monthly dir
+    f = "pix/#{mp}"
+    Dir.mkdir(f) unless File.exists?(f)
+
+    # dir per webcam
     urls.each_with_index do |u, i|
-      f = "pix/#{u[:desc]}"
+      f = "pix/#{mp}/#{u[:desc]}"
       Dir.mkdir(f) unless File.exists?(f)
     end
+
+    @monthly_prefix = mp
   end
 
   # Download file/image using wget
@@ -51,8 +65,8 @@ class WebCamDownloader
   def image_set_paths(u)
     u[:temporary] = "tmp/#{u[:desc]}_#{u[:desc]}_#{Time.now.to_i}.jpg.tmp"
     u[:new_downloaded_pre_process] = "tmp/#{u[:desc]}_#{u[:desc]}_#{Time.now.to_i}_pre_proc.jpg.tmp"
-    u[:new_downloaded] = "pix/#{u[:desc]}/#{u[:desc]}_#{Time.now.to_i}.jpg"
-    u[:new_downloaded_processed] = "pix/#{u[:desc]}/#{u[:desc]}_#{Time.now.to_i}_proc.jpg"
+    u[:new_downloaded] = "pix/#{@monthly_prefix}/#{u[:desc]}/#{u[:desc]}_#{Time.now.to_i}.jpg"
+    u[:new_downloaded_processed] = "pix/#{@monthly_prefix}/#{u[:desc]}/#{u[:desc]}_#{Time.now.to_i}_proc.jpg"
 
     # stored in other location for easier rsync usage
     if u[:resize] == true
@@ -66,6 +80,9 @@ class WebCamDownloader
 
     j = 0
     loop do
+      # super monthly separation
+      prepare_monthly_directories
+      
       pre_loop_time = Time.now
 
       # super loop
