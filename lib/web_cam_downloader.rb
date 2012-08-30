@@ -321,4 +321,13 @@ class WebCamDownloader
     end
   end
 
+  def self.load_and_flatten_definitions(file)
+    urls = YAML::load(File.open(file))
+    flat_urls = Array.new
+    urls.each do |u|
+      flat_urls += u[:array]
+    end
+    return flat_urls
+  end
+
 end
