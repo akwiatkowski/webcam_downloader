@@ -3,7 +3,7 @@
   :array:
   - :url_schema: "http://www.foto-webcam.eu/webcam/kochelsee/%Y/%m/%d/%H%M_la.jpg"
     :time_modulo: 600 # every 10 minutes
-    :interval: 180
+    :interval: 300
     :desc: germany_kochelsee
     :coord:
       :lat: 0.0
