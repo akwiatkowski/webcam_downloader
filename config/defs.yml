@@ -103,6 +103,58 @@
   - :url: http://www.pieninyportal.com/images/stories/webcamera/pieninyportal.jpg
     :interval: 120
     :desc: trzy_korony
+  # http://www.kamerybieszczady.czaszyn.pl/
+  - :url: http://obsluga-medialna.pl/kamera/kamera_wetlina/index.php
+    :interval: 180
+    :desc: bieszczady_wetlina
+    :coord:
+      :lat: 49.1575
+      :lon: 22.467222
+    :use_in_timelapse: false
+  - :url: http://obsluga-medialna.pl/kamera/czaszyn/index_cz.php
+    :interval: 180
+    :desc: bieszczady_czaszyn
+    :coord:
+      :lat: 49.1575
+      :lon: 22.467222
+    :use_in_timelapse: false
+  - :url: http://esolina.pl/kamera/widok.php
+    :interval: 180
+    :desc: bieszczady_polanczyk
+    :coord:
+      :lat: 49.1575
+      :lon: 22.467222
+    :use_in_timelapse: false
+  - :url: http://images.webcams.travel/webcam/1309464984.jpg
+    :interval: 180
+    :desc: bieszczady_u_gorne
+    :coord:
+      :lat: 49.1575
+      :lon: 22.467222
+    :use_in_timelapse: false
+  - :url: http://images.webcams.travel/webcam/1287047915.jpg
+    :interval: 180
+    :desc: bieszczady_przyslup_carynski
+    :coord:
+      :lat: 49.1575
+      :lon: 22.467222
+    :use_in_timelapse: false
+  - :url: http://images.webcams.travel/webcam/1248008562.jpg
+    :interval: 180
+    :desc: bieszczady_lesko_centrum
+    :coord:
+      :lat: 49.1575
+      :lon: 22.467222
+    :use_in_timelapse: false
+  - :url: http://83.18.111.249:8080/cgi-bin/viewer/video.jpg
+    :interval: 180
+    :desc: bieszczady_keja_siarkopol
+    :coord:
+      :lat: 49.1575
+      :lon: 22.467222
+    :use_in_timelapse: false
+
+
 #  - :url: http://www.niedzica.pl/uploads/webcam/niedzica6.jpg
 #    :interval: 120
 #    :desc: niedzica
