@@ -154,6 +154,168 @@
       :lon: 22.467222
     :use_in_timelapse: false
 
+  # sudety
+  - :url: http://kolejgondolowa.pl/kamery/cam2/snap_c1.jpg
+    :interval: 180
+    :desc: sudety_swieradow2
+    :coord:
+      :lat: 50.9
+      :lon: 15.333333
+    :use_in_timelapse: false
+  - :url: http://kolejgondolowa.pl/kamery/cam3/snap_c1.jpg
+    :interval: 180
+    :desc: sudety_swieradow3
+    :coord:
+      :lat: 50.9
+      :lon: 15.333333
+    :use_in_timelapse: false
+  - :url: http://kolejgondolowa.pl/kamery/cam1/snap_c1.jpg
+    :interval: 180
+    :desc: sudety_swieradow1
+    :coord:
+      :lat: 50.9
+      :lon: 15.333333
+    :use_in_timelapse: false
+  - :url: http://www.kompas.pl/kamerki/szczniec_widok000M.jpg
+    :interval: 180
+    :desc: sudety_szczeliniec2
+    :coord:
+      :lat: 50.9
+      :lon: 15.333333
+    :use_in_timelapse: false
+  # http://kamery.hydronet.cz/vrbata/
+  - :url: http://www.kompas.pl/kamerki/pstrka_widok000M.jpg
+    :interval: 180
+    :desc: sudety_szczeliniec1
+    :coord:
+      :lat: 50.9
+      :lon: 15.333333
+    :use_in_timelapse: false
+  #  - :url: http://kamery.hydronet.cz/lysa/photo/l2/gallery/201209110944_l2.jpg
+  #    :interval: 240
+  #    :resize: true
+  #    :desc: sudety_lysa_hora
+  #    :coord:
+  #      :lat: 50.9
+  #      :lon: 15.333333
+  #    :use_in_timelapse: false
+  - :url: http://kamery.humlnet.cz/images/webcams/chata_vatra/1600x1200.jpg
+    :resize: true
+    :interval: 180
+    :desc: sudety_chata_vatra
+    :coord:
+      :lat: 50.9
+      :lon: 15.333333
+    :use_in_timelapse: false
+  - :url: http://kamery.humlnet.cz/images/webcams/lucnibouda/1600x1200.jpg
+    :resize: true
+    :interval: 180
+    :desc: sudety_chata_vatra
+    :coord:
+      :lat: 50.9
+      :lon: 15.333333
+    :use_in_timelapse: false
+
+  - :url: http://www.kamery.szczawnica.pl/foto5000M.jpg
+    :interval: 180
+    :desc: pieniny_szczawnica
+    :coord:
+      :lat: 49.422778
+      :lon: 20.482778
+    :use_in_timelapse: false
+  - :url: http://www.kamery.szczawnica.pl/foto7000M.jpg
+    :interval: 180
+    :desc: pieniny_przystan_flisacka
+    :coord:
+      :lat: 49.422778
+      :lon: 20.482778
+    :use_in_timelapse: false
+  - :url: http://www.kamery.szczawnica.pl/foto4.jpg
+    :interval: 180
+    :desc: pieniny_gory
+    :coord:
+      :lat: 49.422778
+      :lon: 20.482778
+    :use_in_timelapse: false
+  - :url: http://www.niedzica.pl/uploads/webcam/niedzica7000M.jpg
+    :interval: 180
+    :desc: pieniny_niedzica
+    :coord:
+      :lat: 49.422778
+      :lon: 20.482778
+    :use_in_timelapse: false
+  - :url: http://www.kroscienko-nad-dunajcem.pl/kamera/widok1.jpg
+    :interval: 180
+    :desc: pieniny_most_kroscienko
+    :coord:
+      :lat: 49.422778
+      :lon: 20.482778
+    :use_in_timelapse: false
+  - :url: http://www.pieninyportal.com/images/stories/webcamera/pieninyportal-haligovce.jpg
+    :interval: 180
+    :desc: pieniny_haligovce
+    :coord:
+      :lat: 49.422778
+      :lon: 20.482778
+    :use_in_timelapse: false
+
+
+  - :url: http://kam.szkolagorska.com/sam1.jpg
+    :interval: 180
+    :desc: sudety_samotnia
+    :coord:
+      :lat: 50.9
+      :lon: 15.333333
+    :use_in_timelapse: false
+  - :url: http://www.ugazdy.pl/kamerka/obrazek.jpg
+    :interval: 180
+    :desc: gorce_u_gazdy
+    :coord:
+      :lat: 50.9
+      :lon: 15.333333
+    :use_in_timelapse: false
+  - :url: http://www.fastcom.net.pl/zdjecia-kamera/zdjecie.php
+    :interval: 180
+    :desc: szczyrk_skrzyczne1
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url: http://www.fastcom.net.pl/zdjecia-kamera/zdjecie2.php
+    :interval: 180
+    :desc: szczyrk_beskidek
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url: http://www.pkl.pl/kamera/kasprowy_gorna_stacja_na_gasienicowa.jpg
+    :interval: 180
+    :desc: tatry_kasprowy_gasienicowa
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url: http://www.zakopaneonline.eu/webcam7/murzasichle.jpg
+    :interval: 180
+    :desc: tatry_murzasichle
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url: http://www.tatrzanskie-turnie.pl/kamera/video.jpg
+    :interval: 180
+    :desc: tatry_tatrz_turnie
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+
+
+
+
+
+
 
 #  - :url: http://www.niedzica.pl/uploads/webcam/niedzica6.jpg
 #    :interval: 120
