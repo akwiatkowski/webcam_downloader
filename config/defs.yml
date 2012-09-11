@@ -1,6 +1,17 @@
---- 
+---
+- :group: experimental
+  :array:
+  - :url_schema: "http://www.foto-webcam.eu/webcam/kochelsee/%Y/%m/%d/%H%M_la.jpg"
+    :time_modulo: 600 # every 10 minutes
+    :interval: 180
+    :desc: germany_kochelsee
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
 - :group: tatry
-  :array: 
+  :array:
   - :url: http://www.zakopaneonline.eu/webcam/zakopane.jpg
     :pre_url: http://www.zol.pl/webcam/
     :interval: 180
@@ -99,7 +110,7 @@
       :lon: 19.916832
     :use_in_timelapse: true
 - :group: poland_other
-  :array: 
+  :array:
   - :url: http://www.pieninyportal.com/images/stories/webcamera/pieninyportal.jpg
     :interval: 120
     :desc: trzy_korony
@@ -310,13 +321,6 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-
-
-
-
-
-
-
 #  - :url: http://www.niedzica.pl/uploads/webcam/niedzica6.jpg
 #    :interval: 120
 #    :desc: niedzica
@@ -333,7 +337,7 @@
 #    :interval: 120
 #    :desc: bisk4
 - :group: dalekie_obserwacje
-  :array: 
+  :array:
   - :resize: true
     :url: http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_skrzyczne/A-hi.jpg
     :interval: 240
@@ -383,7 +387,7 @@
       :lon: 18.9
     :use_in_timelapse: false
 - :group: sniezka
-  :array: 
+  :array:
   - :resize: true
     :url: http://kamery.humlnet.cz/images/webcams/snezka3/2048x1536.jpg
     :interval: 120
@@ -412,7 +416,7 @@
       # foggy
     :use_in_timelapse: false
 - :group: yuz
-  :array: 
+  :array:
   - :resize: true
     :url: http://www.slaskie.pl/slaski2012/camera/chorzow_aktualny_1024.jpg
     :interval: 300
@@ -431,7 +435,7 @@
     # some issues with mencoder
     :use_in_timelapse: false
 - :group: usa
-  :array: 
+  :array:
   - :url: http://www.sunvalley.com/assets/images/cams/wclouds_full.jpg
     :ingterval: 300
     :desc: usa_sunvalley1
@@ -533,7 +537,7 @@
     :interval: 120
     :desc: usa_infrared_telescope
 - :group: cold
-  :array: 
+  :array:
   - :url: http://www.summitcamp.org/static/images/status/view/webcam.jpg
     :interval: 120
     :desc: greenland
@@ -563,7 +567,7 @@
     :desc: greenland_1
 
 - :group: norway
-  :array: 
+  :array:
   - :url: http://ekstra.htg.no/webcam/img/tromso_fullsize.jpg
     :interval: 300
     :desc: no_tromso
@@ -648,7 +652,7 @@
     :url: http://www.promonorge.no/webcam/kabelvag.jpg
 
 - :group: hot
-  :array: 
+  :array:
   - :url: http://cam.sheratonsomabayview.com/view_live1.jpg
     :interval: 600
     :desc: egypt
@@ -932,5 +936,87 @@
       :lon: 19.780973
     :use_in_timelapse: true
 
+  - :interval: 300
+    :desc: innsbruck_lans
+    :url: http://live.tyrol.at/tyrolcams/lans/lans.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: obertauern
+    :url: http://www.snowwhite.at/obertauernwebcam/webcam01.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: saalfelden_hotel_Ritzenhof1
+    :url: http://www.ritzenhof.at/webcam/cam1/cam1.jpg
+    :resize: true
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: saalfelden_hotel_Ritzenhof2
+    :url: http://www.ritzenhof.at/webcam/cam2/cam2.jpg
+    :resize: true
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: austria_gasthof_geierwallihof
+    :url: http://geierwallihof.at/MOBOTIX/test.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: chamonix_glace
+    :url: http://www.compagniedumontblanc.fr/webcam/CMM1MERDEGLACE.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
 
+  - :interval: 300
+    :desc: chamonix_mont_blanc
+    :url: http://www.webcams-stations.com/webcam/panoramique-massif-du-mont-blanc/vignette.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: chamonix_valley
+    :url: http://www.regione.vda.it/gestione/webcamgallery/showimage.aspx?nomefile=ferret.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: germany_aussichtsteeg
+    :url: http://www.breitenbergbahn.de/fileadmin/webcams/mobotix/steeg.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: germany_aggensteinlift
+    :url: http://www.breitenbergbahn.de/fileadmin/webcams/mobotix/aglstrecke.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
 
+# MOAR
+# http://www.worldcam.pl/3,300,cat

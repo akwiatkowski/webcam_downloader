@@ -173,6 +173,7 @@ class WebCamDownloader
 
           # download image
           time_pre = Time.now
+          generate_url(u)
           download_file(u[:url], u[:temporary])
           u[:download_count] = u[:download_count].to_i + 1 # nil safe
           u[:download_time_cost] = Time.now - time_pre
@@ -217,6 +218,20 @@ class WebCamDownloader
     end
 
 
+  end
+
+  # Generate url using current time
+  def generate_url(u)
+    return if u[:url_schema].nil?
+    
+    t = Time.now.to_i
+    # webcams store image every :time_modulo interval
+    if u[:time_modulo]
+      t -= t % u[:time_modulo]
+    end
+    u[:url] = Time.at(t).strftime(u[:url_schema])
+    puts "generated url #{u[:url]}"
+    return u[:url]
   end
 
 # remove image which file size is 0
