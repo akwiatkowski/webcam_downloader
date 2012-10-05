@@ -7,13 +7,13 @@ class WebCamDownloader
     @options = _options
 
     # processing image
-    @jpeg_quality = 77
+    @jpeg_quality = 74
 
     @sleep_interval = 5
 
     @dns_timeout = 2 # --dns-timeout
-    @connect_timeout = 3 # --connect-timeout
-    @read_timeout = 3 # --read-timeout
+    @connect_timeout = 4 # --connect-timeout
+    @read_timeout = 5 # --read-timeout
 
     Dir.mkdir('tmp') if not File.exist?('tmp')
     Dir.mkdir('data') if not File.exist?('data')

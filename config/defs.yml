@@ -37,21 +37,21 @@
       :lon: 19.916832
     :use_in_timelapse: true
   - :url: http://kamery.topr.pl/moko/moko_01.jpg
-    :interval: 180
+    :interval: 240
     :desc: moko
     :coord:
       :lat: 49.304778
       :lon: 19.916832
     :use_in_timelapse: true
   - :url: http://kamery.topr.pl/goryczkowa/gorycz.jpg
-    :interval: 180
+    :interval: 210
     :desc: goryczkowa
     :coord:
       :lat: 49.304778
       :lon: 19.916832
     :use_in_timelapse: true
   - :url: http://kamery.topr.pl/moko_TPN/moko_02.jpg
-    :interval: 180
+    :interval: 210
     :desc: moko2
     :coord:
       :lat: 49.304778
@@ -89,7 +89,7 @@
     :interval: 180
     :desc: beskid1
   - :url: http://www.zakopaneonline.eu/webcam4/bukowina.jpg
-    :interval: 180
+    :interval: 300
     :desc: bukowina
     :coord:
       :lat: 49.304778
@@ -116,7 +116,7 @@
     :desc: trzy_korony
   # http://www.kamerybieszczady.czaszyn.pl/
   - :url: http://obsluga-medialna.pl/kamera/kamera_wetlina/index.php
-    :interval: 180
+    :interval: 240
     :desc: bieszczady_wetlina
     :coord:
       :lat: 49.1575
@@ -144,14 +144,14 @@
       :lon: 22.467222
     :use_in_timelapse: false
   - :url: http://images.webcams.travel/webcam/1287047915.jpg
-    :interval: 180
+    :interval: 300
     :desc: bieszczady_przyslup_carynski
     :coord:
       :lat: 49.1575
       :lon: 22.467222
     :use_in_timelapse: false
   - :url: http://images.webcams.travel/webcam/1248008562.jpg
-    :interval: 180
+    :interval: 240
     :desc: bieszczady_lesko_centrum
     :coord:
       :lat: 49.1575
@@ -167,21 +167,21 @@
 
   # sudety
   - :url: http://kolejgondolowa.pl/kamery/cam2/snap_c1.jpg
-    :interval: 180
+    :interval: 240
     :desc: sudety_swieradow2
     :coord:
       :lat: 50.9
       :lon: 15.333333
     :use_in_timelapse: false
   - :url: http://kolejgondolowa.pl/kamery/cam3/snap_c1.jpg
-    :interval: 180
+    :interval: 240
     :desc: sudety_swieradow3
     :coord:
       :lat: 50.9
       :lon: 15.333333
     :use_in_timelapse: false
   - :url: http://kolejgondolowa.pl/kamery/cam1/snap_c1.jpg
-    :interval: 180
+    :interval: 240
     :desc: sudety_swieradow1
     :coord:
       :lat: 50.9
@@ -212,7 +212,7 @@
   #    :use_in_timelapse: false
   - :url: http://kamery.humlnet.cz/images/webcams/chata_vatra/1600x1200.jpg
     :resize: true
-    :interval: 180
+    :interval: 240
     :desc: sudety_chata_vatra
     :coord:
       :lat: 50.9
@@ -235,21 +235,21 @@
       :lon: 20.482778
     :use_in_timelapse: false
   - :url: http://www.kamery.szczawnica.pl/foto7000M.jpg
-    :interval: 180
+    :interval: 240
     :desc: pieniny_przystan_flisacka
     :coord:
       :lat: 49.422778
       :lon: 20.482778
     :use_in_timelapse: false
   - :url: http://www.kamery.szczawnica.pl/foto4.jpg
-    :interval: 180
+    :interval: 210
     :desc: pieniny_gory
     :coord:
       :lat: 49.422778
       :lon: 20.482778
     :use_in_timelapse: false
   - :url: http://www.niedzica.pl/uploads/webcam/niedzica7000M.jpg
-    :interval: 180
+    :interval: 240
     :desc: pieniny_niedzica
     :coord:
       :lat: 49.422778
@@ -263,7 +263,7 @@
       :lon: 20.482778
     :use_in_timelapse: false
   - :url: http://www.pieninyportal.com/images/stories/webcamera/pieninyportal-haligovce.jpg
-    :interval: 180
+    :interval: 240
     :desc: pieniny_haligovce
     :coord:
       :lat: 49.422778
@@ -272,7 +272,7 @@
 
 
   - :url: http://kam.szkolagorska.com/sam1.jpg
-    :interval: 180
+    :interval: 210
     :desc: sudety_samotnia
     :coord:
       :lat: 50.9
@@ -286,21 +286,21 @@
       :lon: 15.333333
     :use_in_timelapse: false
   - :url: http://www.fastcom.net.pl/zdjecia-kamera/zdjecie.php
-    :interval: 180
+    :interval: 210
     :desc: szczyrk_skrzyczne1
     :coord:
       :lat: 0.0
       :lon: 0.0
     :use_in_timelapse: false
   - :url: http://www.fastcom.net.pl/zdjecia-kamera/zdjecie2.php
-    :interval: 180
+    :interval: 220
     :desc: szczyrk_beskidek
     :coord:
       :lat: 0.0
       :lon: 0.0
     :use_in_timelapse: false
   - :url: http://www.pkl.pl/kamera/kasprowy_gorna_stacja_na_gasienicowa.jpg
-    :interval: 180
+    :interval: 220
     :desc: tatry_kasprowy_gasienicowa
     :coord:
       :lat: 0.0
@@ -390,7 +390,7 @@
   :array:
   - :resize: true
     :url: http://kamery.humlnet.cz/images/webcams/snezka3/2048x1536.jpg
-    :interval: 120
+    :interval: 240
     :desc: sniezka0
     :coord:
       :lat: 50.735833
@@ -399,7 +399,7 @@
     :use_in_timelapse: false
   - :resize: true
     :url: http://kamery.humlnet.cz/images/webcams/snezka2/2048x1536.jpg
-    :interval: 120
+    :interval: 240
     :desc: sniezka1
     :coord:
       :lat: 50.735833
@@ -408,7 +408,7 @@
     :use_in_timelapse: false
   - :resize: true
     :url: http://kamery.humlnet.cz/images/webcams/snezka/2048x1536.jpg
-    :interval: 120
+    :interval: 240
     :desc: sniezka2
     :coord:
       :lat: 50.735833
@@ -437,26 +437,26 @@
 - :group: usa
   :array:
   - :url: http://www.sunvalley.com/assets/images/cams/wclouds_full.jpg
-    :ingterval: 300
+    :ingterval: 330
     :desc: usa_sunvalley1
     :coord:
       :lat: 43.70263
       :lon: -114.369106
     :use_in_timelapse: false
   - :url: http://www.sunvalley.com/assets/images/cams/clubhouse_full.jpg
-    :interval: 300
+    :interval: 330
     :desc: usa_sunvalley2
   - :url: http://www.sunvalley.com/assets/images/cams/bowls_full.jpg
-    :interval: 300
+    :interval: 330
     :desc: usa_sunvalley3
   - :url: http://www.ridehunter.com/cam3.jpg
-    :interval: 300
+    :interval: 320
     :desc: usa_ridehunter1
   - :url: http://www.ridehunter.com/cam1.jpg
-    :interval: 300
+    :interval: 320
     :desc: usa_ridehunter2
   - :url: http://www.ridehunter.com/cam2.jpg
-    :interval: 300
+    :interval: 320
     :desc: usa_ridehunter3
   - :url: http://www.mountainwebcams.com/Qx4F8e21/netcam2.jpg
     :interval: 300
@@ -475,7 +475,7 @@
 #    :interval: 300
 #    :desc: usa_crestline
   - :url: http://www.methow.com/sunmtncam/viewpic.jpg
-    :interval: 300
+    :interval: 330
     :desc: usa_sun_mnt_lodge
   - :url: http://www.stevenspass.com/Stevens/SiteAssets/_ftp/webcam/stevenspass.jpg
     :interval: 300
@@ -499,13 +499,13 @@
     :interval: 300
     :desc: usa_paradise_west
   - :url: http://www.haarp.alaska.edu/data/haarpcam/images/latest.jpg
-    :interval: 300
+    :interval: 500
     :desc: usa_haarp
   - :url: http://cws2vm.integra.net/~nsps/weather2c.jpg
-    :interval: 300
+    :interval: 400
     :desc: usa_hoodoo_2c
   - :url: http://cws2vm.integra.net/~nsps/weather3b.jpg
-    :interval: 300
+    :interval: 400
     :desc: usa_hoodoo_3b
   - :url: http://www.cfht.hawaii.edu/webcams/c4/c4.jpg
     :interval: 60
@@ -517,7 +517,7 @@
     :interval: 300
     :desc: usa_mnt_washburn
   - :url: http://cws2vm.integra.net/~nsps/weather2a.jpg
-    :interval: 300
+    :interval: 400
     :desc: usa_mnt_jefferson
   - :resize: true
     :url: http://snow.whistler-blackcomb.com/catskinner/fissile.jpg
@@ -527,7 +527,7 @@
 #    :interval: 300
 #    :desc: usa_alaska_spurr
   - :url: http://www.avo.alaska.edu/webcam/redoubt.jpg
-    :interval: 300
+    :interval: 400
     :desc: usa_alaska_redoubt
   - :url: http://volcanoes.usgs.gov/hvo/cams/MLcam/images/E.jpg
     :interval: 300
@@ -545,7 +545,7 @@
     :interval: 300
     :desc: greenland_tasiilaq
   - :url: http://www.antarcticanz.govt.nz/webcam/webcam32.jpg
-    :interval: 300
+    :interval: 450
     :desc: antarc_scott
     :coord:
       #:lat: -77.85
@@ -608,7 +608,7 @@
 #    :interval: 300
 #    :desc: norway_hardstad2
   - :url: http://www.lofot-tidende.no/static/local/webcam/cubus.jpg
-    :interval: 300
+    :interval: 450
     :desc: norway_leknes
   - :url: http://home.online.no/~abjoernv/kamera/kam2.jpg
     :interval: 300
@@ -639,7 +639,7 @@
     :interval: 120
     :desc: norwa_sjovegan
   - :url: http://nordkapp.livecam360.com/cam3/php/show_lq_last.php
-    :interval: 300
+    :interval: 450
     :desc: norwa_north_cap
   - :interval: 300
     :desc: norway_lofoten
@@ -663,13 +663,13 @@
 - :group: world
   :array:
   - :url: http://www.monopol-andermatt.ch/cam/webcam.jpg
-    :interval: 120
+    :interval: 220
     :desc: switz_andermatt
   - :url: http://www.appenzell-ai.ch/appenzell_fotoold.jpg
-    :interval: 120
+    :interval: 220
     :desc: switz_appenzell
   - :url: http://www.obergoms.ch/tourismus/service/webcams/obergesteln.php?e_12_14_getimage=1
-    :interval: 120
+    :interval: 220
     :desc: switz_obergoms
   - :url: http://webcam.21.by/pub/webcam/148/size_0.jpg
     :interval: 300
@@ -689,7 +689,7 @@
     :interval: 180
     :desc: sweden_goteborg
   - :url: http://www.gehammar.se/not001.jpg
-    :interval: 300
+    :interval: 450
     :desc: sweden_hjalmo
   - :resize: true
     :url: http://www.liveevent.se/webbkamera/ca-kalmar/ca_kalmar_1_1280.jpg
@@ -705,7 +705,7 @@
     :desc: sweden_vosalo
   - :resize: true
     :url: http://87.237.210.145/~checkpoi/webcam/klappen/webcam_10_1280.jpg
-    :interval: 300
+    :interval: 450
     :desc: sweden_klappen
   - :resize: true
     :url: http://www.hamrafjallet.se/kamera/webbkamror/topmega.jpg
@@ -713,7 +713,7 @@
     :desc: sweden_tandallen
   - :resize: true
     :url: http://www.liveevent.se/webbkamera/tv4/sundsvall/tv4_sundsvall_1_1280.jpg
-    :interval: 300
+    :interval: 450
     :desc: sweden_tvn4
   - :resize: true
     :url: http://dedi68.aname.net/~checkpoi/webcam/unostorn/webcam_6_1280.jpg
@@ -731,24 +731,24 @@
   - :interval: 300
     :desc: finland_koppola
     :url: http://85.157.217.2/-wvhttp-01-/GetStillImage
-  - :interval: 300
+  - :interval: 450
     :desc: austria_kargogel
     :url: http://karkogel.it-wms.com/big_current4.jpg
-  - :interval: 300
+  - :interval: 360
     :desc: austria_aflenz
     :url: http://www.aflenz-outdoorpark.at/webcam/webcam.jpg
-  - :interval: 300
+  - :interval: 400
     :desc: austria_blumental
     :url: http://www.blumentalcam.at/cam_1.jpg
     :coord:
       :lat: 47.256649
       :lon: 11.408386
     :use_in_timelapse: true
-  - :interval: 300
+  - :interval: 390
     :resize: true
     :desc: austria_silvretta1
     :url: http://www.silvretta-montafon.at/webcam/image1_text.jpg
-  - :interval: 300
+  - :interval: 390
     :resize: true
     :desc: austria_silvretta2
     :url: http://www.silvretta-montafon.at/webcam/image2_text.jpg
@@ -768,13 +768,13 @@
   - :interval: 300
     :desc: antar_neumayerP
     :url: http://www.awi.de/NM_WebCam/neumayerP.last.jpg
-  - :interval: 300
+  - :interval: 450
     :desc: antar_neumayer
     :url: http://www.awi.de/NM_WebCam/neumayer.last.jpg
-  - :interval: 150
+  - :interval: 220
     :desc: de_mount1
     :url: http://cms.zugspitze.de/static/webcams/k02.jpg
-  - :interval: 200
+  - :interval: 220
     :desc: de_mount2
     :url: http://cms.zugspitze.de/static/webcams/k04.jpg
     :coord:
@@ -788,10 +788,10 @@
       :lat: 37.7793
       :lon: -122.4192
     :use_in_timelapse: true
-  - :interval: 300
+  - :interval: 360
     :desc: italy_mount1
     :url: http://www.ras.bz.it/img_webcams/scheibe/scheibe_P1.jpg
-  - :interval: 300
+  - :interval: 360
     :desc: hahnenkoepfle
     :url: http://tramino.s3.amazonaws.com/s/das-hoechste/webcams/ifen-hahnenkoepfle.jpg
   - :interval: 300
@@ -835,21 +835,21 @@
       :lat: 52.526248
       :lon: 13.361664
     :use_in_timelapse: true
-  - :interval: 300
+  - :interval: 360
     :desc: cannobio
     :url: http://www.cannobio.net/resizeimgpiazza.asp?dimensioni=800
     :coord:
       :lat: 41.897676
       :lon: 12.495164
     :use_in_timelapse: true
-  - :interval: 300
+  - :interval: 360
     :desc: villas_on_great_bay
     :url: http://www.thevillasongreatbay.com/images/netcam.jpg
     :coord:
       :lat: 18.069003
       :lon: -63.070621
     :use_in_timelapse: true
-  - :interval: 300
+  - :interval: 320
     :desc: arolla_collonx
     :url: http://www.arolla.com/mt-collon/mtcollonx.jpg
     :resize: true
@@ -865,7 +865,7 @@
       :lat: 45.866667
       :lon: 6.883333
     :use_in_timelapse: true
-  - :interval: 300
+  - :interval: 330
     :desc: bavaria_bergen
     :url: http://www.bayernwebcam.de/bilder/bergen.jpg
   - :interval: 300
@@ -873,7 +873,7 @@
     :url: http://www.bayernwebcam.de/bilder/marquartstein.jpg
 
 # 2012-04-09
-  - :interval: 300
+  - :interval: 330
     :desc: austria_schruns
     :url: http://schruns-tschagguns.at/kamera/kamera/aktuell.jpg
     :resize: false
