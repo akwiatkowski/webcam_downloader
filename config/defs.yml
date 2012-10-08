@@ -10,6 +10,19 @@
       :lon: 0.0
     :use_in_timelapse: false
 
+  - :url_schema: "http://kamery.hydronet.cz/lysa/photo/l2/gallery/%Y%m%d%H%M_l2.jpg"
+    :time_modulo: 1200 # every 20 minutes
+    :time_offset: 720 # 12 minutes
+    :interval: 900 # it is every 20 minutes
+    :desc: karkonosze_lysa_hora
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+    #:resize: true
+
+
+
 - :group: tatry
   :array:
   - :url: http://www.zakopaneonline.eu/webcam/zakopane.jpg

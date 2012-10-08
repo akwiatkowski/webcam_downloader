@@ -7,7 +7,7 @@ class WebCamDownloader
     @options = _options
 
     # processing image
-    @jpeg_quality = 74
+    @jpeg_quality = 88
 
     @sleep_interval = 5
 
@@ -229,6 +229,13 @@ class WebCamDownloader
     if u[:time_modulo]
       t -= t % u[:time_modulo]
     end
+
+    # time offset
+    if u[:time_offset]
+      t += u[:time_offset].to_i
+      t -= u[:time_modulo]
+    end
+    
     u[:url] = Time.at(t).strftime(u[:url_schema])
     puts "generated url #{u[:url]}"
     return u[:url]
