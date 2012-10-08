@@ -14,14 +14,23 @@
     :time_modulo: 1200 # every 20 minutes
     :time_offset: 720 # 12 minutes
     :interval: 900 # it is every 20 minutes
-    :desc: karkonosze_lysa_hora
+    :desc: karkonosze_lysa_hora2
     :coord:
       :lat: 0.0
       :lon: 0.0
     :use_in_timelapse: false
     #:resize: true
 
-
+  - :url_schema: "http://kamery.hydronet.cz/lysa/photo/l3/gallery/%Y%m%d%H%M_l3.jpg"
+    :time_modulo: 1200 # every 20 minutes
+    :time_offset: 1080 # 18 minutes
+    :interval: 900 # it is every 20 minutes
+    :desc: karkonosze_lysa_hora3
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+    #:resize: true
 
 - :group: tatry
   :array:
@@ -179,6 +188,42 @@
     :use_in_timelapse: false
 
   # sudety
+  - :url: http://kamery.hydronet.cz/korenov/photo/korenov_960x1280_now.jpg
+    :interval: 240
+    :desc: karkonosze_korenove
+    :coord:
+      :lat:
+      :lon:
+    :use_in_timelapse: false
+  - :url: http://kamery.hydronet.cz/kamenec/photo_jabl/jablonecek_1600x1200_now.jpg
+    :interval: 240
+    :desc: karkonosze_jablonecek
+    :coord:
+      :lat:
+      :lon:
+    :use_in_timelapse: false
+  - :url: http://kamery.hydronet.cz/strezimir/photo/strezimir_1600x1200_now.jpg
+    :interval: 240
+    :desc: karkonosze_strezimir
+    :coord:
+      :lat:
+      :lon:
+    :use_in_timelapse: false
+  - :url: http://kamery.hydronet.cz/polesi/photo/polesi_now.jpg
+    :interval: 240
+    :desc: karkonosze_polesi
+    :coord:
+      :lat:
+      :lon:
+    :use_in_timelapse: false
+  - :url: http://kamery.hydronet.cz/brod/photo/brod_1600x1200_now.jpg
+    :interval: 240
+    :desc: karkonosze_zelazny_brod
+    :coord:
+      :lat:
+      :lon:
+    :use_in_timelapse: false
+
   - :url: http://kolejgondolowa.pl/kamery/cam2/snap_c1.jpg
     :interval: 240
     :desc: sudety_swieradow2
