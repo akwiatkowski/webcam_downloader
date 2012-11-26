@@ -259,14 +259,18 @@ module WebcamDownloader
     def process_temp_image_if_needed
       return unless @process_resize
       time_pre = Time.now
-      @image_processor.process(self)
+      res = @image_processor.process(self)
 
-      @process_count = @process_count.to_i + 1
-      @process_time_cost_last = Time.now - time_pre
-      @process_time_cost_total = @process_time_cost_total.to_f + @process_time_cost_last
-      @process_time_cost_max = @process_time_cost_last if @process_time_cost_last > @process_time_cost_max
+      if res
+        @process_count = @process_count.to_i + 1
+        @process_time_cost_last = Time.now - time_pre
+        @process_time_cost_total = @process_time_cost_total.to_f + @process_time_cost_last
+        @process_time_cost_max = @process_time_cost_last if @process_time_cost_last > @process_time_cost_max
 
-      @logger.debug("#{@desc} - Image processed, count #{@process_count}, cost #{@process_time_cost_last}")
+        @logger.debug("#{@desc} - Image processed, count #{@process_count}, cost #{@process_time_cost_last}")
+      else
+        @logger.warn("#{@desc} - Image can't be processed")
+      end
     end
 
     def move_to_storage

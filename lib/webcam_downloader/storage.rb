@@ -23,7 +23,7 @@ module WebcamDownloader
       end
     end
 
-    def prepare_monthly_directories(desc_array = [])
+    def prepare_monthly_directories
       mp = Time.now.strftime('%Y_%m')
       return if @monthly_prefix == mp
 
@@ -34,7 +34,7 @@ module WebcamDownloader
       Dir.mkdir(f) unless File.exists?(f)
 
       # dir per webcam
-      desc_array.each do |desc|
+      @descs.each do |desc|
         f = File.join("pix", mp, desc)
         Dir.mkdir(f) unless File.exists?(f)
       end
@@ -57,7 +57,7 @@ module WebcamDownloader
 
     # move to storage
     def store_temporary_image(webcam)
-      @logger.info("Stored #{webcam.desc} at #{webcam.path_store}")
+      @logger.info("Stored #{webcam.desc}, from #{webcam.path_temporary} to #{webcam.path_store}")
       File.rename(webcam.path_temporary, webcam.path_store)
     end
 

@@ -5,7 +5,7 @@ require 'logger'
 
 module WebcamDownloader
   class Downloader
-    DEV_MODE = true
+    DEV_MODE = false
     DEV_MODE_LIMIT = 5
     LOGGER_LEVEL = Logger::DEBUG
 
