@@ -5,6 +5,7 @@ module WebcamDownloader
     def initialize(_downloader, _options = { })
       @options = _options
       @downloader = _downloader
+      @logger = _downloader.logger
 
       @jpeg_quality = 88
     end

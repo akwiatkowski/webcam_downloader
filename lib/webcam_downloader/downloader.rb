@@ -19,6 +19,7 @@ module WebcamDownloader
       @webcams = Array.new
 
       @sleep_interval = 5
+      @loop_count = 1
 
       @storage = WebcamDownloader::Storage.new(self, _options)
       @image_processor = WebcamDownloader::ImageProcessor.new(self, _options)
@@ -36,7 +37,7 @@ module WebcamDownloader
 
       @logger.info("Start!")
       @started_at = Time.now
-      @storage.descs = @webcams.collect{|w| w.desc}
+      @storage.descs = @webcams.collect { |w| w.desc }
       @storage.prepare_file_structure
       @storage.prepare_monthly_directories
 
@@ -46,10 +47,13 @@ module WebcamDownloader
 
     def start_loop
       loop do
+        @logger.info("Loop #{@loop_count}")
         @webcams.each do |webcam|
           webcam.make_it_so
         end
 
+        @loop_count += 1
+        @logger.debug("Sleep after loop #{@sleep_interval}")
         sleep(@sleep_interval)
       end
     end
@@ -63,8 +67,12 @@ module WebcamDownloader
       end
 
       if DEV_MODE
+        @logger.warn("DEVELOPMENT MODE, from 0 to #{DEV_MODE_LIMIT}")
         flat_defs = flat_defs[0..DEV_MODE_LIMIT]
       end
+
+      @logger.info("Loaded #{flat_defs.count} definitions")
+
 
       @defs += flat_defs
     end
