@@ -2,7 +2,7 @@ $:.unshift(File.dirname(__FILE__))
 
 module WebcamDownloader
   class ImageProcessor
-    def initialize(_options, _downloader)
+    def initialize(_downloader, _options = {})
       @options = _options
       @downloader = _downloader
 

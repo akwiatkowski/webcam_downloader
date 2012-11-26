@@ -45,6 +45,7 @@ module WebcamDownloader
       download_to_temp
       return false if downloaded_file_is_empty?
       return false if downloaded_file_is_equal_to_previous?
+      process_temp_image_if_needed
 
       # TODO
 
@@ -110,6 +111,21 @@ module WebcamDownloader
       return false
     end
 
+    def process_temp_image_if_needed
+      # resizing
+      puts "resizing image #{u[:new_downloaded]}"
+      u[:new_proc_filename] = u[:new_downloaded_processed]
+      command = "convert \"#{u[:new_downloaded]}\" -resize '1920x1080>' -quality #{@jpeg_quality}% \"#{u[:new_proc_filename]}\""
+      time_pre = Time.now
+      `#{command}`
+      u[:process_count] = u[:process_count].to_i + 1
+      u[:process_time_cost] = Time.now - time_pre
+      u[:process_time_cost_total] = u[:process_time_cost_total].to_f + u[:process_time_cost]
+
+      # remove original
+      `rm #{u[:new_downloaded]}`
+    end
+
     def post_download!
       @last_downloaded_time = Time.now
       @last_downloaded_path = @path_store
@@ -117,6 +133,7 @@ module WebcamDownloader
       @last_downloaded_digest = Digest::MD5.hexdigest(File.read(@last_downloaded_path))
       @last_downloaded_mtime = File.new(@last_downloaded_path).mtime
     end
+
 
   end
 end

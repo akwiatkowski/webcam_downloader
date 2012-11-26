@@ -14,7 +14,8 @@ module WebcamDownloader
 
       @sleep_interval = 5
 
-      @storage = WebcamDownloader::Storage.new(self)
+      @storage = WebcamDownloader::Storage.new(self, _options)
+      @image_processor = WebcamDownloader::ImageProcessor.new(self, _options)
     end
 
     attr_reader :storage

@@ -5,7 +5,7 @@ require 'digest/md5'
 module WebcamDownloader
   class Storage
 
-    def initialize(_downloader, _options={ })
+    def initialize(_downloader, _options = { })
       @downloader = _downloader
       @options = _options
 
