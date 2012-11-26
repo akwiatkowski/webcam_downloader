@@ -97,6 +97,35 @@ module WebcamDownloader
       return @stored_file_size_sum.to_f / c.to_f
     end
 
+    def to_hash
+      {
+        :desc => self.desc,
+        :process_flag => self.process_resize ? "T" : "-",
+
+        :avg_cost => fl_to_s(self.avg_cost),
+        :avg_download_cost => fl_to_s(self.avg_download_cost),
+        :avg_process_cost => self.process_resize ? fl_to_s(self.avg_process_cost) : "",
+
+        :last_cost => fl_to_s(self.last_cost),
+        :last_download_cost => fl_to_s(self.last_download_cost),
+        :last_process_cost => self.process_resize ? fl_to_s(self.last_process_cost) : "",
+
+        :max_cost => fl_to_s(self.max_cost),
+        :max_download_cost => fl_to_s(self.max_download_cost),
+        :max_process_cost => self.process_resize ? fl_to_s(self.max_process_cost) : "",
+
+        :last_attempted_time_ago => Time.now.to_i - self.last_downloaded_temporary_at.to_i,
+        :last_stored_time_ago => Time.now.to_i - self.latest_stored_at.to_i,
+
+        :count_download => self.download_count,
+        :count_zero_size => self.file_size_zero_count,
+        :count_identical => self.file_identical_count,
+
+        :file_size_last => self.stored_file_size_last,
+        :file_size_avg => self.avg_file_size,
+        :file_size_max => self.stored_file_size_max,
+      }
+    end
 
     #
 
