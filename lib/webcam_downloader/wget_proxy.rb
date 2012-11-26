@@ -13,7 +13,11 @@ module WebcamDownloader
       @dns_timeout = 2 # --dns-timeout
       @connect_timeout = 3 # --connect-timeout
       @read_timeout = 10 # --read-timeout
+
+      @tmp_file = File.join('tmp', 'tmp.tmp')
     end
+
+    attr_accessor :verbose
 
     def verbose?
       @verbose
@@ -21,11 +25,16 @@ module WebcamDownloader
 
     # Download file/image using wget
     def download_file(url, dest, options = { })
-      ref = options[:ref] || url
+      ref = options[:referer] || url
       agent = options[:agent] || "Internet Explorer 8.0"
       command = "wget --dns-timeout=#{@dns_timeout} --connect-timeout=#{@connect_timeout} --read-timeout=#{@read_timeout} --quiet --referer=\"#{ref}\" --user-agent=\"#{agent}\" --load-cookies data/cookies.txt --keep-session-cookies --save-cookies data/cookies.txt \"#{url}\" -O#{dest}"
       puts command if verbose?
       `#{command}`
+    end
+
+    def download_and_remove(url)
+      download_file(url, @tmp_file)
+      File.delete(@tmp_file)
     end
 
   end

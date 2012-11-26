@@ -17,6 +17,8 @@ module WebcamDownloader
       @storage = WebcamDownloader::Storage.new(self)
     end
 
+    attr_reader :storage
+
     def make_it_so
       # create WebCam instances
       @defs.each do |d|
