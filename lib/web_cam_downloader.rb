@@ -294,13 +294,8 @@ class WebCamDownloader
         f.puts "download count #{u[:download_count]}, download time cost #{u[:download_time_cost]}, last download time #{Time.at(u[:last_downloaded_time])}\n"
         f.puts "</p>\n"
 
-        if u[:proc]
-          img = u[:new_downloaded_processed]
-        else
-          img = u[:new_downloaded]
-        end
-
-        f.puts "<img src=\"../#{img}\" style=\"max-width: 800px; max-height: 600px;\" />\n"
+        img = u[:desc] + ".jpg"
+        f.puts "<img src=\"#{img}\" style=\"max-width: 800px; max-height: 600px;\" />\n"
       end
 
       f.puts "<hr>\n"
