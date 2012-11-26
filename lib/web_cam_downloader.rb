@@ -178,6 +178,7 @@ class WebCamDownloader
           download_file(u[:url], u[:temporary])
           u[:download_count] = u[:download_count].to_i + 1 # nil safe
           u[:download_time_cost] = Time.now - time_pre
+          u[:download_time_cost_total] = u[:download_time_cost_total].to_f + u[:download_time_cost]
           u[:last_downloaded_time] = Time.now.to_i
 
           # check file size, remove empty files
@@ -226,7 +227,7 @@ class WebCamDownloader
   # Generate url using current time
   def generate_url(u)
     return if u[:url_schema].nil?
-    
+
     t = Time.now.to_i
     # webcams store image every :time_modulo interval
     if u[:time_modulo]
@@ -238,7 +239,7 @@ class WebCamDownloader
       t += u[:time_offset].to_i
       t -= u[:time_modulo]
     end
-    
+
     u[:url] = Time.at(t).strftime(u[:url_schema])
     puts "generated url #{u[:url]}"
     return u[:url]
@@ -301,7 +302,76 @@ class WebCamDownloader
       f.puts "<hr>\n"
     end
 
-    f.close 
+    f.puts "<h2>Time costs</h2>\n"
+    tc = urls.collect { |u|
+      count = u[:download_count]
+      count = 1 if count.to_i == 0
+
+      process_count = u[:process_count]
+      process_count = 1 if process_count.to_i == 0
+
+      avg_download_time_cost = (u[:download_time_cost_total].to_f / count.to_f)
+      avg_process_time_cost = (u[:process_time_cost_total].to_f / process_count.to_f)
+      sum_full_cost = avg_download_time_cost + avg_process_time_cost
+
+      {
+        :desc => u[:desc],
+
+        :last_cost => fl_to_s(u[:download_time_cost].to_f + u[:process_time_cost].to_f),
+        :last_download_cost => fl_to_s(u[:download_time_cost].to_f),
+        :last_process_cost => fl_to_s(u[:process_time_cost].to_f),
+
+        :last_attempted_time_ago => Time.now.to_i - u[:last_downloaded_time].to_i,
+
+        :avg_cost => fl_to_s(sum_full_cost),
+        :avg_download_cost => fl_to_s(avg_download_time_cost),
+        :avg_process_cost => fl_to_s(avg_process_time_cost),
+
+        :process_flag => u[:resize] ? "T" : "-",
+        :count => count,
+        :fail_count => u[:zero_size_count],
+        :process_count => process_count
+      }
+    }
+    tc.sort! { |a, b| a[:avg_cost] <=> b[:avg_cost] }
+
+    keys = [
+      [:desc, "desc"],
+      [:process_flag, "proc?"],
+      [:avg_cost, "avg TC[s]"],
+      [:avg_download_cost, "a.down TC[s]"],
+      [:avg_process_cost, "a.proc TC[s]"],
+      [:last_attempted_time_ago, "old [s]"],
+      [:last_cost, "last TC[s]"],
+      [:last_download_cost, "l.down TC[s]"],
+      [:last_process_cost, "l.proc TC[s]"],
+      [:count, "count"],
+      [:process_count, "p.count"],
+      [:fail_count, "failed(0)"],
+    ]
+
+    f.puts "<table border=\"1\">\n"
+    f.puts "<tr>\n"
+    keys.each do |k|
+      f.puts "<th>#{k[1]}</th>\n"
+    end
+    f.puts "</tr>\n"
+
+    tc.each do |t|
+      f.puts "<tr>\n"
+      keys.each do |k|
+        f.puts "<td>#{t[k[0]]}</td>\n"
+      end
+      f.puts "</tr>\n"
+    end
+
+    f.puts "</table>\n"
+
+    f.close
+  end
+
+  def fl_to_s(fl)
+    (fl.to_f * 1000.0).round.to_f / 1000.0
   end
 
 # remove image which was already downloaded
@@ -354,7 +424,9 @@ class WebCamDownloader
     command = "convert \"#{u[:new_downloaded]}\" -resize '1920x1080>' -quality #{@jpeg_quality}% \"#{u[:new_proc_filename]}\""
     time_pre = Time.now
     `#{command}`
+    u[:process_count] = u[:process_count].to_i + 1
     u[:process_time_cost] = Time.now - time_pre
+    u[:process_time_cost_total] = u[:process_time_cost_total].to_f + u[:process_time_cost]
 
     # remove original
     `rm #{u[:new_downloaded]}`
@@ -387,7 +459,7 @@ class WebCamDownloader
       flat_urls += u[:array]
     end
     # just for dev
-    #flat_urls = flat_urls[0..15]
+    #flat_urls = flat_urls[0..5]
     return flat_urls
   end
 
