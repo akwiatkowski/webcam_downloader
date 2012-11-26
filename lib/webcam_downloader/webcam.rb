@@ -25,6 +25,7 @@ module WebcamDownloader
       @last_downloaded_temporary_at = nil
       @process_count = 0
       @process_time_cost_total = 0.0
+      @process_time_cost_max = 0.0
 
     end
 
@@ -111,6 +112,8 @@ module WebcamDownloader
       @download_count = @download_count.to_i + 1
       @download_time_cost_last = Time.now - time_pre
       @download_time_cost_total = @download_time_cost_total.to_f + @download_time_cost_last
+      @download_time_cost_max = @download_time_cost_last if @download_time_cost_last > @download_time_cost_max
+
       @last_downloaded_temporary_at = Time.now.to_i
 
       @last_downloaded_temporary_size = File.size(@path_temporary)
@@ -147,6 +150,7 @@ module WebcamDownloader
       @process_count = @process_count.to_i + 1
       @process_time_cost_last = Time.now - time_pre
       @process_time_cost_total = @process_time_cost_total.to_f + @process_time_cost_last
+      @process_time_cost_max = @process_time_cost_last if @process_time_cost_last > @process_time_cost_max
     end
 
     def move_to_storage
