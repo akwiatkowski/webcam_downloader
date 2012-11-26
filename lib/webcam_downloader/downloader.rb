@@ -4,8 +4,6 @@ require 'digest/md5'
 
 module WebcamDownloader
   class Downloader
-    attr_accessor :urls
-
     DEV_MODE = true
     DEV_MODE_LIMIT = 5
 
@@ -13,6 +11,11 @@ module WebcamDownloader
       @options = _options
       @defs = Array.new
       @webcams = Array.new
+
+      @dns_timeout = 2 # --dns-timeout
+      @connect_timeout = 3 # --connect-timeout
+      @read_timeout = 10 # --read-timeout
+
     end
 
     def make_it_so
