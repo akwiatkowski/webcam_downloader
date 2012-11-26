@@ -194,6 +194,8 @@ class WebCamDownloader
                 proc_image(u)
                 remove_proc_if_exist(u)
               end
+
+              mark_file_size(u)
             end
           end
 
@@ -247,7 +249,8 @@ class WebCamDownloader
 
 # remove image which file size is 0
   def remove_empty_file(f, u)
-    if File.size(f) == 0
+    s = File.size(f)
+    if s == 0
       u[:zero_size_count] = u[:zero_size_count].to_i + 1
       u[:zero_size] = true
       puts "removing #{f}, file size = 0"
@@ -311,6 +314,9 @@ class WebCamDownloader
       process_count = u[:process_count]
       process_count = 1 if process_count.to_i == 0
 
+      fs_count = u[:file_size_count]
+      fs_count = 1 if fs_count.to_i == 0
+
       avg_download_time_cost = (u[:download_time_cost_total].to_f / count.to_f)
       avg_process_time_cost = (u[:process_time_cost_total].to_f / process_count.to_f)
       sum_full_cost = avg_download_time_cost + avg_process_time_cost
@@ -331,7 +337,10 @@ class WebCamDownloader
         :process_flag => u[:resize] ? "T" : "-",
         :count => u[:download_count],
         :fail_count => u[:zero_size_count],
-        :process_count => u[:process_count]
+        :process_count => u[:process_count],
+
+        :file_size_last => u[:file_size_last],
+        :file_size_avg => fl_to_s(u[:file_size_total].to_f / fs_count.to_f),
       }
     }
     tc.sort! { |a, b| b[:avg_cost] <=> a[:avg_cost] }
@@ -349,6 +358,9 @@ class WebCamDownloader
       [:count, "count"],
       [:process_count, "p.count"],
       [:fail_count, "failed(0)"],
+
+      [:file_size_last, "size last"],
+      [:file_size_avg, "size avg"],
     ]
 
     f.puts "<table border=\"1\">\n"
@@ -457,8 +469,21 @@ class WebCamDownloader
       # a new file
       u[:old_proc_digest] = u[:new_proc_digest]
       u[:old_proc_filename] = u[:new_proc_filename]
+
       return
     end
+  end
+
+  def mark_file_size(u)
+    if u[:resize]
+      file = u[:new_proc_filename]
+    else
+      file = u[:new_downloaded]
+    end
+
+    u[:file_size_count] = u[:file_size_count].to_i + 1
+    u[:file_size_last] = File.size(file) / 1024
+    u[:file_size_total] = u[:file_size_total].to_i + u[:file_size_last]
   end
 
   def self.load_and_flatten_definitions(file)
@@ -468,7 +493,7 @@ class WebCamDownloader
       flat_urls += u[:array]
     end
     # just for dev
-    flat_urls = flat_urls[0..5]
+    #flat_urls = flat_urls[0..5]
     return flat_urls
   end
 
