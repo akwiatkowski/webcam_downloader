@@ -8,13 +8,13 @@ module WebcamDownloader
       @logger = _downloader.logger
 
       @jpeg_quality = 88
+      @resolution = "1920x1080"
     end
 
     def process(webcam)
-      # resizing
-      puts "resizing image #{webcam.temporary}"
-      command = "convert \"#{webcam.temporary}\" -resize '1920x1080>' -quality #{@jpeg_quality}% \"#{webcam.path_temporary_processed}\""
-      time_pre = Time.now
+      jpeg_quality = webcam.jpeg_quality || @jpeg_quality
+      @logger.debug("#{webcam.desc} - Resize to #{@resolution}, quality #{jpeg_quality}")
+      command = "convert \"#{webcam.temporary}\" -resize '#{@resolution}>' -quality #{jpeg_quality}% \"#{webcam.path_temporary_processed}\""
       `#{command}`
       File.delete(webcam.temporary)
       File.rename(webcam.path_temporary_processed, webcam.temporary)

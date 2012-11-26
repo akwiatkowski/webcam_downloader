@@ -16,6 +16,7 @@ module WebcamDownloader
       @url = _options[:url]
       @url_schema = _options[:url_schema]
       @process_resize = _options[:resize] || _options[:process_resize]
+      @jpeg_quality = _options[:resize_jpg_quality] || _options[:jpg_quality]
 
       @path_temporary = nil
       @path_temporary_processed = nil
@@ -31,7 +32,7 @@ module WebcamDownloader
 
     end
 
-    attr_reader :desc
+    attr_reader :desc, :jpeg_quality
 
     attr_accessor :path_temporary, :path_temporary_processed, :path_store
 

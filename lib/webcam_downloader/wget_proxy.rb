@@ -6,15 +6,19 @@ module WebcamDownloader
   class WgetProxy
     include Singleton
 
-    def initialize(_options={ })
-      @options = _options
-      @verbose = _options[:verbose]
-
+    def initialize
       @dns_timeout = 2 # --dns-timeout
       @connect_timeout = 3 # --connect-timeout
       @read_timeout = 10 # --read-timeout
 
       @tmp_file = File.join('tmp', 'tmp.tmp')
+    end
+
+    def setup(_downloader, _options={ })
+      @downloader = _downloader
+      @logger = _downloader.logger
+      @options = _options
+      @verbose = _options[:verbose]
     end
 
     attr_accessor :verbose
@@ -28,7 +32,7 @@ module WebcamDownloader
       ref = options[:referer] || url
       agent = options[:agent] || "Internet Explorer 8.0"
       command = "wget --dns-timeout=#{@dns_timeout} --connect-timeout=#{@connect_timeout} --read-timeout=#{@read_timeout} --quiet --referer=\"#{ref}\" --user-agent=\"#{agent}\" --load-cookies data/cookies.txt --keep-session-cookies --save-cookies data/cookies.txt \"#{url}\" -O#{dest}"
-      puts command if verbose?
+      @logger.debug("Wget proxy command - #{command}")
       `#{command}`
     end
 
