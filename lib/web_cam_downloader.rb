@@ -481,9 +481,11 @@ class WebCamDownloader
       file = u[:new_downloaded]
     end
 
-    u[:file_size_count] = u[:file_size_count].to_i + 1
-    u[:file_size_last] = File.size(file) / 1024
-    u[:file_size_total] = u[:file_size_total].to_i + u[:file_size_last]
+    if File.exists?(file)
+      u[:file_size_count] = u[:file_size_count].to_i + 1
+      u[:file_size_last] = File.size(file) / 1024
+      u[:file_size_total] = u[:file_size_total].to_i + u[:file_size_last]
+    end
   end
 
   def self.load_and_flatten_definitions(file)
