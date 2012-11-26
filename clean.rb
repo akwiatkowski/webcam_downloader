@@ -6,7 +6,7 @@ urls.each do |u|
   flat_urls += u[:array]
 end
 
-load 'lib/web_cam_downloader.rb'
+load 'lib/webcam_downloader.rb'
 wd = WebCamDownloaderOld.new
 wd.urls = flat_urls
 wd.relocate_files2
