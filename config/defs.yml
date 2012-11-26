@@ -548,7 +548,7 @@
 #    :interval: 240
 #    :desc: usa_crystal_hill
   - :url: http://www.tacomaweathercam.com/rainier.jpg
-    :interval: 300
+    :interval: 600
     :desc: usa_tacoma_rainier
   - :url: http://www.nps.gov/webcams-mora/mountain.jpg
     :interval: 300
@@ -597,7 +597,7 @@
 - :group: cold
   :array:
   - :url: http://www.summitcamp.org/static/images/status/view/webcam.jpg
-    :interval: 120
+    :interval: 600
     :desc: greenland
   - :url: http://icons.wunderground.com/webcamramdisk/a/l/alfis/1/current.jpg
     :interval: 300
@@ -788,7 +788,7 @@
       :lat: 45.085278
       :lon: 20.659444
     :use_in_timelapse: true
-  - :interval: 300
+  - :interval: 600
     :desc: finland_koppola
     :url: http://85.157.217.2/-wvhttp-01-/GetStillImage
   - :interval: 450

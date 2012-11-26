@@ -276,6 +276,7 @@ class WebCamDownloader
 
   def create_html_page
     f = File.new(File.join('latest', 'index2.html'), 'w')
+    fs = File.new(File.join('latest', 'stats.html'), 'w')
     f.puts "<h1>Webcam downloader - #{Time.now}</h1>\n"
     f.puts "<h4>started at #{@started_at}</h4>\n"
     f.puts "<hr>\n"
@@ -319,21 +320,21 @@ class WebCamDownloader
 
         :last_cost => fl_to_s(u[:download_time_cost].to_f + u[:process_time_cost].to_f),
         :last_download_cost => fl_to_s(u[:download_time_cost].to_f),
-        :last_process_cost => fl_to_s(u[:process_time_cost].to_f),
+        :last_process_cost => u[:resize] ? fl_to_s(u[:process_time_cost].to_f) : "",
 
         :last_attempted_time_ago => Time.now.to_i - u[:last_downloaded_time].to_i,
 
         :avg_cost => fl_to_s(sum_full_cost),
         :avg_download_cost => fl_to_s(avg_download_time_cost),
-        :avg_process_cost => fl_to_s(avg_process_time_cost),
+        :avg_process_cost => u[:resize] ? fl_to_s(avg_process_time_cost) : "",
 
         :process_flag => u[:resize] ? "T" : "-",
-        :count => count,
+        :count => u[:download_count],
         :fail_count => u[:zero_size_count],
-        :process_count => process_count
+        :process_count => u[:process_count]
       }
     }
-    tc.sort! { |a, b| a[:avg_cost] <=> b[:avg_cost] }
+    tc.sort! { |a, b| b[:avg_cost] <=> a[:avg_cost] }
 
     keys = [
       [:desc, "desc"],
@@ -351,23 +352,31 @@ class WebCamDownloader
     ]
 
     f.puts "<table border=\"1\">\n"
+    fs.puts "<table border=\"1\">\n"
     f.puts "<tr>\n"
+    fs.puts "<tr>\n"
     keys.each do |k|
       f.puts "<th>#{k[1]}</th>\n"
+      fs.puts "<th>#{k[1]}</th>\n"
     end
     f.puts "</tr>\n"
+    fs.puts "</tr>\n"
 
     tc.each do |t|
       f.puts "<tr>\n"
+      fs.puts "<tr>\n"
       keys.each do |k|
         f.puts "<td>#{t[k[0]]}</td>\n"
+        fs.puts "<td>#{t[k[0]]}</td>\n"
       end
       f.puts "</tr>\n"
+      fs.puts "</tr>\n"
     end
-
     f.puts "</table>\n"
+    fs.puts "</table>\n"
 
     f.close
+    fs.close
   end
 
   def fl_to_s(fl)
@@ -459,7 +468,7 @@ class WebCamDownloader
       flat_urls += u[:array]
     end
     # just for dev
-    #flat_urls = flat_urls[0..5]
+    flat_urls = flat_urls[0..5]
     return flat_urls
   end
 
