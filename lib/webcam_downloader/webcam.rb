@@ -123,9 +123,9 @@ module WebcamDownloader
         :count_zero_size => self.file_size_zero_count,
         :count_identical => self.file_identical_count,
 
-        :file_size_last => self.stored_file_size_last,
-        :file_size_avg => self.avg_file_size,
-        :file_size_max => self.stored_file_size_max,
+        :file_size_last => fl_to_s(self.stored_file_size_last),
+        :file_size_avg => fl_to_s(self.avg_file_size),
+        :file_size_max => fl_to_s(self.stored_file_size_max),
       }
     end
 

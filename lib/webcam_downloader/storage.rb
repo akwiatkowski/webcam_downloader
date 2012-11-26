@@ -57,8 +57,12 @@ module WebcamDownloader
 
     # move to storage
     def store_temporary_image(webcam)
-      @logger.info("Stored #{webcam.desc}, from #{webcam.path_temporary} to #{webcam.path_store}")
-      File.rename(webcam.path_temporary, webcam.path_store)
+      if File.exists?(webcam.path_temporary)
+        File.rename(webcam.path_temporary, webcam.path_store)
+        @logger.info("Stored #{webcam.desc}, from #{webcam.path_temporary} to #{webcam.path_store}")
+      else
+        @logger.info("Not stored #{webcam.desc}, file #{webcam.path_temporary} not exists")
+      end
     end
 
   end
