@@ -21,6 +21,15 @@ module WebcamDownloader
     end
 
     def after_loop_cycle
+      file_image_html = File.new( File.join("latest", "index2.html"), "w")
+      file_stats_html = File.new( File.join("latest", "stats.html"), "w")
+
+      file_image_html.puts images_html
+      file_stats_html.puts stats_html
+
+      file_image_html.close
+      file_stats_html.close
+
       @logger.debug("Presentation - after cycle")
     end
 
@@ -34,15 +43,15 @@ module WebcamDownloader
         s += "<h3>#{webcam.desc}</h3>\n"
         s += "<p>\n"
         s += "<a href=\"#{webcam.url}\">#{webcam.url}</a><br>\n"
-        s += "download count #{webcam.download_count]}, last download time cost #{u[:download_time_cost]}, last download time #{Time.at(u[:last_downloaded_time])}\n"
         s += "</p>\n"
 
-        img = u[:desc] + ".jpg"
+        img = webcam.desc + ".jpg"
         s += "<img src=\"#{img}\" style=\"max-width: 800px; max-height: 600px;\" />\n"
+
+        s += html_table_from_webcam_hash([webcam.to_hash])
+
         s += "<hr>\n"
       end
-
-      s += "<h2>Time costs</h2>\n"
 
       return s
     end

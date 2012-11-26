@@ -40,9 +40,11 @@ module WebcamDownloader
 
     end
 
-    attr_reader :desc, :jpeg_quality
+    attr_reader :desc, :jpeg_quality, :url
     attr_reader :download_count, :process_count, :file_size_zero_count, :file_identical_count
     attr_reader :download_time_cost_total, :process_time_cost_total
+    attr_reader :download_time_cost_last, :process_time_cost_last
+    attr_reader :download_time_cost_max, :process_time_cost_max
     attr_reader :stored_file_size_last, :stored_file_size_sum, :stored_file_size_count, :stored_file_size_max
     attr_reader :process_resize
     attr_reader :latest_stored_at, :last_downloaded_temporary_at
@@ -76,7 +78,7 @@ module WebcamDownloader
     end
 
     def last_cost
-      last_download_cost + last_process_cost
+      last_download_cost.to_f + last_process_cost.to_f
     end
 
     def max_download_cost
@@ -88,7 +90,7 @@ module WebcamDownloader
     end
 
     def max_cost
-      max_download_cost + max_process_cost
+      max_download_cost.to_f + max_process_cost.to_f
     end
 
     def avg_file_size
