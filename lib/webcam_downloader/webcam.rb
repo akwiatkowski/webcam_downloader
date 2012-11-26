@@ -19,10 +19,10 @@ module WebcamDownloader
       @path_temporary = nil
       @path_temporary_processed = nil
       @path_store = nil
-      @last_downloaded_time = nil
+      @latest_downloaded_time = nil
       @download_count = 0
       @download_time_cost_total = 0.0
-      @last_downloaded_at = nil
+      @last_downloaded_temporary_at = nil
       @process_count = 0
       @process_time_cost_total = 0.0
 
@@ -41,21 +41,29 @@ module WebcamDownloader
     end
 
     def download_by_interval?
-      (Time.now.to_i - @last_downloaded_time.to_i >= @interval.to_i)
+      (Time.now.to_i - @last_downloaded_temporary_at.to_i >= @interval.to_i)
     end
 
     def download!
+      # if user has to download something before main image
       pre_url_download
+      # setup all local paths
       setup_paths
-      generate_url
+      # generate url when url schemes
+      generate_url_if_needed
+      # download image to temp, store size, digest, ...
       download_to_temp
+      # if image can't be downloaded or is 0-size, delete and ignore this attempt
+      # wait interval for another attempt
       return false if downloaded_file_is_empty?
+      # check if that image wasn't downloaded at previous attempt
       return false if downloaded_file_is_equal_to_previous?
+      # mark that this image is last downloaded and store
+      mark_temp_image_as_latest
+      # process image (resize, re-compress) if that is set in definition
       process_temp_image_if_needed
-
-      # TODO
-
-      post_download
+      # move to storage
+      move_to_storage
     end
 
     #
@@ -71,7 +79,7 @@ module WebcamDownloader
       @storage.set_paths_for_webcam(self)
     end
 
-    def generate_url
+    def generate_url_if_needed
       return if @url_schema.nil?
 
       t = Time.now.to_i
@@ -103,7 +111,11 @@ module WebcamDownloader
       @download_count = @download_count.to_i + 1
       @download_time_cost_last = Time.now - time_pre
       @download_time_cost_total = @download_time_cost_total.to_f + @download_time_cost_last
-      @last_downloaded_at = Time.now.to_i
+      @last_downloaded_temporary_at = Time.now.to_i
+
+      @last_downloaded_temporary_size = File.size(@path_temporary)
+      @last_downloaded_temporary_digest = Digest::MD5.hexdigest(File.read(@path_temporary))
+      @last_downloaded_temporary_mtime = File.new(@path_temporary).mtime
     end
 
     def downloaded_file_is_empty?
@@ -113,8 +125,18 @@ module WebcamDownloader
     end
 
     def downloaded_file_is_equal_to_previous?
-      # TODO
-      return false
+      return false if @latest_downloaded_size.nil? or @latest_downloaded_digest.nil?
+      return false unless @latest_downloaded_size == @last_downloaded_temporary_size
+      return false unless @latest_downloaded_digest == @last_downloaded_temporary_digest
+      return true
+    end
+
+    def mark_temp_image_as_latest
+      @latest_downloaded_time = Time.now
+      @latest_downloaded_path = @path_temporary
+      @latest_downloaded_size = File.size(@latest_downloaded_path)
+      @latest_downloaded_digest = Digest::MD5.hexdigest(File.read(@latest_downloaded_path))
+      @latest_downloaded_mtime = File.new(@latest_downloaded_path).mtime
     end
 
     def process_temp_image_if_needed
@@ -127,12 +149,10 @@ module WebcamDownloader
       @process_time_cost_total = @process_time_cost_total.to_f + @process_time_cost_last
     end
 
-    def post_download!
-      @last_downloaded_time = Time.now
-      @last_downloaded_path = @path_store
-      @last_downloaded_size = File.size(@last_downloaded_path)
-      @last_downloaded_digest = Digest::MD5.hexdigest(File.read(@last_downloaded_path))
-      @last_downloaded_mtime = File.new(@last_downloaded_path).mtime
+    def move_to_storage
+      @storage.store_temporary_image(self)
+      @latest_stored_at = Time.now
+      @latest_stored_path = @path_store
     end
 
 

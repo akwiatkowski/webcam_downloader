@@ -42,5 +42,9 @@ module WebcamDownloader
       # webcam.path_store_processed = File.join("pix", @monthly_prefix, webcam.desc, "#{webcam.desc}_#{Time.now.to_i}_proc.jpg")
     end
 
+    def store_temporary_image(webcam)
+      File.rename(webcam.path_temporary, webcam.path_store)
+    end
+
   end
 end
