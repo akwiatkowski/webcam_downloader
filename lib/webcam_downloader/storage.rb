@@ -60,8 +60,10 @@ module WebcamDownloader
       if File.exists?(webcam.path_temporary)
         File.rename(webcam.path_temporary, webcam.path_store)
         @logger.info("Stored #{webcam.desc}, from #{webcam.path_temporary} to #{webcam.path_store}")
+        return true
       else
         @logger.info("Not stored #{webcam.desc}, file #{webcam.path_temporary} not exists")
+        return false
       end
     end
 

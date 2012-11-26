@@ -274,16 +274,18 @@ module WebcamDownloader
     end
 
     def move_to_storage
-      @storage.store_temporary_image(self)
-      @presentation.after_image_store(self)
-      @latest_stored_at = Time.now
-      @latest_stored_path = @path_store
+      res = @storage.store_temporary_image(self)
 
-      @stored_file_size_last = File.size(@path_store).to_f / 1024.0
-      @stored_file_size_sum += @stored_file_size_last
-      @stored_file_size_count += 1
-      @stored_file_size_max = @stored_file_size_last if @stored_file_size_last > @stored_file_size_max
+      if res
+        @presentation.after_image_store(self)
+        @latest_stored_at = Time.now
+        @latest_stored_path = @path_store
 
+        @stored_file_size_last = File.size(@path_store).to_f / 1024.0
+        @stored_file_size_sum += @stored_file_size_last
+        @stored_file_size_count += 1
+        @stored_file_size_max = @stored_file_size_last if @stored_file_size_last > @stored_file_size_max
+      end
     end
 
 

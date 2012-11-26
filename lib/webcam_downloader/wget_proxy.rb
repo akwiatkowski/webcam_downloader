@@ -9,7 +9,9 @@ module WebcamDownloader
     def initialize
       @dns_timeout = 2 # --dns-timeout
       @connect_timeout = 3 # --connect-timeout
-      @read_timeout = 10 # --read-timeout
+      @read_timeout = 3 # --read-timeout
+
+      @retries = 3
 
       @tmp_file = File.join('tmp', 'tmp.tmp')
     end
@@ -31,7 +33,7 @@ module WebcamDownloader
     def download_file(url, dest, options = { })
       ref = options[:referer] || url
       agent = options[:agent] || "Internet Explorer 8.0"
-      command = "wget --dns-timeout=#{@dns_timeout} --connect-timeout=#{@connect_timeout} --read-timeout=#{@read_timeout} --quiet --referer=\"#{ref}\" --user-agent=\"#{agent}\" --load-cookies data/cookies.txt --keep-session-cookies --save-cookies data/cookies.txt \"#{url}\" -O#{dest}"
+      command = "wget -t #{@retries} --dns-timeout=#{@dns_timeout} --connect-timeout=#{@connect_timeout} --read-timeout=#{@read_timeout} --quiet --referer=\"#{ref}\" --user-agent=\"#{agent}\" --load-cookies data/cookies.txt --keep-session-cookies --save-cookies data/cookies.txt \"#{url}\" -O#{dest}"
       @logger.debug("Wget proxy command - #{command}")
       `#{command}`
     end
