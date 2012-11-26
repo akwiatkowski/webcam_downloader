@@ -1,14 +1,20 @@
 $:.unshift(File.dirname(__FILE__))
 
 require 'digest/md5'
+require 'logger'
 
 module WebcamDownloader
   class Downloader
     DEV_MODE = true
     DEV_MODE_LIMIT = 5
+    LOGGER_LEVEL = Logger::DEBUG
 
     def initialize(_options={ })
       @options = _options
+
+      @logger = _options[:logger] || Logger.new(STDOUT)
+      @logger.level = _options[:logger_level] || LOGGER_LEVEL
+
       @defs = Array.new
       @webcams = Array.new
 
@@ -18,17 +24,23 @@ module WebcamDownloader
       @image_processor = WebcamDownloader::ImageProcessor.new(self, _options)
     end
 
-    attr_reader :storage, :image_processor
+    attr_reader :storage, :image_processor, :logger
 
     def make_it_so
       # create WebCam instances
       @defs.each do |d|
-        @webcams << WebcamDownloader::Webcam.new(d, self)
+        w = WebcamDownloader::Webcam.new(d, self)
+        @webcams << w
+        @logger.debug("Created Webcam for #{w.desc}")
       end
 
+      @logger.info("Start!")
       @started_at = Time.now
+      @storage.descs = @webcams.collect{|w| w.desc}
       @storage.prepare_file_structure
-      @storage.prepare_monthly_directories(@webcams.collect{|w| w.desc})
+      @storage.prepare_monthly_directories
+
+      @logger.info("Start loop!")
       start_loop
     end
 

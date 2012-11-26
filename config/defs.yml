@@ -12,7 +12,7 @@
     :use_in_timelapse: false
 
   - :url_schema:
-      url_schema: "http://kamery.hydronet.cz/lysa/photo/l2/gallery/%Y%m%d%H%M_l2.jpg"
+      :url_schema: "http://kamery.hydronet.cz/lysa/photo/l2/gallery/%Y%m%d%H%M_l2.jpg"
       :time_modulo: 1200 # every 20 minutes
       :time_offset: 720 # 12 minutes
     :interval: 900 # it is every 20 minutes
@@ -24,7 +24,7 @@
     #:resize: true
 
   - :url_schema:
-      :url_schema:"http://kamery.hydronet.cz/lysa/photo/l3/gallery/%Y%m%d%H%M_l3.jpg"
+      :url_schema: "http://kamery.hydronet.cz/lysa/photo/l3/gallery/%Y%m%d%H%M_l3.jpg"
       :time_modulo: 1200 # every 20 minutes
       :time_offset: 1080 # 18 minutes
     :interval: 900 # it is every 20 minutes
