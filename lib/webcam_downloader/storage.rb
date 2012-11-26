@@ -56,6 +56,7 @@ module WebcamDownloader
     end
 
     def store_temporary_image(webcam)
+      @logger.info("Stored #{webcam.desc} at #{webcam.path_store}")
       File.rename(webcam.path_temporary, webcam.path_store)
     end
 
