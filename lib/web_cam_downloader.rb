@@ -12,14 +12,15 @@ class WebCamDownloader
     @sleep_interval = 5
 
     @dns_timeout = 2 # --dns-timeout
-    @connect_timeout = 4 # --connect-timeout
-    @read_timeout = 5 # --read-timeout
+    @connect_timeout = 3 # --connect-timeout
+    @read_timeout = 10 # --read-timeout
 
     Dir.mkdir('tmp') if not File.exist?('tmp')
     Dir.mkdir('data') if not File.exist?('data')
 
     # time cost of all cycles, for stats and optim. only
     @time_stats = Array.new
+    @started_at = Time.now
   end
 
   def verbose?
@@ -180,7 +181,7 @@ class WebCamDownloader
           u[:last_downloaded_time] = Time.now.to_i
 
           # check file size, remove empty files
-          if remove_empty_file(u[:temporary]) == false
+          if remove_empty_file(u[:temporary], u) == false
             # move image to downloaded
             puts "moving #{u[:temporary]} to #{u[:new_downloaded]}"
             `mv "#{u[:temporary]}" "#{u[:new_downloaded]}"`
@@ -200,6 +201,8 @@ class WebCamDownloader
 
         end
       end
+
+      create_html_page
 
       # add time stat
       @time_stats << (Time.now - pre_loop_time)
@@ -242,12 +245,15 @@ class WebCamDownloader
   end
 
 # remove image which file size is 0
-  def remove_empty_file(f)
+  def remove_empty_file(f, u)
     if File.size(f) == 0
+      u[:zero_size_count] = u[:zero_size_count].to_i + 1
+      u[:zero_size] = true
       puts "removing #{f}, file size = 0"
       `rm "#{f}"`
       return true
     else
+      u[:zero_size] = false
       return false
     end
   end
@@ -265,6 +271,42 @@ class WebCamDownloader
       command = "ln -sf \"../#{_file}\" \"#{_output}\""
       `#{command}`
     end
+  end
+
+  def create_html_page
+    f = File.new(File.join('latest', 'index2.html'), 'w')
+    f.puts "<h1>Webcam downloader - #{Time.now}</h1>\n"
+    f.puts "<h4>started at #{@started_at}</h4>\n"
+    f.puts "<hr>\n"
+
+    urls.each do |u|
+      if u[:zero_size]
+        f.puts "<h4>#{u[:desc]}</h4>\n"
+        f.puts "<p style=\"font-size: 70%\">\n"
+        f.puts "<span style=\"color: red\">NOT DOWNLOADED</span> \n"
+        f.puts "<a href=\"#{u[:url]}\">#{u[:url]}</a><br>\n"
+        f.puts "zero size count #{u[:zero_size_count]}, download count #{u[:download_count]}, download time cost #{u[:download_time_cost]}, last download time #{Time.at(u[:last_downloaded_time])}\n"
+        f.puts "</p>\n"
+      else
+        f.puts "<h3>#{u[:desc]}</h3>\n"
+        f.puts "<p>\n"
+        f.puts "<a href=\"#{u[:url]}\">#{u[:url]}</a><br>\n"
+        f.puts "download count #{u[:download_count]}, download time cost #{u[:download_time_cost]}, last download time #{Time.at(u[:last_downloaded_time])}\n"
+        f.puts "</p>\n"
+
+        if u[:proc]
+          img = u[:new_downloaded_processed]
+        else
+          img = u[:new_downloaded]
+        end
+
+        f.puts "<img src=\"../#{img}\" style=\"max-width: 800px; max-height: 600px;\" />\n"
+      end
+
+      f.puts "<hr>\n"
+    end
+
+    f.close 
   end
 
 # remove image which was already downloaded
@@ -349,6 +391,8 @@ class WebCamDownloader
     urls.each do |u|
       flat_urls += u[:array]
     end
+    # just for dev
+    #flat_urls = flat_urls[0..15]
     return flat_urls
   end
 
