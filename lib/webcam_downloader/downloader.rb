@@ -28,7 +28,7 @@ module WebcamDownloader
     end
 
     attr_reader :storage, :image_processor, :logger, :presentation
-    attr_reader :webcams
+    attr_reader :webcams, :started_at
 
     def make_it_so
       # create WebCam instances

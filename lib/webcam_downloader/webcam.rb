@@ -31,6 +31,7 @@ module WebcamDownloader
       @process_time_cost_total = 0.0
       @process_time_cost_max = 0.0
       @file_size_zero_count = 0
+      @file_identical_count = 0
 
       @stored_file_size_last = 0.0
       @stored_file_size_sum = 0.0
@@ -40,10 +41,11 @@ module WebcamDownloader
     end
 
     attr_reader :desc, :jpeg_quality
-    attr_reader :download_count, :process_count, :file_size_zero_count
+    attr_reader :download_count, :process_count, :file_size_zero_count, :file_identical_count
     attr_reader :download_time_cost_total, :process_time_cost_total
     attr_reader :stored_file_size_last, :stored_file_size_sum, :stored_file_size_count, :stored_file_size_max
     attr_reader :process_resize
+    attr_reader :latest_stored_at, :last_downloaded_temporary_at
 
     attr_accessor :path_temporary, :path_temporary_processed, :path_store
 
@@ -75,6 +77,24 @@ module WebcamDownloader
 
     def last_cost
       last_download_cost + last_process_cost
+    end
+
+    def max_download_cost
+      self.download_time_cost_max
+    end
+
+    def max_process_cost
+      self.process_time_cost_last
+    end
+
+    def max_cost
+      max_download_cost + max_process_cost
+    end
+
+    def avg_file_size
+      c = self.stored_file_size_count
+      c = 1 if c == 0
+      return @stored_file_size_sum.to_f / c.to_f
     end
 
 
@@ -191,6 +211,7 @@ module WebcamDownloader
       return false unless @latest_downloaded_digest == @last_downloaded_temporary_digest
 
       @logger.debug("#{@desc} - Downloaded file is identical as previously stored")
+      @file_identical_count += 1
       return true
     end
 

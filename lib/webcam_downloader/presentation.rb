@@ -24,6 +24,41 @@ module WebcamDownloader
       @logger.debug("Presentation - after cycle")
     end
 
+    def images_html
+      s = ""
+      s += "<h1>Webcam downloader - #{Time.now}</h1>\n"
+      s += "<h4>started at #{@downloader.started_at}</h4>\n"
+      s += "<hr>\n"
+
+      @downloader.webcams.each do |webcam|
+        if u[:zero_size]
+          s += "<h4>#{webcam.desc}</h4>\n"
+          s += "<p style=\"font-size: 70%\">\n"
+          s += "<span style=\"color: red\">NOT DOWNLOADED</span> \n"
+          s += "<a href=\"#{u[:url]}\">#{u[:url]}</a><br>\n"
+          s += "zero size count #{u[:zero_size_count]}, download count #{u[:download_count]}, download time cost #{u[:download_time_cost]}, last download time #{Time.at(u[:last_downloaded_time])}\n"
+          s += "</p>\n"
+        else
+          s += "<h3>#{u[:desc]}</h3>\n"
+          s += "<p>\n"
+          s += "<a href=\"#{u[:url]}\">#{u[:url]}</a><br>\n"
+          s += "download count #{u[:download_count]}, download time cost #{u[:download_time_cost]}, last download time #{Time.at(u[:last_downloaded_time])}\n"
+          s += "</p>\n"
+
+          img = u[:desc] + ".jpg"
+          s += "<img src=\"#{img}\" style=\"max-width: 800px; max-height: 600px;\" />\n"
+        end
+
+        s += "<hr>\n"
+      end
+
+      s += "<h2>Time costs</h2>\n"
+
+
+      f.close
+      fs.close
+    end
+
     def stats_html
       s = ""
 
@@ -40,25 +75,20 @@ module WebcamDownloader
           :last_download_cost => fl_to_s(webcam.last_download_cost),
           :last_process_cost => webcam.process_resize ? fl_to_s(webcam.last_process_cost) : "",
 
-          #
+          :max_cost => fl_to_s(webcam.max_cost),
+          :max_download_cost => fl_to_s(webcam.max_download_cost),
+          :max_process_cost => webcam.process_resize ? fl_to_s(webcam.max_process_cost) : "",
 
-          :last_cost => fl_to_s(u[:download_time_cost].to_f + u[:process_time_cost].to_f),
-          :last_download_cost => fl_to_s(u[:download_time_cost].to_f),
-          :last_process_cost => u[:resize] ? fl_to_s(u[:process_time_cost].to_f) : "",
+          :last_attempted_time_ago => Time.now.to_i - webcam.last_downloaded_temporary_at.to_i,
+          :last_stored_time_ago => Time.now.to_i - webcam.latest_stored_at.to_i,
 
-          :last_attempted_time_ago => Time.now.to_i - u[:last_downloaded_time].to_i,
+          :count_download => webcam.download_count,
+          :count_zero_size => webcam.file_size_zero_count,
+          :count_identical => webcam.file_identical_count,
 
-
-          :avg_download_cost => fl_to_s(avg_download_time_cost),
-          :avg_process_cost => u[:resize] ? fl_to_s(avg_process_time_cost) : "",
-
-
-          :count => u[:download_count],
-          :fail_count => u[:zero_size_count],
-          :process_count => u[:process_count],
-
-          :file_size_last => u[:file_size_last],
-          :file_size_avg => fl_to_s(u[:file_size_total].to_f / fs_count.to_f),
+          :file_size_last => webcam.stored_file_size_last,
+          :file_size_avg => webcam.avg_file_size,
+          :file_size_max => webcam.stored_file_size_max,
         }
       }
       tc.sort! { |a, b| b[:avg_cost] <=> a[:avg_cost] }
@@ -66,129 +96,52 @@ module WebcamDownloader
       keys = [
         [:desc, "desc"],
         [:process_flag, "proc?"],
+
         [:avg_cost, "avg TC[s]"],
         [:avg_download_cost, "a.down TC[s]"],
         [:avg_process_cost, "a.proc TC[s]"],
-        [:last_attempted_time_ago, "old [s]"],
+
         [:last_cost, "last TC[s]"],
         [:last_download_cost, "l.down TC[s]"],
         [:last_process_cost, "l.proc TC[s]"],
-        [:count, "count"],
-        [:process_count, "p.count"],
-        [:fail_count, "failed(0)"],
 
-        [:file_size_last, "size last"],
-        [:file_size_avg, "size avg"],
+        [:max_cost, "max TC[s]"],
+        [:max_download_cost, "m.down TC[s]"],
+        [:max_process_cost, "m.proc TC[s]"],
+
+        [:last_attempted_time_ago, "attmp old[s]"],
+        [:last_stored_time_ago, "stored old[s]"],
+
+        [:count_download, "count"],
+        [:count_zero_size, "c. size 0"],
+        [:count_identical, "c. identical"],
+
+        [:file_size_last, "last size [kB]"],
+        [:file_size_avg, "avg size [kB]"],
+        [:file_size_max, "max size [kB]"],
       ]
 
-      f.puts "<table border=\"1\">\n"
-      fs.puts "<table border=\"1\">\n"
-      f.puts "<tr>\n"
-      fs.puts "<tr>\n"
+      s += "<table border=\"1\">\n"
+      s += "<tr>\n"
       keys.each do |k|
-        f.puts "<th>#{k[1]}</th>\n"
-        fs.puts "<th>#{k[1]}</th>\n"
+        s += "<th>#{k[1]}</th>\n"
       end
-      f.puts "</tr>\n"
-      fs.puts "</tr>\n"
+      s += "</tr>\n"
 
       tc.each do |t|
-        f.puts "<tr>\n"
-        fs.puts "<tr>\n"
+        s += "<tr>\n"
         keys.each do |k|
-          f.puts "<td>#{t[k[0]]}</td>\n"
-          fs.puts "<td>#{t[k[0]]}</td>\n"
+          s += "<td>#{t[k[0]]}</td>\n"
         end
-        f.puts "</tr>\n"
-        fs.puts "</tr>\n"
+        s += "</tr>\n"
       end
-      f.puts "</table>\n"
-      fs.puts "</table>\n"
+      s += "</table>\n"
+
+      return s
     end
 
-
-    def stats_html_old
-      s = ""
-
-      tc = @downloader.webcams.collect { |webcam|
-        count = webcam.download_count
-        count = 1 if count.to_i == 0
-
-        process_count = webcam.process_count
-        process_count = 1 if process_count.to_i == 0
-
-        fs_count = webcam.zero_size_count
-        fs_count = 1 if fs_count.to_i == 0
-
-        avg_download_time_cost = (u[:download_time_cost_total].to_f / count.to_f)
-        avg_process_time_cost = (u[:process_time_cost_total].to_f / process_count.to_f)
-        sum_full_cost = avg_download_time_cost + avg_process_time_cost
-
-        {
-          :desc => u[:desc],
-
-          :last_cost => fl_to_s(u[:download_time_cost].to_f + u[:process_time_cost].to_f),
-          :last_download_cost => fl_to_s(u[:download_time_cost].to_f),
-          :last_process_cost => u[:resize] ? fl_to_s(u[:process_time_cost].to_f) : "",
-
-          :last_attempted_time_ago => Time.now.to_i - u[:last_downloaded_time].to_i,
-
-          :avg_cost => fl_to_s(sum_full_cost),
-          :avg_download_cost => fl_to_s(avg_download_time_cost),
-          :avg_process_cost => u[:resize] ? fl_to_s(avg_process_time_cost) : "",
-
-          :process_flag => u[:resize] ? "T" : "-",
-          :count => u[:download_count],
-          :fail_count => u[:zero_size_count],
-          :process_count => u[:process_count],
-
-          :file_size_last => u[:file_size_last],
-          :file_size_avg => fl_to_s(u[:file_size_total].to_f / fs_count.to_f),
-        }
-      }
-      tc.sort! { |a, b| b[:avg_cost] <=> a[:avg_cost] }
-
-      keys = [
-        [:desc, "desc"],
-        [:process_flag, "proc?"],
-        [:avg_cost, "avg TC[s]"],
-        [:avg_download_cost, "a.down TC[s]"],
-        [:avg_process_cost, "a.proc TC[s]"],
-        [:last_attempted_time_ago, "old [s]"],
-        [:last_cost, "last TC[s]"],
-        [:last_download_cost, "l.down TC[s]"],
-        [:last_process_cost, "l.proc TC[s]"],
-        [:count, "count"],
-        [:process_count, "p.count"],
-        [:fail_count, "failed(0)"],
-
-        [:file_size_last, "size last"],
-        [:file_size_avg, "size avg"],
-      ]
-
-      f.puts "<table border=\"1\">\n"
-      fs.puts "<table border=\"1\">\n"
-      f.puts "<tr>\n"
-      fs.puts "<tr>\n"
-      keys.each do |k|
-        f.puts "<th>#{k[1]}</th>\n"
-        fs.puts "<th>#{k[1]}</th>\n"
-      end
-      f.puts "</tr>\n"
-      fs.puts "</tr>\n"
-
-      tc.each do |t|
-        f.puts "<tr>\n"
-        fs.puts "<tr>\n"
-        keys.each do |k|
-          f.puts "<td>#{t[k[0]]}</td>\n"
-          fs.puts "<td>#{t[k[0]]}</td>\n"
-        end
-        f.puts "</tr>\n"
-        fs.puts "</tr>\n"
-      end
-      f.puts "</table>\n"
-      fs.puts "</table>\n"
+    def fl_to_s(fl)
+      (fl.to_f * 1000.0).round.to_f / 1000.0
     end
 
   end
