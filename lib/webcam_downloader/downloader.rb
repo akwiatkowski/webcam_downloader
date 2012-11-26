@@ -27,7 +27,8 @@ module WebcamDownloader
       WebcamDownloader::WgetProxy.instance.setup(self, _options)
     end
 
-    attr_reader :storage, :image_processor, :logger
+    attr_reader :storage, :image_processor, :logger, :presentation
+    attr_reader :webcams
 
     def make_it_so
       # create WebCam instances

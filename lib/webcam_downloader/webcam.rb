@@ -7,6 +7,7 @@ module WebcamDownloader
       @downloader = _downloader
       @storage = _downloader.storage
       @image_processor = _downloader.image_processor
+      @presentation = _downloader.presentation
       @logger = _downloader.logger
 
       @desc = _options[:desc]
@@ -29,13 +30,55 @@ module WebcamDownloader
       @process_count = 0
       @process_time_cost_total = 0.0
       @process_time_cost_max = 0.0
+      @file_size_zero_count = 0
+
+      @stored_file_size_last = 0.0
+      @stored_file_size_sum = 0.0
+      @stored_file_size_count = 0
+      @stored_file_size_max = 0.0
 
     end
 
     attr_reader :desc, :jpeg_quality
+    attr_reader :download_count, :process_count, :file_size_zero_count
+    attr_reader :download_time_cost_total, :process_time_cost_total
+    attr_reader :stored_file_size_last, :stored_file_size_sum, :stored_file_size_count, :stored_file_size_max
+    attr_reader :process_resize
 
     attr_accessor :path_temporary, :path_temporary_processed, :path_store
 
+    # time cost stats
+
+    def avg_download_cost
+      c = self.download_count
+      c = 1 if c == 0 # div by 0
+      return self.download_time_cost_total / c.to_f
+    end
+
+    def avg_process_cost
+      c = self.process_count
+      c = 1 if c == 0 # div by 0
+      return self.process_time_cost_total / c.to_f
+    end
+
+    def avg_cost
+      avg_download_cost + avg_process_cost
+    end
+
+    def last_download_cost
+      self.download_time_cost_last
+    end
+
+    def last_process_cost
+      self.process_time_cost_last
+    end
+
+    def last_cost
+      last_download_cost + last_process_cost
+    end
+
+
+    #
 
     def make_it_so
       if download_by_interval?
@@ -129,11 +172,13 @@ module WebcamDownloader
     def downloaded_file_is_empty?
       unless File.exists?(@path_temporary)
         @logger.debug("#{@desc} - Downloaded file not exists")
+        @file_size_zero_count += 1
         return true
       end
 
       if 0 == File.size(@path_temporary)
         @logger.debug("#{@desc} - Downloaded file 0 size")
+        @file_size_zero_count += 1
         return true
       end
 
@@ -174,8 +219,15 @@ module WebcamDownloader
 
     def move_to_storage
       @storage.store_temporary_image(self)
+      @presentation.after_image_store(self)
       @latest_stored_at = Time.now
       @latest_stored_path = @path_store
+
+      @stored_file_size_last = File.size(@path_store).to_f / 1024.0
+      @stored_file_size_sum += @stored_file_size_last
+      @stored_file_size_count += 1
+      @stored_file_size_max = @stored_file_size_last if @stored_file_size_last > @stored_file_size_max
+
     end
 
 
