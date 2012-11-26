@@ -12,10 +12,9 @@ module WebcamDownloader
       @defs = Array.new
       @webcams = Array.new
 
-      @dns_timeout = 2 # --dns-timeout
-      @connect_timeout = 3 # --connect-timeout
-      @read_timeout = 10 # --read-timeout
+      @sleep_interval = 5
 
+      @storage = WebcamDownloader::Storage.new(self)
     end
 
     def make_it_so
@@ -23,7 +22,23 @@ module WebcamDownloader
       @defs.each do |d|
         @webcams << WebcamDownloader::Webcam.new(d, self)
       end
+
+      @started_at = Time.now
+      @storage.prepare_file_structure
+      @storage.prepare_monthly_directories(@webcams.collect{|w| w.desc})
+      start_loop
     end
+
+    def start_loop
+      loop do
+        @webcams.each do |webcam|
+          webcam.make_it_so
+        end
+
+        sleep(@sleep_interval)
+      end
+    end
+
 
     def load_definition_file(file = File.join('config', 'defs.yml'))
       defs = YAML::load(File.open(file))

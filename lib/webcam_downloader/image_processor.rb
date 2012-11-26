@@ -1,22 +1,13 @@
 $:.unshift(File.dirname(__FILE__))
 
 module WebcamDownloader
-  class Webcam
+  class ImageProcessor
     def initialize(_options, _downloader)
       @options = _options
       @downloader = _downloader
 
-      @desc = _options[:desc]
-      @temporary = nil
+      @jpeg_quality = 88
     end
-
-    attr_reader :desc, :temporary
-
-    def make_it_so
-
-    end
-
-
 
   end
 end
