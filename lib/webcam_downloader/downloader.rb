@@ -23,6 +23,7 @@ module WebcamDownloader
 
       @storage = WebcamDownloader::Storage.new(self, _options)
       @image_processor = WebcamDownloader::ImageProcessor.new(self, _options)
+      @presentation = WebcamDownloader::Presentation.new(self, _options)
       WebcamDownloader::WgetProxy.instance.setup(self, _options)
     end
 
@@ -52,6 +53,8 @@ module WebcamDownloader
         @webcams.each do |webcam|
           webcam.make_it_so
         end
+
+        @presentation.after_loop_cycle
 
         @loop_count += 1
         @logger.debug("Sleep after loop #{@sleep_interval}")
