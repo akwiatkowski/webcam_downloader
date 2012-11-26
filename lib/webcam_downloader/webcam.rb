@@ -11,6 +11,8 @@ module WebcamDownloader
       @interval = _options[:interval]
       @pre_url = _options[:pre_url]
       @referer = _options[:ref] || _options[:referer]
+      @url = _options[:url]
+      @url_schema = _options[:url_schema]
 
       @temporary = nil
       @last_downloaded_time = nil
@@ -22,13 +24,13 @@ module WebcamDownloader
 
     attr_reader :desc, :temporary
 
-    attr_accessor :path_temporary, :path_temporary_process, :path_store, :path_store_processed
+    attr_accessor :path_temporary, :path_store
 
 
     def make_it_so
       if download_by_interval?
         download!
-        post_download!
+
       end
     end
 
@@ -41,13 +43,15 @@ module WebcamDownloader
       setup_paths
       generate_url
       download_to_temp
+      return false if downloaded_file_is_empty?
+      return false if downloaded_file_is_equal_to_previous?
+
+      # TODO
+
+      post_download
     end
 
     #
-
-    def post_download!
-      @last_downloaded_time = Time.now
-    end
 
     # download temporary and remove
     def pre_url_download
@@ -61,7 +65,23 @@ module WebcamDownloader
     end
 
     def generate_url
-      # TODO
+      return if @url_schema.nil?
+
+      t = Time.now.to_i
+      # webcams store image every :time_modulo interval
+      if @url_schema[:time_modulo]
+        t -= t % @url_schema[:time_modulo]
+      end
+
+      # time offset
+      if @url_schema[:time_offset]
+        t += @url_schema[:time_offset].to_i
+        t -= @url_schema[:time_modulo]
+      end
+
+      @url = Time.at(t).strftime(@url_schema[:url_schema])
+      puts "generated url #{@url}"
+      return @url
     end
 
     def download_to_temp
@@ -79,6 +99,24 @@ module WebcamDownloader
       @last_downloaded_at = Time.now.to_i
     end
 
+    def downloaded_file_is_empty?
+      return true unless File.exists?(@path_temporary)
+      return true if 0 == File.size(@path_temporary)
+      return false
+    end
+
+    def downloaded_file_is_equal_to_previous?
+      # TODO
+      return false
+    end
+
+    def post_download!
+      @last_downloaded_time = Time.now
+      @last_downloaded_path = @path_store
+      @last_downloaded_size = File.size(@last_downloaded_path)
+      @last_downloaded_digest = Digest::MD5.hexdigest(File.read(@last_downloaded_path))
+      @last_downloaded_mtime = File.new(@last_downloaded_path).mtime
+    end
 
   end
 end

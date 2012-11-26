@@ -1,8 +1,9 @@
 ---
 - :group: experimental
   :array:
-  - :url_schema: "http://www.foto-webcam.eu/webcam/kochelsee/%Y/%m/%d/%H%M_la.jpg"
-    :time_modulo: 600 # every 10 minutes
+  - :url_schema:
+      :url_schema: "http://www.foto-webcam.eu/webcam/kochelsee/%Y/%m/%d/%H%M_la.jpg"
+      :time_modulo: 600 # every 10 minutes
     :interval: 300
     :desc: germany_kochelsee
     :coord:
@@ -10,9 +11,10 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :url_schema: "http://kamery.hydronet.cz/lysa/photo/l2/gallery/%Y%m%d%H%M_l2.jpg"
-    :time_modulo: 1200 # every 20 minutes
-    :time_offset: 720 # 12 minutes
+  - :url_schema:
+      url_schema: "http://kamery.hydronet.cz/lysa/photo/l2/gallery/%Y%m%d%H%M_l2.jpg"
+      :time_modulo: 1200 # every 20 minutes
+      :time_offset: 720 # 12 minutes
     :interval: 900 # it is every 20 minutes
     :desc: karkonosze_lysa_hora2
     :coord:
@@ -21,9 +23,10 @@
     :use_in_timelapse: false
     #:resize: true
 
-  - :url_schema: "http://kamery.hydronet.cz/lysa/photo/l3/gallery/%Y%m%d%H%M_l3.jpg"
-    :time_modulo: 1200 # every 20 minutes
-    :time_offset: 1080 # 18 minutes
+  - :url_schema:
+      :url_schema:"http://kamery.hydronet.cz/lysa/photo/l3/gallery/%Y%m%d%H%M_l3.jpg"
+      :time_modulo: 1200 # every 20 minutes
+      :time_offset: 1080 # 18 minutes
     :interval: 900 # it is every 20 minutes
     :desc: karkonosze_lysa_hora3
     :coord:

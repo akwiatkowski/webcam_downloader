@@ -37,9 +37,9 @@ module WebcamDownloader
 
     def set_paths_for_webcam(webcam)
       webcam.path_temporary = File.join('tmp', "tmp_" + webcam.desc + Time.now.to_i.to_s + ".jpg.tmp")
-      webcam.path_temporary_process = File.join('tmp', "tmp_" + webcam.desc + Time.now.to_i.to_s + "_proc.jpg.tmp")
+      # webcam.path_temporary_process = File.join('tmp', "tmp_" + webcam.desc + Time.now.to_i.to_s + "_proc.jpg.tmp")
       webcam.path_store = File.join("pix", @monthly_prefix, webcam.desc, "#{webcam.desc}_#{Time.now.to_i}.jpg")
-      webcam.path_store_processed = File.join("pix", @monthly_prefix, webcam.desc, "#{webcam.desc}_#{Time.now.to_i}_proc.jpg")
+      # webcam.path_store_processed = File.join("pix", @monthly_prefix, webcam.desc, "#{webcam.desc}_#{Time.now.to_i}_proc.jpg")
     end
 
   end
