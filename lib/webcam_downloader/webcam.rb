@@ -6,6 +6,7 @@ module WebcamDownloader
       @options = _options
       @downloader = _downloader
       @storage = _downloader.storage
+      @image_processor = _downloader.image_processor
 
       @desc = _options[:desc]
       @interval = _options[:interval]
@@ -13,18 +14,23 @@ module WebcamDownloader
       @referer = _options[:ref] || _options[:referer]
       @url = _options[:url]
       @url_schema = _options[:url_schema]
+      @process_resize = _options[:resize] || _options[:process_resize]
 
-      @temporary = nil
+      @path_temporary = nil
+      @path_temporary_processed = nil
+      @path_store = nil
       @last_downloaded_time = nil
       @download_count = 0
       @download_time_cost_total = 0.0
       @last_downloaded_at = nil
+      @process_count = 0
+      @process_time_cost_total = 0.0
 
     end
 
-    attr_reader :desc, :temporary
+    attr_reader :desc
 
-    attr_accessor :path_temporary, :path_store
+    attr_accessor :path_temporary, :path_temporary_processed, :path_store
 
 
     def make_it_so
@@ -112,18 +118,13 @@ module WebcamDownloader
     end
 
     def process_temp_image_if_needed
-      # resizing
-      puts "resizing image #{u[:new_downloaded]}"
-      u[:new_proc_filename] = u[:new_downloaded_processed]
-      command = "convert \"#{u[:new_downloaded]}\" -resize '1920x1080>' -quality #{@jpeg_quality}% \"#{u[:new_proc_filename]}\""
+      return unless @process_resize
       time_pre = Time.now
-      `#{command}`
-      u[:process_count] = u[:process_count].to_i + 1
-      u[:process_time_cost] = Time.now - time_pre
-      u[:process_time_cost_total] = u[:process_time_cost_total].to_f + u[:process_time_cost]
+      @image_processor.process(self)
 
-      # remove original
-      `rm #{u[:new_downloaded]}`
+      @process_count = @process_count.to_i + 1
+      @process_time_cost_last = Time.now - time_pre
+      @process_time_cost_total = @process_time_cost_total.to_f + @process_time_cost_last
     end
 
     def post_download!

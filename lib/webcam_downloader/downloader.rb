@@ -18,7 +18,7 @@ module WebcamDownloader
       @image_processor = WebcamDownloader::ImageProcessor.new(self, _options)
     end
 
-    attr_reader :storage
+    attr_reader :storage, :image_processor
 
     def make_it_so
       # create WebCam instances
