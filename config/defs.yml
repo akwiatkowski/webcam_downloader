@@ -617,12 +617,14 @@
   - :url: http://www.esrl.noaa.gov/gmd/webdata/spo/webcam/cmdlfullsize.jpg
     :interval: 600
     :desc: antarc_south_pole
-  - :url: http://212.86.4.14/camera_image/kauppatori.jpg
-    :interval: 120
-    :desc: finland_kauppatori
-  - :url: http://www.andreassen.gl/andreassen/video.jpg
-    :interval: 900
-    :desc: greenland_1
+# laggy
+#  - :url: http://212.86.4.14/camera_image/kauppatori.jpg
+#    :interval: 120
+#    :desc: finland_kauppatori
+# not fresh
+#  - :url: http://www.andreassen.gl/andreassen/video.jpg
+#    :interval: 900
+#    :desc: greenland_1
 
 - :group: norway
   :array:
