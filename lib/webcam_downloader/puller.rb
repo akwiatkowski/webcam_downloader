@@ -5,6 +5,10 @@ require 'logger'
 
 module WebcamDownloader
   class Puller
+
+    #RSYNC_FLAGS = "avrL" # --archive keeps perms, owner and group
+    RSYNC_FLAGS = "vrl"
+
     def self.commands(definitions, url, destination = '.', time_to = Time.now, months_before = 1)
       i = 0
       time_prefix = time_to - i * 30 * 24 * 3600
@@ -15,7 +19,7 @@ module WebcamDownloader
         desc = d[:desc]
         source_url = "#{url}/pix/#{time_prefix}/#{desc}".gsub(/\/\//, "/")
         destination_path = File.join(destination, 'pix', time_prefix).gsub(/^\//, '')
-        command = "rsync -avrL -e ssh #{source_url} #{destination_path}"
+        command = "rsync -#{RSYNC_FLAGS} -e ssh #{source_url} #{destination_path}"
 
         commands << command
         #puts command
