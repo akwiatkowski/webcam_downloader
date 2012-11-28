@@ -146,14 +146,6 @@
       :lon: 0.0
     :use_in_timelapse: false
   - :interval: 300
-    :desc: czaszyn
-    :url: http://obsluga-medialna.pl/kamera/czaszyn/index_cz.php
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
-  - :interval: 300
     :desc: parafia_klemensa
     :url: http://178.218.224.7/kam/10image2.jpg
     :resize: false

@@ -105,6 +105,16 @@ module WebcamDownloader
     end
 
 
+    def load_all_definition_files(path = 'config')
+      Dir.new(path).each do |f|
+        if f =~ /\.yml/
+          load_definition_file(File.join(path, f))
+        end
+      end
+      @logger.info("Loaded total #{@defs.size} definitions")
+      check_def_uniq
+    end
+
     def load_definition_file(file = File.join('config', 'defs.yml'))
       defs = YAML::load(File.open(file))
       flat_defs = Array.new
@@ -112,6 +122,7 @@ module WebcamDownloader
         array = u[:array]
         array.each do |a|
           a[:group] = u[:group]
+          a[:def_file] = file
         end
         flat_defs += array
       end
@@ -125,6 +136,19 @@ module WebcamDownloader
 
 
       @defs += flat_defs
+    end
+
+    def check_def_uniq
+      @defs.each do |d|
+        url = d[:url]
+        unless url.nil?
+          similar = @defs.select{|e| e[:url] == url}
+          if similar.size > 1
+            @logger.error("DOUBLED #{d[:desc]} - #{d[:url]}")
+            @logger.error("\n#{similar.to_yaml}")
+          end
+        end
+      end
     end
 
   end

@@ -112,15 +112,6 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
-    :desc: austria_snowwhite
-    :url: http://www.snowwhite.at/obertauernwebcam/webcam01.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
-
 - :group: check
   :array:
   - :interval: 300
