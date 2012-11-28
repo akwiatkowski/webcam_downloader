@@ -41,6 +41,10 @@ module WebcamDownloader
       @stored_file_size_count = 0
       @stored_file_size_max = 0.0
 
+      # interval random fix - load balancing ;)
+      @interval += rand(20)
+      @interval -= 10
+      @interval = 60 if @interval < 60
     end
 
     attr_reader :desc, :jpeg_quality, :url, :group
