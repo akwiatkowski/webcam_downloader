@@ -67,6 +67,9 @@ module WebcamDownloader
     end
 
     def start_loop
+      # remove all not used tmp files
+      @storage.empty_temporary_dir
+
       loop do
         @logger.info("Loop #{@loop_count}")
 
@@ -86,7 +89,7 @@ module WebcamDownloader
           alive_threads = @threads_by_worker.values.select { |t| t.alive? }
           @logger.debug("Threads alive - #{alive_threads.size}")
           sleep 0.5
-          
+
           break if alive_threads.size == 0
         end
         @logger.info("All threads are dead! yeaah!")
@@ -102,9 +105,6 @@ module WebcamDownloader
         @logger.debug("Sleep after loop #{@sleep_interval}")
 
         sleep(@sleep_interval)
-
-        # remove all not used tmp files
-        @storage.empty_temporary_dir
       end
     end
 
@@ -146,7 +146,7 @@ module WebcamDownloader
       @defs.each do |d|
         url = d[:url]
         unless url.nil?
-          similar = @defs.select{|e| e[:url] == url}
+          similar = @defs.select { |e| e[:url] == url }
           if similar.size > 1
             @logger.error("DOUBLED #{d[:desc]} - #{d[:url]}")
             @logger.error("\n#{similar.to_yaml}")
