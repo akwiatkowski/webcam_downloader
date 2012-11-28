@@ -100,3 +100,10 @@
     :url: http://www.jach.hawaii.edu/weather/images/ukirt.jpg
     :interval: 120
     :desc: usa_infrared_telescope
+  - :interval: 300
+    :desc: usa_san_francisco
+    :url: http://wwc.instacam.com/instacamimg/SANFR/SANFR_l.jpg
+    :coord:
+      :lat: 37.7793
+      :lon: -122.4192
+    :use_in_timelapse: true

@@ -1,3 +1,4 @@
+---
 - :group: cold
   :array:
   - :url: http://www.summitcamp.org/static/images/status/view/webcam.jpg
@@ -25,3 +26,12 @@
 #  - :url: http://www.andreassen.gl/andreassen/video.jpg
 #    :interval: 900
 #    :desc: greenland_1
+  - :interval: 300
+    :desc: antar_neumayeriT
+    :url: http://www.awi.de/NM_WebCam/neumayerT.last.jpg
+  - :interval: 300
+    :desc: antar_neumayerP
+    :url: http://www.awi.de/NM_WebCam/neumayerP.last.jpg
+  - :interval: 450
+    :desc: antar_neumayer
+    :url: http://www.awi.de/NM_WebCam/neumayer.last.jpg
