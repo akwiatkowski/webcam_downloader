@@ -2,7 +2,7 @@ require 'yaml'
 require 'webcam_downloader'
 require 'logger'
 
-wd = WebcamDownloader::Downloader.new(options)
+wd = WebcamDownloader::Downloader.new
 wd.load_all_definition_files
 flat_urls = wd.defs
 
