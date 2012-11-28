@@ -1,6 +1,7 @@
 $:.unshift(File.dirname(__FILE__))
 
 require 'digest/md5'
+require 'fileutils'
 
 module WebcamDownloader
   class Storage
@@ -59,12 +60,17 @@ module WebcamDownloader
     def store_temporary_image(webcam)
       if File.exists?(webcam.path_temporary)
         File.rename(webcam.path_temporary, webcam.path_store)
-        @logger.info("Stored #{webcam.desc}, from #{webcam.path_temporary} to #{webcam.path_store}")
+        @logger.info("Stored #{webcam.desc} (id #{webcam.webcam_id}, worker #{webcam.worker_id}), from #{webcam.path_temporary} to #{webcam.path_store}")
         return true
       else
         @logger.info("Not stored #{webcam.desc}, file #{webcam.path_temporary} not exists")
         return false
       end
+    end
+
+    def empty_temporary_dir
+      # WARNING
+      FileUtils.rm_rf("tmp/.", secure: true)
     end
 
   end
