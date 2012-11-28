@@ -3,7 +3,7 @@ require 'webcam_downloader'
 require 'logger'
 options = {
   logger_level: Logger::INFO,
-  workers_count: 2
+  workers_count: 4
 }
 options[:logger_level] = Logger::DEBUG
 
