@@ -1,0 +1,318 @@
+---
+- :group: poland_2012_11_27
+  :array:
+  - :interval: 300
+    :desc: belchatow_plac_narutowicza
+    :url: http://81.15.194.42:8080/cam_9.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: belchatow_hala_energia
+    :url: http://81.15.194.42:8080/cam_2.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: bielsko_biala_aeroklub
+    :url: http://pogodynka.pl/http/assets/products/pogodynka/webcam/bielskobiala/bielskobiala.php.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: bielsko_biala_elektrocieplownia1
+    :url: http://www.pke.pl/kamery/zec/cam_bb_1000M.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: bielsko_biala_elektrocieplownia2
+    :url: http://www.pke.pl/kamery/zec/cam_bb_2000M.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: boleslawiec_rynek
+    :url: http://webcam.istotne.pl/rynek000M.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: bystrzyca_klodzka_spalona
+    :url: http://wcam.pl/~ozmo/kamera.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: cedry_wielkie_marina1
+    :url: http://79.190.93.34:81/cgi-bin/encoder?USER=www&PWD=www&SNAPSHOT
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: cedry_wielkie_marina2
+    :url: http://79.190.93.34:82/cgi-bin/encoder?USER=www&PWD=www&SNAPSHOT
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: nowy_sacz_rynek
+    :url: http://www.nowysacz.pl/execute.php?nav=535&mod=live&q=image
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: jaworzno_elektrownia1
+    :url: http://www.pke.pl/kamery/ej3/cam1_ej3_bio_les.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: jelenia_gora_pano
+    :url: http://www.media-art24.com/kamery/jeleniagora.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: karpacz_3_maja
+    :url: http://www.karpacz.eu/camera.php
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: katowice_dworzec
+    :url: http://www.ett.net.pl/video.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: korbielow_pilsko1
+    :url: http://cypisek.korbielow.net/webcam1/cam1_17.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: korbielow_pilsko2
+    :url: http://cypisek.korbielow.net/webcam2/cam2_17.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: kowary_deptak
+    :url: http://www.kowary.pl/kamera/obrazek002.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: krosno
+    :url: http://pogodynka.pl/http/assets/products/pogodynka/webcam/krosno/krosno.php.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: czaszyn
+    :url: http://obsluga-medialna.pl/kamera/czaszyn/index_cz.php
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: parafia_klemensa
+    :url: http://178.218.224.7/kam/10image2.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: male_ciche
+    :url: http://www.maleciche.home.pl/kamery/ikonoskop.php?o=kamera3000M.jpg&s=800&w=600
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: lubomierz
+    :url: http://www.lubomierz.com/kam_01.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: muszyna_lewiatan
+    :url: http://www.kamera.muszyna.info.pl/lewiatan_000M.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: muszyna_tatry
+    :url: http://www.kamera.muszyna.info.pl/kamera2/m_tatry_000M.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: niedzica_polana_sosny
+    :url: http://www.niedzica.pl/uploads/webcam/niedzica8000M.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: grodek_nad_dunajcem
+    :url: http://83.0.153.236/jpg/image.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: ski_park_magura
+    :url: http://skisun.pl/kamery/mag3/image.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: jezioro_nyskie
+    :url: http://www.nor.nysa.pl/cam/nor001M.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: osiek
+    :url: http://www.osieknet.pl/kamerka.php?k=2
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+#  - :interval: 300
+#    :desc: koninki_8
+#    :url: http://timeforu.home.pl/ftp/koninki/8.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+#  - :interval: 300
+#    :desc: koninki_9
+#    :url: http://timeforu.home.pl/ftp/koninki/9.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+  - :interval: 300
+    :desc: koninki_10
+    :url: http://timeforu.home.pl/ftp/koninki/10.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: szczeliniec_z_radkowa
+    :url: http://bastech.com.pl/radkow/widok.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: miedzygorze
+    :url: http://www.miedzygorze.com.pl/kamera.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: jaworki_homole
+    :url: http://www.arenanarciarska.pl/kam/000M.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: kasprowy_giewont
+    :url: http://www.pkl.pl/kamera/Gor001M.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :interval: 300
+    :desc: plaza_stogi
+    :url: http://www.plazastogi.pl/kamera/00B800014FF7%28002enqe%29_0_20121128002601_202174.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :interval: 300
+    :desc: kalety_centrum
+    :url: http://kamera01.kalety.net/LATEST.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :interval: 300
+    :desc: elektrownia_zielony_blok
+    :url: http://193.16.229.11/live/image0.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
