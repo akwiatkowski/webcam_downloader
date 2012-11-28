@@ -20,6 +20,11 @@ module WebcamDownloader
       @jpeg_quality = _options[:resize_jpg_quality] || _options[:jpg_quality]
       @group = _options[:group]
 
+      if @interval.nil?
+        @logger.error("Webcam #{@desc} has no interval set, using default - 300s")
+        @interval = 300
+      end
+
       @webcam_id = nil
       @worker_id = nil
       @path_temporary = nil
