@@ -1,0 +1,18 @@
+---
+- :group: andorra
+  :array:
+  - :url: http://www.bagn.obs-mip.fr/webcamV2/webcam85.jpg
+    :interval: 180
+    :desc: andorra_pic_du_mudi
+    :coord:
+      :lat:
+      :lon:
+    :use_in_timelapse: false
+
+  - :url: http://www.altiservice.com/webcams/FRP2000/fontromeu.jpg
+    :interval: 180
+    :desc: andorra_font_romeu
+    :coord:
+      :lat:
+      :lon:
+    :use_in_timelapse: false

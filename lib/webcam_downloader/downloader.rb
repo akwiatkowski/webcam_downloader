@@ -32,8 +32,9 @@ module WebcamDownloader
 
     def make_it_so
       # create WebCam instances
-      @defs.each do |d|
+      @defs.each_with_index do |d,i|
         w = WebcamDownloader::Webcam.new(d, self)
+        w.webcam_id = i
         @webcams << w
         @logger.debug("Created Webcam for #{w.desc}")
       end

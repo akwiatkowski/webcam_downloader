@@ -19,6 +19,7 @@ module WebcamDownloader
       @process_resize = _options[:resize] || _options[:process_resize]
       @jpeg_quality = _options[:resize_jpg_quality] || _options[:jpg_quality]
 
+      @webcam_id = nil
       @path_temporary = nil
       @path_temporary_processed = nil
       @path_store = nil
@@ -50,6 +51,7 @@ module WebcamDownloader
     attr_reader :latest_stored_at, :last_downloaded_temporary_at
 
     attr_accessor :path_temporary, :path_temporary_processed, :path_store
+    attr_accessor :webcam_id
 
     # time cost stats
 
@@ -165,11 +167,15 @@ module WebcamDownloader
 
     #
 
+    def webcam_logger_prefix
+      "#{@webcam_id}: #{@desc} - "
+    end
+    
     # download temporary and remove
     def pre_url_download
       unless @pre_url.nil?
         WebcamDownloader::WgetProxy.instance.download_and_remove(@pre_url)
-        @logger.debug("#{@desc} - Pre-url downloaded from #{@pre_url}")
+        @logger.debug("#{webcam_logger_prefix}Pre-url downloaded from #{@pre_url}")
       end
     end
 
@@ -193,7 +199,7 @@ module WebcamDownloader
       end
 
       @url = Time.at(t).strftime(@url_schema[:url_schema])
-      @logger.info("#{@desc} - Url generated #{@url}")
+      @logger.info("#{webcam_logger_prefix}Url generated #{@url}")
       return @url
     end
 
@@ -211,7 +217,7 @@ module WebcamDownloader
       @download_time_cost_total = @download_time_cost_total.to_f + @download_time_cost_last
       @download_time_cost_max = @download_time_cost_last if @download_time_cost_last > @download_time_cost_max
 
-      @logger.debug("#{@desc} - Downloaded: count #{@download_count}, cost #{@download_time_cost_last}")
+      @logger.debug("#{webcam_logger_prefix}Downloaded: count #{@download_count}, cost #{@download_time_cost_last}")
 
       @last_downloaded_temporary_at = Time.now.to_i
 
@@ -222,13 +228,13 @@ module WebcamDownloader
 
     def downloaded_file_is_empty?
       unless File.exists?(@path_temporary)
-        @logger.debug("#{@desc} - Downloaded file not exists")
+        @logger.debug("#{webcam_logger_prefix}Downloaded file not exists")
         @file_size_zero_count += 1
         return true
       end
 
       if 0 == File.size(@path_temporary)
-        @logger.debug("#{@desc} - Downloaded file 0 size")
+        @logger.debug("#{webcam_logger_prefix}Downloaded file 0 size")
         @file_size_zero_count += 1
         return true
       end
@@ -241,7 +247,7 @@ module WebcamDownloader
       return false unless @latest_downloaded_size == @last_downloaded_temporary_size
       return false unless @latest_downloaded_digest == @last_downloaded_temporary_digest
 
-      @logger.debug("#{@desc} - Downloaded file is identical as previously stored")
+      @logger.debug("#{webcam_logger_prefix}Downloaded file is identical as previously stored")
       @file_identical_count += 1
       return true
     end
@@ -253,7 +259,7 @@ module WebcamDownloader
       @latest_downloaded_digest = Digest::MD5.hexdigest(File.read(@latest_downloaded_path))
       @latest_downloaded_mtime = File.new(@latest_downloaded_path).mtime
 
-      @logger.debug("#{@desc} - Marked as stored in #{@latest_downloaded_path}")
+      @logger.debug("#{webcam_logger_prefix}Marked as stored in #{@latest_downloaded_path}")
     end
 
     def process_temp_image_if_needed
@@ -267,9 +273,9 @@ module WebcamDownloader
         @process_time_cost_total = @process_time_cost_total.to_f + @process_time_cost_last
         @process_time_cost_max = @process_time_cost_last if @process_time_cost_last > @process_time_cost_max
 
-        @logger.debug("#{@desc} - Image processed, count #{@process_count}, cost #{@process_time_cost_last}")
+        @logger.debug("#{webcam_logger_prefix}Image processed, count #{@process_count}, cost #{@process_time_cost_last}")
       else
-        @logger.warn("#{@desc} - Image can't be processed")
+        @logger.warn("#{webcam_logger_prefix}Image can't be processed")
       end
     end
 
