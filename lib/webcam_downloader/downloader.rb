@@ -98,12 +98,13 @@ module WebcamDownloader
 
         @presentation.after_loop_cycle
 
-        # remove all not used tmp files
-        @storage.empty_temporary_dir
-
         @loop_count += 1
         @logger.debug("Sleep after loop #{@sleep_interval}")
+
         sleep(@sleep_interval)
+
+        # remove all not used tmp files
+        @storage.empty_temporary_dir
       end
     end
 
