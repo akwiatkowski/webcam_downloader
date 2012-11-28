@@ -8,6 +8,8 @@ require 'webcam_downloader/wget_proxy'
 require 'webcam_downloader/webcam'
 require 'webcam_downloader/downloader'
 
+require 'webcam_downloader/puller'
+
 def fl_to_s(fl)
   (fl.to_f * 1000.0).round.to_f / 1000.0
 end
