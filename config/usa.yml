@@ -1,0 +1,102 @@
+- :group: usa
+  :array:
+  - :url: http://www.sunvalley.com/assets/images/cams/wclouds_full.jpg
+    :ingterval: 330
+    :desc: usa_sunvalley1
+    :coord:
+      :lat: 43.70263
+      :lon: -114.369106
+    :use_in_timelapse: false
+  - :url: http://www.sunvalley.com/assets/images/cams/clubhouse_full.jpg
+    :interval: 330
+    :desc: usa_sunvalley2
+  - :url: http://www.sunvalley.com/assets/images/cams/bowls_full.jpg
+    :interval: 330
+    :desc: usa_sunvalley3
+  - :url: http://www.ridehunter.com/cam3.jpg
+    :interval: 320
+    :desc: usa_ridehunter1
+  - :url: http://www.ridehunter.com/cam1.jpg
+    :interval: 320
+    :desc: usa_ridehunter2
+  - :url: http://www.ridehunter.com/cam2.jpg
+    :interval: 320
+    :desc: usa_ridehunter3
+  - :url: http://www.mountainwebcams.com/Qx4F8e21/netcam2.jpg
+    :interval: 300
+    :desc: usa_lake_arrowhead
+    :coord:
+      :lat: 34.256389
+      :lon: -117.184444
+    :use_in_timelapse: true
+  - :url: http://www.dot.ca.gov/dist8/tmc/snapshots/hwy18_lkgreg.jpg
+    :interval: 300
+    :desc: usa_lake_gregory
+#  - :url: http://green-valley-lake.com/webcam/bob.jpg
+#    :interval: 300
+#    :desc: usa_green_valley
+#  - :url: http://www.mountainwebcams.com/f4Rxv23a/netcam.jpg
+#    :interval: 300
+#    :desc: usa_crestline
+  - :url: http://www.methow.com/sunmtncam/viewpic.jpg
+    :interval: 330
+    :desc: usa_sun_mnt_lodge
+  - :url: http://www.stevenspass.com/Stevens/SiteAssets/_ftp/webcam/stevenspass.jpg
+    :interval: 300
+    :desc: usa_stevens1
+  - :url: http://www.stevenspass.com/Stevens/SiteAssets/_ftp/webcam/stevenspass2.jpg
+    :interval: 300
+    :desc: usa_stevens2
+#  - :url: http://www.instacam.com/instacamimg/CRYMB/CRYMB_s.jpg
+#    :interval: 240
+#    :desc: usa_crystal_gondola
+#  - :url: http://www.crystalmountainresort.com/images/webcams/cmsnowcam2.jpg
+#    :interval: 240
+#    :desc: usa_crystal_hill
+  - :url: http://www.tacomaweathercam.com/rainier.jpg
+    :interval: 600
+    :desc: usa_tacoma_rainier
+  - :url: http://www.nps.gov/webcams-mora/mountain.jpg
+    :interval: 300
+    :desc: usa_paradise_mountain
+  - :url: http://www.nps.gov/webcams-mora/west.jpg?1802716
+    :interval: 300
+    :desc: usa_paradise_west
+  - :url: http://www.haarp.alaska.edu/data/haarpcam/images/latest.jpg
+    :interval: 500
+    :desc: usa_haarp
+  - :url: http://cws2vm.integra.net/~nsps/weather2c.jpg
+    :interval: 400
+    :desc: usa_hoodoo_2c
+  - :url: http://cws2vm.integra.net/~nsps/weather3b.jpg
+    :interval: 400
+    :desc: usa_hoodoo_3b
+  - :url: http://www.cfht.hawaii.edu/webcams/c4/c4.jpg
+    :interval: 60
+    :desc: usa_canada_telescope_nnw
+  - :url: http://www.nps.gov/webcams-yell/mammothcam2.jpg
+    :interval: 120
+    :desc: usa_y_mammoth_hot_spr2
+  - :url: http://www.nps.gov/webcams-yell/mtwashburn.jpg
+    :interval: 300
+    :desc: usa_mnt_washburn
+  - :url: http://cws2vm.integra.net/~nsps/weather2a.jpg
+    :interval: 400
+    :desc: usa_mnt_jefferson
+  - :resize: true
+    :url: http://snow.whistler-blackcomb.com/catskinner/fissile.jpg
+    :interval: 120
+    :desc: usa_whistler_fissile
+#  - :url: http://www.avo.alaska.edu/webcam/a-spurr.jpg
+#    :interval: 300
+#    :desc: usa_alaska_spurr
+  - :url: http://www.avo.alaska.edu/webcam/redoubt.jpg
+    :interval: 400
+    :desc: usa_alaska_redoubt
+  - :url: http://volcanoes.usgs.gov/hvo/cams/MLcam/images/E.jpg
+    :interval: 300
+    :desc: usa_mauna_lao
+  - :resize: true
+    :url: http://www.jach.hawaii.edu/weather/images/ukirt.jpg
+    :interval: 120
+    :desc: usa_infrared_telescope

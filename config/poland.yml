@@ -98,12 +98,121 @@
       :lat: 49.304778
       :lon: 19.916832
     :use_in_timelapse: true
+  - :url: http://www.pkl.pl/kamera/kasprowy_gorna_stacja_na_gasienicowa.jpg
+    :interval: 220
+    :desc: tatry_kasprowy_gasienicowa
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url: http://www.zakopaneonline.eu/webcam7/murzasichle.jpg
+    :interval: 180
+    :desc: tatry_murzasichle
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url: http://www.tatrzanskie-turnie.pl/kamera/video.jpg
+    :interval: 180
+    :desc: tatry_tatrz_turnie
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+
+
+
+
+
 
 - :group: poland_podhale
   :array:
   - :url: http://www.pieninyportal.com/images/stories/webcamera/pieninyportal.jpg
     :interval: 120
     :desc: trzy_korony
+  - :url: http://www.kamery.szczawnica.pl/foto5000M.jpg
+    :interval: 180
+    :desc: pieniny_szczawnica
+    :coord:
+      :lat: 49.422778
+      :lon: 20.482778
+    :use_in_timelapse: false
+  - :url: http://www.kamery.szczawnica.pl/foto7000M.jpg
+    :interval: 240
+    :desc: pieniny_przystan_flisacka
+    :coord:
+      :lat: 49.422778
+      :lon: 20.482778
+    :use_in_timelapse: false
+  - :url: http://www.kamery.szczawnica.pl/foto4.jpg
+    :interval: 210
+    :desc: pieniny_gory
+    :coord:
+      :lat: 49.422778
+      :lon: 20.482778
+    :use_in_timelapse: false
+  - :url: http://www.niedzica.pl/uploads/webcam/niedzica7000M.jpg
+    :interval: 240
+    :desc: pieniny_niedzica
+    :coord:
+      :lat: 49.422778
+      :lon: 20.482778
+    :use_in_timelapse: false
+  - :url: http://www.kroscienko-nad-dunajcem.pl/kamera/widok1.jpg
+    :interval: 180
+    :desc: pieniny_most_kroscienko
+    :coord:
+      :lat: 49.422778
+      :lon: 20.482778
+    :use_in_timelapse: false
+  - :url: http://www.pieninyportal.com/images/stories/webcamera/pieninyportal-haligovce.jpg
+    :interval: 240
+    :desc: pieniny_haligovce
+    :coord:
+      :lat: 49.422778
+      :lon: 20.482778
+    :use_in_timelapse: false
+  - :url: http://www.ugazdy.pl/kamerka/obrazek.jpg
+    :interval: 180
+    :desc: gorce_u_gazdy
+    :coord:
+      :lat: 50.9
+      :lon: 15.333333
+    :use_in_timelapse: false
+  - :url: http://www.fastcom.net.pl/zdjecia-kamera/zdjecie.php
+    :interval: 210
+    :desc: szczyrk_skrzyczne1
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url: http://www.fastcom.net.pl/zdjecia-kamera/zdjecie2.php
+    :interval: 220
+    :desc: szczyrk_beskidek
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+#  - :url: http://www.niedzica.pl/uploads/webcam/niedzica6.jpg
+#    :interval: 120
+#    :desc: niedzica
+#  - :url: http://cedr.irsm.cas.cz/rinex/meteo/webcam_photo.php?station=bisk
+#    :interval: 120
+#    :desc: bisk
+#  - :url: http://cedr.irsm.cas.cz/rinex/meteo/webcam_photo.php?station=bisk2
+#    :interval: 120
+#    :desc: bisk2
+#  - :url: http://cedr.irsm.cas.cz/rinex/meteo/webcam_photo.php?station=bisk3
+#    :interval: 120
+#    :desc: bisk3
+#  - :url: http://cedr.irsm.cas.cz/rinex/meteo/webcam_photo.php?station=bisk4
+#    :interval: 120
+#    :desc: bisk4
+
+
+
+
 
 - :group: poland_bieszczady
   :array:
@@ -196,3 +305,103 @@
       :lat: 50.9
       :lon: 15.333333
     :use_in_timelapse: false
+  - :url: http://kam.szkolagorska.com/sam1.jpg
+    :interval: 210
+    :desc: sudety_samotnia
+    :coord:
+      :lat: 50.9
+      :lon: 15.333333
+    :use_in_timelapse: false
+
+- :group: poland_dalekie_obserwacje
+  :array:
+  - :resize: true
+    :url: http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_skrzyczne/A-hi.jpg
+    :interval: 240
+    :desc: skrzyczne
+    :coord:
+      :lat: 49.684444
+      :lon: 19.030278
+    :use_in_timelapse: false
+  - :resize: true
+    :url: http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_szyndzielnia/A-hi.jpg
+    :interval: 240
+    :desc: szyndzielnia
+    :coord:
+      :lat: 49.753111
+      :lon: 18.999667
+    :use_in_timelapse: false
+  - :resize: true
+    :url: http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_rysianka/A-hi.jpg
+    :interval: 240
+    :desc: rysianka
+    :coord:
+      :lat: 49.536111
+      :lon: 19.234444
+    :use_in_timelapse: false
+  - :resize: true
+    :url: http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_liwocz/A-hi.jpg
+    :interval: 240
+    :desc: liwocz
+    :coord:
+      :lat: 49.813211
+      :lon: 21.351397
+    :use_in_timelapse: false
+  - :resize: true
+    :url: http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_widnica/A-hi.jpg
+    :interval: 240
+    :desc: widnica
+    :coord:
+      :lat: 50.399167
+      :lon: 20.031389
+    :use_in_timelapse: false
+  - :resize: true
+    :url: http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_mikolow/A-hi.jpg
+    :interval: 240
+    :desc: mikolow
+    :coord:
+      :lat: 50.166667
+      :lon: 18.9
+    :use_in_timelapse: false
+
+- :group: poland_sniezka
+  :array:
+  - :resize: true
+    :url: http://kamery.humlnet.cz/images/webcams/snezka3/2048x1536.jpg
+    :interval: 240
+    :desc: sniezka0
+    :coord:
+      :lat: 50.735833
+      :lon: 15.739167
+      # foggy
+    :use_in_timelapse: false
+  - :resize: true
+    :url: http://kamery.humlnet.cz/images/webcams/snezka2/2048x1536.jpg
+    :interval: 240
+    :desc: sniezka1
+    :coord:
+      :lat: 50.735833
+      :lon: 15.739167
+      # foggy
+    :use_in_timelapse: false
+  - :resize: true
+    :url: http://kamery.humlnet.cz/images/webcams/snezka/2048x1536.jpg
+    :interval: 240
+    :desc: sniezka2
+    :coord:
+      :lat: 50.735833
+      :lon: 15.739167
+      # foggy
+    :use_in_timelapse: false
+
+
+- :group: poland_slask
+  :array:
+  - :resize: true
+    :url: http://www.slaskie.pl/slaski2012/camera/chorzow_aktualny_1024.jpg
+    :interval: 300
+    :desc: chorzow_stadion
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: true

@@ -1,0 +1,27 @@
+- :group: cold
+  :array:
+  - :url: http://www.summitcamp.org/static/images/status/view/webcam.jpg
+    :interval: 600
+    :desc: greenland
+  - :url: http://icons.wunderground.com/webcamramdisk/a/l/alfis/1/current.jpg
+    :interval: 300
+    :desc: greenland_tasiilaq
+  - :url: http://www.antarcticanz.govt.nz/webcam/webcam32.jpg
+    :interval: 450
+    :desc: antarc_scott
+    :coord:
+      #:lat: -77.85
+      # fake
+      :lat: -65.85
+      :lon: 166.766667
+    :use_in_timelapse: true
+  - :url: http://www.antarcticanz.govt.nz/ahnetcam/netcam.jpg
+    :interval: 300
+    :desc: antarc_arr_h
+  - :url: http://www.esrl.noaa.gov/gmd/webdata/spo/webcam/cmdlfullsize.jpg
+    :interval: 600
+    :desc: antarc_south_pole
+# not fresh
+#  - :url: http://www.andreassen.gl/andreassen/video.jpg
+#    :interval: 900
+#    :desc: greenland_1

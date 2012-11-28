@@ -1,0 +1,95 @@
+- :group: norway
+  :array:
+  - :url: http://ekstra.htg.no/webcam/img/tromso_fullsize.jpg
+    :interval: 300
+    :desc: no_tromso
+  - :url: http://weather.cs.uit.no/wcam0_snapshots/wcam0_latest_medium.jpg
+    :interval: 120
+    :desc: no_tromso_univ
+    :coord:
+      #:lat: 70.085278
+      # faked
+      :lat: 45.085278
+      :lon: 20.659444
+    :use_in_timelapse: true
+#  - :url: http://213.184.198.16/info/kamerabilder/k11/pos3.jpg
+#    :interval: 300
+#    :desc: norway_llesund_port1
+  - :url: http://fevik.axiscam.net/axis-cgi/jpg/image.cgi?resolution=640x360
+    :interval: 60
+    :desc: norway_fevik
+  - :url: http://www.flaamsbana.no/images/flaam_4.jpg
+    :interval: 300
+    :desc: norway_flaams
+  - :url: http://ekstra.htg.no/webcam/img/harstad_fullsize.jpg
+    :interval: 300
+    :desc: norway_harstad
+    :coord:
+      #:lat: 70.085278
+      # faked
+      :lat: 45.085278
+      :lon: 20.659444
+    :use_in_timelapse: false
+  - :url: http://ekstra.htg.no/webcam/img/alta_fullsize.jpg
+    :interval: 300
+    :desc: norway_alta
+  - :url: http://www.hlk.no/webkamera/images//pos3.jpg
+    :interval: 300
+    :desc: norway_sama
+#  - :url: http://www.hlk.no/webkamera/images//pos2.jpg
+#    :interval: 300
+#    :desc: norway_hardstad2
+  - :url: http://www.lofot-tidende.no/static/local/webcam/cubus.jpg
+    :interval: 450
+    :desc: norway_leknes
+  - :url: http://home.online.no/~abjoernv/kamera/kam2.jpg
+    :interval: 300
+    :desc: norway_arne
+  - :url: http://home.custompublish.com/snsk/lyb_big.jpg
+    :interval: 300
+    :desc: norway_longyearbyen
+  - :resize: true
+    :url: http://www.svein-nordahl.com/01-gruvedalen.jpg
+    :interval: 300
+    :desc: norway_gruvedalen
+  - :url: http://www.promonorge.no/webcam/kamera.jpg
+    :interval: 300
+    :desc: norway_utsikt_s
+  - :url: http://www.amihotel.no/webcamera/broadcast.jpg
+    :interval: 300
+    :desc: norway_tromso3
+  - :url: http://www.arcticutleie.no/webkamera.jpg
+    :interval: 120
+    :desc: norwa_skjervoy
+    :coord:
+      #:lat: 70.085278
+      # faked
+      :lat: 45.085278
+      :lon: 20.659444
+    :use_in_timelapse: true
+  - :url: http://ekstra.htg.no/webcam/img/sjovegan_fullsize.jpg
+    :interval: 120
+    :desc: norwa_sjovegan
+  - :url: http://nordkapp.livecam360.com/cam3/php/show_lq_last.php
+    :interval: 450
+    :desc: norwa_north_cap
+  - :interval: 300
+    :desc: norway_lofoten
+    :url: http://www.lofoten-golf.no/webcam/Lgolf.jpg
+  - :interval: 300
+    :desc: norway_fjellet
+    :url: http://nktv.edbc.no/fjellet.jpg
+  - :interval: 300
+    :desc: norway_kabelvag
+    :url: http://www.promonorge.no/webcam/kabelvag.jpg
+
+
+
+
+
+- :group: finland
+  :array:
+# laggy
+#  - :url: http://212.86.4.14/camera_image/kauppatori.jpg
+#    :interval: 120
+#    :desc: finland_kauppatori

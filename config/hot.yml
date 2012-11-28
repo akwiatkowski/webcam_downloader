@@ -1,0 +1,9 @@
+---
+- :group: hot
+  :array:
+  - :url: http://cam.sheratonsomabayview.com/view_live1.jpg
+    :interval: 600
+    :desc: egypt
+  - :url: http://crest.ernet.in/webcam/images/latest.jpg
+    :interval: 300
+    :desc: himalayan_chandra
