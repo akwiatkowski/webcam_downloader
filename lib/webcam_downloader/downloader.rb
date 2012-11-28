@@ -109,7 +109,11 @@ module WebcamDownloader
       defs = YAML::load(File.open(file))
       flat_defs = Array.new
       defs.each do |u|
-        flat_defs += u[:array]
+        array = u[:array]
+        array.each do |a|
+          a[:group] = u[:group]
+        end
+        flat_defs += array
       end
 
       if DEV_MODE

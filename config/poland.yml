@@ -1,0 +1,198 @@
+---
+- :group: poland_tatry
+  :array:
+  - :url: http://www.zakopaneonline.eu/webcam/zakopane.jpg
+    :pre_url: http://www.zol.pl/webcam/
+    :interval: 180
+    :desc: zakopane
+    :coord:
+      :lat: 49.304778
+      :lon: 19.916832
+    :use_in_timelapse: true
+  - :url: http://www.zakopaneonline.eu/webcam2/zakopane.jpg
+    :pre_url: http://www.zol.pl/webcam/
+    :interval: 180
+    :desc: zakopane2
+    :coord:
+      :lat: 49.304778
+      :lon: 19.916832
+    :use_in_timelapse: true
+  - :url: http://www.zakopaneonline.eu/webcam3/zakopane.jpg
+    :pre_url: http://www.zol.pl/webcam/
+    :interval: 180
+    :desc: zakopane3
+    :coord:
+      :lat: 49.304778
+      :lon: 19.916832
+    :use_in_timelapse: true
+  - :url: http://kamery.topr.pl/moko/moko_01.jpg
+    :interval: 240
+    :desc: moko
+    :coord:
+      :lat: 49.304778
+      :lon: 19.916832
+    :use_in_timelapse: true
+  - :url: http://kamery.topr.pl/goryczkowa/gorycz.jpg
+    :interval: 210
+    :desc: goryczkowa
+    :coord:
+      :lat: 49.304778
+      :lon: 19.916832
+    :use_in_timelapse: true
+  - :url: http://kamery.topr.pl/moko_TPN/moko_02.jpg
+    :interval: 210
+    :desc: moko2
+    :coord:
+      :lat: 49.304778
+      :lon: 19.916832
+    :use_in_timelapse: true
+  - :url: http://kamery.topr.pl/stawy1/stawy1.jpg
+    :interval: 180
+    :desc: stawy
+    :coord:
+      :lat: 49.304778
+      :lon: 19.916832
+    :use_in_timelapse: true
+  - :url: http://www.zakopaneonline.eu/webcam6/koscielisko.jpg
+    :interval: 180
+    :desc: koscielisko
+    :coord:
+      :lat: 49.304778
+      :lon: 19.916832
+    :use_in_timelapse: true
+  - :url: http://www.zakopaneonline.eu/webcam9/krupowki.jpg
+    :interval: 180
+    :desc: krupowki
+    :coord:
+      :lat: 49.304778
+      :lon: 19.916832
+    :use_in_timelapse: true
+  - :url: http://www.zakopaneonline.eu/webcam8/zakopianka.jpg
+    :interval: 180
+    :desc: zakopianka
+    :coord:
+      :lat: 49.304778
+      :lon: 19.916832
+    :use_in_timelapse: true
+  - :url: http://www.kamera.zadzial.pl/cam_1.jpg
+    :interval: 180
+    :desc: beskid1
+  - :url: http://www.zakopaneonline.eu/webcam4/bukowina.jpg
+    :interval: 300
+    :desc: bukowina
+    :coord:
+      :lat: 49.304778
+      :lon: 19.916832
+    :use_in_timelapse: false
+  - :url: http://www.zakopaneonline.eu/webcams/kubik.jpg
+    :interval: 180
+    :desc: willa_kubik
+    :coord:
+      :lat: 49.304778
+      :lon: 19.916832
+    :use_in_timelapse: true
+  - :url: http://z-ne.pl/kamery/giewont_zakopane.jpg
+    :interval: 180
+    :desc: giewont_zakopane
+    :coord:
+      :lat: 49.304778
+      :lon: 19.916832
+    :use_in_timelapse: true
+
+- :group: poland_podhale
+  :array:
+  - :url: http://www.pieninyportal.com/images/stories/webcamera/pieninyportal.jpg
+    :interval: 120
+    :desc: trzy_korony
+
+- :group: poland_bieszczady
+  :array:
+  # http://www.kamerybieszczady.czaszyn.pl/
+  - :url: http://obsluga-medialna.pl/kamera/kamera_wetlina/index.php
+    :interval: 240
+    :desc: bieszczady_wetlina
+    :coord:
+      :lat: 49.1575
+      :lon: 22.467222
+    :use_in_timelapse: false
+  - :url: http://obsluga-medialna.pl/kamera/czaszyn/index_cz.php
+    :interval: 180
+    :desc: bieszczady_czaszyn
+    :coord:
+      :lat: 49.1575
+      :lon: 22.467222
+    :use_in_timelapse: false
+  - :url: http://esolina.pl/kamera/widok.php
+    :interval: 180
+    :desc: bieszczady_polanczyk
+    :coord:
+      :lat: 49.1575
+      :lon: 22.467222
+    :use_in_timelapse: false
+  - :url: http://images.webcams.travel/webcam/1309464984.jpg
+    :interval: 180
+    :desc: bieszczady_u_gorne
+    :coord:
+      :lat: 49.1575
+      :lon: 22.467222
+    :use_in_timelapse: false
+  - :url: http://images.webcams.travel/webcam/1287047915.jpg
+    :interval: 300
+    :desc: bieszczady_przyslup_carynski
+    :coord:
+      :lat: 49.1575
+      :lon: 22.467222
+    :use_in_timelapse: false
+  - :url: http://images.webcams.travel/webcam/1248008562.jpg
+    :interval: 240
+    :desc: bieszczady_lesko_centrum
+    :coord:
+      :lat: 49.1575
+      :lon: 22.467222
+    :use_in_timelapse: false
+  - :url: http://83.18.111.249:8080/cgi-bin/viewer/video.jpg
+    :interval: 180
+    :desc: bieszczady_keja_siarkopol
+    :coord:
+      :lat: 49.1575
+      :lon: 22.467222
+    :use_in_timelapse: false
+
+- :group: poland_sudety
+  :array:
+  - :url: http://kolejgondolowa.pl/kamery/cam2/snap_c1.jpg
+    :interval: 240
+    :desc: sudety_swieradow2
+    :coord:
+      :lat: 50.9
+      :lon: 15.333333
+    :use_in_timelapse: false
+  - :url: http://kolejgondolowa.pl/kamery/cam3/snap_c1.jpg
+    :interval: 240
+    :desc: sudety_swieradow3
+    :coord:
+      :lat: 50.9
+      :lon: 15.333333
+    :use_in_timelapse: false
+  - :url: http://kolejgondolowa.pl/kamery/cam1/snap_c1.jpg
+    :interval: 240
+    :desc: sudety_swieradow1
+    :coord:
+      :lat: 50.9
+      :lon: 15.333333
+    :use_in_timelapse: false
+  - :url: http://www.kompas.pl/kamerki/szczniec_widok000M.jpg
+    :interval: 180
+    :desc: sudety_szczeliniec2
+    :coord:
+      :lat: 50.9
+      :lon: 15.333333
+    :use_in_timelapse: false
+  # http://kamery.hydronet.cz/vrbata/
+  - :url: http://www.kompas.pl/kamerki/pstrka_widok000M.jpg
+    :interval: 180
+    :desc: sudety_szczeliniec1
+    :coord:
+      :lat: 50.9
+      :lon: 15.333333
+    :use_in_timelapse: false

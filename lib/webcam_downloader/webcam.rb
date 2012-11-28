@@ -18,6 +18,7 @@ module WebcamDownloader
       @url_schema = _options[:url_schema]
       @process_resize = _options[:resize] || _options[:process_resize]
       @jpeg_quality = _options[:resize_jpg_quality] || _options[:jpg_quality]
+      @group = _options[:group]
 
       @webcam_id = nil
       @worker_id = nil
@@ -42,7 +43,7 @@ module WebcamDownloader
 
     end
 
-    attr_reader :desc, :jpeg_quality, :url
+    attr_reader :desc, :jpeg_quality, :url, :group
     attr_reader :download_count, :process_count, :file_size_zero_count, :file_identical_count
     attr_reader :download_time_cost_total, :process_time_cost_total
     attr_reader :download_time_cost_last, :process_time_cost_last

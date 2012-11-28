@@ -1,0 +1,35 @@
+---
+- :group: germany
+  :array:
+  - :url_schema:
+      :url_schema: "http://www.foto-webcam.eu/webcam/kochelsee/%Y/%m/%d/%H%M_la.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :desc: germany_kochelsee
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: germany_halle
+    :url: http://217.89.96.98/vhughsize.jpg
+    :coord:
+      :lat: 52.526248
+      :lon: 13.361664
+    :use_in_timelapse: true
+  - :interval: 300
+    :desc: germany_aussichtsteeg
+    :url: http://www.breitenbergbahn.de/fileadmin/webcams/mobotix/steeg.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: germany_aggensteinlift
+    :url: http://www.breitenbergbahn.de/fileadmin/webcams/mobotix/aglstrecke.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
