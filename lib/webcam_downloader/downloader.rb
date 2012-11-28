@@ -32,7 +32,7 @@ module WebcamDownloader
     end
 
     attr_reader :storage, :image_processor, :logger, :presentation
-    attr_reader :webcams, :started_at
+    attr_reader :webcams, :defs, :started_at
 
     def make_it_so
       # prepare Array for worker plans
