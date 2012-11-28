@@ -21,8 +21,8 @@ module WebcamDownloader
     end
 
     def after_loop_cycle
-      file_image_html = File.new( File.join("latest", "index2.html"), "w")
-      file_stats_html = File.new( File.join("latest", "stats.html"), "w")
+      file_image_html = File.new(File.join("latest", "index2_full.html"), "w")
+      file_stats_html = File.new(File.join("latest", "stats.html"), "w")
 
       file_image_html.puts images_html
       file_stats_html.puts stats_html
@@ -30,16 +30,33 @@ module WebcamDownloader
       file_image_html.close
       file_stats_html.close
 
+      html_per_groups
+
       @logger.debug("Presentation - after cycle")
     end
 
-    def images_html
+    def html_per_groups
+      groups = @downloader.webcams.collect { |w| w.group }.uniq
+
+      groups.each do |group|
+        file_image_html = File.new(File.join("latest", "index1_#{group}.html"), "w")
+        file_image_html.puts images_html(group)
+        file_image_html.close
+      end
+    end
+
+    def images_html(group = nil)
       s = ""
       s += "<h1>Webcam downloader - #{Time.now}</h1>\n"
       s += "<h4>started at #{@downloader.started_at}</h4>\n"
       s += "<hr>\n"
 
-      @downloader.webcams.each do |webcam|
+      webcams = @downloader.webcams
+      if group
+        webcams = webcams.select { |w| w.group == group }
+      end
+
+      webcams.each do |webcam|
         s += "<h3>#{webcam.desc}</h3>\n"
         s += "<p>\n"
         s += "<a href=\"#{webcam.url}\">#{webcam.url}</a><br>\n"
