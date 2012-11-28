@@ -106,6 +106,7 @@ module WebcamDownloader
 
       s += "<table border=\"1\">\n"
       s += "<tr>\n"
+      s += "<th>U</th>\n"
       keys.each do |k|
         s += "<th>#{k[1]}</th>\n"
       end
@@ -113,6 +114,8 @@ module WebcamDownloader
 
       tc.each do |t|
         s += "<tr>\n"
+        img = webcam.desc + ".jpg"
+        s += "<td><a href=\"#{img}\">U</a></td>\n"
         keys.each do |k|
           s += "<td>#{t[k[0]]}</td>\n"
         end

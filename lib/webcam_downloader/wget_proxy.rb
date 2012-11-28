@@ -40,7 +40,7 @@ module WebcamDownloader
 
     def download_and_remove(url)
       download_file(url, @tmp_file)
-      File.delete(@tmp_file)
+      File.delete(@tmp_file) if File.exists?(@tmp_file)
     end
 
   end
