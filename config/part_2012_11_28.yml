@@ -16,3 +16,143 @@
       :lat:
       :lon:
     :use_in_timelapse: false
+
+- :group: austria
+  :array:
+  - :interval: 300
+    :desc: austria_bad_gastein
+    :url_schema:
+      :url_schema: "http://panodata1.panomax.at/cams/23/%Y/%m/%d//%H-%M-00_default.jpg"
+      :time_modulo: 600 # every 20 minutes
+      :time_offset: 0 # 12 minutes
+    :resize: false
+    :coord:
+      :lat:
+      :lon:
+    :use_in_timelapse: false
+
+  - :interval: 300
+    :desc: austria_elbigenalp
+    :url: http://www.hotel-post.biz/typo/tl_files/webcam/camera.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :interval: 300
+    :desc: austria_Kufstein_Unterer_Stadtplatz
+    :url: http://www.webcam.kufnet.at/livebild/untererstadtplatz/image.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :interval: 300
+    :desc: austria_Festungsarena_Unterer_Stadtplatz
+    :url: http://www.webcam.kufnet.at/livebild/festungsarena/image.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :interval: 300
+    :desc: austria_Kufsteinblick
+    :url: http://www.webcam.kufnet.at/livebild/kufsteinblick/image.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :interval: 300
+    :desc: austria_lienz
+    :url: http://www.hochsteinhuette.at/images/stories/webcam/livebild.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :interval: 300
+    :desc: austria_loser1
+    :url: http://www.mentalworks.com/live/altaussee.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :interval: 300
+    :desc: austria_loser3
+    :url: http://www.mentalworks.com/live/loser.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :interval: 300
+    :desc: austria_Luckneralm
+    :url: http://www.lucknerhuette.at/webcam/lucknerhuette.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :interval: 300
+    :desc: austria_Neue_Regensburger
+    :url: http://www.regensburgerhuette.at/fileadmin/webcam/html/fileadmin/IPCamera/snapshot-wz.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :interval: 300
+    :desc: austria_snowwhite
+    :url: http://www.snowwhite.at/obertauernwebcam/webcam01.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+#
+#  - :interval: 300
+#    :desc:
+#    :url:
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+#
+#  - :interval: 300
+#    :desc:
+#    :url:
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+#
+#  - :interval: 300
+#    :desc:
+#    :url:
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+#
+#  - :interval: 300
+#    :desc:
+#    :url:
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false

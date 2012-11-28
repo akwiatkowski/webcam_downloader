@@ -8,17 +8,21 @@ module WebcamDownloader
     DEV_MODE = false
     DEV_MODE_LIMIT = 5
     LOGGER_LEVEL = Logger::DEBUG
+    DEFAULT_WORKERS_COUNT = 2
 
     def initialize(_options={ })
+      Thread.abort_on_exception = true
+
       @options = _options
 
       @logger = _options[:logger] || Logger.new(STDOUT)
       @logger.level = _options[:logger_level] || LOGGER_LEVEL
+      @workers_count = _options[:workers_count] || DEFAULT_WORKERS_COUNT
 
       @defs = Array.new
       @webcams = Array.new
 
-      @sleep_interval = 5
+      @sleep_interval = _options[:sleep_interval] || 5
       @loop_count = 1
 
       @storage = WebcamDownloader::Storage.new(self, _options)
@@ -31,12 +35,25 @@ module WebcamDownloader
     attr_reader :webcams, :started_at
 
     def make_it_so
+      # prepare Array for worker plans
+      @webcam_by_worker = Hash.new
+      @threads_by_worker = Hash.new
+      (0...@workers_count).each do |wrk_id|
+        @webcam_by_worker[wrk_id] = Array.new
+      end
+
       # create WebCam instances
-      @defs.each_with_index do |d,i|
+      @defs.each_with_index do |d, i|
         w = WebcamDownloader::Webcam.new(d, self)
         w.webcam_id = i
         @webcams << w
-        @logger.debug("Created Webcam for #{w.desc}")
+
+        # choose worker and place webcam there
+        wrk_id = i % @workers_count
+        w.worker_id = wrk_id
+        @webcam_by_worker[wrk_id] << w
+
+        @logger.debug("Created Webcam for #{w.desc}, id #{i}, worker #{wrk_id}")
       end
 
       @logger.info("Start!")
@@ -52,9 +69,32 @@ module WebcamDownloader
     def start_loop
       loop do
         @logger.info("Loop #{@loop_count}")
-        @webcams.each do |webcam|
-          webcam.make_it_so
+
+        @webcam_by_worker.keys.each do |wrk_id|
+          @logger.info("Starting thread #{wrk_id} with #{@webcam_by_worker[wrk_id].size} webcams")
+          @threads_by_worker[wrk_id] = Thread.new do
+            @webcam_by_worker[wrk_id].each do |webcam|
+              webcam.make_it_so
+            end
+          end
+          @logger.info("Started thread #{wrk_id} with #{@webcam_by_worker[wrk_id].size} webcams")
         end
+
+        # wait for threads to finish
+        @logger.debug("Waiting for threads to finish their job")
+        loop do
+          alive_threads = @threads_by_worker.values.select { |t| t.alive? }
+          @logger.debug("Threads alive - #{alive_threads.size}")
+          sleep 0.5
+          
+          break if alive_threads.size == 0
+        end
+        @logger.info("All threads are dead! yeaah!")
+
+        # single thread, oldschool
+        #@webcams.each do |webcam|
+        #  Thread.new{ webcam.make_it_so }
+        #end
 
         @presentation.after_loop_cycle
 

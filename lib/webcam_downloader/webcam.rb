@@ -20,6 +20,7 @@ module WebcamDownloader
       @jpeg_quality = _options[:resize_jpg_quality] || _options[:jpg_quality]
 
       @webcam_id = nil
+      @worker_id = nil
       @path_temporary = nil
       @path_temporary_processed = nil
       @path_store = nil
@@ -51,7 +52,7 @@ module WebcamDownloader
     attr_reader :latest_stored_at, :last_downloaded_temporary_at
 
     attr_accessor :path_temporary, :path_temporary_processed, :path_store
-    attr_accessor :webcam_id
+    attr_accessor :webcam_id, :worker_id
 
     # time cost stats
 
