@@ -103,6 +103,7 @@ module WebcamDownloader
         [:file_size_last, "last size [kB]", { background: "009900" }],
         [:file_size_avg, "avg size [kB]", { background: "009900" }],
         [:file_size_max, "max size [kB]", { background: "009900" }],
+        [:data_per_day, "MB/day", { background: "44CC44" }],
 
         [:html_info, "info"],
         [:group, "group"],
@@ -138,10 +139,13 @@ module WebcamDownloader
 
     def sorted_stats_html_save
       # quite an overkill
+      #orders = [
+      #  :avg_cost, :desc, :worker_id, :last_cost, :max_cost,
+      #  :last_attempted_time_ago, :count_download, :count_zero_size,
+      #  :count_identical, :interval, :identical_factor, :file_size_avg
+      #]
       orders = [
-        :avg_cost, :desc, :worker_id, :last_cost, :max_cost,
-        :last_attempted_time_ago, :count_download, :count_zero_size,
-        :count_identical, :interval, :identical_factor, :file_size_avg
+        :avg_cost, :last_attempted_time_ago, :identical_factor, :file_size_avg, :data_per_day
       ]
 
       orders.each do |o|

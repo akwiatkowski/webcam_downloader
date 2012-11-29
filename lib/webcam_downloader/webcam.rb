@@ -40,6 +40,7 @@ module WebcamDownloader
       @process_time_cost_max = 0.0
       @file_size_zero_count = 0
       @file_identical_count = 0
+      @started_at = Time.now
 
       @stored_file_size_last = 0.0
       @stored_file_size_sum = 0.0
@@ -64,7 +65,18 @@ module WebcamDownloader
     attr_accessor :path_temporary, :path_temporary_processed, :path_store
     attr_accessor :webcam_id, :worker_id
 
-    # time cost stats
+    # time cost and other stats
+
+    def total_mbs
+      @stored_file_size_sum / 1024.0
+    end
+
+    # MB per day
+    def data_per_day
+      t = (Time.now.to_f - @started_at.to_f)
+      ds = (24*3600/1024.0) * @stored_file_size_sum.to_f / t
+      return ds
+    end
 
     def avg_download_cost
       c = self.download_count
@@ -154,6 +166,7 @@ module WebcamDownloader
         :html_info => self.html_info,
         :worker_id => self.worker_id,
         :process_flag => self.process_resize ? "T" : "-",
+        :data_per_day => self.data_per_day,
 
         :interval => @interval,
         :identical_factor => self.identical_factor,
