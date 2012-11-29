@@ -80,7 +80,7 @@ module WebcamDownloader
               webcam.make_it_so
             end
           end
-          @logger.info("Started thread #{wrk_id} with #{@webcam_by_worker[wrk_id].size} webcams")
+          @logger.info("Started thread #{wrk_id} webcams to go #{@webcam_by_worker[wrk_id].select { |w| w.r? }.size} all #{@webcam_by_worker[wrk_id].size} webcams")
         end
 
         # wait for threads to finish

@@ -205,6 +205,10 @@ module WebcamDownloader
       end
     end
 
+    def r?
+      download_by_interval?
+    end
+
     def download_by_interval?
       (Time.now.to_i - @last_downloaded_temporary_at.to_i >= @interval.to_i)
     end
