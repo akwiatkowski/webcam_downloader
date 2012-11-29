@@ -32,6 +32,7 @@
     :desc: arolla_collonx
     :url: http://www.arolla.com/mt-collon/mtcollonx.jpg
     :resize: true
+    :jpg_quality_offset: 4
     :coord:
       :lat: 45.866667
       :lon: 6.883333
@@ -40,6 +41,7 @@
     :desc: arolla_widex
     :url: http://www.arolla.com/webcam_kurhaus/widex.jpg
     :resize: true
+    :jpg_quality_offset: 2
     :coord:
       :lat: 45.866667
       :lon: 6.883333

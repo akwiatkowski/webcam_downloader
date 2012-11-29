@@ -121,8 +121,8 @@ module WebcamDownloader
 
       tc.each do |t|
         s += "<tr>\n"
-        img = t[:desc] + ".jpg"
-        s += "<td><a href=\"#{img}\">U</a></td>\n"
+        img = "pix/" + t[:desc] + ".jpg"
+        s += "<td><a href=\"#{img}\" target=\"_blank\">X</a></td>\n"
         keys.each do |k|
           if k[2] and k[2][:background]
             style = " style=\"background-color: #{k[2][:background]}\""

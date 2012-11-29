@@ -120,7 +120,13 @@ module WebcamDownloader
       @logger.info("Loaded total #{@defs.size} definitions")
       check_def_uniq
 
-      @defs = @defs[0..10] if @development
+      if @development
+        @defs = @defs[0..10]
+        #@defs.each do |d|
+        #  d[:resize] = true
+        #  d[:jpg_quality] = :advanced
+        #end
+      end
     end
 
     def load_definition_file(file = File.join('config', 'defs.yml'))

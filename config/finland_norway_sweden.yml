@@ -114,10 +114,12 @@
     :interval: 150
     :desc: sweden_hjalmo
   - :resize: true
+    :jpg_quality_offset: 6
     :url: http://www.liveevent.se/webbkamera/ca-kalmar/ca_kalmar_1_1280.jpg
     :interval: 90
     :desc: sweden_kalmar
   - :resize: true
+    :jpg_quality_offset: -8
     :url: http://www.venjan.se/cam/kupan_cam.jpg
     :interval: 200
     :desc: sweden_kupan
@@ -131,6 +133,7 @@
 #    :interval: 450
 #    :desc: sweden_klappen
   - :resize: true
+    :jpg_quality_offset: 4
     :url: http://www.hamrafjallet.se/kamera/webbkamror/topmega.jpg
     :interval: 120
     :desc: sweden_tandallen
@@ -139,10 +142,12 @@
     :interval: 300
     :desc: sweden_tvn4
   - :resize: true
+    :jpg_quality_offset: 10
     :url: http://dedi68.aname.net/~checkpoi/webcam/unostorn/webcam_6_1280.jpg
     :interval: 120
     :desc: sweden_unostorm
   - :resize: true
+    :jpg_quality_offset: 10
     :url: http://87.237.210.145/~checkpoi/webcam/visby_stora_torget/webcam_10_1280.jpg
     :interval: 90
     :desc: swedeb_visby

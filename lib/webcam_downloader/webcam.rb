@@ -17,7 +17,8 @@ module WebcamDownloader
       @url = _options[:url]
       @url_schema = _options[:url_schema]
       @process_resize = _options[:resize] || _options[:process_resize]
-      @jpeg_quality = _options[:resize_jpg_quality] || _options[:jpg_quality]
+      @jpeg_quality = _options[:resize_jpg_quality] || _options[:jpg_quality] || _options[:jpeg_quality] || :advanced
+      @jpeg_quality_offset = _options[:resize_jpg_quality_offset] || _options[:jpg_quality_offset] || _options[:jpeg_quality_offset] || 0
       @group = _options[:group]
 
       if @interval.nil?
@@ -54,7 +55,7 @@ module WebcamDownloader
       @interval = 60 if @interval < 60
     end
 
-    attr_reader :desc, :jpeg_quality, :url, :group
+    attr_reader :desc, :url, :group
     attr_reader :download_count, :process_count, :file_size_zero_count, :file_identical_count
     attr_reader :download_time_cost_total, :process_time_cost_total
     attr_reader :download_time_cost_last, :process_time_cost_last
@@ -68,6 +69,33 @@ module WebcamDownloader
     attr_accessor :pre_processing_file_size_last
 
     # time cost and other stats
+
+    # variable quality depends on last downloaded image size
+    def jpeg_quality
+      if @jpeg_quality.nil?
+        return nil
+      elsif @jpeg_quality.kind_of?(Fixnum)
+        return @jpeg_quality
+      elsif @jpeg_quality == :advanced
+        # more intelligent
+        s = @pre_processing_file_size_last || @stored_file_size_last
+        s = 1.0 if s < 0
+        q = 3 + 350 / Math.log(s)
+        q = q.round
+
+        if @jpeg_quality_offset
+          q += @jpeg_quality_offset.to_i
+        end
+
+        q = 90 if q > 90
+        q = 50 if q < 50
+
+        @logger.info("Quality for size #{s} = #{q}")
+        return q
+      else
+        raise ArgumentError
+      end
+    end
 
     def total_mbs
       @stored_file_size_sum / 1024.0

@@ -317,7 +317,6 @@
       :lon: 0.0
     :use_in_timelapse: false
     :resize: true
-    :jpg_quality: 70.0
 
   - :interval: 150
     :desc: germany_odenwald

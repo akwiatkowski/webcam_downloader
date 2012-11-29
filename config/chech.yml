@@ -70,6 +70,7 @@
   #    :use_in_timelapse: false
   - :url: http://kamery.humlnet.cz/images/webcams/chata_vatra/1600x1200.jpg
     :resize: true
+    :jpg_quality_offset: 10
     :interval: 120
     :desc: sudety_chata_vatra
     :coord:
@@ -78,6 +79,7 @@
     :use_in_timelapse: false
   - :url: http://kamery.humlnet.cz/images/webcams/lucnibouda/1600x1200.jpg
     :resize: true
+    :jpg_quality_offset: 10
     :interval: 150
     :desc: lucnibouda
     :coord:
@@ -89,6 +91,7 @@
     :interval: 120
     :desc: lysa_hora
     :resize: true
+    :jpg_quality_offset: 14
     :coord:
       :lat: 49.545833
       :lon: 18.4475
