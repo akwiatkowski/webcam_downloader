@@ -166,10 +166,10 @@ module WebcamDownloader
         :html_info => self.html_info,
         :worker_id => self.worker_id,
         :process_flag => self.process_resize ? "T" : "-",
-        :data_per_day => self.data_per_day,
+        :data_per_day => fl_to_s(self.data_per_day),
 
         :interval => @interval,
-        :identical_factor => self.identical_factor,
+        :identical_factor => fl_to_s(self.identical_factor),
 
         :avg_cost => fl_to_s(self.avg_cost),
         :avg_download_cost => fl_to_s(self.avg_download_cost),

@@ -29,6 +29,8 @@ module WebcamDownloader
       @image_processor = WebcamDownloader::ImageProcessor.new(self, _options)
       @presentation = WebcamDownloader::Presentation.new(self, _options)
       WebcamDownloader::WgetProxy.instance.setup(self, _options)
+
+      @development = _options[:development] || false
     end
 
     attr_reader :storage, :image_processor, :logger, :presentation
@@ -118,7 +120,7 @@ module WebcamDownloader
       @logger.info("Loaded total #{@defs.size} definitions")
       check_def_uniq
 
-      #@defs = @defs[0..10]
+      @defs = @defs[0..10] if @development
     end
 
     def load_definition_file(file = File.join('config', 'defs.yml'))

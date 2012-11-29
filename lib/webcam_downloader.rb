@@ -10,8 +10,8 @@ require 'webcam_downloader/downloader'
 
 require 'webcam_downloader/puller'
 
-def fl_to_s(fl)
-  (fl.to_f * 1000.0).round.to_f / 1000.0
+def fl_to_s(fl, level = 2)
+  (fl.to_f * (10.0 ** level)).round.to_f / (10.0 ** level)
 end
 
 module WebcamDownloader
