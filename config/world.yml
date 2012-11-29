@@ -18,3 +18,7 @@
       :lat: 0.0
       :lon: 0.0
     :use_in_timelapse: false
+
+#  - :url: http://crest.ernet.in/webcam/images/latest.jpg
+#    :interval: 300
+#    :desc: himalayan_chandra

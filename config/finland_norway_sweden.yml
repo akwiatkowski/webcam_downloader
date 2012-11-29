@@ -4,7 +4,7 @@
     :interval: 300
     :desc: no_tromso
   - :url: http://weather.cs.uit.no/wcam0_snapshots/wcam0_latest_medium.jpg
-    :interval: 120
+    :interval: 60
     :desc: no_tromso_univ
     :coord:
       #:lat: 70.085278
@@ -18,9 +18,9 @@
   - :url: http://fevik.axiscam.net/axis-cgi/jpg/image.cgi?resolution=640x360
     :interval: 60
     :desc: norway_fevik
-  - :url: http://www.flaamsbana.no/images/flaam_4.jpg
-    :interval: 300
-    :desc: norway_flaams
+#  - :url: http://www.flaamsbana.no/images/flaam_4.jpg
+#    :interval: 300
+#    :desc: norway_flaams
   - :url: http://ekstra.htg.no/webcam/img/harstad_fullsize.jpg
     :interval: 300
     :desc: norway_harstad
@@ -36,30 +36,32 @@
   - :url: http://www.hlk.no/webkamera/images//pos3.jpg
     :interval: 300
     :desc: norway_sama
+    :prior: -10
 #  - :url: http://www.hlk.no/webkamera/images//pos2.jpg
 #    :interval: 300
 #    :desc: norway_hardstad2
   - :url: http://www.lofot-tidende.no/static/local/webcam/cubus.jpg
-    :interval: 450
+    :interval: 600
     :desc: norway_leknes
+    :prior: -5
   - :url: http://home.online.no/~abjoernv/kamera/kam2.jpg
     :interval: 300
     :desc: norway_arne
   - :url: http://home.custompublish.com/snsk/lyb_big.jpg
-    :interval: 300
+    :interval: 150
     :desc: norway_longyearbyen
-  - :resize: true
-    :url: http://www.svein-nordahl.com/01-gruvedalen.jpg
-    :interval: 300
-    :desc: norway_gruvedalen
+#  - :resize: true
+#    :url: http://www.svein-nordahl.com/01-gruvedalen.jpg
+#    :interval: 300
+#    :desc: norway_gruvedalen
   - :url: http://www.promonorge.no/webcam/kamera.jpg
-    :interval: 300
+    :interval: 220
     :desc: norway_utsikt_s
   - :url: http://www.amihotel.no/webcamera/broadcast.jpg
-    :interval: 300
+    :interval: 150
     :desc: norway_tromso3
   - :url: http://www.arcticutleie.no/webkamera.jpg
-    :interval: 120
+    :interval: 60
     :desc: norwa_skjervoy
     :coord:
       #:lat: 70.085278
@@ -68,18 +70,18 @@
       :lon: 20.659444
     :use_in_timelapse: true
   - :url: http://ekstra.htg.no/webcam/img/sjovegan_fullsize.jpg
-    :interval: 120
+    :interval: 180
     :desc: norwa_sjovegan
   - :url: http://nordkapp.livecam360.com/cam3/php/show_lq_last.php
     :interval: 450
     :desc: norwa_north_cap
-  - :interval: 300
+  - :interval: 450
     :desc: norway_lofoten
     :url: http://www.lofoten-golf.no/webcam/Lgolf.jpg
-  - :interval: 300
+  - :interval: 150
     :desc: norway_fjellet
     :url: http://nktv.edbc.no/fjellet.jpg
-  - :interval: 300
+  - :interval: 120
     :desc: norway_kabelvag
     :url: http://www.promonorge.no/webcam/kabelvag.jpg
 
@@ -93,7 +95,7 @@
 #  - :url: http://212.86.4.14/camera_image/kauppatori.jpg
 #    :interval: 120
 #    :desc: finland_kauppatori
-  - :interval: 600
+  - :interval: 220
     :desc: finland_koppola
     :url: http://85.157.217.2/-wvhttp-01-/GetStillImage
 
@@ -105,42 +107,43 @@
   :array:
   - :resize: true
     :url: http://www.liveevent.se/webbkamera/tv4/goteborg/tv4_goteborg_1_1280.jpg
-    :interval: 180
+    :interval: 60
     :desc: sweden_goteborg
   - :url: http://www.gehammar.se/not001.jpg
-    :interval: 450
+    :interval: 150
     :desc: sweden_hjalmo
   - :resize: true
     :url: http://www.liveevent.se/webbkamera/ca-kalmar/ca_kalmar_1_1280.jpg
-    :interval: 180
+    :interval: 90
     :desc: sweden_kalmar
   - :resize: true
     :url: http://www.venjan.se/cam/kupan_cam.jpg
-    :interval: 300
+    :interval: 200
     :desc: sweden_kupan
+    :prior: -8
   - :resize: true
     :url: http://livecam.mora.se/imageb.jpg
-    :interval: 300
+    :interval: 120
     :desc: sweden_vosalo
-  - :resize: true
-    :url: http://87.237.210.145/~checkpoi/webcam/klappen/webcam_10_1280.jpg
-    :interval: 450
-    :desc: sweden_klappen
+#  - :resize: true
+#    :url: http://87.237.210.145/~checkpoi/webcam/klappen/webcam_10_1280.jpg
+#    :interval: 450
+#    :desc: sweden_klappen
   - :resize: true
     :url: http://www.hamrafjallet.se/kamera/webbkamror/topmega.jpg
-    :interval: 600
+    :interval: 120
     :desc: sweden_tandallen
   - :resize: true
     :url: http://www.liveevent.se/webbkamera/tv4/sundsvall/tv4_sundsvall_1_1280.jpg
-    :interval: 450
+    :interval: 300
     :desc: sweden_tvn4
   - :resize: true
     :url: http://dedi68.aname.net/~checkpoi/webcam/unostorn/webcam_6_1280.jpg
-    :interval: 300
+    :interval: 120
     :desc: sweden_unostorm
   - :resize: true
     :url: http://87.237.210.145/~checkpoi/webcam/visby_stora_torget/webcam_10_1280.jpg
-    :interval: 300
+    :interval: 90
     :desc: swedeb_visby
     :coord:
       # faked

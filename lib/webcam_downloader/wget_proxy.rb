@@ -7,9 +7,9 @@ module WebcamDownloader
     include Singleton
 
     def initialize
-      @dns_timeout = 2 # --dns-timeout
-      @connect_timeout = 3 # --connect-timeout
-      @read_timeout = 3 # --read-timeout
+      @dns_timeout = 3 # --dns-timeout
+      @connect_timeout = 4 # --connect-timeout
+      @read_timeout = 4 # --read-timeout
 
       @retries = 3
 

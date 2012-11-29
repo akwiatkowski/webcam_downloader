@@ -11,17 +11,18 @@
       :lat: 41.897676
       :lon: 12.495164
     :use_in_timelapse: true
-  - :interval: 300
+    :prior: 0
+  - :interval: 120
     :desc: italy_caorle_centro
     :url: http://webcam.caorle.com/webcam-centro-storico/current.jpg
     :coord:
       :lat: 41.897676
       :lon: 12.495164
     :use_in_timelapse: false
-  - :interval: 300
+  - :interval: 220
     :desc: italy_lago
     :url: http://webcam.molveno.it/webcam/current_grande.jpg
-  - :interval: 300
+  - :interval: 200
     :desc: italy_liqueria_serra
     :url: http://www.meteolaserra.it/images/webcam/test/webcam2.php
     :resize: true
