@@ -22,15 +22,11 @@ module WebcamDownloader
 
     def after_loop_cycle
       file_image_html = File.new(File.join("latest", "index2_full.html"), "w")
-      file_stats_html = File.new(File.join("latest", "stats.html"), "w")
-
       file_image_html.puts images_html
-      file_stats_html.puts stats_html
-
       file_image_html.close
-      file_stats_html.close
 
       html_per_groups
+      sorted_stats_html_save
 
       @logger.debug("Presentation - after cycle")
     end
@@ -77,40 +73,40 @@ module WebcamDownloader
       s = ""
 
       keys = [
-        [:desc, "desc"],
+        [:desc, "desc", { background: "66FF99" }],
         [:worker_id, "wrk"],
         [:process_flag, "proc?"],
 
-        [:interval, "int"],
-        [:identical_factor, "ident. fact"],
+        [:avg_cost, "avg TC[s]", { background: "FF3333" }],
+        [:avg_download_cost, "a.down TC[s]", { background: "FF3333" }],
+        [:avg_process_cost, "a.proc TC[s]", { background: "FF3333" }],
 
-        [:avg_cost, "avg TC[s]"],
-        [:avg_download_cost, "a.down TC[s]"],
-        [:avg_process_cost, "a.proc TC[s]"],
+        [:last_cost, "last TC[s]", { background: "FF6600" }],
+        [:last_download_cost, "l.down TC[s]", { background: "FF6600" }],
+        [:last_process_cost, "l.proc TC[s]", { background: "FF6600" }],
 
-        [:last_cost, "last TC[s]"],
-        [:last_download_cost, "l.down TC[s]"],
-        [:last_process_cost, "l.proc TC[s]"],
+        [:max_cost, "max TC[s]", { background: "FF0066" }],
+        [:max_download_cost, "m.down TC[s]", { background: "FF0066" }],
+        [:max_process_cost, "m.proc TC[s]", { background: "FF0066" }],
 
-        [:max_cost, "max TC[s]"],
-        [:max_download_cost, "m.down TC[s]"],
-        [:max_process_cost, "m.proc TC[s]"],
+        [:last_attempted_time_ago, "attmp old[s]", { background: "99BBBB" }],
+        [:last_stored_time_ago, "stored old[s]", { background: "99BBBB" }],
+        [:will_be_downloaded_after, "will d. be after[s]", { background: "99BBBB" }],
 
-        [:last_attempted_time_ago, "attmp old[s]"],
-        [:last_stored_time_ago, "stored old[s]"],
-        [:will_be_downloaded_after, "will d. be after[s]"],
+        [:count_download, "count", { background: "CC9900" }],
+        [:count_zero_size, "c. size 0", { background: "CC9900" }],
+        [:count_identical, "c. identical", { background: "CC9900" }],
 
-        [:count_download, "count"],
-        [:count_zero_size, "c. size 0"],
-        [:count_identical, "c. identical"],
+        [:interval, "int", { background: "66CCCC" }],
+        [:identical_factor, "ident. fact", { background: "66CCCC" }],
 
-        [:file_size_last, "last size [kB]"],
-        [:file_size_avg, "avg size [kB]"],
-        [:file_size_max, "max size [kB]"],
+        [:file_size_last, "last size [kB]", { background: "009900" }],
+        [:file_size_avg, "avg size [kB]", { background: "009900" }],
+        [:file_size_max, "max size [kB]", { background: "009900" }],
 
         [:html_info, "info"],
         [:group, "group"],
-        [:desc, "desc"],
+        [:desc, "desc", { background: "66FF99" }],
       ]
 
       s += "<table border=\"1\">\n"
@@ -126,7 +122,11 @@ module WebcamDownloader
         img = t[:desc] + ".jpg"
         s += "<td><a href=\"#{img}\">U</a></td>\n"
         keys.each do |k|
-          s += "<td>#{t[k[0]]}</td>\n"
+          if k[2] and k[2][:background]
+            style = " style=\"background-color: #{k[2][:background]}\""
+          end
+
+          s += "<td#{style}>#{t[k[0]]}</td>\n"
         end
         s += "</tr>\n"
       end
@@ -136,9 +136,24 @@ module WebcamDownloader
     end
 
 
-    def stats_html
-      tc = @downloader.webcams.collect { |webcam| webcam.to_hash }
-      tc.sort! { |a, b| b[:avg_cost] <=> a[:avg_cost] }
+    def sorted_stats_html_save
+      # quite an overkill
+      orders = [
+        :avg_cost, :desc, :worker_id, :last_cost, :max_cost,
+        :last_attempted_time_ago, :count_download, :count_zero_size,
+        :count_identical, :interval, :identical_factor, :file_size_avg
+      ]
+
+      orders.each do |o|
+        fs = File.new(File.join("latest", "stats_#{o}.html"), "w")
+        fs.puts(sorted_stats_html(@downloader.webcams, o))
+        fs.close
+      end
+    end
+
+    def sorted_stats_html(webcams = @downloader.webcams, order = :avg_cost)
+      tc = webcams.collect { |webcam| webcam.to_hash }
+      tc.sort! { |a, b| b[order] <=> a[order] }
       return html_table_from_webcam_hash(tc)
     end
 
