@@ -118,7 +118,7 @@ module WebcamDownloader
       @logger.info("Loaded total #{@defs.size} definitions")
       check_def_uniq
 
-      @defs = [@defs.first]
+      # @defs = @defs[0..5]
     end
 
     def load_definition_file(file = File.join('config', 'defs.yml'))
