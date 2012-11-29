@@ -78,6 +78,7 @@ module WebcamDownloader
 
       keys = [
         [:desc, "desc"],
+        [:worker_id, "wrk"],
         [:process_flag, "proc?"],
 
         [:avg_cost, "avg TC[s]"],
@@ -102,6 +103,10 @@ module WebcamDownloader
         [:file_size_last, "last size [kB]"],
         [:file_size_avg, "avg size [kB]"],
         [:file_size_max, "max size [kB]"],
+
+        [:html_info, "info"],
+        [:group, "group"],
+        [:desc, "desc"],
       ]
 
       s += "<table border=\"1\">\n"

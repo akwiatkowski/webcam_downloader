@@ -112,9 +112,47 @@ module WebcamDownloader
       return @stored_file_size_sum.to_f / c.to_f
     end
 
+    def identical_factor
+      c = self.download_count
+      c = 1 if c < 1
+      return self.file_identical_count.to_f / c.to_f
+    end
+
+    def html_info
+      s = ""
+      if self.download_count == self.file_size_zero_count
+        s += "<span style=\"color: red\">all images 0 size</span> "
+      end
+
+      if self.avg_cost > 20.0
+        s += "<span style=\"color: red\">high cost #{fl_to_s(self.avg_cost)}</span> "
+      end
+
+      if self.avg_file_size > 500.0
+        s += "<span style=\"color: yellow\">big file size #{fl_to_s(self.avg_file_size)}kB</span> "
+      end
+
+      if (Time.now.to_i - self.last_downloaded_temporary_at.to_i) > 600
+        s += "<span style=\"color: yellow\">last downloaded > 10 minutes</span> "
+      end
+
+      if identical_factor > 0.4
+        s += "<span style=\"color: yellow\">high identical factor #{fl_to_s(identical_factor)}</span> "
+      end
+
+      if identical_factor < 0.02 and self.download_count > 20
+        s += "<span style=\"color: blue\">zero identical factor</span> "
+      end
+
+      return s
+    end
+
     def to_hash
       {
         :desc => self.desc,
+        :group => self.group,
+        :html_info => self.html_info,
+        :worker_id => self.worker_id,
         :process_flag => self.process_resize ? "T" : "-",
 
         :avg_cost => fl_to_s(self.avg_cost),
@@ -130,7 +168,7 @@ module WebcamDownloader
         :max_process_cost => self.process_resize ? fl_to_s(self.max_process_cost) : "",
 
         :last_attempted_time_ago => Time.now.to_i - self.last_downloaded_temporary_at.to_i,
-        :last_stored_time_ago => Time.now.to_i - self.latest_stored_at.to_i,
+        :last_stored_time_ago => self.download_count == self.file_size_zero_count ? "" : Time.now.to_i - self.latest_stored_at.to_i,
 
         :count_download => self.download_count,
         :count_zero_size => self.file_size_zero_count,
