@@ -2,7 +2,7 @@
 - :group: cold
   :array:
   - :url: http://www.summitcamp.org/static/images/status/view/webcam.jpg
-    :interval: 600
+    :interval: 500
     :desc: greenland
   - :url: http://icons.wunderground.com/webcamramdisk/a/l/alfis/1/current.jpg
     :interval: 300
@@ -17,7 +17,7 @@
       :lon: 166.766667
     :use_in_timelapse: true
   - :url: http://www.antarcticanz.govt.nz/ahnetcam/netcam.jpg
-    :interval: 300
+    :interval: 150
     :desc: antarc_arr_h
   - :url: http://www.esrl.noaa.gov/gmd/webdata/spo/webcam/cmdlfullsize.jpg
     :interval: 600

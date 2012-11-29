@@ -2,7 +2,7 @@
 - :group: andorra
   :array:
   - :url: http://www.bagn.obs-mip.fr/webcamV2/webcam85.jpg
-    :interval: 180
+    :interval: 160
     :desc: andorra_pic_du_mudi
     :coord:
       :lat:
@@ -10,7 +10,7 @@
     :use_in_timelapse: false
 
   - :url: http://www.altiservice.com/webcams/FRP2000/fontromeu.jpg
-    :interval: 180
+    :interval: 80
     :desc: andorra_font_romeu
     :coord:
       :lat:
@@ -31,7 +31,7 @@
       :lon:
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 120
     :desc: austria_elbigenalp
     :url: http://www.hotel-post.biz/typo/tl_files/webcam/camera.jpg
     :resize: false
@@ -40,7 +40,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 120
     :desc: austria_Kufstein_Unterer_Stadtplatz
     :url: http://www.webcam.kufnet.at/livebild/untererstadtplatz/image.jpg
     :resize: false
@@ -49,7 +49,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 120
     :desc: austria_Festungsarena_Unterer_Stadtplatz
     :url: http://www.webcam.kufnet.at/livebild/festungsarena/image.jpg
     :resize: false
@@ -58,7 +58,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 90
     :desc: austria_Kufsteinblick
     :url: http://www.webcam.kufnet.at/livebild/kufsteinblick/image.jpg
     :resize: false
@@ -67,7 +67,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 180
     :desc: austria_lienz
     :url: http://www.hochsteinhuette.at/images/stories/webcam/livebild.jpg
     :resize: false
@@ -76,7 +76,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 180
     :desc: austria_loser1
     :url: http://www.mentalworks.com/live/altaussee.jpg
     :resize: false
@@ -125,7 +125,7 @@
 
 - :group: estonia
   :array:
-  - :interval: 300
+  - :interval: 120
     :desc: estonia_tartu
     :url: http://meteo.physic.ut.ee/webcam/praegu/big.jpg
     :resize: false
@@ -136,7 +136,7 @@
 
 - :group: finland
   :array:
-  - :interval: 300
+  - :interval: 90
     :desc: finland_Kemijarvi
     :url: http://www.koillislapinsahko.fi/webcam/current.jpg
     :resize: false
@@ -145,7 +145,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 100
     :desc: finland_levi
     :url: http://213.28.111.31/record/current.jpg
     :resize: false
@@ -248,7 +248,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 120
     :desc: grecja_ateny1
     :url: http://nifada.com/webcam/current.jpg
     :resize: false
@@ -257,7 +257,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 120
     :desc: grecja_samarina
     :url: http://www.snowreport.gr/snowcam/samarina/samarina.jpg
     :resize: false
@@ -279,7 +279,7 @@
 
 - :group: liechtenstein
   :array:
-  - :interval: 300
+  - :interval: 120
     :desc: liechte_steg
     :url: http://video.lkw.li/liveCamSteg/lkw-stausee-steg.jpg
     :resize: false
@@ -290,7 +290,7 @@
 
 - :group: germany
   :array:
-  - :interval: 300
+  - :interval: 120
     :desc: germany_bergisch_gladbach
     :url: http://bg01.onwebcam.net/aktuellesbild.aspx
     :resize: false
@@ -299,7 +299,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 150
     :desc: germany_Diedenshausen
     :url: http://diedenshausen.de/assets/images/webcamddh.jpg
     :resize: false
@@ -308,7 +308,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 150
     :desc: germany_trianel
     :url: http://212.37.52.98/record/current.jpg
     :resize: false
@@ -317,7 +317,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 150
     :desc: germany_odenwald
     :url: http://www.odenwald.de/fileadmin/odenwald/Webcam/Marktplatz000M.jpg
     :resize: false
@@ -335,7 +335,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 150
     :desc: germany_walldurn1
     :url: http://www.wallduern.de/webcam/wallduern.jpg
     :resize: false
@@ -344,7 +344,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 120
     :desc: germany_walldurn2
     :url: http://www.wallduern.de/webcam/hauptstr.jpg
     :resize: false
@@ -355,7 +355,7 @@
 
 - :group: norway
   :array:
-  - :interval: 300
+  - :interval: 120
     :desc: norway_birkeland
     :url: http://www.torgrim.no/webcam.jpg
     :resize: false
@@ -391,7 +391,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 90
     :desc: switzerland_costa_borgnome
     :url: http://www.costa-borgnone.ch/current.jpg
     :resize: false
@@ -400,7 +400,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 120
     :desc: switzerland_charmey
     :url: http://fribourg.cam.stpartner.ch/cam/charmey/camera2/current.jpg
     :resize: false
@@ -409,7 +409,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 120
     :desc: switzerland_lauerz
     :url: http://lauerz.ch.web1.init0hosting.net/webcam/cam_lauerz-hasen.jpg
     :resize: false
@@ -418,7 +418,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 90
     :desc: switzerland_martigny
     :url: http://213.221.142.195:8888/record/current.jpg
     :resize: false
@@ -427,7 +427,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 120
     :desc: switzerland_ronco
     :url: http://www.webcamticino.ch/vivereblu/gallery/img/webcam/current.jpg
     :resize: false
@@ -436,7 +436,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 100
     :desc: switzerland_soglio
     :url: http://www.webcam.valtline.it/soglio.jpg
     :resize: false
@@ -454,7 +454,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 90
     :desc: switzerland_veysonnaz
     :url: http://www.caboulis.ch/sion.jpg
     :resize: false
@@ -463,7 +463,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 90
     :desc: switzerland_zermatt_kirche
     :url: http://www.zermatt.ch/html/bergbahnen/webcams/kirche.jpg
     :resize: false
@@ -472,7 +472,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 120
     :desc: switzerland_zermatt_bahnhof
     :url: http://www.zermatt.ch/html/bergbahnen/webcams/bahnhof.jpg
     :resize: false
@@ -490,7 +490,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 200
     :desc: switzerland_zermatt_ober
     :url: http://www.schonegg.ch/webcam.jpg
     :resize: false

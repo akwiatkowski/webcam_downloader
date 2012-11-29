@@ -10,14 +10,14 @@
       :lat: 0.0
       :lon: 0.0
     :use_in_timelapse: false
-  - :interval: 300
+  - :interval: 120
     :desc: germany_halle
     :url: http://217.89.96.98/vhughsize.jpg
     :coord:
       :lat: 52.526248
       :lon: 13.361664
     :use_in_timelapse: true
-  - :interval: 300
+  - :interval: 120
     :desc: germany_aussichtsteeg
     :url: http://www.breitenbergbahn.de/fileadmin/webcams/mobotix/steeg.jpg
     :resize: false
@@ -25,7 +25,7 @@
       :lat: 0.0
       :lon: 0.0
     :use_in_timelapse: false
-  - :interval: 300
+  - :interval: 120
     :desc: germany_aggensteinlift
     :url: http://www.breitenbergbahn.de/fileadmin/webcams/mobotix/aglstrecke.jpg
     :resize: false
@@ -43,16 +43,16 @@
       :lat: 45.866667
       :lon: 6.883333
     :use_in_timelapse: true
-  - :interval: 330
+  - :interval: 180
     :desc: bavaria_bergen
     :url: http://www.bayernwebcam.de/bilder/bergen.jpg
-  - :interval: 300
+  - :interval: 180
     :desc: bavaria_marquartstein
     :url: http://www.bayernwebcam.de/bilder/marquartstein.jpg
 
 - :group: france
   :array:
-  - :interval: 300
+  - :interval: 120
     :desc: troyes
     :url: http://www.vision-environnement.com/webcams/Troyes2/image/webcam.jpg
   - :interval: 300

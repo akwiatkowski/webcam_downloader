@@ -2,15 +2,15 @@
 - :group: russia
   :array:
   - :url: http://webcam.21.by/pub/webcam/148/size_0.jpg
-    :interval: 300
+    :interval: 200
     :desc: minsk
   - :resize: true
     :url: http://camera.kemernet.ru/cam_huge.jpg
-    :interval: 120
+    :interval: 60
     :desc: russia_1
   - :url: http://www.norilsk-zv.ru/webcam/cam1.jpg
-    :interval: 300
+    :interval: 120
     :desc: russia_norilsk
   - :url: http://62.182.141.132/jpg/image.jpg
-    :interval: 300
+    :interval: 120
     :desc: russia_sochi

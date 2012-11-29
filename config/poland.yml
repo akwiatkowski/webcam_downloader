@@ -92,7 +92,7 @@
       :lon: 19.916832
     :use_in_timelapse: true
   - :url: http://z-ne.pl/kamery/giewont_zakopane.jpg
-    :interval: 180
+    :interval: 120
     :desc: giewont_zakopane
     :coord:
       :lat: 49.304778
@@ -119,7 +119,7 @@
       :lat: 0.0
       :lon: 0.0
     :use_in_timelapse: false
-  - :interval: 300
+  - :interval: 200
     :desc: tatry_chocholowska
     :url: http://kamery.topr.pl/chocholowska/chocholow.jpg
     :resize: false
@@ -139,14 +139,14 @@
     :interval: 120
     :desc: trzy_korony
   - :url: http://www.kamery.szczawnica.pl/foto5000M.jpg
-    :interval: 180
+    :interval: 220
     :desc: pieniny_szczawnica
     :coord:
       :lat: 49.422778
       :lon: 20.482778
     :use_in_timelapse: false
   - :url: http://www.kamery.szczawnica.pl/foto7000M.jpg
-    :interval: 240
+    :interval: 180
     :desc: pieniny_przystan_flisacka
     :coord:
       :lat: 49.422778
@@ -167,7 +167,7 @@
       :lon: 20.482778
     :use_in_timelapse: false
   - :url: http://www.kroscienko-nad-dunajcem.pl/kamera/widok1.jpg
-    :interval: 180
+    :interval: 150
     :desc: pieniny_most_kroscienko
     :coord:
       :lat: 49.422778
@@ -225,21 +225,21 @@
   :array:
   # http://www.kamerybieszczady.czaszyn.pl/
   - :url: http://obsluga-medialna.pl/kamera/kamera_wetlina/index.php
-    :interval: 240
+    :interval: 150
     :desc: bieszczady_wetlina
     :coord:
       :lat: 49.1575
       :lon: 22.467222
     :use_in_timelapse: false
   - :url: http://obsluga-medialna.pl/kamera/czaszyn/index_cz.php
-    :interval: 180
+    :interval: 110
     :desc: bieszczady_czaszyn
     :coord:
       :lat: 49.1575
       :lon: 22.467222
     :use_in_timelapse: false
   - :url: http://esolina.pl/kamera/widok.php
-    :interval: 180
+    :interval: 120
     :desc: bieszczady_polanczyk
     :coord:
       :lat: 49.1575
@@ -267,7 +267,7 @@
       :lon: 22.467222
     :use_in_timelapse: false
   - :url: http://83.18.111.249:8080/cgi-bin/viewer/video.jpg
-    :interval: 180
+    :interval: 90
     :desc: bieszczady_keja_siarkopol
     :coord:
       :lat: 49.1575
@@ -277,28 +277,28 @@
 - :group: poland_sudety
   :array:
   - :url: http://kolejgondolowa.pl/kamery/cam2/snap_c1.jpg
-    :interval: 240
+    :interval: 200
     :desc: sudety_swieradow2
     :coord:
       :lat: 50.9
       :lon: 15.333333
     :use_in_timelapse: false
   - :url: http://kolejgondolowa.pl/kamery/cam3/snap_c1.jpg
-    :interval: 240
+    :interval: 200
     :desc: sudety_swieradow3
     :coord:
       :lat: 50.9
       :lon: 15.333333
     :use_in_timelapse: false
   - :url: http://kolejgondolowa.pl/kamery/cam1/snap_c1.jpg
-    :interval: 240
+    :interval: 200
     :desc: sudety_swieradow1
     :coord:
       :lat: 50.9
       :lon: 15.333333
     :use_in_timelapse: false
   - :url: http://www.kompas.pl/kamerki/szczniec_widok000M.jpg
-    :interval: 180
+    :interval: 110
     :desc: sudety_szczeliniec2
     :coord:
       :lat: 50.9
@@ -306,14 +306,14 @@
     :use_in_timelapse: false
   # http://kamery.hydronet.cz/vrbata/
   - :url: http://www.kompas.pl/kamerki/pstrka_widok000M.jpg
-    :interval: 180
+    :interval: 110
     :desc: sudety_szczeliniec1
     :coord:
       :lat: 50.9
       :lon: 15.333333
     :use_in_timelapse: false
   - :url: http://kam.szkolagorska.com/sam1.jpg
-    :interval: 210
+    :interval: 170
     :desc: sudety_samotnia
     :coord:
       :lat: 50.9
@@ -375,7 +375,7 @@
   :array:
   - :resize: true
     :url: http://kamery.humlnet.cz/images/webcams/snezka3/2048x1536.jpg
-    :interval: 240
+    :interval: 160
     :desc: sniezka0
     :coord:
       :lat: 50.735833
@@ -384,7 +384,7 @@
     :use_in_timelapse: false
   - :resize: true
     :url: http://kamery.humlnet.cz/images/webcams/snezka2/2048x1536.jpg
-    :interval: 240
+    :interval: 160
     :desc: sniezka1
     :coord:
       :lat: 50.735833
@@ -393,7 +393,7 @@
     :use_in_timelapse: false
   - :resize: true
     :url: http://kamery.humlnet.cz/images/webcams/snezka/2048x1536.jpg
-    :interval: 240
+    :interval: 160
     :desc: sniezka2
     :coord:
       :lat: 50.735833

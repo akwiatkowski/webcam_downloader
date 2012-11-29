@@ -1,29 +1,29 @@
 - :group: usa
   :array:
   - :url: http://www.sunvalley.com/assets/images/cams/wclouds_full.jpg
-    :ingterval: 330
+    :ingterval: 450
     :desc: usa_sunvalley1
     :coord:
       :lat: 43.70263
       :lon: -114.369106
     :use_in_timelapse: false
   - :url: http://www.sunvalley.com/assets/images/cams/clubhouse_full.jpg
-    :interval: 330
+    :interval: 450
     :desc: usa_sunvalley2
   - :url: http://www.sunvalley.com/assets/images/cams/bowls_full.jpg
-    :interval: 330
+    :interval: 450
     :desc: usa_sunvalley3
   - :url: http://www.ridehunter.com/cam3.jpg
-    :interval: 320
+    :interval: 450
     :desc: usa_ridehunter1
   - :url: http://www.ridehunter.com/cam1.jpg
-    :interval: 320
+    :interval: 450
     :desc: usa_ridehunter2
   - :url: http://www.ridehunter.com/cam2.jpg
-    :interval: 320
+    :interval: 450
     :desc: usa_ridehunter3
   - :url: http://www.mountainwebcams.com/Qx4F8e21/netcam2.jpg
-    :interval: 300
+    :interval: 120
     :desc: usa_lake_arrowhead
     :coord:
       :lat: 34.256389
@@ -32,6 +32,7 @@
   - :url: http://www.dot.ca.gov/dist8/tmc/snapshots/hwy18_lkgreg.jpg
     :interval: 300
     :desc: usa_lake_gregory
+    :prior: -5
 #  - :url: http://green-valley-lake.com/webcam/bob.jpg
 #    :interval: 300
 #    :desc: usa_green_valley
@@ -63,7 +64,7 @@
     :interval: 300
     :desc: usa_paradise_west
   - :url: http://www.haarp.alaska.edu/data/haarpcam/images/latest.jpg
-    :interval: 500
+    :interval: 600
     :desc: usa_haarp
   - :url: http://cws2vm.integra.net/~nsps/weather2c.jpg
     :interval: 400
@@ -78,10 +79,10 @@
     :interval: 120
     :desc: usa_y_mammoth_hot_spr2
   - :url: http://www.nps.gov/webcams-yell/mtwashburn.jpg
-    :interval: 300
+    :interval: 450
     :desc: usa_mnt_washburn
   - :url: http://cws2vm.integra.net/~nsps/weather2a.jpg
-    :interval: 400
+    :interval: 450
     :desc: usa_mnt_jefferson
   - :resize: true
     :url: http://snow.whistler-blackcomb.com/catskinner/fissile.jpg

@@ -26,35 +26,35 @@
     #:resize: true
   # sudety
   - :url: http://kamery.hydronet.cz/korenov/photo/korenov_960x1280_now.jpg
-    :interval: 240
+    :interval: 250
     :desc: karkonosze_korenove
     :coord:
       :lat:
       :lon:
     :use_in_timelapse: false
   - :url: http://kamery.hydronet.cz/kamenec/photo_jabl/jablonecek_1600x1200_now.jpg
-    :interval: 240
+    :interval: 180
     :desc: karkonosze_jablonecek
     :coord:
       :lat:
       :lon:
     :use_in_timelapse: false
   - :url: http://kamery.hydronet.cz/strezimir/photo/strezimir_1600x1200_now.jpg
-    :interval: 240
+    :interval: 120
     :desc: karkonosze_strezimir
     :coord:
       :lat:
       :lon:
     :use_in_timelapse: false
   - :url: http://kamery.hydronet.cz/polesi/photo/polesi_now.jpg
-    :interval: 240
+    :interval: 140
     :desc: karkonosze_polesi
     :coord:
       :lat:
       :lon:
     :use_in_timelapse: false
   - :url: http://kamery.hydronet.cz/brod/photo/brod_1600x1200_now.jpg
-    :interval: 240
+    :interval: 90
     :desc: karkonosze_zelazny_brod
     :coord:
       :lat:
@@ -70,7 +70,7 @@
   #    :use_in_timelapse: false
   - :url: http://kamery.humlnet.cz/images/webcams/chata_vatra/1600x1200.jpg
     :resize: true
-    :interval: 240
+    :interval: 120
     :desc: sudety_chata_vatra
     :coord:
       :lat: 50.9
@@ -78,8 +78,8 @@
     :use_in_timelapse: false
   - :url: http://kamery.humlnet.cz/images/webcams/lucnibouda/1600x1200.jpg
     :resize: true
-    :interval: 180
-    :desc: sudety_chata_vatra
+    :interval: 150
+    :desc: lucnibouda
     :coord:
       :lat: 50.9
       :lon: 15.333333

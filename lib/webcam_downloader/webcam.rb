@@ -47,8 +47,8 @@ module WebcamDownloader
       @stored_file_size_max = 0.0
 
       # interval random fix - load balancing ;)
-      @interval += rand(20)
-      @interval -= 10
+      @interval += rand(20).to_f * 0.2
+      @interval -= 2.0
       @interval = 60 if @interval < 60
     end
 

@@ -1,41 +1,34 @@
 ---
 - :group: world
   :array:
-  - :interval: 360
+  - :interval: 120
     :desc: hahnenkoepfle
     :url: http://tramino.s3.amazonaws.com/s/das-hoechste/webcams/ifen-hahnenkoepfle.jpg
-  - :interval: 300
-    :desc: ch_birkli
-    :url: http://www.birkli.ch/webcam/bildgross/aktuell_gross.jpg
-    :coord:
-      :lat: 45.866667
-      :lon: 6.883333
-    :use_in_timelapse: true
-  - :interval: 300
+  - :interval: 120
     :desc: ischl
     :url: http://www.weti.net/cam/ischl.jpg
     :coord:
       :lat: 52.526248
       :lon: 13.361664
     :use_in_timelapse: true
-  - :interval: 300
+  - :interval: 600
     :desc: hsb_broken
     :url: http://webcam.netco.de/bilder/hsb-brocken/brocken-bhf.jpg
-  - :interval: 360
+  - :interval: 200
     :desc: cannobio
     :url: http://www.cannobio.net/resizeimgpiazza.asp?dimensioni=800
     :coord:
       :lat: 41.897676
       :lon: 12.495164
     :use_in_timelapse: true
-  - :interval: 360
+  - :interval: 180
     :desc: villas_on_great_bay
     :url: http://www.thevillasongreatbay.com/images/netcam.jpg
     :coord:
       :lat: 18.069003
       :lon: -63.070621
     :use_in_timelapse: true
-  - :interval: 320
+  - :interval: 120
     :desc: arolla_collonx
     :url: http://www.arolla.com/mt-collon/mtcollonx.jpg
     :resize: true
@@ -43,7 +36,7 @@
       :lat: 45.866667
       :lon: 6.883333
     :use_in_timelapse: true
-  - :interval: 300
+  - :interval: 150
     :desc: arolla_widex
     :url: http://www.arolla.com/webcam_kurhaus/widex.jpg
     :resize: true
