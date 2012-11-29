@@ -155,6 +155,9 @@ module WebcamDownloader
         :worker_id => self.worker_id,
         :process_flag => self.process_resize ? "T" : "-",
 
+        :interval => @interval,
+        :identical_factor => self.identical_factor,
+
         :avg_cost => fl_to_s(self.avg_cost),
         :avg_download_cost => fl_to_s(self.avg_download_cost),
         :avg_process_cost => self.process_resize ? fl_to_s(self.avg_process_cost) : "",
@@ -169,6 +172,7 @@ module WebcamDownloader
 
         :last_attempted_time_ago => Time.now.to_i - self.last_downloaded_temporary_at.to_i,
         :last_stored_time_ago => self.download_count == self.file_size_zero_count ? "" : Time.now.to_i - self.latest_stored_at.to_i,
+        :will_be_downloaded_after => self.will_be_downloaded_after,
 
         :count_download => self.download_count,
         :count_zero_size => self.file_size_zero_count,
@@ -190,6 +194,11 @@ module WebcamDownloader
 
     def download_by_interval?
       (Time.now.to_i - @last_downloaded_temporary_at.to_i >= @interval.to_i)
+    end
+
+    def will_be_downloaded_after
+      return nil if @last_downloaded_temporary_at.nil?
+      return (@last_downloaded_temporary_at.to_i + @interval.to_i) - Time.now.to_i
     end
 
     def download!

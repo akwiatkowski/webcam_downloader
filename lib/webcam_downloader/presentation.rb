@@ -81,6 +81,9 @@ module WebcamDownloader
         [:worker_id, "wrk"],
         [:process_flag, "proc?"],
 
+        [:interval, "int"],
+        [:identical_factor, "ident. fact"],
+
         [:avg_cost, "avg TC[s]"],
         [:avg_download_cost, "a.down TC[s]"],
         [:avg_process_cost, "a.proc TC[s]"],
@@ -95,6 +98,7 @@ module WebcamDownloader
 
         [:last_attempted_time_ago, "attmp old[s]"],
         [:last_stored_time_ago, "stored old[s]"],
+        [:will_be_downloaded_after, "will d. be after[s]"],
 
         [:count_download, "count"],
         [:count_zero_size, "c. size 0"],
