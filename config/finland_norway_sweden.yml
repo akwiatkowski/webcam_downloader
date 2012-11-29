@@ -109,6 +109,7 @@
     :url: http://www.liveevent.se/webbkamera/tv4/goteborg/tv4_goteborg_1_1280.jpg
     :interval: 60
     :desc: sweden_goteborg
+    :resize: true
   - :url: http://www.gehammar.se/not001.jpg
     :interval: 150
     :desc: sweden_hjalmo

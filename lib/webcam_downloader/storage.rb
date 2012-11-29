@@ -6,6 +6,8 @@ require 'fileutils'
 module WebcamDownloader
   class Storage
 
+    DIRS = %w(tmp data pix latest) + [File.join('latest', 'pix')]
+
     def initialize(_downloader, _options = { })
       @downloader = _downloader
       @options = _options
@@ -19,7 +21,7 @@ module WebcamDownloader
     attr_accessor :descs
 
     def prepare_file_structure
-      %w(tmp data pix latest).each do |d|
+      DIRS.each do |d|
         Dir.mkdir(d) unless File.exist?(d)
       end
     end

@@ -46,6 +46,7 @@ module WebcamDownloader
       @stored_file_size_sum = 0.0
       @stored_file_size_count = 0
       @stored_file_size_max = 0.0
+      @pre_processing_file_size_last = nil
 
       # interval random fix - load balancing ;)
       @interval += rand(20).to_f * 0.2
@@ -64,6 +65,7 @@ module WebcamDownloader
 
     attr_accessor :path_temporary, :path_temporary_processed, :path_store
     attr_accessor :webcam_id, :worker_id
+    attr_accessor :pre_processing_file_size_last
 
     # time cost and other stats
 
@@ -194,6 +196,7 @@ module WebcamDownloader
         :file_size_last => fl_to_s(self.stored_file_size_last),
         :file_size_avg => fl_to_s(self.avg_file_size),
         :file_size_max => fl_to_s(self.stored_file_size_max),
+        :file_size_pre_process_last => self.process_resize ? fl_to_s(self.pre_processing_file_size_last) : "",
       }
     end
 

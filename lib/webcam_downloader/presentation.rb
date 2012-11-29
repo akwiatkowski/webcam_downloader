@@ -11,10 +11,10 @@ module WebcamDownloader
 
     def after_image_store(webcam)
       _file = webcam.path_store
-      _output = File.join("latest", "#{webcam.desc}.jpg")
+      _output = File.join("latest", "pix", "#{webcam.desc}.jpg")
 
-      #command = "ln -f \"#{_file}\" \"#{_output}\""
-      command = "ln -sf \"../#{_file}\" \"#{_output}\""
+      #command = "ln -f X Y"
+      command = "ln -sf \"../../#{_file}\" \"#{_output}\""
       `#{command}`
 
       @logger.debug("#{webcam.desc} - symlink to latest")
@@ -101,6 +101,7 @@ module WebcamDownloader
         [:identical_factor, "ident. fact", { background: "66CCCC" }],
 
         [:file_size_last, "last size [kB]", { background: "009900" }],
+        [:file_size_pre_process_last, "l. pre-proc [kB]", { background: "009900" }],
         [:file_size_avg, "avg size [kB]", { background: "009900" }],
         [:file_size_max, "max size [kB]", { background: "009900" }],
         [:data_per_day, "MB/day", { background: "44CC44" }],
