@@ -80,7 +80,8 @@ module WebcamDownloader
         # more intelligent
         s = @pre_processing_file_size_last || @stored_file_size_last
         s = 1.0 if s < 0
-        q = 3 + 350 / Math.log(s)
+        #q = 3 + 350 / Math.log(s) #old
+        q = 5 + 700 / Math.log(50*s)
         q = q.round
 
         if @jpeg_quality_offset

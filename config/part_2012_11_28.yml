@@ -228,14 +228,14 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 600
-    :desc: france_orcieres
-    :url: http://www.trinum.com/ibox/ftpcam/mega_orcieres-croze.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+#  - :interval: 600
+#    :desc: france_orcieres
+#    :url: http://www.trinum.com/ibox/ftpcam/mega_orcieres-croze.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
 
 - :group: greece
   :array:
