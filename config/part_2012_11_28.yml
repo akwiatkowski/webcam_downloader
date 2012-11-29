@@ -77,6 +77,8 @@
     :use_in_timelapse: false
 
   - :interval: 180
+    :resize: true
+    :jpg_quality_offset: -4
     :desc: austria_loser1
     :url: http://www.mentalworks.com/live/altaussee.jpg
     :resize: false

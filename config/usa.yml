@@ -13,6 +13,8 @@
   - :url: http://www.sunvalley.com/assets/images/cams/bowls_full.jpg
     :interval: 450
     :desc: usa_sunvalley3
+    :resize: true
+    :jpg_quality_offset: -4
   - :url: http://www.ridehunter.com/cam3.jpg
     :interval: 450
     :desc: usa_ridehunter1
