@@ -439,7 +439,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 100
+  - :interval: 120
     :desc: switzerland_soglio
     :url: http://www.webcam.valtline.it/soglio.jpg
     :resize: false

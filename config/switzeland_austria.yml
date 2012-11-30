@@ -28,7 +28,7 @@
   - :interval: 120
     :desc: austria_aflenz
     :url: http://www.aflenz-outdoorpark.at/webcam/webcam.jpg
-  - :interval: 120
+  - :interval: 180
     :desc: austria_blumental
     :url: http://www.blumentalcam.at/cam_1.jpg
     :coord:

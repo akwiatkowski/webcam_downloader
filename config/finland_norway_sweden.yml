@@ -61,7 +61,7 @@
     :interval: 150
     :desc: norway_tromso3
   - :url: http://www.arcticutleie.no/webkamera.jpg
-    :interval: 60
+    :interval: 90
     :desc: norwa_skjervoy
     :coord:
       #:lat: 70.085278
@@ -105,18 +105,18 @@
 
 - :group: sweden
   :array:
-  - :resize: true
+  - :resize: false
     :url: http://www.liveevent.se/webbkamera/tv4/goteborg/tv4_goteborg_1_1280.jpg
-    :interval: 60
+    :interval: 100
     :desc: sweden_goteborg
     :resize: true
   - :url: http://www.gehammar.se/not001.jpg
     :interval: 150
     :desc: sweden_hjalmo
-  - :resize: true
+  - :resize: false
     :jpg_quality_offset: 6
     :url: http://www.liveevent.se/webbkamera/ca-kalmar/ca_kalmar_1_1280.jpg
-    :interval: 90
+    :interval: 100
     :desc: sweden_kalmar
   - :resize: true
     :jpg_quality_offset: -8
@@ -141,15 +141,15 @@
     :url: http://www.liveevent.se/webbkamera/tv4/sundsvall/tv4_sundsvall_1_1280.jpg
     :interval: 300
     :desc: sweden_tvn4
-  - :resize: true
+  - :resize: false
     :jpg_quality_offset: 10
     :url: http://dedi68.aname.net/~checkpoi/webcam/unostorn/webcam_6_1280.jpg
     :interval: 120
     :desc: sweden_unostorm
-  - :resize: true
+  - :resize: false
     :jpg_quality_offset: 10
     :url: http://87.237.210.145/~checkpoi/webcam/visby_stora_torget/webcam_10_1280.jpg
-    :interval: 90
+    :interval: 100
     :desc: swedeb_visby
     :coord:
       # faked
