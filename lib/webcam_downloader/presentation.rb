@@ -22,7 +22,9 @@ module WebcamDownloader
 
     def after_loop_cycle
       file_image_html = File.new(File.join("latest", "index2_full.html"), "w")
+      file_image_html.puts html_start
       file_image_html.puts images_html
+      file_image_html.puts html_end
       file_image_html.close
 
       html_per_groups
@@ -36,7 +38,9 @@ module WebcamDownloader
 
       groups.each do |group|
         file_image_html = File.new(File.join("latest", "index1_#{group}.html"), "w")
+        file_image_html.puts html_start
         file_image_html.puts images_html(group)
+        file_image_html.puts html_end
         file_image_html.close
       end
     end
@@ -58,7 +62,7 @@ module WebcamDownloader
         s += "<a href=\"#{webcam.url}\">#{webcam.url}</a><br>\n"
         s += "</p>\n"
 
-        img = webcam.desc + ".jpg"
+        img = "pix/" + webcam.desc + ".jpg"
         s += "<img src=\"#{img}\" style=\"max-width: 800px; max-height: 600px;\" />\n"
 
         s += html_table_from_webcam_hash([webcam.to_hash])
@@ -128,7 +132,7 @@ module WebcamDownloader
             style = " style=\"background-color: #{k[2][:background]}\""
           end
 
-          s += "<td#{style}>#{t[k[0]]}</td>\n"
+          s += "<td class=\"hideextra\"#{style}>#{t[k[0]]}</td>\n"
         end
         s += "</tr>\n"
       end
@@ -151,7 +155,9 @@ module WebcamDownloader
 
       orders.each do |o|
         fs = File.new(File.join("latest", "stats_#{o}.html"), "w")
+        fs.puts html_start
         fs.puts(sorted_stats_html(@downloader.webcams, o))
+        fs.puts html_end
         fs.close
       end
     end
@@ -160,6 +166,23 @@ module WebcamDownloader
       tc = webcams.collect { |webcam| webcam.to_hash }
       tc.sort! { |a, b| b[order] <=> a[order] }
       return html_table_from_webcam_hash(tc)
+    end
+
+    def html_start
+      "
+<html>
+<head>
+<style>
+.hideextra { white-space: nowrap; overflow: hidden; text-overflow:ellipsis; }
+</style>
+</head>
+<body>"
+    end
+
+    def html_end
+      "
+</body>
+</html>"
     end
 
   end

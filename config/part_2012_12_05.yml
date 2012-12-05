@@ -1,0 +1,40 @@
+- :group: poland
+  :array:
+  - :resize: false
+    :url: http://www.niedzica.pl/uploads/webcam/niedzica2.jpg
+    :interval: 150
+    :desc: pieniny_niedzica2_polana_sosny
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false
+  - :resize: false
+    :url: http://sokolowsko.pl/soko-cam.jpg
+    :interval: 150
+    :desc: sokolowsko
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false
+
+- :group: cold
+  :array:
+  - :resize: false
+    :url: http://ivs.bkg.bund.de/vlbi/ohiggins/ohig-web1.jpg
+    :interval: 150
+    :desc: antarctic_ohig
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false
+  - :resize: false
+    :url: http://antarctica.martingrund.de/ohig-pingi-z.jpg
+    :interval: 150
+    :desc: antarctic_ohig_ping
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false
+
+
+
