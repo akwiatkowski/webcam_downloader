@@ -322,7 +322,7 @@ module WebcamDownloader
       WebcamDownloader::WgetProxy.instance.download_file(
         @url,
         @path_temporary,
-        { ref: @referer }
+        { referer: @referer }
       )
 
       @download_count = @download_count.to_i + 1

@@ -3,6 +3,7 @@
   :array:
   - :url: http://www.zakopaneonline.eu/webcam/zakopane.jpg
     :pre_url: http://www.zol.pl/webcam/
+    :referer: http://www.zol.pl/webcam/
     :interval: 180
     :desc: zakopane
     :coord:
@@ -11,6 +12,7 @@
     :use_in_timelapse: true
   - :url: http://www.zakopaneonline.eu/webcam2/zakopane.jpg
     :pre_url: http://www.zol.pl/webcam/
+    :referer: http://www.zol.pl/webcam/
     :interval: 180
     :desc: zakopane2
     :coord:
@@ -19,6 +21,7 @@
     :use_in_timelapse: true
   - :url: http://www.zakopaneonline.eu/webcam3/zakopane.jpg
     :pre_url: http://www.zol.pl/webcam/
+    :referer: http://www.zol.pl/webcam/
     :interval: 180
     :desc: zakopane3
     :coord:
@@ -54,6 +57,7 @@
       :lon: 19.916832
     :use_in_timelapse: true
   - :url: http://www.zakopaneonline.eu/webcam6/koscielisko.jpg
+    :referer: http://www.zol.pl/webcam/
     :interval: 180
     :desc: koscielisko
     :coord:
@@ -61,6 +65,7 @@
       :lon: 19.916832
     :use_in_timelapse: true
   - :url: http://www.zakopaneonline.eu/webcam9/krupowki.jpg
+    :referer: http://www.zol.pl/webcam/
     :interval: 180
     :desc: krupowki
     :coord:
@@ -68,6 +73,7 @@
       :lon: 19.916832
     :use_in_timelapse: true
   - :url: http://www.zakopaneonline.eu/webcam8/zakopianka.jpg
+    :referer: http://www.zol.pl/webcam/
     :interval: 180
     :desc: zakopianka
     :coord:
@@ -78,6 +84,7 @@
     :interval: 180
     :desc: beskid1
   - :url: http://www.zakopaneonline.eu/webcam4/bukowina.jpg
+    :referer: http://www.zol.pl/webcam/
     :interval: 300
     :desc: bukowina
     :coord:
@@ -85,6 +92,7 @@
       :lon: 19.916832
     :use_in_timelapse: false
   - :url: http://www.zakopaneonline.eu/webcams/kubik.jpg
+    :referer: http://www.zol.pl/webcam/
     :interval: 180
     :desc: willa_kubik
     :coord:
@@ -106,6 +114,7 @@
       :lon: 0.0
     :use_in_timelapse: false
   - :url: http://www.zakopaneonline.eu/webcam7/murzasichle.jpg
+    :referer: http://www.zol.pl/webcam/
     :interval: 180
     :desc: tatry_murzasichle
     :coord:

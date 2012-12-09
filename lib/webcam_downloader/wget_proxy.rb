@@ -32,11 +32,18 @@ module WebcamDownloader
     # Download file/image using wget
     def download_file(url, dest, options = { })
       ref = options[:referer] || url
-      agent = options[:agent] || "Internet Explorer 8.0"
-      command = "wget -t #{@retries} --dns-timeout=#{@dns_timeout} --connect-timeout=#{@connect_timeout} --read-timeout=#{@read_timeout} --quiet --referer=\"#{ref}\" --user-agent=\"#{agent}\" --load-cookies data/cookies.txt --keep-session-cookies --save-cookies data/cookies.txt \"#{url}\" -O#{dest}"
+      add_options = options[:wget_options] || ""
+
+      agent = options[:agent] || "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)"
+      command = "wget #{add_options} -t #{@retries} --dns-timeout=#{@dns_timeout} --connect-timeout=#{@connect_timeout} --read-timeout=#{@read_timeout} --quiet --referer=\"#{ref}\" --user-agent=\"#{agent}\" --load-cookies data/cookies.txt --keep-session-cookies --save-cookies data/cookies.txt \"#{url}\" -O#{dest}"
+
       @logger.debug("Wget proxy command - #{command.to_s.green}")
       `#{command}`
     end
+
+    #def download_and_remove_new(url)
+    #  download_file(url, @tmp_file, { wget_options: "-cm" })
+    #end
 
     def download_and_remove(url)
       download_file(url, @tmp_file)

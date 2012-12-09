@@ -121,6 +121,7 @@ module WebcamDownloader
       check_def_uniq
 
       if @development
+        #@defs.select!{|d| d[:desc] =~ /zako/}
         @defs = @defs[0..10]
         #@defs.each do |d|
         #  d[:resize] = true
@@ -145,7 +146,7 @@ module WebcamDownloader
         @logger.warn("DEVELOPMENT MODE, from 0 to #{DEV_MODE_LIMIT.to_s.blue}")
         flat_defs = flat_defs[0..DEV_MODE_LIMIT]
         flat_defs.each do |d|
-          d[:resize] = true
+          #d[:resize] = true
         end
       end
 
