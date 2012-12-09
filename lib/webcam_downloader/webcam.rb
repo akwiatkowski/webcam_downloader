@@ -261,9 +261,15 @@ module WebcamDownloader
       download_to_temp
       # if image can't be downloaded or is 0-size, delete and ignore this attempt
       # wait interval for another attempt
-      return false if downloaded_file_is_empty?
+      if downloaded_file_is_empty?
+        remove_temp
+        return false
+      end
       # check if that image wasn't downloaded at previous attempt
-      return false if downloaded_file_is_equal_to_previous?
+      if downloaded_file_is_equal_to_previous?
+        remove_temp
+        return false
+      end
       # mark that this image is last downloaded and store
       mark_temp_image_as_latest
       # process image (resize, re-compress) if that is set in definition
@@ -277,7 +283,7 @@ module WebcamDownloader
     def webcam_logger_prefix
       "#{@webcam_id.to_s.light_yellow}: #{@desc.to_s.yellow} - "
     end
-    
+
     # download temporary and remove
     def pre_url_download
       unless @pre_url.nil?

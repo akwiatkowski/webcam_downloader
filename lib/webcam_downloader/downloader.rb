@@ -144,6 +144,9 @@ module WebcamDownloader
       if DEV_MODE
         @logger.warn("DEVELOPMENT MODE, from 0 to #{DEV_MODE_LIMIT.to_s.blue}")
         flat_defs = flat_defs[0..DEV_MODE_LIMIT]
+        flat_defs.each do |d|
+          d[:resize] = true
+        end
       end
 
       @logger.info("Loaded #{flat_defs.count} definitions")

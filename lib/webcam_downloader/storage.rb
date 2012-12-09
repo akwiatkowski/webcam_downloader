@@ -70,6 +70,12 @@ module WebcamDownloader
       end
     end
 
+    def remove_temp(webcam)
+      if File.exists?(webcam.path_temporary)
+        File.delete(webcam.path_temporary)
+      end
+    end
+
     #def empty_temporary_dir
     #  # WARNING
     #  #FileUtils.rm_rf("tmp/.", secure: true)
