@@ -407,6 +407,10 @@ module WebcamDownloader
       end
     end
 
+    def remove_temp
+      @storage.remove_temp(self)
+    end
+
 
   end
 end
