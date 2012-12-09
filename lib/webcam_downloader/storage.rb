@@ -30,7 +30,7 @@ module WebcamDownloader
       mp = Time.now.strftime('%Y_%m')
       return if @monthly_prefix == mp
 
-      @logger.debug("Prepare monthly directories for #{mp}")
+      @logger.debug("Prepare monthly directories for #{mp}".on_red)
 
       # monthly dir
       f = File.join("pix", mp)
@@ -53,27 +53,28 @@ module WebcamDownloader
       webcam.path_store = File.join("pix", @monthly_prefix, webcam.desc, "#{webcam.desc}_#{Time.now.to_i}.jpg")
       # webcam.path_store_processed = File.join("pix", @monthly_prefix, webcam.desc, "#{webcam.desc}_#{Time.now.to_i}_proc.jpg")
 
-      @logger.debug("Set paths for #{webcam.desc}, store path #{webcam.path_store}")
+      @logger.debug("Set paths for #{webcam.desc.to_s.yellow}, store path #{webcam.path_store.to_s.green}")
       @logger.debug(" Temp path  #{webcam.path_temporary}")
-      @logger.debug(" Store path #{webcam.path_store}")
+      @logger.debug(" Store path #{webcam.path_store.to_s.light_green}")
     end
 
     # move to storage
     def store_temporary_image(webcam)
       if File.exists?(webcam.path_temporary)
         File.rename(webcam.path_temporary, webcam.path_store)
-        @logger.info("Stored #{webcam.desc} (id #{webcam.webcam_id}, worker #{webcam.worker_id}), from #{webcam.path_temporary} to #{webcam.path_store}")
+        @logger.info("Stored #{webcam.desc.to_s.yellow} (id #{webcam.webcam_id}, worker #{webcam.worker_id.to_s.red}), from #{webcam.path_temporary} to #{webcam.path_store.to_s.green}")
         return true
       else
-        @logger.info("Not stored #{webcam.desc}, file #{webcam.path_temporary} not exists")
+        @logger.info("Not stored #{webcam.desc.to_s.yellow}, file #{webcam.path_temporary} not exists")
         return false
       end
     end
 
-    def empty_temporary_dir
-      # WARNING
-      FileUtils.rm_rf("tmp/.", secure: true)
-    end
+    #def empty_temporary_dir
+    #  # WARNING
+    #  #FileUtils.rm_rf("tmp/.", secure: true)
+    #  raise 'very bad'
+    #end
 
   end
 end

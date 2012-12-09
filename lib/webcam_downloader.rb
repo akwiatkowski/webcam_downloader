@@ -1,5 +1,6 @@
 $:.unshift(File.dirname(__FILE__))
 
+require 'colorize'
 require 'digest/md5'
 require 'webcam_downloader/image_processor'
 require 'webcam_downloader/presentation'

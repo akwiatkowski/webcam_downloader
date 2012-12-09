@@ -22,7 +22,7 @@ module WebcamDownloader
       @group = _options[:group]
 
       if @interval.nil?
-        @logger.error("Webcam #{@desc} has no interval set, using default - 300s")
+        @logger.error("Webcam #{@desc.yellow} has no interval set, using default - #{300.to_s.red}s")
         @interval = 300
       end
 
@@ -91,7 +91,7 @@ module WebcamDownloader
         q = 90 if q > 90
         q = 50 if q < 50
 
-        @logger.info("Quality for size #{s} = #{q}")
+        @logger.info("Quality for size #{s.to_s.blue} = #{q.to_s.light_blue}")
         return q
       else
         raise ArgumentError
@@ -275,14 +275,14 @@ module WebcamDownloader
     #
 
     def webcam_logger_prefix
-      "#{@webcam_id}: #{@desc} - "
+      "#{@webcam_id.to_s.light_yellow}: #{@desc.to_s.yellow} - "
     end
     
     # download temporary and remove
     def pre_url_download
       unless @pre_url.nil?
         WebcamDownloader::WgetProxy.instance.download_and_remove(@pre_url)
-        @logger.debug("#{webcam_logger_prefix}Pre-url downloaded from #{@pre_url}")
+        @logger.debug("#{webcam_logger_prefix}Pre-url downloaded from #{@pre_url.to_s.green}")
       end
     end
 
@@ -306,7 +306,7 @@ module WebcamDownloader
       end
 
       @url = Time.at(t).strftime(@url_schema[:url_schema])
-      @logger.info("#{webcam_logger_prefix}Url generated #{@url}")
+      @logger.info("#{webcam_logger_prefix}Url generated #{@url.green}")
       return @url
     end
 
@@ -324,7 +324,7 @@ module WebcamDownloader
       @download_time_cost_total = @download_time_cost_total.to_f + @download_time_cost_last
       @download_time_cost_max = @download_time_cost_last if @download_time_cost_last > @download_time_cost_max
 
-      @logger.debug("#{webcam_logger_prefix}Downloaded: count #{@download_count}, cost #{@download_time_cost_last}")
+      @logger.debug("#{webcam_logger_prefix}Downloaded: count #{@download_count.to_s.red}, cost #{@download_time_cost_last.to_s.cyan}")
 
       @last_downloaded_temporary_at = Time.now.to_i
 
@@ -366,7 +366,7 @@ module WebcamDownloader
       @latest_downloaded_digest = Digest::MD5.hexdigest(File.read(@latest_downloaded_path))
       @latest_downloaded_mtime = File.new(@latest_downloaded_path).mtime
 
-      @logger.debug("#{webcam_logger_prefix}Marked as stored in #{@latest_downloaded_path}")
+      @logger.debug("#{webcam_logger_prefix}Marked as stored in #{@latest_downloaded_path.to_s.green}")
     end
 
     def process_temp_image_if_needed
@@ -380,7 +380,7 @@ module WebcamDownloader
         @process_time_cost_total = @process_time_cost_total.to_f + @process_time_cost_last
         @process_time_cost_max = @process_time_cost_last if @process_time_cost_last > @process_time_cost_max
 
-        @logger.debug("#{webcam_logger_prefix}Image processed, count #{@process_count}, cost #{@process_time_cost_last}")
+        @logger.debug("#{webcam_logger_prefix}Image processed, count #{@process_count.to_s.red}, cost #{@process_time_cost_last.to_s.cyan}")
       else
         @logger.warn("#{webcam_logger_prefix}Image can't be processed")
       end

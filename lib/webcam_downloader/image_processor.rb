@@ -19,7 +19,7 @@ module WebcamDownloader
       webcam.pre_processing_file_size_last = File.size(webcam.path_temporary).to_f / 1024.0
 
       jpeg_quality = webcam.jpeg_quality || @jpeg_quality
-      @logger.debug("#{webcam.desc} - Resize to #{@resolution}, quality #{jpeg_quality}")
+      @logger.debug("#{webcam.desc.to_s.yellow} - Resize to #{@resolution.to_s.red}, quality #{jpeg_quality.to_s.blue}")
       command = "convert \"#{webcam.path_temporary}\" -resize '#{@resolution}>' -quality #{jpeg_quality}% \"#{webcam.path_temporary_processed}\""
       `#{command}`
       File.delete(webcam.path_temporary) if File.exists?(webcam.path_temporary)

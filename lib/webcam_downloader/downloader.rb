@@ -55,46 +55,46 @@ module WebcamDownloader
         w.worker_id = wrk_id
         @webcam_by_worker[wrk_id] << w
 
-        @logger.debug("Created Webcam for #{w.desc}, id #{i}, worker #{wrk_id}")
+        @logger.debug("Created Webcam for #{w.desc.to_s.yellow}, id #{i.to_s.red}, worker #{wrk_id.to_s.blue}")
       end
 
-      @logger.info("Start!")
+      @logger.info("Start!".black.on_green)
       @started_at = Time.now
       @storage.descs = @webcams.collect { |w| w.desc }
       @storage.prepare_file_structure
       @storage.prepare_monthly_directories
 
-      @logger.info("Start loop!")
+      @logger.info("Start loop!".on_blue)
       start_loop
     end
 
     def start_loop
-      # remove all not used tmp files
-      @storage.empty_temporary_dir
+      ## remove all not used tmp files
+      #@storage.empty_temporary_dir
 
       loop do
-        @logger.info("Loop #{@loop_count}")
+        @logger.info("Loop #{@loop_count}".black.on_green)
 
         @webcam_by_worker.keys.each do |wrk_id|
-          @logger.info("Starting thread #{wrk_id} with #{@webcam_by_worker[wrk_id].size} webcams")
+          @logger.info("Starting thread #{wrk_id.to_s.green} with #{@webcam_by_worker[wrk_id].size.to_s.red} webcams")
           @threads_by_worker[wrk_id] = Thread.new do
             @webcam_by_worker[wrk_id].each do |webcam|
               webcam.make_it_so
             end
           end
-          @logger.info("Started thread #{wrk_id} webcams to go #{@webcam_by_worker[wrk_id].select { |w| w.r? }.size} all #{@webcam_by_worker[wrk_id].size} webcams")
+          @logger.info("Started thread #{wrk_id.to_s.green} webcams to go #{@webcam_by_worker[wrk_id].select { |w| w.r? }.size.to_s.red} all #{@webcam_by_worker[wrk_id].size.to_s.light_red} webcams")
         end
 
         # wait for threads to finish
         @logger.debug("Waiting for threads to finish their job")
         loop do
           alive_threads = @threads_by_worker.values.select { |t| t.alive? }
-          @logger.debug("Threads alive - #{alive_threads.size}")
+          @logger.debug("Threads alive - #{alive_threads.size.to_s.magenta}")
           sleep 0.5
 
           break if alive_threads.size == 0
         end
-        @logger.info("All threads are dead! yeaah!")
+        @logger.info("All threads are dead! yeaah!".black.on_cyan)
 
         # single thread, oldschool
         #@webcams.each do |webcam|
@@ -117,7 +117,7 @@ module WebcamDownloader
           load_definition_file(File.join(path, f))
         end
       end
-      @logger.info("Loaded total #{@defs.size} definitions")
+      @logger.info("Loaded total #{@defs.size.to_s.red} definitions")
       check_def_uniq
 
       if @development
@@ -142,7 +142,7 @@ module WebcamDownloader
       end
 
       if DEV_MODE
-        @logger.warn("DEVELOPMENT MODE, from 0 to #{DEV_MODE_LIMIT}")
+        @logger.warn("DEVELOPMENT MODE, from 0 to #{DEV_MODE_LIMIT.to_s.blue}")
         flat_defs = flat_defs[0..DEV_MODE_LIMIT]
       end
 
@@ -158,8 +158,8 @@ module WebcamDownloader
         unless url.nil?
           similar = @defs.select { |e| e[:url] == url }
           if similar.size > 1
-            @logger.error("DOUBLED #{d[:desc]} - #{d[:url]}")
-            @logger.error("\n#{similar.to_yaml}")
+            @logger.error("DOUBLED #{d[:desc].to_s.yellow.on_red} - #{d[:url]}".on_read)
+            @logger.error("\n#{similar.to_yaml}".on_red)
           end
         end
       end

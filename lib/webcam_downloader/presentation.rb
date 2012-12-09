@@ -17,7 +17,7 @@ module WebcamDownloader
       command = "ln -sf \"../../#{_file}\" \"#{_output}\""
       `#{command}`
 
-      @logger.debug("#{webcam.desc} - symlink to latest")
+      @logger.debug("#{webcam.desc.to_s.yellow} - symlink to latest")
     end
 
     def after_loop_cycle
@@ -30,7 +30,7 @@ module WebcamDownloader
       html_per_groups
       sorted_stats_html_save
 
-      @logger.debug("Presentation - after cycle")
+      @logger.debug("Presentation - after cycle".on_red)
     end
 
     def html_per_groups

@@ -34,7 +34,7 @@ module WebcamDownloader
       ref = options[:referer] || url
       agent = options[:agent] || "Internet Explorer 8.0"
       command = "wget -t #{@retries} --dns-timeout=#{@dns_timeout} --connect-timeout=#{@connect_timeout} --read-timeout=#{@read_timeout} --quiet --referer=\"#{ref}\" --user-agent=\"#{agent}\" --load-cookies data/cookies.txt --keep-session-cookies --save-cookies data/cookies.txt \"#{url}\" -O#{dest}"
-      @logger.debug("Wget proxy command - #{command}")
+      @logger.debug("Wget proxy command - #{command.to_s.green}")
       `#{command}`
     end
 
