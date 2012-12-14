@@ -157,16 +157,27 @@ module WebcamDownloader
     end
 
     def check_def_uniq
+      raise = false
       @defs.each do |d|
         url = d[:url]
         unless url.nil?
           similar = @defs.select { |e| e[:url] == url }
           if similar.size > 1
-            @logger.error("DOUBLED #{d[:desc].to_s.yellow.on_red} - #{d[:url]}".on_read)
+            @logger.error("DOUBLED #{d[:desc].to_s.yellow.on_red} - #{d[:url]}".on_red)
             @logger.error("\n#{similar.to_yaml}".on_red)
+            raise = true
           end
         end
+
+        similar = @defs.select { |e| e[:desc] == d[:desc] }
+        if similar.size > 1
+          @logger.error("DOUBLED #{d[:desc].to_s.yellow.on_red} - #{d[:url]}".on_red)
+          @logger.error("\n#{similar.to_yaml}".on_red)
+          raise = true
+        end
       end
+
+      raise "Errors in definitions" if raise
     end
 
   end

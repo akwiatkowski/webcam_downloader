@@ -334,9 +334,11 @@ module WebcamDownloader
 
       @last_downloaded_temporary_at = Time.now.to_i
 
-      @last_downloaded_temporary_size = File.size(@path_temporary)
-      @last_downloaded_temporary_digest = Digest::MD5.hexdigest(File.read(@path_temporary))
-      @last_downloaded_temporary_mtime = File.new(@path_temporary).mtime
+      if File.exists?(@path_temporary)
+        @last_downloaded_temporary_size = File.size(@path_temporary)
+        @last_downloaded_temporary_digest = Digest::MD5.hexdigest(File.read(@path_temporary))
+        @last_downloaded_temporary_mtime = File.new(@path_temporary).mtime
+      end
     end
 
     def downloaded_file_is_empty?
