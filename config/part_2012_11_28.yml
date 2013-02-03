@@ -138,7 +138,7 @@
 
 - :group: finland
   :array:
-  - :interval: 90
+  - :interval: 120
     :desc: finland_Kemijarvi
     :url: http://www.koillislapinsahko.fi/webcam/current.jpg
     :resize: false
@@ -310,7 +310,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 150
+  - :interval: 180
     :desc: germany_trianel
     :url: http://212.37.52.98/record/current.jpg
     :resize: false

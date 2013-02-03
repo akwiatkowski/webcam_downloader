@@ -41,7 +41,7 @@
       :lat: 0.0
       :lon: 0.0
     :use_in_timelapse: false
-  - :interval: 120
+  - :interval: 150
     :desc: boleslawiec_rynek
     :url: http://webcam.istotne.pl/rynek000M.jpg
     :resize: false

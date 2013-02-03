@@ -54,7 +54,7 @@
       :lon:
     :use_in_timelapse: false
   - :url: http://kamery.hydronet.cz/brod/photo/brod_1600x1200_now.jpg
-    :interval: 120
+    :interval: 150
     :desc: karkonosze_zelazny_brod
     :coord:
       :lat:

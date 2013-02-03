@@ -25,7 +25,7 @@
     :interval: 450
     :desc: usa_ridehunter3
   - :url: http://www.mountainwebcams.com/Qx4F8e21/netcam2.jpg
-    :interval: 120
+    :interval: 150
     :desc: usa_lake_arrowhead
     :coord:
       :lat: 34.256389
