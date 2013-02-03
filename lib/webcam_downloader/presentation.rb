@@ -85,30 +85,31 @@ module WebcamDownloader
         [:avg_download_cost, "a.down TC[s]", { background: "FF3333" }],
         [:avg_process_cost, "a.proc TC[s]", { background: "FF3333" }],
 
-        [:last_cost, "last TC[s]", { background: "FF6600" }],
-        [:last_download_cost, "l.down TC[s]", { background: "FF6600" }],
-        [:last_process_cost, "l.proc TC[s]", { background: "FF6600" }],
+        [:last_cost, "last TC[s]", { background: "FF6600" }, { sum: true }],
+        [:last_download_cost, "l.down TC[s]", { background: "FF6600" }, { sum: true }],
+        [:last_process_cost, "l.proc TC[s]", { background: "FF6600" }, { sum: true }],
 
-        [:max_cost, "max TC[s]", { background: "FF0066" }],
-        [:max_download_cost, "m.down TC[s]", { background: "FF0066" }],
-        [:max_process_cost, "m.proc TC[s]", { background: "FF0066" }],
+        [:max_cost, "max TC[s]", { background: "FF0066" }, { sum: true }],
+        [:max_download_cost, "m.down TC[s]", { background: "FF0066" }, { sum: true }],
+        [:max_process_cost, "m.proc TC[s]", { background: "FF0066" }, { sum: true }],
 
         [:last_attempted_time_ago, "attmp old[s]", { background: "99BBBB" }],
         [:last_stored_time_ago, "stored old[s]", { background: "99BBBB" }],
         [:will_be_downloaded_after, "will d. be after[s]", { background: "99BBBB" }],
 
-        [:count_download, "count", { background: "CC9900" }],
-        [:count_zero_size, "c. size 0", { background: "CC9900" }],
-        [:count_identical, "c. identical", { background: "CC9900" }],
+        [:count_download, "count", { background: "CC9900" }, { sum: true }],
+        [:count_zero_size, "c. size 0", { background: "CC9900" }, { sum: true }],
+        [:count_identical, "c. identical", { background: "CC9900" }, { sum: true }],
 
         [:interval, "int", { background: "66CCCC" }],
         [:identical_factor, "ident. fact", { background: "66CCCC" }],
 
-        [:file_size_last, "last size [kB]", { background: "009900" }],
-        [:file_size_pre_process_last, "l. pre-proc [kB]", { background: "009900" }],
-        [:file_size_avg, "avg size [kB]", { background: "009900" }],
-        [:file_size_max, "max size [kB]", { background: "009900" }],
-        [:data_per_day, "MB/day", { background: "44CC44" }],
+        [:file_size_last, "last size [kB]", { background: "009900" }, { sum: true }],
+        [:file_size_pre_process_last, "l. pre-proc [kB]", { background: "009900" }, { sum: true }],
+        [:file_size_avg, "avg size [kB]", { background: "009900" }, { sum: true }],
+        [:file_size_max, "max size [kB]", { background: "009900" }, { sum: true }],
+        [:data_per_day, "MB/day", { background: "44CC44" }, { sum: true }],
+        [:data_per_month, "GB/m", { background: "44CC44" }, { sum: true }],
 
         [:html_info, "info"],
         [:group, "group"],
@@ -136,6 +137,31 @@ module WebcamDownloader
         end
         s += "</tr>\n"
       end
+
+      # summary
+      s += "<tr>\n"
+      s += "<th></th>\n"
+      keys.each do |k|
+        v = ""
+        if k[3].kind_of?(Hash) and k[3][:sum]
+          sum = 0.0
+
+          tc.each do |t|
+            sum += t[k[0]].to_f
+          end
+
+          v = fl_to_s(sum)
+        end
+
+        style = ""
+        if k[2] and k[2][:background]
+          style = " style=\"background-color: #{k[2][:background]}\""
+        end
+
+        s += "<th#{style}>#{v}</th>\n"
+      end
+      s += "</tr>\n"
+
       s += "</table>\n"
 
       return s

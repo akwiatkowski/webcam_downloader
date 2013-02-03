@@ -198,6 +198,7 @@ module WebcamDownloader
         :worker_id => self.worker_id,
         :process_flag => self.process_resize ? "T" : "-",
         :data_per_day => fl_to_s(self.data_per_day),
+        :data_per_month => fl_to_s(self.data_per_day.to_f * 30.0 / 1024.0),
 
         :interval => @interval,
         :identical_factor => fl_to_s(self.identical_factor),
