@@ -218,7 +218,7 @@
       :lat: 0.0
       :lon: 0.0
     :use_in_timelapse: false
-  - :interval: 150
+  - :interval: 165
     :desc: osiek
     :url: http://www.osieknet.pl/kamerka.php?k=2
     :resize: false

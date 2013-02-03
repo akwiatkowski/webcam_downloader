@@ -133,9 +133,9 @@
 #    :interval: 450
 #    :desc: sweden_klappen
   - :resize: true
-    :jpg_quality_offset: 4
+    :jpg_quality_offset: 2
     :url: http://www.hamrafjallet.se/kamera/webbkamror/topmega.jpg
-    :interval: 120
+    :interval: 150
     :desc: sweden_tandallen
   - :resize: true
     :url: http://www.liveevent.se/webbkamera/tv4/sundsvall/tv4_sundsvall_1_1280.jpg

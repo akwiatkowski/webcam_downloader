@@ -167,7 +167,7 @@
 
 - :group: france
   :array:
-  - :interval: 300
+  - :interval: 450
     :desc: france_alpes_village_1
     :url: http://www.webcam-hd.com/Images/2alpes-ot_village/pano/2alpes-ot_village1.jpg
     :resize: false
@@ -176,7 +176,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 450
     :desc: france_alpes_village_2
     :url: http://www.webcam-hd.com/Images/2alpes-ot_village/pano/2alpes-ot_village2.jpg
     :resize: false
@@ -185,7 +185,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 450
     :desc: france_alpes_village_3
     :url: http://www.webcam-hd.com/Images/2alpes-ot_village/pano/2alpes-ot_village3.jpg
     :resize: false
@@ -194,7 +194,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 450
     :desc: france_alpes_village_4
     :url: http://www.webcam-hd.com/Images/2alpes-ot_village/pano/2alpes-ot_village4.jpg
     :resize: false
@@ -203,7 +203,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 450
     :desc: france_alpes_village_5
     :url: http://www.webcam-hd.com/Images/2alpes-ot_village/pano/2alpes-ot_village5.jpg
     :resize: false
@@ -212,7 +212,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 450
     :desc: france_alpes_village_6
     :url: http://www.webcam-hd.com/Images/2alpes-ot_village/pano/2alpes-ot_village6.jpg
     :resize: false
@@ -221,7 +221,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
+  - :interval: 450
     :desc: france_alpes_village_7
     :url: http://www.webcam-hd.com/Images/2alpes-ot_village/pano/2alpes-ot_village7.jpg
     :resize: false
