@@ -63,6 +63,8 @@
   - :url: http://www.arcticutleie.no/webkamera.jpg
     :interval: 120
     :desc: norwa_skjervoy
+    :resize: true
+    :jpg_quality_offset: 0
     :coord:
       #:lat: 70.085278
       # faked

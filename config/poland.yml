@@ -102,6 +102,8 @@
   - :url: http://z-ne.pl/kamery/giewont_zakopane.jpg
     :interval: 120
     :desc: giewont_zakopane
+    :resize: true
+    :jpg_quality_offset: 1
     :coord:
       :lat: 49.304778
       :lon: 19.916832
@@ -391,7 +393,8 @@
   - :resize: true
     :jpg_quality_offset: 5
     :url: http://kamery.humlnet.cz/images/webcams/snezka3/2048x1536.jpg
-    :interval: 160
+    #:interval: 160
+    :interval: 3600
     :desc: sniezka0
     :coord:
       :lat: 50.735833

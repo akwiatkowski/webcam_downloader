@@ -2,6 +2,8 @@
   :array:
   - :url: http://www.sunvalley.com/assets/images/cams/wclouds_full.jpg
     :ingterval: 450
+    :resize: true
+    :jpg_quality_offset: -2
     :desc: usa_sunvalley1
     :coord:
       :lat: 43.70263
@@ -9,12 +11,14 @@
     :use_in_timelapse: false
   - :url: http://www.sunvalley.com/assets/images/cams/clubhouse_full.jpg
     :interval: 450
+    :resize: true
+    :jpg_quality_offset: 0
     :desc: usa_sunvalley2
   - :url: http://www.sunvalley.com/assets/images/cams/bowls_full.jpg
     :interval: 450
     :desc: usa_sunvalley3
     :resize: true
-    :jpg_quality_offset: -4
+    :jpg_quality_offset: -15
   - :url: http://www.ridehunter.com/cam3.jpg
     :interval: 450
     :desc: usa_ridehunter1
@@ -27,6 +31,8 @@
   - :url: http://www.mountainwebcams.com/Qx4F8e21/netcam2.jpg
     :interval: 150
     :desc: usa_lake_arrowhead
+    :resize: true
+    :jpg_quality_offset: 4
     :coord:
       :lat: 34.256389
       :lon: -117.184444
@@ -77,9 +83,12 @@
   - :url: http://www.cfht.hawaii.edu/webcams/c4/c4.jpg
     :interval: 60
     :desc: usa_canada_telescope_nnw
-  - :url: http://www.nps.gov/webcams-yell/mammothcam2.jpg
-    :interval: 120
-    :desc: usa_y_mammoth_hot_spr2
+
+# boring
+#  - :url: http://www.nps.gov/webcams-yell/mammothcam2.jpg
+#    :interval: 120
+#    :desc: usa_y_mammoth_hot_spr2
+
   - :url: http://www.nps.gov/webcams-yell/mtwashburn.jpg
     :interval: 450
     :desc: usa_mnt_washburn
@@ -103,6 +112,8 @@
     :url: http://www.jach.hawaii.edu/weather/images/ukirt.jpg
     :interval: 120
     :desc: usa_infrared_telescope
+    :resize: true
+    :jpg_quality_offset: -10
   - :interval: 300
     :desc: usa_san_francisco
     :url: http://wwc.instacam.com/instacamimg/SANFR/SANFR_l.jpg

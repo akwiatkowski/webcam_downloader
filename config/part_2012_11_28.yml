@@ -52,7 +52,8 @@
   - :interval: 120
     :desc: austria_Festungsarena_Unterer_Stadtplatz
     :url: http://www.webcam.kufnet.at/livebild/festungsarena/image.jpg
-    :resize: false
+    :resize: true
+    :jpg_quality_offset: -2
     :coord:
       :lat: 0.0
       :lon: 0.0
@@ -250,19 +251,21 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 120
-    :desc: grecja_ateny1
-    :url: http://nifada.com/webcam/current.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+# boring
+#  - :interval: 120
+#    :desc: grecja_ateny1
+#    :url: http://nifada.com/webcam/current.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
 
   - :interval: 120
     :desc: grecja_samarina
     :url: http://www.snowreport.gr/snowcam/samarina/samarina.jpg
-    :resize: false
+    :resize: true
+    :jpg_quality_offset: 2
     :coord:
       :lat: 0.0
       :lon: 0.0

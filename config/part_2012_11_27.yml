@@ -28,7 +28,8 @@
   - :interval: 120
     :desc: bielsko_biala_elektrocieplownia1
     :url: http://www.pke.pl/kamery/zec/cam_bb_1000M.jpg
-    :resize: false
+    :resize: true
+    :jpg_quality_offset: -2
     :coord:
       :lat: 0.0
       :lon: 0.0
@@ -36,7 +37,8 @@
   - :interval: 120
     :desc: bielsko_biala_elektrocieplownia2
     :url: http://www.pke.pl/kamery/zec/cam_bb_2000M.jpg
-    :resize: false
+    :resize: true
+    :jpg_quality_offset: -2
     :coord:
       :lat: 0.0
       :lon: 0.0
@@ -68,7 +70,8 @@
   - :interval: 150
     :desc: cedry_wielkie_marina2
     :url: http://79.190.93.34:82/cgi-bin/encoder?USER=www&PWD=www&SNAPSHOT
-    :resize: false
+    :resize: true
+    :jpg_quality_offset: -3
     :coord:
       :lat: 0.0
       :lon: 0.0
@@ -132,7 +135,8 @@
   - :interval: 60
     :desc: kowary_deptak
     :url: http://www.kowary.pl/kamera/obrazek002.jpg
-    :resize: false
+    :resize: true
+    :jpg_quality_offset: -5
     :coord:
       :lat: 0.0
       :lon: 0.0
@@ -173,7 +177,8 @@
   - :interval: 120
     :desc: muszyna_lewiatan
     :url: http://www.kamera.muszyna.info.pl/lewiatan_000M.jpg
-    :resize: false
+    :resize: true
+    :jpg_quality_offset: -8
     :coord:
       :lat: 0.0
       :lon: 0.0
@@ -221,7 +226,8 @@
   - :interval: 165
     :desc: osiek
     :url: http://www.osieknet.pl/kamerka.php?k=2
-    :resize: false
+    :resize: true
+    :jpg_quality_offset: -10
     :coord:
       :lat: 0.0
       :lon: 0.0

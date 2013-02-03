@@ -3,6 +3,8 @@
   :array:
   - :url: http://webcam.21.by/pub/webcam/148/size_0.jpg
     :interval: 200
+    :resize: true
+    :jpg_quality_offset: -10
     :desc: minsk
   - :resize: true
     :url: http://camera.kemernet.ru/cam_huge.jpg
