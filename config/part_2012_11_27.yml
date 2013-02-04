@@ -178,7 +178,7 @@
     :desc: muszyna_lewiatan
     :url: http://www.kamera.muszyna.info.pl/lewiatan_000M.jpg
     :resize: true
-    :jpg_quality_offset: -8
+    :jpg_quality_offset: -12
     :coord:
       :lat: 0.0
       :lon: 0.0

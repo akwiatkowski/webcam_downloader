@@ -64,7 +64,7 @@
     :interval: 120
     :desc: norwa_skjervoy
     :resize: true
-    :jpg_quality_offset: 0
+    :jpg_quality_offset: -5
     :coord:
       #:lat: 70.085278
       # faked
@@ -112,6 +112,7 @@
     :interval: 120
     :desc: sweden_goteborg
     :resize: true
+    :jpg_quality_offset: -5
   - :url: http://www.gehammar.se/not001.jpg
     :interval: 150
     :desc: sweden_hjalmo
@@ -135,7 +136,7 @@
 #    :interval: 450
 #    :desc: sweden_klappen
   - :resize: true
-    :jpg_quality_offset: 2
+    :jpg_quality_offset: -2
     :url: http://www.hamrafjallet.se/kamera/webbkamror/topmega.jpg
     :interval: 150
     :desc: sweden_tandallen

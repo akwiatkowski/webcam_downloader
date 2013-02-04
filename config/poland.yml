@@ -103,7 +103,7 @@
     :interval: 120
     :desc: giewont_zakopane
     :resize: true
-    :jpg_quality_offset: 1
+    :jpg_quality_offset: -3
     :coord:
       :lat: 49.304778
       :lon: 19.916832

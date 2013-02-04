@@ -7,7 +7,7 @@ module WebcamDownloader
       @downloader = _downloader
       @logger = _downloader.logger
 
-      @jpeg_quality = 88
+      @jpeg_quality = 84
       @resolution = "1920x1080"
     end
 

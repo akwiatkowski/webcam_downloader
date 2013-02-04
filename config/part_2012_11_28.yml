@@ -265,7 +265,7 @@
     :desc: grecja_samarina
     :url: http://www.snowreport.gr/snowcam/samarina/samarina.jpg
     :resize: true
-    :jpg_quality_offset: 2
+    :jpg_quality_offset: -5
     :coord:
       :lat: 0.0
       :lon: 0.0
