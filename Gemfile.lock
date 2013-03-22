@@ -4,7 +4,7 @@ GEM
     RubySunrise (0.3)
       tzinfo
     colorize (0.5.8)
-    tzinfo (0.3.35)
+    tzinfo (0.3.37)
 
 PLATFORMS
   ruby
