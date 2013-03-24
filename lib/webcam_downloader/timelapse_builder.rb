@@ -147,12 +147,8 @@ module WebcamDownloader
           end
 
           if (success + errors) % 100 == 0
-            @logger.info(" ... #{files.size.to_s.blue}")
+            @logger.info(" ... #{(success + errors)} / #{files.size}")
           end
-
-          ####
-          return a
-
         end
       end
 
