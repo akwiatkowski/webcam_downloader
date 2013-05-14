@@ -5,12 +5,12 @@
     :interval: 180
     :desc: switz_andermatt
   - :url: http://www.appenzell-ai.ch/appenzell_fotoold.jpg
-    :interval: 180
+    :interval: 200
     :desc: switz_appenzell
-  - :url: http://www.obergoms.ch/tourismus/service/webcams/obergesteln.php?e_12_14_getimage=1
-    :interval: 210
-    :desc: switz_obergoms
-  - :interval: 90
+#  - :url: http://www.obergoms.ch/tourismus/service/webcams/obergesteln.php?e_12_14_getimage=1
+#    :interval: 210
+#    :desc: switz_obergoms
+  - :interval: 150
     :desc: ch_birkli
     :url: http://www.birkli.ch/webcam/bildgross/aktuell_gross.jpg
     :coord:
@@ -22,13 +22,13 @@
 
 - :group: austria
   :array:
-  - :interval: 450
-    :desc: austria_kargogel
-    :url: http://karkogel.it-wms.com/big_current4.jpg
-  - :interval: 120
+#  - :interval: 450
+#    :desc: austria_kargogel
+#    :url: http://karkogel.it-wms.com/big_current4.jpg
+  - :interval: 180
     :desc: austria_aflenz
     :url: http://www.aflenz-outdoorpark.at/webcam/webcam.jpg
-  - :interval: 200
+  - :interval: 210
     :desc: austria_blumental
     :url: http://www.blumentalcam.at/cam_1.jpg
     :coord:
@@ -43,30 +43,30 @@
     :resize: true
     :desc: austria_silvretta2
     :url: http://www.silvretta-montafon.at/webcam/image2_text.jpg
-  - :interval: 120
+  - :interval: 180
     :desc: austria_mondi
     :url: http://91.112.132.150/record/current.jpg
     :coord:
       :lat: 47.256649
       :lon: 11.408386
     :use_in_timelapse: true
-  - :interval: 150
-    :desc: innsbruck_lans
-    :url: http://live.tyrol.at/tyrolcams/lans/lans.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
-  - :interval: 120
-    :desc: obertauern
-    :url: http://www.snowwhite.at/obertauernwebcam/webcam01.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
-  - :interval: 150
+#  - :interval: 150
+#    :desc: innsbruck_lans
+#    :url: http://live.tyrol.at/tyrolcams/lans/lans.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+#  - :interval: 120
+#    :desc: obertauern
+#    :url: http://www.snowwhite.at/obertauernwebcam/webcam01.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+  - :interval: 180
     :desc: saalfelden_hotel_Ritzenhof1
     :url: http://www.ritzenhof.at/webcam/cam1/cam1.jpg
     :resize: true
@@ -74,7 +74,7 @@
       :lat: 0.0
       :lon: 0.0
     :use_in_timelapse: false
-  - :interval: 90
+  - :interval: 180
     :desc: saalfelden_hotel_Ritzenhof2
     :url: http://www.ritzenhof.at/webcam/cam2/cam2.jpg
     :resize: true
@@ -82,7 +82,7 @@
       :lat: 0.0
       :lon: 0.0
     :use_in_timelapse: false
-  - :interval: 90
+  - :interval: 180
     :desc: austria_gasthof_geierwallihof
     :url: http://geierwallihof.at/MOBOTIX/test.jpg
     :resize: false

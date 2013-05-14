@@ -7,4 +7,4 @@ options = {
 
 b = WebcamDownloader::TimelapseBuilder.new(options)
 b.add_root_path('/media/f35c3848-ec12-4e09-bc60-f5622b3015f5/backup/webcam_downloader')
-b.analyze_webcam_images_for('goryczkowa')
+b.analyze_webcam_images_for('switzerland_zermatt_matterhorn')

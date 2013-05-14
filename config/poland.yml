@@ -66,7 +66,7 @@
     :use_in_timelapse: true
   - :url: http://www.zakopaneonline.eu/webcam9/krupowki.jpg
     :referer: http://www.zol.pl/webcam/
-    :interval: 180
+    :interval: 300
     :desc: krupowki
     :coord:
       :lat: 49.304778
@@ -80,17 +80,17 @@
       :lat: 49.304778
       :lon: 19.916832
     :use_in_timelapse: true
-  - :url: http://www.kamera.zadzial.pl/cam_1.jpg
-    :interval: 180
-    :desc: beskid1
-  - :url: http://www.zakopaneonline.eu/webcam4/bukowina.jpg
-    :referer: http://www.zol.pl/webcam/
-    :interval: 300
-    :desc: bukowina
-    :coord:
-      :lat: 49.304778
-      :lon: 19.916832
-    :use_in_timelapse: false
+#  - :url: http://www.kamera.zadzial.pl/cam_1.jpg
+#    :interval: 180
+#    :desc: beskid1
+#  - :url: http://www.zakopaneonline.eu/webcam4/bukowina.jpg
+#    :referer: http://www.zol.pl/webcam/
+#    :interval: 300
+#    :desc: bukowina
+#    :coord:
+#      :lat: 49.304778
+#      :lon: 19.916832
+#    :use_in_timelapse: false
   - :url: http://www.zakopaneonline.eu/webcams/kubik.jpg
     :referer: http://www.zol.pl/webcam/
     :interval: 180
@@ -108,13 +108,13 @@
       :lat: 49.304778
       :lon: 19.916832
     :use_in_timelapse: true
-  - :url: http://www.pkl.pl/kamera/kasprowy_gorna_stacja_na_gasienicowa.jpg
-    :interval: 220
-    :desc: tatry_kasprowy_gasienicowa
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+#  - :url: http://www.pkl.pl/kamera/kasprowy_gorna_stacja_na_gasienicowa.jpg
+#    :interval: 220
+#    :desc: tatry_kasprowy_gasienicowa
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
   - :url: http://www.zakopaneonline.eu/webcam7/murzasichle.jpg
     :referer: http://www.zol.pl/webcam/
     :interval: 180
@@ -149,27 +149,27 @@
   - :url: http://www.pieninyportal.com/images/stories/webcamera/pieninyportal.jpg
     :interval: 120
     :desc: trzy_korony
-  - :url: http://www.kamery.szczawnica.pl/foto5000M.jpg
-    :interval: 220
-    :desc: pieniny_szczawnica
-    :coord:
-      :lat: 49.422778
-      :lon: 20.482778
-    :use_in_timelapse: false
-  - :url: http://www.kamery.szczawnica.pl/foto7000M.jpg
-    :interval: 180
-    :desc: pieniny_przystan_flisacka
-    :coord:
-      :lat: 49.422778
-      :lon: 20.482778
-    :use_in_timelapse: false
-  - :url: http://www.kamery.szczawnica.pl/foto4.jpg
-    :interval: 210
-    :desc: pieniny_gory
-    :coord:
-      :lat: 49.422778
-      :lon: 20.482778
-    :use_in_timelapse: false
+#  - :url: http://www.kamery.szczawnica.pl/foto5000M.jpg
+#    :interval: 220
+#    :desc: pieniny_szczawnica
+#    :coord:
+#      :lat: 49.422778
+#      :lon: 20.482778
+#    :use_in_timelapse: false
+#  - :url: http://www.kamery.szczawnica.pl/foto7000M.jpg
+#    :interval: 180
+#    :desc: pieniny_przystan_flisacka
+#    :coord:
+#      :lat: 49.422778
+#      :lon: 20.482778
+#    :use_in_timelapse: false
+#  - :url: http://www.kamery.szczawnica.pl/foto4.jpg
+#    :interval: 210
+#    :desc: pieniny_gory
+#    :coord:
+#      :lat: 49.422778
+#      :lon: 20.482778
+#    :use_in_timelapse: false
   - :url: http://www.niedzica.pl/uploads/webcam/niedzica7000M.jpg
     :interval: 240
     :desc: pieniny_niedzica
@@ -177,20 +177,20 @@
       :lat: 49.422778
       :lon: 20.482778
     :use_in_timelapse: false
-  - :url: http://www.kroscienko-nad-dunajcem.pl/kamera/widok1.jpg
-    :interval: 150
-    :desc: pieniny_most_kroscienko
-    :coord:
-      :lat: 49.422778
-      :lon: 20.482778
-    :use_in_timelapse: false
-  - :url: http://www.pieninyportal.com/images/stories/webcamera/pieninyportal-haligovce.jpg
-    :interval: 240
-    :desc: pieniny_haligovce
-    :coord:
-      :lat: 49.422778
-      :lon: 20.482778
-    :use_in_timelapse: false
+#  - :url: http://www.kroscienko-nad-dunajcem.pl/kamera/widok1.jpg
+#    :interval: 150
+#    :desc: pieniny_most_kroscienko
+#    :coord:
+#      :lat: 49.422778
+#      :lon: 20.482778
+#    :use_in_timelapse: false
+#  - :url: http://www.pieninyportal.com/images/stories/webcamera/pieninyportal-haligovce.jpg
+#    :interval: 240
+#    :desc: pieniny_haligovce
+#    :coord:
+#      :lat: 49.422778
+#      :lon: 20.482778
+#    :use_in_timelapse: false
   - :url: http://www.ugazdy.pl/kamerka/obrazek.jpg
     :interval: 180
     :desc: gorce_u_gazdy
@@ -198,20 +198,20 @@
       :lat: 50.9
       :lon: 15.333333
     :use_in_timelapse: false
-  - :url: http://www.fastcom.net.pl/zdjecia-kamera/zdjecie.php
-    :interval: 210
-    :desc: szczyrk_skrzyczne1
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
-  - :url: http://www.fastcom.net.pl/zdjecia-kamera/zdjecie2.php
-    :interval: 220
-    :desc: szczyrk_beskidek
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+#  - :url: http://www.fastcom.net.pl/zdjecia-kamera/zdjecie.php
+#    :interval: 210
+#    :desc: szczyrk_skrzyczne1
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+#  - :url: http://www.fastcom.net.pl/zdjecia-kamera/zdjecie2.php
+#    :interval: 220
+#    :desc: szczyrk_beskidek
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
 #  - :url: http://www.niedzica.pl/uploads/webcam/niedzica6.jpg
 #    :interval: 120
 #    :desc: niedzica
@@ -249,13 +249,13 @@
       :lat: 49.1575
       :lon: 22.467222
     :use_in_timelapse: false
-  - :url: http://esolina.pl/kamera/widok.php
-    :interval: 120
-    :desc: bieszczady_polanczyk
-    :coord:
-      :lat: 49.1575
-      :lon: 22.467222
-    :use_in_timelapse: false
+#  - :url: http://esolina.pl/kamera/widok.php
+#    :interval: 120
+#    :desc: bieszczady_polanczyk
+#    :coord:
+#      :lat: 49.1575
+#      :lon: 22.467222
+#    :use_in_timelapse: false
   - :url: http://images.webcams.travel/webcam/1309464984.jpg
     :interval: 180
     :desc: bieszczady_u_gorne
@@ -390,27 +390,27 @@
 
 - :group: poland_sniezka
   :array:
-  - :resize: true
-    :jpg_quality_offset: 5
-    :url: http://kamery.humlnet.cz/images/webcams/snezka3/2048x1536.jpg
-    #:interval: 160
-    :interval: 3600
-    :desc: sniezka0
-    :coord:
-      :lat: 50.735833
-      :lon: 15.739167
-      # foggy
-    :use_in_timelapse: false
-  - :resize: true
-    :jpg_quality_offset: 5
-    :url: http://kamery.humlnet.cz/images/webcams/snezka2/2048x1536.jpg
-    :interval: 160
-    :desc: sniezka1
-    :coord:
-      :lat: 50.735833
-      :lon: 15.739167
-      # foggy
-    :use_in_timelapse: false
+#  - :resize: true
+#    :jpg_quality_offset: 5
+#    :url: http://kamery.humlnet.cz/images/webcams/snezka3/2048x1536.jpg
+#    #:interval: 160
+#    :interval: 3600
+#    :desc: sniezka0
+#    :coord:
+#      :lat: 50.735833
+#      :lon: 15.739167
+#      # foggy
+#    :use_in_timelapse: false
+#  - :resize: true
+#    :jpg_quality_offset: 5
+#    :url: http://kamery.humlnet.cz/images/webcams/snezka2/2048x1536.jpg
+#    :interval: 160
+#    :desc: sniezka1
+#    :coord:
+#      :lat: 50.735833
+#      :lon: 15.739167
+#      # foggy
+#    :use_in_timelapse: false
   - :resize: true
     :jpg_quality_offset: 5
     :url: http://kamery.humlnet.cz/images/webcams/snezka/2048x1536.jpg

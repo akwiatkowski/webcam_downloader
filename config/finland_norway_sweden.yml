@@ -54,9 +54,9 @@
 #    :url: http://www.svein-nordahl.com/01-gruvedalen.jpg
 #    :interval: 300
 #    :desc: norway_gruvedalen
-  - :url: http://www.promonorge.no/webcam/kamera.jpg
-    :interval: 220
-    :desc: norway_utsikt_s
+#  - :url: http://www.promonorge.no/webcam/kamera.jpg
+#    :interval: 220
+#    :desc: norway_utsikt_s
   - :url: http://www.amihotel.no/webcamera/broadcast.jpg
     :interval: 150
     :desc: norway_tromso3
@@ -74,12 +74,13 @@
   - :url: http://ekstra.htg.no/webcam/img/sjovegan_fullsize.jpg
     :interval: 180
     :desc: norwa_sjovegan
-  - :url: http://nordkapp.livecam360.com/cam3/php/show_lq_last.php
-    :interval: 450
-    :desc: norwa_north_cap
-  - :interval: 450
-    :desc: norway_lofoten
-    :url: http://www.lofoten-golf.no/webcam/Lgolf.jpg
+# format changed
+#  - :url: http://nordkapp.livecam360.com/cam3/php/show_lq_last.php
+#    :interval: 450
+#    :desc: norwa_north_cap
+#  - :interval: 450
+#    :desc: norway_lofoten
+#    :url: http://www.lofoten-golf.no/webcam/Lgolf.jpg
   - :interval: 150
     :desc: norway_fjellet
     :url: http://nktv.edbc.no/fjellet.jpg
@@ -109,37 +110,38 @@
   :array:
   - :resize: false
     :url: http://www.liveevent.se/webbkamera/tv4/goteborg/tv4_goteborg_1_1280.jpg
-    :interval: 120
+    :interval: 200
     :desc: sweden_goteborg
     :resize: true
     :jpg_quality_offset: -5
   - :url: http://www.gehammar.se/not001.jpg
-    :interval: 150
+    :interval: 200
     :desc: sweden_hjalmo
   - :resize: false
     :jpg_quality_offset: 4
     :url: http://www.liveevent.se/webbkamera/ca-kalmar/ca_kalmar_1_1280.jpg
-    :interval: 120
+    :interval: 180
     :desc: sweden_kalmar
-  - :resize: true
-    :jpg_quality_offset: -8
-    :url: http://www.venjan.se/cam/kupan_cam.jpg
-    :interval: 200
-    :desc: sweden_kupan
-    :prior: -8
-  - :resize: true
-    :url: http://livecam.mora.se/imageb.jpg
-    :interval: 120
-    :desc: sweden_vosalo
+#  - :resize: true
+#    :jpg_quality_offset: -8
+#    :url: http://www.venjan.se/cam/kupan_cam.jpg
+#    :interval: 200
+#    :desc: sweden_kupan
+#    :prior: -8
+#  - :resize: true
+#    :url: http://livecam.mora.se/imageb.jpg
+#    :interval: 240
+#    :desc: sweden_vosalo
 #  - :resize: true
 #    :url: http://87.237.210.145/~checkpoi/webcam/klappen/webcam_10_1280.jpg
 #    :interval: 450
 #    :desc: sweden_klappen
-  - :resize: true
-    :jpg_quality_offset: -2
-    :url: http://www.hamrafjallet.se/kamera/webbkamror/topmega.jpg
-    :interval: 150
-    :desc: sweden_tandallen
+# low space, not so interesting
+#  - :resize: true
+#    :jpg_quality_offset: -2
+#    :url: http://www.hamrafjallet.se/kamera/webbkamror/topmega.jpg
+#    :interval: 150
+#    :desc: sweden_tandallen
   - :resize: true
     :url: http://www.liveevent.se/webbkamera/tv4/sundsvall/tv4_sundsvall_1_1280.jpg
     :interval: 300
@@ -147,7 +149,7 @@
   - :resize: false
     :jpg_quality_offset: 4
     :url: http://dedi68.aname.net/~checkpoi/webcam/unostorn/webcam_6_1280.jpg
-    :interval: 150
+    :interval: 180
     :desc: sweden_unostorm
   - :resize: false
     :jpg_quality_offset: 4

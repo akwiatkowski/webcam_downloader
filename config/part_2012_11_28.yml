@@ -9,13 +9,13 @@
       :lon:
     :use_in_timelapse: false
 
-  - :url: http://www.altiservice.com/webcams/FRP2000/fontromeu.jpg
-    :interval: 80
-    :desc: andorra_font_romeu
-    :coord:
-      :lat:
-      :lon:
-    :use_in_timelapse: false
+#  - :url: http://www.altiservice.com/webcams/FRP2000/fontromeu.jpg
+#    :interval: 80
+#    :desc: andorra_font_romeu
+#    :coord:
+#      :lat:
+#      :lon:
+#    :use_in_timelapse: false
 
 - :group: austria
   :array:
@@ -106,25 +106,25 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
-    :desc: austria_Neue_Regensburger
-    :url: http://www.regensburgerhuette.at/fileadmin/webcam/html/fileadmin/IPCamera/snapshot-wz.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+#  - :interval: 300
+#    :desc: austria_Neue_Regensburger
+#    :url: http://www.regensburgerhuette.at/fileadmin/webcam/html/fileadmin/IPCamera/snapshot-wz.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
 
-- :group: check
-  :array:
-  - :interval: 300
-    :desc: czech_kravare
-    :url: http://new.kravarecl.cz/kamera/webcam.html
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+#- :group: check
+#  :array:
+#  - :interval: 300
+#    :desc: czech_kravare
+#    :url: http://new.kravarecl.cz/kamera/webcam.html
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
 
 - :group: estonia
   :array:
@@ -157,79 +157,79 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
-    :desc: finland_posio
-    :url: http://posiokamera.fns.fi/kuvat/kuva.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+#  - :interval: 300
+#    :desc: finland_posio
+#    :url: http://posiokamera.fns.fi/kuvat/kuva.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
 
 - :group: france
   :array:
-  - :interval: 450
-    :desc: france_alpes_village_1
-    :url: http://www.webcam-hd.com/Images/2alpes-ot_village/pano/2alpes-ot_village1.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
-
-  - :interval: 450
-    :desc: france_alpes_village_2
-    :url: http://www.webcam-hd.com/Images/2alpes-ot_village/pano/2alpes-ot_village2.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
-
-  - :interval: 450
-    :desc: france_alpes_village_3
-    :url: http://www.webcam-hd.com/Images/2alpes-ot_village/pano/2alpes-ot_village3.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
-
-  - :interval: 450
-    :desc: france_alpes_village_4
-    :url: http://www.webcam-hd.com/Images/2alpes-ot_village/pano/2alpes-ot_village4.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
-
-  - :interval: 450
-    :desc: france_alpes_village_5
-    :url: http://www.webcam-hd.com/Images/2alpes-ot_village/pano/2alpes-ot_village5.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
-
-  - :interval: 450
-    :desc: france_alpes_village_6
-    :url: http://www.webcam-hd.com/Images/2alpes-ot_village/pano/2alpes-ot_village6.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
-
-  - :interval: 450
-    :desc: france_alpes_village_7
-    :url: http://www.webcam-hd.com/Images/2alpes-ot_village/pano/2alpes-ot_village7.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+#  - :interval: 450
+#    :desc: france_alpes_village_1
+#    :url: http://www.webcam-hd.com/Images/2alpes-ot_village/pano/2alpes-ot_village1.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+#
+#  - :interval: 450
+#    :desc: france_alpes_village_2
+#    :url: http://www.webcam-hd.com/Images/2alpes-ot_village/pano/2alpes-ot_village2.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+#
+#  - :interval: 450
+#    :desc: france_alpes_village_3
+#    :url: http://www.webcam-hd.com/Images/2alpes-ot_village/pano/2alpes-ot_village3.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+#
+#  - :interval: 450
+#    :desc: france_alpes_village_4
+#    :url: http://www.webcam-hd.com/Images/2alpes-ot_village/pano/2alpes-ot_village4.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+#
+#  - :interval: 450
+#    :desc: france_alpes_village_5
+#    :url: http://www.webcam-hd.com/Images/2alpes-ot_village/pano/2alpes-ot_village5.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+#
+#  - :interval: 450
+#    :desc: france_alpes_village_6
+#    :url: http://www.webcam-hd.com/Images/2alpes-ot_village/pano/2alpes-ot_village6.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+#
+#  - :interval: 450
+#    :desc: france_alpes_village_7
+#    :url: http://www.webcam-hd.com/Images/2alpes-ot_village/pano/2alpes-ot_village7.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
 
 #  - :interval: 600
 #    :desc: france_orcieres
@@ -242,14 +242,14 @@
 
 - :group: greece
   :array:
-  - :interval: 300
-    :desc: grecja_akropol
-    :url: http://cam.grandebretagneview.com/view_live1.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+#  - :interval: 300
+#    :desc: grecja_akropol
+#    :url: http://cam.grandebretagneview.com/view_live1.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
 
 # boring
 #  - :interval: 120
@@ -273,14 +273,14 @@
 
 - :group: spain
   :array:
-  - :interval: 300
-    :desc: hiszpania_picos_de_europe
-    :url: http://www.colladojermoso.com/www/mobotix/picosdeeuropa.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+#  - :interval: 300
+#    :desc: hiszpania_picos_de_europe
+#    :url: http://www.colladojermoso.com/www/mobotix/picosdeeuropa.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
 
 - :group: liechtenstein
   :array:
@@ -361,14 +361,14 @@
 
 - :group: norway
   :array:
-  - :interval: 120
-    :desc: norway_birkeland
-    :url: http://www.torgrim.no/webcam.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+#  - :interval: 120
+#    :desc: norway_birkeland
+#    :url: http://www.torgrim.no/webcam.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
 
   - :interval: 300
     :desc: norway_pl_stac_polar1
@@ -388,14 +388,14 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
-    :desc: norway_tromso_aur
-    :url: http://polaris.nipr.ac.jp/~acaurora/aurora/Tromso/latest.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+#  - :interval: 300
+#    :desc: norway_tromso_aur
+#    :url: http://polaris.nipr.ac.jp/~acaurora/aurora/Tromso/latest.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
 
   - :interval: 90
     :desc: switzerland_costa_borgnome

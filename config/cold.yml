@@ -8,7 +8,7 @@
     :interval: 300
     :desc: greenland_tasiilaq
   - :url: http://www.antarcticanz.govt.nz/webcam/webcam32.jpg
-    :interval: 450
+    :interval: 600
     :desc: antarc_scott
     :coord:
       #:lat: -77.85
@@ -26,9 +26,9 @@
 #  - :url: http://www.andreassen.gl/andreassen/video.jpg
 #    :interval: 900
 #    :desc: greenland_1
-  - :interval: 300
-    :desc: antar_neumayeriT
-    :url: http://www.awi.de/NM_WebCam/neumayerT.last.jpg
+#  - :interval: 300
+#    :desc: antar_neumayeriT
+#    :url: http://www.awi.de/NM_WebCam/neumayerT.last.jpg
   - :interval: 300
     :desc: antar_neumayerP
     :url: http://www.awi.de/NM_WebCam/neumayerP.last.jpg

@@ -1,9 +1,9 @@
 ---
 - :group: italy
   :array:
-  - :interval: 360
-    :desc: italy_mount1
-    :url: http://www.ras.bz.it/img_webcams/scheibe/scheibe_P1.jpg
+#  - :interval: 360
+#    :desc: italy_mount1
+#    :url: http://www.ras.bz.it/img_webcams/scheibe/scheibe_P1.jpg
   - :interval: 300
     :desc: italy_caorle
     :url: http://webcam.caorle.com/webcam-spiaggia-ponente/current.jpg

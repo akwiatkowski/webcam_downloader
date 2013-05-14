@@ -135,11 +135,13 @@ module WebcamDownloader
       flat_defs = Array.new
       defs.each do |u|
         array = u[:array]
-        array.each do |a|
-          a[:group] = u[:group]
-          a[:def_file] = file
+        unless array.nil?
+          array.each do |a|
+            a[:group] = u[:group]
+            a[:def_file] = file
+          end
+          flat_defs += array
         end
-        flat_defs += array
       end
 
       if DEV_MODE

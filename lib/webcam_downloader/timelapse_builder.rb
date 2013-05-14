@@ -59,7 +59,7 @@ module WebcamDownloader
     def after_analyze(desc)
       file_list_file_path = File.absolute_path(File.join("tmp", "#{desc}_#{Time.now.to_i.to_s}.txt"))
       movie_file_path = File.absolute_path(File.join("data", "#{desc}_#{Time.now.to_i.to_s}.avi"))
-      command_file_path = File.absolute_path(File.join("tmp", "#{desc}_#{Time.now.to_i.to_s}.sh"))
+      command_file_path = File.absolute_path(File.join("tmp", "#{desc}.sh"))
 
       # file list
       file_list_file = File.open(file_list_file_path, 'w')
@@ -114,9 +114,14 @@ module WebcamDownloader
 
       # -1 true aspect ratio
       # -2 fit into movie size, aspect not maintained
-      aspect_ratio_type = _options[:aspect] || -2
+      aspect_ratio_type = _options[:aspect] || -1
 
-      scale_crop_string = "-aspect #{ratio} -vf scale=#{aspect_ratio_type}:#{height},crop=#{width}:#{height} -sws 9 "
+      if _options[:crop]
+        scale_crop_string = "-aspect #{ratio} -vf scale=#{aspect_ratio_type}:#{height},crop=#{width}:#{height} -sws 9 "
+      else
+        scale_crop_string = "-vf scale=#{aspect_ratio_type} -sws 9 "
+      end
+
       input_string = "\"mf://@#{file_list}\" "
       fps_string = "-mf fps=#{fps} "
       options_string = "-ovc xvid -xvidencopts noqpel:nogmc:trellis:nocartoon:nochroma_me:chroma_opt:lumi_mask:max_iquant=7:max_pquant=7:max_bquant=7:bitrate=#{bitrate}:threads=120 "

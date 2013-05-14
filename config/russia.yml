@@ -6,13 +6,13 @@
     :resize: true
     :jpg_quality_offset: -10
     :desc: minsk
-  - :resize: true
-    :url: http://camera.kemernet.ru/cam_huge.jpg
-    :interval: 60
-    :desc: russia_1
+#  - :resize: true
+#    :url: http://camera.kemernet.ru/cam_huge.jpg
+#    :interval: 60
+#    :desc: russia_1
   - :url: http://www.norilsk-zv.ru/webcam/cam1.jpg
     :interval: 120
     :desc: russia_norilsk
-  - :url: http://62.182.141.132/jpg/image.jpg
-    :interval: 120
-    :desc: russia_sochi
+#  - :url: http://62.182.141.132/jpg/image.jpg
+#    :interval: 120
+#    :desc: russia_sochi
