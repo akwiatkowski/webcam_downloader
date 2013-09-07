@@ -1,8 +1,11 @@
 - :group: norway
   :array:
-  - :url: http://ekstra.htg.no/webcam/img/tromso_fullsize.jpg
-    :interval: 300
-    :desc: no_tromso
+
+#  # static
+#  - :url: http://ekstra.htg.no/webcam/img/tromso_fullsize.jpg
+#    :interval: 300
+#    :desc: no_tromso
+
   - :url: http://weather.cs.uit.no/wcam0_snapshots/wcam0_latest_medium.jpg
     :interval: 60
     :desc: no_tromso_univ
@@ -21,18 +24,23 @@
 #  - :url: http://www.flaamsbana.no/images/flaam_4.jpg
 #    :interval: 300
 #    :desc: norway_flaams
-  - :url: http://ekstra.htg.no/webcam/img/harstad_fullsize.jpg
-    :interval: 300
-    :desc: norway_harstad
-    :coord:
-      #:lat: 70.085278
-      # faked
-      :lat: 45.085278
-      :lon: 20.659444
-    :use_in_timelapse: false
-  - :url: http://ekstra.htg.no/webcam/img/alta_fullsize.jpg
-    :interval: 300
-    :desc: norway_alta
+
+#  # static
+#  - :url: http://ekstra.htg.no/webcam/img/harstad_fullsize.jpg
+#    :interval: 300
+#    :desc: norway_harstad
+#    :coord:
+#      #:lat: 70.085278
+#      # faked
+#      :lat: 45.085278
+#      :lon: 20.659444
+#    :use_in_timelapse: false
+
+#  # static
+#  - :url: http://ekstra.htg.no/webcam/img/alta_fullsize.jpg
+#    :interval: 300
+#    :desc: norway_alta
+
   - :url: http://www.hlk.no/webkamera/images//pos3.jpg
     :interval: 300
     :desc: norway_sama
@@ -44,9 +52,12 @@
     :interval: 600
     :desc: norway_leknes
     :prior: -5
-  - :url: http://home.online.no/~abjoernv/kamera/kam2.jpg
-    :interval: 300
-    :desc: norway_arne
+
+#  # bad quality
+#  - :url: http://home.online.no/~abjoernv/kamera/kam2.jpg
+#    :interval: 300
+#    :desc: norway_arne
+
   - :url: http://home.custompublish.com/snsk/lyb_big.jpg
     :interval: 150
     :desc: norway_longyearbyen
@@ -71,9 +82,12 @@
       :lat: 45.085278
       :lon: 20.659444
     :use_in_timelapse: true
-  - :url: http://ekstra.htg.no/webcam/img/sjovegan_fullsize.jpg
-    :interval: 180
-    :desc: norwa_sjovegan
+
+#  # static
+#  - :url: http://ekstra.htg.no/webcam/img/sjovegan_fullsize.jpg
+#    :interval: 180
+#    :desc: norwa_sjovegan
+
 # format changed
 #  - :url: http://nordkapp.livecam360.com/cam3/php/show_lq_last.php
 #    :interval: 450

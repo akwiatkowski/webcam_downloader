@@ -4,13 +4,16 @@
   - :interval: 120
     :desc: hahnenkoepfle
     :url: http://tramino.s3.amazonaws.com/s/das-hoechste/webcams/ifen-hahnenkoepfle.jpg
-  - :interval: 180
-    :desc: ischl
-    :url: http://www.weti.net/cam/ischl.jpg
-    :coord:
-      :lat: 52.526248
-      :lon: 13.361664
-    :use_in_timelapse: true
+
+#  # bad quality
+#  - :interval: 180
+#    :desc: ischl
+#    :url: http://www.weti.net/cam/ischl.jpg
+#    :coord:
+#      :lat: 52.526248
+#      :lon: 13.361664
+#    :use_in_timelapse: true
+
 #  - :interval: 600
 #    :desc: hsb_broken
 #    :url: http://webcam.netco.de/bilder/hsb-brocken/brocken-bhf.jpg

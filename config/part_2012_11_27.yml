@@ -95,22 +95,27 @@
 #      :lat: 0.0
 #      :lon: 0.0
 #    :use_in_timelapse: false
-  - :interval: 150
-    :desc: jaworzno_elektrownia1
-    :url: http://www.pke.pl/kamery/ej3/cam1_ej3_bio_les.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
-  - :interval: 180
-    :desc: jelenia_gora_pano
-    :url: http://www.media-art24.com/kamery/jeleniagora.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+
+#  # fail
+#  - :interval: 150
+#    :desc: jaworzno_elektrownia1
+#    :url: http://www.pke.pl/kamery/ej3/cam1_ej3_bio_les.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+
+#  # bad quality, boring
+#  - :interval: 180
+#    :desc: jelenia_gora_pano
+#    :url: http://www.media-art24.com/kamery/jeleniagora.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+
   - :interval: 120
     :desc: karpacz_3_maja
     :url: http://www.karpacz.eu/camera.php
@@ -152,15 +157,18 @@
       :lat: 0.0
       :lon: 0.0
     :use_in_timelapse: false
-  - :interval: 300
-    :desc: krosno
-    :url: http://pogodynka.pl/http/assets/products/pogodynka/webcam/krosno/krosno.php.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
-    :prior: -10
+
+#  # bad quality
+#  - :interval: 300
+#    :desc: krosno
+#    :url: http://pogodynka.pl/http/assets/products/pogodynka/webcam/krosno/krosno.php.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+#    :prior: -10
+
 #  - :interval: 150
 #    :desc: parafia_klemensa
 #    :url: http://178.218.224.7/kam/10image2.jpg
@@ -202,14 +210,17 @@
 #      :lat: 0.0
 #      :lon: 0.0
 #    :use_in_timelapse: false
-  - :interval: 300
-    :desc: niedzica_polana_sosny
-    :url: http://www.niedzica.pl/uploads/webcam/niedzica8000M.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+
+#  # boring
+#  - :interval: 300
+#    :desc: niedzica_polana_sosny
+#    :url: http://www.niedzica.pl/uploads/webcam/niedzica8000M.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+
 #  - :interval: 120
 #    :desc: grodek_nad_dunajcem
 #    :url: http://83.0.153.236/jpg/image.jpg
@@ -259,14 +270,16 @@
 #      :lat: 0.0
 #      :lon: 0.0
 #    :use_in_timelapse: false
-  - :interval: 300
-    :desc: koninki_10
-    :url: http://timeforu.home.pl/ftp/koninki/10.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+
+#  - :interval: 300
+#    :desc: koninki_10
+#    :url: http://timeforu.home.pl/ftp/koninki/10.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+
 #  - :interval: 200
 #    :desc: szczeliniec_z_radkowa
 #    :url: http://bastech.com.pl/radkow/widok.jpg
@@ -275,14 +288,17 @@
 #      :lat: 0.0
 #      :lon: 0.0
 #    :use_in_timelapse: false
-  - :interval: 200
-    :desc: miedzygorze
-    :url: http://www.miedzygorze.com.pl/kamera.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+
+#  # static
+#  - :interval: 200
+#    :desc: miedzygorze
+#    :url: http://www.miedzygorze.com.pl/kamera.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+
 #  - :interval: 150
 #    :desc: jaworki_homole
 #    :url: http://www.arenanarciarska.pl/kam/000M.jpg
@@ -309,14 +325,15 @@
 #      :lon: 0.0
 #    :use_in_timelapse: false
 
-  - :interval: 300
-    :desc: kalety_centrum
-    :url: http://kamera01.kalety.net/LATEST.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+#  # boring, bad quality
+#  - :interval: 300
+#    :desc: kalety_centrum
+#    :url: http://kamera01.kalety.net/LATEST.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
 
   - :interval: 120
     :desc: elektrownia_zielony_blok

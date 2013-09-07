@@ -266,15 +266,16 @@
 #      :lon: 0.0
 #    :use_in_timelapse: false
 
-  - :interval: 120
-    :desc: grecja_samarina
-    :url: http://www.snowreport.gr/snowcam/samarina/samarina.jpg
-    :resize: true
-    :jpg_quality_offset: -5
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+#  # boring and huge
+#  - :interval: 120
+#    :desc: grecja_samarina
+#    :url: http://www.snowreport.gr/snowcam/samarina/samarina.jpg
+#    :resize: true
+#    :jpg_quality_offset: -5
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
 
 - :group: spain
   :array:
@@ -300,14 +301,15 @@
 
 - :group: germany
   :array:
-  - :interval: 120
-    :desc: germany_bergisch_gladbach
-    :url: http://bg01.onwebcam.net/aktuellesbild.aspx
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+#  # too much storage for quality
+#  - :interval: 120
+#    :desc: germany_bergisch_gladbach
+#    :url: http://bg01.onwebcam.net/aktuellesbild.aspx
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
 
   - :interval: 150
     :desc: germany_Diedenshausen
@@ -318,7 +320,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 180
+  - :interval: 300
     :desc: germany_trianel
     :url: http://212.37.52.98/record/current.jpg
     :resize: false
@@ -328,14 +330,15 @@
     :use_in_timelapse: false
     :resize: true
 
-  - :interval: 150
-    :desc: germany_odenwald
-    :url: http://www.odenwald.de/fileadmin/odenwald/Webcam/Marktplatz000M.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+#  # bad quality
+#  - :interval: 150
+#    :desc: germany_odenwald
+#    :url: http://www.odenwald.de/fileadmin/odenwald/Webcam/Marktplatz000M.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
 
   - :interval: 300
     :desc: germany_plauen
@@ -346,7 +349,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 150
+  - :interval: 300
     :desc: germany_walldurn1
     :url: http://www.wallduern.de/webcam/wallduern.jpg
     :resize: false
@@ -355,7 +358,7 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 120
+  - :interval: 300
     :desc: germany_walldurn2
     :url: http://www.wallduern.de/webcam/hauptstr.jpg
     :resize: false

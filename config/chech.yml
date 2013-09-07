@@ -1,11 +1,12 @@
 ---
 - :group: chech
   :array:
-  - :url_schema:
-      :url_schema: "http://kamery.hydronet.cz/lysa/photo/l2/gallery/%Y%m%d%H%M_l2.jpg"
-      :time_modulo: 1200 # every 20 minutes
-      :time_offset: 720 # 12 minutes
-    :interval: 900 # it is every 20 minutes
+  - :url: http://kamery.hydronet.cz/lysa/photo/l2_now.jpg
+#    :url_schema:
+#      :url_schema: "http://kamery.hydronet.cz/lysa/photo/l2/gallery/%Y%m%d%H%M_l2.jpg"
+#      :time_modulo: 1200 # every 20 minutes
+#      :time_offset: 720 # 12 minutes
+    :interval: 150 # it is every 20 minutes
     :desc: karkonosze_lysa_hora2
     :coord:
       :lat: 0.0
@@ -13,17 +14,29 @@
     :use_in_timelapse: false
     #:resize: true
 
-  - :url_schema:
-      :url_schema: "http://kamery.hydronet.cz/lysa/photo/l3/gallery/%Y%m%d%H%M_l3.jpg"
-      :time_modulo: 1200 # every 20 minutes
-      :time_offset: 1080 # 18 minutes
-    :interval: 900 # it is every 20 minutes
-    :desc: karkonosze_lysa_hora3
+  - :url: http://kamery.hydronet.cz/lysa/photo/l5_now.jpg
+    :interval: 150 # it is every 20 minutes
+    :desc: karkonosze_lysa_hora5
     :coord:
       :lat: 0.0
       :lon: 0.0
     :use_in_timelapse: false
     #:resize: true
+
+
+#  # turned off
+#  - :url_schema:
+#      :url_schema: "http://kamery.hydronet.cz/lysa/photo/l3/gallery/%Y%m%d%H%M_l3.jpg"
+#      :time_modulo: 1200 # every 20 minutes
+#      :time_offset: 1080 # 18 minutes
+#    :interval: 900 # it is every 20 minutes
+#    :desc: karkonosze_lysa_hora3
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+#    #:resize: true
+
   # sudety
   - :url: http://kamery.hydronet.cz/korenov/photo/korenov_960x1280_now.jpg
     :interval: 250
@@ -32,13 +45,34 @@
       :lat:
       :lon:
     :use_in_timelapse: false
-  - :url: http://kamery.hydronet.cz/kamenec/photo_jabl/jablonecek_1600x1200_now.jpg
+
+#  # changeable
+#  - :url: http://kamery.hydronet.cz/kamenec/photo_jabl/jablonecek_1600x1200_now.jpg
+#    :interval: 180
+#    :desc: karkonosze_jablonecek
+#    :coord:
+#      :lat:
+#      :lon:
+#    :use_in_timelapse: false
+
+  - :url: http://kamery.hydronet.cz/jerabkovna/photo/jerabkovna_1600x1200_now.jpg
     :interval: 180
-    :desc: karkonosze_jablonecek
+    :desc: karkonosze_jerabkovna_Jizerka
     :coord:
       :lat:
       :lon:
     :use_in_timelapse: false
+
+  - :url: http://kamery.hydronet.cz/bukovec/photo/bukovec_1600x1200_now.jpg
+    :interval: 180
+    :desc: karkonosze_bukovec_Osada_Jizerka
+    :coord:
+      :lat:
+      :lon:
+    :use_in_timelapse: false
+
+
+
   - :url: http://kamery.hydronet.cz/strezimir/photo/strezimir_1600x1200_now.jpg
     :interval: 120
     :desc: karkonosze_strezimir

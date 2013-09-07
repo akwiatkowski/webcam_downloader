@@ -447,11 +447,13 @@
 
 - :group: poland_slask
   :array:
-  - :resize: true
-    :url: http://www.slaskie.pl/slaski2012/camera/chorzow_aktualny_1024.jpg
-    :interval: 300
-    :desc: chorzow_stadion
-    :coord:
-      :lat: 50.288333
-      :lon: 18.973611
-    :use_in_timelapse: true
+
+#  # boring
+#  - :resize: true
+#    :url: http://www.slaskie.pl/slaski2012/camera/chorzow_aktualny_1024.jpg
+#    :interval: 300
+#    :desc: chorzow_stadion
+#    :coord:
+#      :lat: 50.288333
+#      :lon: 18.973611
+#    :use_in_timelapse: true
