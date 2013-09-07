@@ -1,22 +1,27 @@
 ---
 - :group: poland_2012_11_27
   :array:
-  - :interval: 120
-    :desc: belchatow_plac_narutowicza
-    :url: http://81.15.194.42:8080/cam_9.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
-  - :interval: 180
-    :desc: belchatow_hala_energia
-    :url: http://81.15.194.42:8080/cam_2.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+
+#  # boring
+#  - :interval: 120
+#    :desc: belchatow_plac_narutowicza
+#    :url: http://81.15.194.42:8080/cam_9.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+
+#  # boring
+#  - :interval: 180
+#    :desc: belchatow_hala_energia
+#    :url: http://81.15.194.42:8080/cam_2.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+
 #  - :interval: 300
 #    :desc: bielsko_biala_aeroklub
 #    :url: http://pogodynka.pl/http/assets/products/pogodynka/webcam/bielskobiala/bielskobiala.php.jpg
@@ -43,14 +48,17 @@
 #      :lat: 0.0
 #      :lon: 0.0
 #    :use_in_timelapse: false
-  - :interval: 150
-    :desc: boleslawiec_rynek
-    :url: http://webcam.istotne.pl/rynek000M.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+
+#  # huge
+#  - :interval: 150
+#    :desc: boleslawiec_rynek
+#    :url: http://webcam.istotne.pl/rynek000M.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+
 #  - :interval: 300
 #    :desc: bystrzyca_klodzka_spalona
 #    :url: http://wcam.pl/~ozmo/kamera.jpg
@@ -67,15 +75,18 @@
       :lat: 0.0
       :lon: 0.0
     :use_in_timelapse: false
-  - :interval: 150
-    :desc: cedry_wielkie_marina2
-    :url: http://79.190.93.34:82/cgi-bin/encoder?USER=www&PWD=www&SNAPSHOT
-    :resize: true
-    :jpg_quality_offset: -3
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+
+#  # huge
+#  - :interval: 150
+#    :desc: cedry_wielkie_marina2
+#    :url: http://79.190.93.34:82/cgi-bin/encoder?USER=www&PWD=www&SNAPSHOT
+#    :resize: true
+#    :jpg_quality_offset: -3
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+
 #  - :interval: 150
 #    :desc: nowy_sacz_rynek
 #    :url: http://www.nowysacz.pl/execute.php?nav=535&mod=live&q=image

@@ -248,14 +248,17 @@
 
 - :group: poland_bieszczady
   :array:
-  # http://www.kamerybieszczady.czaszyn.pl/
-  - :url: http://obsluga-medialna.pl/kamera/kamera_wetlina/index.php
-    :interval: 150
-    :desc: bieszczady_wetlina
-    :coord:
-      :lat: 49.1575
-      :lon: 22.467222
-    :use_in_timelapse: false
+
+#  # fail
+#  # http://www.kamerybieszczady.czaszyn.pl/
+#  - :url: http://obsluga-medialna.pl/kamera/kamera_wetlina/index.php
+#    :interval: 150
+#    :desc: bieszczady_wetlina
+#    :coord:
+#      :lat: 49.1575
+#      :lon: 22.467222
+#    :use_in_timelapse: false
+
   - :url: http://obsluga-medialna.pl/kamera/czaszyn/index_cz.php
     :interval: 110
     :desc: bieszczady_czaszyn
@@ -270,13 +273,16 @@
 #      :lat: 49.1575
 #      :lon: 22.467222
 #    :use_in_timelapse: false
-  - :url: http://images.webcams.travel/webcam/1309464984.jpg
-    :interval: 180
-    :desc: bieszczady_u_gorne
-    :coord:
-      :lat: 49.1575
-      :lon: 22.467222
-    :use_in_timelapse: false
+
+#  # bad quality
+#  - :url: http://images.webcams.travel/webcam/1309464984.jpg
+#    :interval: 180
+#    :desc: bieszczady_u_gorne
+#    :coord:
+#      :lat: 49.1575
+#      :lon: 22.467222
+#    :use_in_timelapse: false
+
   - :url: http://images.webcams.travel/webcam/1287047915.jpg
     :interval: 300
     :desc: bieszczady_przyslup_carynski
@@ -291,13 +297,15 @@
       :lat: 49.1575
       :lon: 22.467222
     :use_in_timelapse: false
-  - :url: http://83.18.111.249:8080/cgi-bin/viewer/video.jpg
-    :interval: 90
-    :desc: bieszczady_keja_siarkopol
-    :coord:
-      :lat: 49.1575
-      :lon: 22.467222
-    :use_in_timelapse: false
+
+#  # not enough good quality
+#  - :url: http://83.18.111.249:8080/cgi-bin/viewer/video.jpg
+#    :interval: 90
+#    :desc: bieszczady_keja_siarkopol
+#    :coord:
+#      :lat: 49.1575
+#      :lon: 22.467222
+#    :use_in_timelapse: false
 
 - :group: poland_sudety
   :array:

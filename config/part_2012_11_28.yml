@@ -40,33 +40,37 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 120
-    :desc: austria_Kufstein_Unterer_Stadtplatz
-    :url: http://www.webcam.kufnet.at/livebild/untererstadtplatz/image.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+#  # not so boring, but huge, and only one street in city
+#  - :interval: 120
+#    :desc: austria_Kufstein_Unterer_Stadtplatz
+#    :url: http://www.webcam.kufnet.at/livebild/untererstadtplatz/image.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
 
-  - :interval: 120
-    :desc: austria_Festungsarena_Unterer_Stadtplatz
-    :url: http://www.webcam.kufnet.at/livebild/festungsarena/image.jpg
-    :resize: true
-    :jpg_quality_offset: -2
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+#  # not regular, boring
+#  - :interval: 120
+#    :desc: austria_Festungsarena_Unterer_Stadtplatz
+#    :url: http://www.webcam.kufnet.at/livebild/festungsarena/image.jpg
+#    :resize: true
+#    :jpg_quality_offset: -2
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
 
-  - :interval: 90
-    :desc: austria_Kufsteinblick
-    :url: http://www.webcam.kufnet.at/livebild/kufsteinblick/image.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+#  # space conservation, above the city
+#  # TODO: enable after new storage
+#  - :interval: 90
+#    :desc: austria_Kufsteinblick
+#    :url: http://www.webcam.kufnet.at/livebild/kufsteinblick/image.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
 
   - :interval: 180
     :desc: austria_lienz
@@ -77,16 +81,17 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 180
-    :resize: true
-    :jpg_quality_offset: -4
-    :desc: austria_loser1
-    :url: http://www.mentalworks.com/live/altaussee.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+#  # quite low on photo quality
+#  - :interval: 180
+#    :resize: true
+#    :jpg_quality_offset: -4
+#    :desc: austria_loser1
+#    :url: http://www.mentalworks.com/live/altaussee.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
 
   - :interval: 300
     :desc: austria_loser3

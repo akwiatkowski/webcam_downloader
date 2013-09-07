@@ -46,9 +46,9 @@
   - :interval: 180
     :desc: bavaria_bergen
     :url: http://www.bayernwebcam.de/bilder/bergen.jpg
-  - :interval: 180
-    :desc: bavaria_marquartstein
-    :url: http://www.bayernwebcam.de/bilder/marquartstein.jpg
+#  - :interval: 180
+#    :desc: bavaria_marquartstein
+#    :url: http://www.bayernwebcam.de/bilder/marquartstein.jpg
 
 - :group: france
   :array:

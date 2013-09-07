@@ -19,9 +19,9 @@
   - :url: http://www.antarcticanz.govt.nz/ahnetcam/netcam.jpg
     :interval: 150
     :desc: antarc_arr_h
-  - :url: http://www.esrl.noaa.gov/gmd/webdata/spo/webcam/cmdlfullsize.jpg
-    :interval: 600
-    :desc: antarc_south_pole
+#  - :url: http://www.esrl.noaa.gov/gmd/webdata/spo/webcam/cmdlfullsize.jpg
+#    :interval: 600
+#    :desc: antarc_south_pole
 # not fresh
 #  - :url: http://www.andreassen.gl/andreassen/video.jpg
 #    :interval: 900
@@ -29,9 +29,9 @@
 #  - :interval: 300
 #    :desc: antar_neumayeriT
 #    :url: http://www.awi.de/NM_WebCam/neumayerT.last.jpg
-  - :interval: 300
-    :desc: antar_neumayerP
-    :url: http://www.awi.de/NM_WebCam/neumayerP.last.jpg
-  - :interval: 450
-    :desc: antar_neumayer
-    :url: http://www.awi.de/NM_WebCam/neumayer.last.jpg
+#  - :interval: 300
+#    :desc: antar_neumayerP
+#    :url: http://www.awi.de/NM_WebCam/neumayerP.last.jpg
+#  - :interval: 450
+#    :desc: antar_neumayer
+#    :url: http://www.awi.de/NM_WebCam/neumayer.last.jpg

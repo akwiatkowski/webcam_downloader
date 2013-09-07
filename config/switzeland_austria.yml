@@ -28,13 +28,14 @@
   - :interval: 180
     :desc: austria_aflenz
     :url: http://www.aflenz-outdoorpark.at/webcam/webcam.jpg
-  - :interval: 210
-    :desc: austria_blumental
-    :url: http://www.blumentalcam.at/cam_1.jpg
-    :coord:
-      :lat: 47.256649
-      :lon: 11.408386
-    :use_in_timelapse: true
+#  # position changed, large amount of data
+#  - :interval: 210
+#    :desc: austria_blumental
+#    :url: http://www.blumentalcam.at/cam_1.jpg
+#    :coord:
+#      :lat: 47.256649
+#      :lon: 11.408386
+#    :use_in_timelapse: true
   - :interval: 390
     :resize: true
     :desc: austria_silvretta1
@@ -43,6 +44,8 @@
     :resize: true
     :desc: austria_silvretta2
     :url: http://www.silvretta-montafon.at/webcam/image2_text.jpg
+
+  # TODO disable, unless new storage
   - :interval: 180
     :desc: austria_mondi
     :url: http://91.112.132.150/record/current.jpg
@@ -50,6 +53,7 @@
       :lat: 47.256649
       :lon: 11.408386
     :use_in_timelapse: true
+
 #  - :interval: 150
 #    :desc: innsbruck_lans
 #    :url: http://live.tyrol.at/tyrolcams/lans/lans.jpg
@@ -90,14 +94,15 @@
       :lat: 0.0
       :lon: 0.0
     :use_in_timelapse: false
-  - :interval: 320
-    :desc: austria_schruns
-    :url: http://schruns-tschagguns.at/kamera/kamera/aktuell.jpg
-    :resize: false
-    :coord:
-      :lat: 47.080048
-      :lon: 9.920596
-    :use_in_timelapse: false
+#  # boring
+#  - :interval: 320
+#    :desc: austria_schruns
+#    :url: http://schruns-tschagguns.at/kamera/kamera/aktuell.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 47.080048
+#      :lon: 9.920596
+#    :use_in_timelapse: false
 
   - :interval: 240
     :desc: austria_tschagguns
@@ -108,14 +113,14 @@
       :lon: 9.901684
     :use_in_timelapse: false
 
-  - :interval: 240
-    :desc: austria_bezaus
-    :url: http://www.hotelpostbezau.com/webcam/live/live.jpg
-    :resize: false
-    :coord:
-      :lat: 47.385427
-      :lon: 9.90251
-    :use_in_timelapse: false
+#  - :interval: 240
+#    :desc: austria_bezaus
+#    :url: http://www.hotelpostbezau.com/webcam/live/live.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 47.385427
+#      :lon: 9.90251
+#    :use_in_timelapse: false
 
   - :interval: 250
     :desc: austria_schruns_ferienhotel
