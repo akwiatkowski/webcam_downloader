@@ -8,6 +8,7 @@
 #      :time_offset: 720 # 12 minutes
     :interval: 150 # it is every 20 minutes
     :desc: karkonosze_lysa_hora2
+    :resize: true
     :coord:
       :lat: 0.0
       :lon: 0.0
@@ -17,6 +18,7 @@
   - :url: http://kamery.hydronet.cz/lysa/photo/l5_now.jpg
     :interval: 150 # it is every 20 minutes
     :desc: karkonosze_lysa_hora5
+    :resize: true
     :coord:
       :lat: 0.0
       :lon: 0.0
