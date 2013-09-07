@@ -245,15 +245,18 @@
       :lat: 0.0
       :lon: 0.0
     :use_in_timelapse: false
-  - :interval: 165
-    :desc: osiek
-    :url: http://www.osieknet.pl/kamerka.php?k=2
-    :resize: true
-    :jpg_quality_offset: -10
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+
+#  # boring
+#  - :interval: 165
+#    :desc: osiek
+#    :url: http://www.osieknet.pl/kamerka.php?k=2
+#    :resize: true
+#    :jpg_quality_offset: -10
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+
 #  - :interval: 300
 #    :desc: koninki_8
 #    :url: http://timeforu.home.pl/ftp/koninki/8.jpg

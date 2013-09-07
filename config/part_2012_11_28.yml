@@ -459,14 +459,15 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 300
-    :desc: switzerland_susten
-    :url: http://www.bella-tola.ch/fileadmin/images/webcam.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+#  # boring
+#  - :interval: 300
+#    :desc: switzerland_susten
+#    :url: http://www.bella-tola.ch/fileadmin/images/webcam.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
 
   - :interval: 90
     :desc: switzerland_veysonnaz
@@ -504,11 +505,12 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-  - :interval: 200
-    :desc: switzerland_zermatt_ober
-    :url: http://www.schonegg.ch/webcam.jpg
-    :resize: false
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+#  # boring
+#  - :interval: 200
+#    :desc: switzerland_zermatt_ober
+#    :url: http://www.schonegg.ch/webcam.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false

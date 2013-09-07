@@ -52,9 +52,11 @@
 
 - :group: france
   :array:
-  - :interval: 180
-    :desc: troyes
-    :url: http://www.vision-environnement.com/webcams/Troyes2/image/webcam.jpg
+#  # boring
+#  - :interval: 180
+#    :desc: troyes
+#    :url: http://www.vision-environnement.com/webcams/Troyes2/image/webcam.jpg
+
   - :interval: 300
     :desc: chamonix_glace
     :url: http://www.compagniedumontblanc.fr/webcam/CMM1MERDEGLACE.jpg

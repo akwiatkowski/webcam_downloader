@@ -56,6 +56,7 @@
       :lat: 49.304778
       :lon: 19.916832
     :use_in_timelapse: true
+
   - :url: http://kamery.topr.pl/stawy2/stawy2.jpg
     :interval: 180
     :desc: stawy2
@@ -63,6 +64,7 @@
       :lat: 49.304778
       :lon: 19.916832
     :use_in_timelapse: true
+
   - :url: http://kamery.topr.pl/gasienicowa/gasie.jpg
     :interval: 180
     :desc: gasienicowa
@@ -137,13 +139,16 @@
       :lat: 0.0
       :lon: 0.0
     :use_in_timelapse: false
-  - :url: http://www.tatrzanskie-turnie.pl/kamera/video.jpg
-    :interval: 180
-    :desc: tatry_tatrz_turnie
-    :coord:
-      :lat: 0.0
-      :lon: 0.0
-    :use_in_timelapse: false
+
+#  # static
+#  - :url: http://www.tatrzanskie-turnie.pl/kamera/video.jpg
+#    :interval: 180
+#    :desc: tatry_tatrz_turnie
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+
   - :interval: 200
     :desc: tatry_chocholowska
     :url: http://kamery.topr.pl/chocholowska/chocholow.jpg

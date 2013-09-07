@@ -41,17 +41,21 @@
 #    :interval: 300
 #    :desc: norway_alta
 
-  - :url: http://www.hlk.no/webkamera/images//pos3.jpg
-    :interval: 300
-    :desc: norway_sama
-    :prior: -10
+#  # static
+#  - :url: http://www.hlk.no/webkamera/images//pos3.jpg
+#    :interval: 300
+#    :desc: norway_sama
+#    :prior: -10
+
 #  - :url: http://www.hlk.no/webkamera/images//pos2.jpg
 #    :interval: 300
 #    :desc: norway_hardstad2
-  - :url: http://www.lofot-tidende.no/static/local/webcam/cubus.jpg
-    :interval: 600
-    :desc: norway_leknes
-    :prior: -5
+
+#  # static
+#  - :url: http://www.lofot-tidende.no/static/local/webcam/cubus.jpg
+#    :interval: 600
+#    :desc: norway_leknes
+#    :prior: -5
 
 #  # bad quality
 #  - :url: http://home.online.no/~abjoernv/kamera/kam2.jpg
@@ -156,10 +160,12 @@
 #    :url: http://www.hamrafjallet.se/kamera/webbkamror/topmega.jpg
 #    :interval: 150
 #    :desc: sweden_tandallen
-  - :resize: true
-    :url: http://www.liveevent.se/webbkamera/tv4/sundsvall/tv4_sundsvall_1_1280.jpg
-    :interval: 300
-    :desc: sweden_tvn4
+
+#  - :resize: true
+#    :url: http://www.liveevent.se/webbkamera/tv4/sundsvall/tv4_sundsvall_1_1280.jpg
+#    :interval: 300
+#    :desc: sweden_tvn4
+
   - :resize: false
     :jpg_quality_offset: 4
     :url: http://dedi68.aname.net/~checkpoi/webcam/unostorn/webcam_6_1280.jpg
