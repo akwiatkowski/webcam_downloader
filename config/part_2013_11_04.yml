@@ -1,0 +1,70 @@
+- :group: poland
+  :array:
+  - :resize: false
+    :url: http://ewymiar.pl/czaszyn/jpg/1.jpg
+    :interval: 120
+    :desc: bieszczady_czaszyn
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false
+  - :resize: false
+    :url: http://www.kamera.karpacz.pl/lodowiec.jpg
+    :interval: 120
+    :desc: karpacz_garb
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false
+
+
+- :group: slovakia
+  :array:
+  - :resize: false
+    :url: http://www.sirokebase.sk/meteo/sirokebase000M.jpg
+    :interval: 120
+    :desc: slovakia_siroke
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false
+
+- :group: chech
+  :array:
+  - :resize: false
+    :url: http://www.tanvald.cz/data/webkamery/tanvald.jpg
+    :interval: 120
+    :desc: chech_tanvald
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false
+  - :resize: false
+    :url: http://www.chalupanarozcesti.cz/webcam/video.jpg
+    :interval: 120
+    :desc: chech_chalupanarozcesti
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false
+  - :resize: false
+    :url: http://kamery.humlnet.cz/images/webcams/pecpodsnezkou/1024x768.jpg
+    :interval: 120
+    :desc: chech_pecpodsnezkou
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false
+  - :resize: false
+    :url: http://kamery.humlnet.cz/images/webcams/gablenz2/1024x768.jpg?1383576151257
+    :interval: 120
+    :desc: chech_trutnov2
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false
+
+
+
+
+
