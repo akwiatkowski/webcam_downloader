@@ -417,27 +417,27 @@
 
 - :group: poland_sniezka
   :array:
-#  - :resize: true
-#    :jpg_quality_offset: 5
-#    :url: http://kamery.humlnet.cz/images/webcams/snezka3/2048x1536.jpg
-#    #:interval: 160
-#    :interval: 3600
-#    :desc: sniezka0
-#    :coord:
-#      :lat: 50.735833
-#      :lon: 15.739167
-#      # foggy
-#    :use_in_timelapse: false
-#  - :resize: true
-#    :jpg_quality_offset: 5
-#    :url: http://kamery.humlnet.cz/images/webcams/snezka2/2048x1536.jpg
-#    :interval: 160
-#    :desc: sniezka1
-#    :coord:
-#      :lat: 50.735833
-#      :lon: 15.739167
-#      # foggy
-#    :use_in_timelapse: false
+  - :resize: true
+    :jpg_quality_offset: 5
+    :url: http://kamery.humlnet.cz/images/webcams/snezka3/2048x1536.jpg
+    #:interval: 160
+    :interval: 3600
+    :desc: sniezka0
+    :coord:
+      :lat: 50.735833
+      :lon: 15.739167
+      # foggy
+    :use_in_timelapse: false
+  - :resize: true
+    :jpg_quality_offset: 5
+    :url: http://kamery.humlnet.cz/images/webcams/snezka2/2048x1536.jpg
+    :interval: 160
+    :desc: sniezka1
+    :coord:
+      :lat: 50.735833
+      :lon: 15.739167
+      # foggy
+    :use_in_timelapse: false
   - :resize: true
     :jpg_quality_offset: 5
     :url: http://kamery.humlnet.cz/images/webcams/snezka/2048x1536.jpg
