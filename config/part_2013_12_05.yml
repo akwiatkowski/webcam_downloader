@@ -1,0 +1,10 @@
+- :group: poland
+  :array:
+  - :resize: false
+    :url: http://www.karpacz.eu/cam_pliki/cam2.php
+    :interval: 120
+    :desc: karpacz2
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false
