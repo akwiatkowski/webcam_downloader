@@ -1,4 +1,1 @@
-rvm use ruby-1.9.2@webcam_downloader --create
-
-# rubymine 3.2.4 don't know about ruby 2.0
-#rvm use ruby-2.0.0-p0@webcam_downloader --create
+rvm use ruby-2.0@webcam_downloader --create
