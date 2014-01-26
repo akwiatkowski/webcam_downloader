@@ -399,10 +399,15 @@ module WebcamDownloader
       res = @storage.store_temporary_image(self)
 
       if res
+        # presentation/notification
         @presentation.after_image_store(self)
+        HelloServerNotifier.new.after_webcam_download(self)
+
+        # next turn
         @latest_stored_at = Time.now
         @latest_stored_path = @path_store
 
+        # kB
         @stored_file_size_last = File.size(@path_store).to_f / 1024.0
         @stored_file_size_sum += @stored_file_size_last
         @stored_file_size_count += 1

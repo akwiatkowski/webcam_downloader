@@ -1,12 +1,3 @@
-GIT
-  remote: git://github.com/akwiatkowski/hello_server_client.git
-  revision: a6a82cf6b5067fa64eac5a6b15819f4c958d5845
-  specs:
-    hello_server_client (0.0.1)
-      ohm
-      ohm-contrib
-      oj
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -17,6 +8,10 @@ GEM
     colorize (0.6.0)
     fastimage (1.5.5)
       addressable (~> 2.3, >= 2.3.5)
+    hello_server_client (0.0.1)
+      ohm
+      ohm-contrib
+      oj
     nest (1.1.2)
       redis
     ohm (1.3.2)
@@ -40,5 +35,5 @@ DEPENDENCIES
   RubySunrise
   colorize
   fastimage
-  hello_server_client!
+  hello_server_client
   tzinfo
