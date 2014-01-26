@@ -72,12 +72,9 @@ class HelloServerNotifier
       end
 
       data_array = h["_data"]
-      puts data_array.inspect, h.keys.inspect, "*"*100
       if data_array.nil?
         data_array = Array.new
       end
-
-      puts h.inspect
 
       wh = Hash.new
       wh["desc"] = webcam.desc
