@@ -8,7 +8,7 @@ GEM
     colorize (0.6.0)
     fastimage (1.5.5)
       addressable (~> 2.3, >= 2.3.5)
-    hello_server_client (0.0.1)
+    hello_server_client (0.1.0)
       ohm
       ohm-contrib
       oj

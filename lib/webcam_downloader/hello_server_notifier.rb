@@ -3,110 +3,68 @@ class HelloServerNotifier
   @@semaphore = Mutex.new
 
   def after_webcam_download(webcam)
-    #return after_webcam_download_hash(webcam)
-    return after_webcam_download_array(webcam)
-  end
-
-  def after_webcam_download_hash(webcam)
     @@semaphore.synchronize do
-      s = HelloServerClient::Service.find_or_initialize_by_name(NAME)
-      h = s.value
+      s = HelloServerClient::Notification.find_or_initialize_by_name(NAME)
+      s.detail_header = %w{desc data_per_day cost file_size last_attempt count}
 
-      if h.kind_of?(Array)
-        h = nil
-      end
-      if h.nil?
-        h = Hash.new
-      end
+      details = s.details
+      details ||= Array.new
 
-      # webcam hash
-      wh = Hash.new
-      wh[:data_per_day] = {
-        _value: "%.2f" % webcam.data_per_day + " MB",
-        _options: { klass: "blue" }
-      }
-      wh[:avg_cost] = {
-        _value: "%.1f" % webcam.avg_cost + " s",
-        _options: { klass: "red" }
-      }
-      wh[:last_cost] = {
-        _value: "%.1f" % webcam.last_cost.to_s + " s",
-        _options: { klass: "red" }
-      }
-      wh[:last_file_size] = {
-        _value: "%.1f" % webcam.stored_file_size_last + " kB",
-        _options: { klass: "teal" }
-      }
-      wh[:avg_file_size] = {
-        _value: "%.1f" % webcam.avg_file_size + " kB",
-        _options: { klass: "teal" }
-      }
-      wh[:last_attempted_time] = {
-        _value: Time.at(webcam.last_downloaded_temporary_at.to_i).strftime("%Y-%m-%d %H:%M:%S"),
-        _options: { klass: "green" }
-      }
-      wh[:download_count] = {
-        _value: webcam.download_count,
-        _options: { klass: "blue" }
-      }
-      wh[:identical_factor] = {
-        _value: "%.2f" % webcam.identical_factor,
-        _options: { klass: "brown" }
-      }
+      webcam_detail = [
+        webcam.desc,
+        "%.2f" % webcam.data_per_day + " MB", # data_per_day
+        { # cost
+          value: "%.1f" % webcam.last_cost.to_s + " s",
+          klass: "red",
+          subvalue: "%.1f" % webcam.avg_cost + " s",
+        },
+        {
+          value: "%.1f" % webcam.stored_file_size_last + " kB",
+          klass: "teal",
+          subvalue: "%.1f" % webcam.avg_file_size + " kB"
+        },
+        {
+          value: Time.at(webcam.last_downloaded_temporary_at.to_i).strftime("%Y-%m-%d %H:%M:%S"),
+          klass: "green"
+        },
+        {
+          value: webcam.download_count,
+          klass: "blue"
+        }
+      ]
 
+      details = details.delete_if { |r| r[0] == webcam.desc }
+      details << webcam_detail
+      details = details.sort { |a, b| a[0] <=> b[0] }
 
-      h[webcam.desc] = wh
-      s.value = h
-      s.save!
-      s
-    end
-  end
+      s.details = details
 
-  def after_webcam_download_array(webcam)
-    @@semaphore.synchronize do
-      s = HelloServerClient::Service.find_or_initialize_by_name(NAME)
-      h = s.value
-      h ||= Hash.new
-      if h["_header"].nil?
-        h["_header"] = %w{desc data_per_day cost file_size last_attempt count}
+      # summaries
+      @@total_downloaded_size = 0.0 unless defined? @@total_downloaded_size
+      @@total_downloaded_size += webcam.stored_file_size_last.to_f
+      @@total_downloaded_count = 0 unless defined? @@total_downloaded_count
+      @@total_downloaded_count += 1
+      @@run_at = Time.now unless defined? @@run_at
+
+      seconds_from_start = Time.now - @@run_at
+      daily_usage = 0.0
+      if seconds_from_start > 5
+        daily_usage = ((@@total_downloaded_size.to_f / 1024.0) / seconds_from_start.to_f) * 24.0 * 3600.0
       end
 
-      data_array = h["_data"]
-      if data_array.nil?
-        data_array = Array.new
-      end
+      summaries = [
+        ["last_downloaded_desc", webcam.desc],
+        ["last_downloaded_at", Time.at(webcam.last_downloaded_temporary_at.to_i).strftime("%Y-%m-%d %H:%M:%S")],
+        ["run_at", @@run_at.strftime("%Y-%m-%d %H:%M:%S")],
+        ["total_downloaded_size", "%.4f GB" % (@@total_downloaded_size / (1024.0 ** 2))],
+        ["daily_usage", "%.2f MB" % daily_usage],
+        ["total_downloaded_count", @@total_downloaded_count],
+      ]
 
-      wh = Hash.new
-      wh["desc"] = webcam.desc
-      wh[:data_per_day] = {
-        _value: "%.2f" % webcam.data_per_day + " MB",
-        _options: { klass: "blue" }
-      }
-      wh[:cost] = {
-        _value: "%.1f" % webcam.last_cost.to_s + " s",
-        _options: { klass: "red" },
-        _subvalue: "%.1f" % webcam.avg_cost + " s",
-      }
-      wh[:file_size] = {
-        _value: "%.1f" % webcam.stored_file_size_last + " kB",
-        _options: { klass: "teal" },
-        _subvalue: "%.1f" % webcam.avg_file_size + " kB"
-      }
-      wh[:last_attempt] = {
-        _value: Time.at(webcam.last_downloaded_temporary_at.to_i).strftime("%Y-%m-%d %H:%M:%S"),
-        _options: { klass: "green" }
-      }
-      wh[:count] = {
-        _value: webcam.download_count,
-        _options: { klass: "blue" }
-      }
+      #
+      s.summary_header = nil
+      s.summaries = summaries
 
-      data_array = data_array.delete_if { |r| r["desc"] == webcam.desc }
-      data_array << wh
-      data_array = data_array.sort { |a, b| a["desc"] <=> b["desc"] }
-      h["_data"] = data_array
-
-      s.value = h
       s.save!
       s
     end
