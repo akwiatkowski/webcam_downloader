@@ -27,6 +27,7 @@ GEM
       atomic
     tzinfo (1.1.0)
       thread_safe (~> 0.1)
+    xxhash (0.2.0)
 
 PLATFORMS
   ruby
@@ -37,3 +38,4 @@ DEPENDENCIES
   fastimage
   hello_server_client
   tzinfo
+  xxhash

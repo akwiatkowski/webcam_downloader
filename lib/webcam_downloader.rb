@@ -2,6 +2,7 @@ $:.unshift(File.dirname(__FILE__))
 
 require 'colorize'
 require 'digest/md5'
+require 'xxhash'
 require 'hello_server_client'
 
 require 'webcam_downloader/image_processor'

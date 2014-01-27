@@ -5,3 +5,4 @@ gem 'RubySunrise'
 gem 'tzinfo'
 gem 'colorize'
 gem 'fastimage'
+gem 'xxhash' # ultra-fast

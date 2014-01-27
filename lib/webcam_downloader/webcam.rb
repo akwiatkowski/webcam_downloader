@@ -337,7 +337,8 @@ module WebcamDownloader
 
       if File.exists?(@path_temporary)
         @last_downloaded_temporary_size = File.size(@path_temporary)
-        @last_downloaded_temporary_digest = Digest::MD5.hexdigest(File.read(@path_temporary))
+        #@last_downloaded_temporary_digest = Digest::MD5.hexdigest(File.read(@path_temporary))
+        @last_downloaded_temporary_digest = XXhash.xxh32_stream(File.new(@path_temporary, 'r'), 231) # is faster
         @last_downloaded_temporary_mtime = File.new(@path_temporary).mtime
       end
     end
