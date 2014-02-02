@@ -6,12 +6,11 @@ GEM
     addressable (2.3.5)
     atomic (1.1.14)
     colorize (0.6.0)
-    fastimage (1.5.5)
+    fastimage (1.6.0)
       addressable (~> 2.3, >= 2.3.5)
-    hello_server_client (0.1.0)
+    hello_server_client (0.1.1)
       ohm
       ohm-contrib
-      oj
     nest (1.1.2)
       redis
     ohm (1.3.2)
@@ -20,7 +19,6 @@ GEM
       scrivener (~> 0.0.3)
     ohm-contrib (1.2)
       ohm (~> 1.2)
-    oj (2.5.4)
     redis (3.0.7)
     scrivener (0.0.3)
     thread_safe (0.1.3)
