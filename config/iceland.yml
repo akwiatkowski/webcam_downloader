@@ -1,9 +1,9 @@
-- :group: poland
+- :group: iceland
   :array:
   - :resize: false
-    :url: http://www.karpacz.eu/cam_pliki/cam2.php
-    :interval: 120
-    :desc: karpacz2
+    :url: http://helgi.dk/webmyndir/image.jpg
+    :interval: 180
+    :desc: iceland_veidivotn
     :coord:
       :lat: 50.288333
       :lon: 18.973611

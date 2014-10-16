@@ -1,24 +1,3 @@
----
-- :group: switzeland
-  :array:
-  - :url: http://www.monopol-andermatt.ch/cam/webcam.jpg
-    :interval: 180
-    :desc: switz_andermatt
-  - :url: http://www.appenzell-ai.ch/appenzell_fotoold.jpg
-    :interval: 200
-    :desc: switz_appenzell
-#  - :url: http://www.obergoms.ch/tourismus/service/webcams/obergesteln.php?e_12_14_getimage=1
-#    :interval: 210
-#    :desc: switz_obergoms
-  - :interval: 150
-    :desc: ch_birkli
-    :url: http://www.birkli.ch/webcam/bildgross/aktuell_gross.jpg
-    :coord:
-      :lat: 45.866667
-      :lon: 6.883333
-    :use_in_timelapse: true
-
-
 
 - :group: austria
   :array:
@@ -130,3 +109,71 @@
       :lat: 47.385427
       :lon: 9.90251
     :use_in_timelapse: false
+
+  - :interval: 300
+    :desc: austria_bad_gastein
+    :url_schema:
+      :url_schema: "http://panodata1.panomax.at/cams/23/%Y/%m/%d//%H-%M-00_default.jpg"
+      :time_modulo: 600 # every 20 minutes
+      :time_offset: 0 # 12 minutes
+    :resize: false
+    :coord:
+      :lat:
+      :lon:
+    :use_in_timelapse: false
+
+  - :interval: 120
+    :desc: austria_Kufsteinblick
+    :url: http://www.webcam.kufnet.at/livebild/kufsteinblick/image.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 180
+    :desc: austria_lienz
+    :url: http://www.hochsteinhuette.at/images/stories/webcam/livebild.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+#  # quite low on photo quality
+#  - :interval: 180
+#    :resize: true
+#    :jpg_quality_offset: -4
+#    :desc: austria_loser1
+#    :url: http://www.mentalworks.com/live/altaussee.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+
+  - :interval: 300
+    :desc: austria_loser3
+    :url: http://www.mentalworks.com/live/loser.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :interval: 300
+    :desc: austria_Luckneralm
+    :url: http://www.lucknerhuette.at/webcam/lucknerhuette.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+#  - :interval: 300
+#    :desc: austria_Neue_Regensburger
+#    :url: http://www.regensburgerhuette.at/fileadmin/webcam/html/fileadmin/IPCamera/snapshot-wz.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false

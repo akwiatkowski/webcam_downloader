@@ -1,0 +1,10 @@
+- :group: liechtenstein
+  :array:
+  - :interval: 120
+    :desc: liechte_steg
+    :url: http://video.lkw.li/liveCamSteg/lkw-stausee-steg.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false

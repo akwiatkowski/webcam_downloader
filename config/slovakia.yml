@@ -1,0 +1,10 @@
+- :group: slovakia
+  :array:
+  - :resize: false
+    :url: http://www.sirokebase.sk/meteo/sirokebase000M.jpg
+    :interval: 120
+    :desc: slovakia_siroke
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false

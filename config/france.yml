@@ -1,0 +1,104 @@
+- :group: france
+  :array:
+#  # boring
+#  - :interval: 180
+#    :desc: troyes
+#    :url: http://www.vision-environnement.com/webcams/Troyes2/image/webcam.jpg
+
+  - :interval: 300
+    :desc: chamonix_glace
+    :url: http://www.compagniedumontblanc.fr/webcam/CMM1MERDEGLACE.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :interval: 300
+    :desc: chamonix_mont_blanc
+    :url: http://www.webcams-stations.com/webcam/panoramique-massif-du-mont-blanc/vignette.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 300
+    :desc: chamonix_valley
+    :url: http://www.regione.vda.it/gestione/webcamgallery/showimage.aspx?nomefile=ferret.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+#  - :interval: 450
+#    :desc: france_alpes_village_1
+#    :url: http://www.webcam-hd.com/Images/2alpes-ot_village/pano/2alpes-ot_village1.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+#
+#  - :interval: 450
+#    :desc: france_alpes_village_2
+#    :url: http://www.webcam-hd.com/Images/2alpes-ot_village/pano/2alpes-ot_village2.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+#
+#  - :interval: 450
+#    :desc: france_alpes_village_3
+#    :url: http://www.webcam-hd.com/Images/2alpes-ot_village/pano/2alpes-ot_village3.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+#
+#  - :interval: 450
+#    :desc: france_alpes_village_4
+#    :url: http://www.webcam-hd.com/Images/2alpes-ot_village/pano/2alpes-ot_village4.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+#
+#  - :interval: 450
+#    :desc: france_alpes_village_5
+#    :url: http://www.webcam-hd.com/Images/2alpes-ot_village/pano/2alpes-ot_village5.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+#
+#  - :interval: 450
+#    :desc: france_alpes_village_6
+#    :url: http://www.webcam-hd.com/Images/2alpes-ot_village/pano/2alpes-ot_village6.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+#
+#  - :interval: 450
+#    :desc: france_alpes_village_7
+#    :url: http://www.webcam-hd.com/Images/2alpes-ot_village/pano/2alpes-ot_village7.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+
+#  - :interval: 600
+#    :desc: france_orcieres
+#    :url: http://www.trinum.com/ibox/ftpcam/mega_orcieres-croze.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false

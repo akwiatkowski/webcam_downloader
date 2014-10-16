@@ -1,0 +1,390 @@
+---
+- :group: sudetes
+  :array:
+  - :url: http://kamery.hydronet.cz/lysa/photo/l2_now.jpg
+#    :url_schema:
+#      :url_schema: "http://kamery.hydronet.cz/lysa/photo/l2/gallery/%Y%m%d%H%M_l2.jpg"
+#      :time_modulo: 1200 # every 20 minutes
+#      :time_offset: 720 # 12 minutes
+    :interval: 150 # it is every 20 minutes
+    :desc: karkonosze_lysa_hora2
+    :resize: true
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+    #:resize: true
+
+  - :url: http://kamery.hydronet.cz/lysa/photo/l5_now.jpg
+    :interval: 150 # it is every 20 minutes
+    :desc: karkonosze_lysa_hora5
+    :resize: true
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+    #:resize: true
+
+
+#  # turned off
+#  - :url_schema:
+#      :url_schema: "http://kamery.hydronet.cz/lysa/photo/l3/gallery/%Y%m%d%H%M_l3.jpg"
+#      :time_modulo: 1200 # every 20 minutes
+#      :time_offset: 1080 # 18 minutes
+#    :interval: 900 # it is every 20 minutes
+#    :desc: karkonosze_lysa_hora3
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+#    #:resize: true
+
+  # sudety
+  - :url: http://kamery.hydronet.cz/korenov/photo/korenov_960x1280_now.jpg
+    :interval: 250
+    :desc: karkonosze_korenove
+    :coord:
+      :lat:
+      :lon:
+    :use_in_timelapse: false
+
+#  # changeable
+#  - :url: http://kamery.hydronet.cz/kamenec/photo_jabl/jablonecek_1600x1200_now.jpg
+#    :interval: 180
+#    :desc: karkonosze_jablonecek
+#    :coord:
+#      :lat:
+#      :lon:
+#    :use_in_timelapse: false
+
+  - :url: http://kamery.hydronet.cz/jerabkovna/photo/jerabkovna_1600x1200_now.jpg
+    :interval: 180
+    :desc: karkonosze_jerabkovna_Jizerka
+    :coord:
+      :lat:
+      :lon:
+    :use_in_timelapse: false
+
+  - :url: http://kamery.hydronet.cz/bukovec/photo/bukovec_1600x1200_now.jpg
+    :interval: 180
+    :desc: karkonosze_bukovec_Osada_Jizerka
+    :coord:
+      :lat:
+      :lon:
+    :use_in_timelapse: false
+
+
+
+  - :url: http://kamery.hydronet.cz/strezimir/photo/strezimir_1600x1200_now.jpg
+    :interval: 120
+    :desc: karkonosze_strezimir
+    :coord:
+      :lat:
+      :lon:
+    :use_in_timelapse: false
+  - :url: http://kamery.hydronet.cz/polesi/photo/polesi_now.jpg
+    :interval: 140
+    :desc: karkonosze_polesi
+    :coord:
+      :lat:
+      :lon:
+    :use_in_timelapse: false
+  - :url: http://kamery.hydronet.cz/brod/photo/brod_1600x1200_now.jpg
+    :interval: 150
+    :desc: karkonosze_zelazny_brod
+    :coord:
+      :lat:
+      :lon:
+    :use_in_timelapse: false
+  #  - :url: http://kamery.hydronet.cz/lysa/photo/l2/gallery/201209110944_l2.jpg
+  #    :interval: 240
+  #    :resize: true
+  #    :desc: sudety_lysa_hora
+  #    :coord:
+  #      :lat: 50.9
+  #      :lon: 15.333333
+  #    :use_in_timelapse: false
+  - :url: http://kamery.humlnet.cz/images/webcams/chata_vatra/1600x1200.jpg
+    :resize: true
+    :jpg_quality_offset: 10
+    :interval: 120
+    :desc: sudety_chata_vatra
+    :coord:
+      :lat: 50.9
+      :lon: 15.333333
+    :use_in_timelapse: false
+  - :url: http://kamery.humlnet.cz/images/webcams/lucnibouda/1600x1200.jpg
+    :resize: true
+    :jpg_quality_offset: 10
+    :interval: 150
+    :desc: lucnibouda
+    :coord:
+      :lat: 50.9
+      :lon: 15.333333
+    :use_in_timelapse: false
+
+  - :url: http://portal.chmi.cz/files/portal/docs/meteo/kam/lysa_hora3.jpg
+    :interval: 120
+    :desc: lysa_hora
+    :resize: true
+    :jpg_quality_offset: 14
+    :coord:
+      :lat: 49.545833
+      :lon: 18.4475
+    # some issues with mencoder
+    :use_in_timelapse: false
+
+
+#  - :url: http://kolejgondolowa.pl/kamery/cam2/snap_c1.jpg
+#    :interval: 200
+#    :desc: sudety_swieradow2
+#    :coord:
+#      :lat: 50.9
+#      :lon: 15.333333
+#    :use_in_timelapse: false
+#  - :url: http://kolejgondolowa.pl/kamery/cam3/snap_c1.jpg
+#    :interval: 200
+#    :desc: sudety_swieradow3
+#    :coord:
+#      :lat: 50.9
+#      :lon: 15.333333
+#    :use_in_timelapse: false
+#  - :url: http://kolejgondolowa.pl/kamery/cam1/snap_c1.jpg
+#    :interval: 200
+#    :desc: sudety_swieradow1
+#    :coord:
+#      :lat: 50.9
+#      :lon: 15.333333
+#    :use_in_timelapse: false
+
+  - :url: http://www.kompas.pl/kamerki/szczniec_widok000M.jpg
+    :interval: 110
+    :desc: sudety_szczeliniec2
+    :coord:
+      :lat: 50.9
+      :lon: 15.333333
+    :use_in_timelapse: false
+  # http://kamery.hydronet.cz/vrbata/
+  - :url: http://www.kompas.pl/kamerki/pstrka_widok000M.jpg
+    :interval: 110
+    :desc: sudety_szczeliniec1
+    :coord:
+      :lat: 50.9
+      :lon: 15.333333
+    :use_in_timelapse: false
+  # temporary disabled
+  - :url: http://kam.szkolagorska.com/sam1.jpg
+    :interval: 200
+    :desc: sudety_samotnia
+    :coord:
+      :lat: 50.9
+      :lon: 15.333333
+    :use_in_timelapse: false
+
+  - :resize: false
+    :url: http://www.tanvald.cz/data/webkamery/tanvald.jpg
+    :interval: 120
+    :desc: chech_tanvald
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false
+  - :resize: false
+    :url: http://www.chalupanarozcesti.cz/webcam/video.jpg
+    :interval: 120
+    :desc: chech_chalupanarozcesti
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false
+  - :resize: false
+    :url: http://kamery.humlnet.cz/images/webcams/pecpodsnezkou/1024x768.jpg
+    :interval: 120
+    :desc: chech_pecpodsnezkou
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false
+  - :resize: false
+    :url: http://kamery.humlnet.cz/images/webcams/gablenz2/1024x768.jpg
+    :interval: 120
+    :desc: chech_trutnov2
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false
+  - :resize: false
+    :url: http://kamery.humlnet.cz/images/webcams/litomerice/1024x768.jpg
+    :interval: 120
+    :desc: chech_litomerice
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false
+  - :resize: false
+    :url: http://kamery.humlnet.cz/images/webcams/lovos/1024x768.jpg
+    :interval: 120
+    :desc: chech_lovos
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false
+  - :resize: false
+    :url: http://kamery.humlnet.cz/images/webcams/cerna_hora/1024x768.jpg
+    :interval: 120
+    :desc: chech_cerna_hora
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false
+  - :resize: false
+    :url: http://kamery.humlnet.cz/images/webcams/labska_bouda/1024x768.jpg
+    :interval: 120
+    :desc: chech_labska_bouda
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false
+  - :resize: false
+    :url: http://kamery.humlnet.cz/images/webcams/boudapodsnezkou/1024x768.jpg
+    :interval: 120
+    :desc: chech_boudapodsnezkou
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false
+  - :resize: false
+    :url: http://kamery.humlnet.cz/images/webcams/prkenak/1024x768.jpg
+    :interval: 120
+    :desc: chech_prkenak
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false
+  - :resize: false
+    :url: http://kamery.humlnet.cz/images/webcams/boruvka/1024x768.jpg
+    :interval: 120
+    :desc: chech_velka_upa_boruvka
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false
+  - :resize: false
+    :url: http://bartanet.cz/~foto/kamera/spindlerovka.jpg
+    :interval: 240
+    :desc: chech_spindlerovka2
+    :use_in_timelapse: false
+
+
+
+  - :resize: false
+    :url: http://www.kamera.karpacz.pl/lodowiec.jpg
+    :interval: 120
+    :desc: karpacz_garb
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false
+
+  - :resize: false
+    :url: http://webcam.box3.pl/new_file.php?camera=plac2
+    :interval: 180
+    :desc: poland_jelenia_cieplice
+    :use_in_timelapse: false
+  - :resize: false
+    :url: http://webcam.box3.pl/new_file.php?camera=zachelmie
+    :interval: 180
+    :desc: poland_jelenia_zachelmie
+    :use_in_timelapse: false
+
+  - :resize: false
+    :url: http://www.infoo.net/sniezka_karpacz.jpg
+    :interval: 180
+    :desc: poland_karpacz_sniezka
+    :use_in_timelapse: false
+
+  - :url_schema:
+      #:url_schema: "http://webcams.tenet.net.pl/webcam_1/Snapshot-20141016-133101.jpg"
+      :url_schema: "http://webcams.tenet.net.pl/webcam_1/Snapshot-%Y%m%d-%H%M01.jpg"
+      :time_modulo: 1800 # every 10 minutes
+      :time_offset: -3540
+    :interval: 300
+    :desc: sudety_kopa
+
+  - :resize: true
+    :jpg_quality_offset: 5
+    :url: http://kamery.humlnet.cz/images/webcams/snezka3/2048x1536.jpg
+    #:interval: 160
+    :interval: 3600
+    :desc: sniezka0
+    :coord:
+      :lat: 50.735833
+      :lon: 15.739167
+      # foggy
+    :use_in_timelapse: false
+  - :resize: true
+    :jpg_quality_offset: 5
+    :url: http://kamery.humlnet.cz/images/webcams/snezka2/2048x1536.jpg
+    :interval: 160
+    :desc: sniezka1
+    :coord:
+      :lat: 50.735833
+      :lon: 15.739167
+      # foggy
+    :use_in_timelapse: false
+  - :resize: true
+    :jpg_quality_offset: 5
+    :url: http://kamery.humlnet.cz/images/webcams/snezka/2048x1536.jpg
+    :interval: 160
+    :desc: sniezka2
+    :coord:
+      :lat: 50.735833
+      :lon: 15.739167
+      # foggy
+    :use_in_timelapse: false
+
+  - :resize: false
+    :url: http://www.karpacz.eu/cam_pliki/cam2.php
+    :interval: 120
+    :desc: karpacz2
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false
+
+  - :resize: false
+    :url: http://sokolowsko.pl/soko-cam.jpg
+    :interval: 150
+    :desc: sokolowsko
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false
+
+#  - :interval: 300
+#    :desc: czech_kravare
+#    :url: http://new.kravarecl.cz/kamera/webcam.html
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+
+  - :interval: 120
+    :desc: karpacz_3_maja
+    :url: http://www.karpacz.eu/camera.php
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :interval: 60
+    :desc: kowary_deptak
+    :url: http://www.kowary.pl/kamera/obrazek002.jpg
+    :resize: true
+    :jpg_quality_offset: -5
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false

@@ -1,6 +1,60 @@
 ---
 - :group: germany
   :array:
+  - :interval: 120
+    :desc: hahnenkoepfle
+    :url: http://tramino.s3.amazonaws.com/s/das-hoechste/webcams/ifen-hahnenkoepfle.jpg
+
+  - :url_schema:
+      :url_schema: "http://www.foto-webcam.eu/webcam/kochelsee/%Y/%m/%d/%H%M_la.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :desc: germany_kochelsee
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+#  - :interval: 120
+#    :desc: germany_halle
+#    :url: http://217.89.96.98/vhughsize.jpg
+#    :coord:
+#      :lat: 52.526248
+#      :lon: 13.361664
+#    :use_in_timelapse: true
+  - :interval: 150
+    :desc: germany_aussichtsteeg
+    :url: http://www.breitenbergbahn.de/fileadmin/webcams/mobotix/steeg.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 150
+    :desc: germany_aggensteinlift
+    :url: http://www.breitenbergbahn.de/fileadmin/webcams/mobotix/aglstrecke.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :interval: 220
+    :desc: de_mount1
+    :url: http://cms.zugspitze.de/static/webcams/k02.jpg
+  - :interval: 220
+    :desc: de_mount2
+    :url: http://cms.zugspitze.de/static/webcams/k04.jpg
+    :coord:
+      :lat: 45.866667
+      :lon: 6.883333
+    :use_in_timelapse: true
+  - :interval: 180
+    :desc: bavaria_bergen
+    :url: http://www.bayernwebcam.de/bilder/bergen.jpg
+#  - :interval: 180
+#    :desc: bavaria_marquartstein
+#    :url: http://www.bayernwebcam.de/bilder/marquartstein.jpg
+
+
   - :url_schema:
       #:url_schema: "http://www.foto-webcam.eu/webcam/kochelsee/%Y/%m/%d/%H%M_la.jpg"
       :url_schema: "http://www.foto-webcam.eu/webcam/lienz/%Y/%m/%d/%H%M_la.jpg"
@@ -53,11 +107,12 @@
       :lat: 0.0
       :lon: 0.0
     :use_in_timelapse: false
+  # it has problems, but sometime works
   - :url_schema:
       #:url_schema: "http://www.foto-webcam.eu/webcam/kochelsee/%Y/%m/%d/%H%M_la.jpg"
       :url_schema: "http://www.foto-webcam.eu/webcam/badtoelz/%Y/%m/%d/%H%M_la.jpg"
       :time_modulo: 600 # every 10 minutes
-    :interval: 300
+    :interval: 600
     :desc: germany_badtoelz
     :coord:
       :lat: 0.0
@@ -126,3 +181,77 @@
       :lat: 0.0
       :lon: 0.0
     :use_in_timelapse: false
+
+#  # too much storage for quality
+#  - :interval: 120
+#    :desc: germany_bergisch_gladbach
+#    :url: http://bg01.onwebcam.net/aktuellesbild.aspx
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+
+  - :interval: 150
+    :desc: germany_Diedenshausen
+    :url: http://diedenshausen.de/assets/images/webcamddh.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :interval: 300
+    :desc: germany_trianel
+    :url: http://212.37.52.98/record/current.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+    :resize: true
+
+#  # bad quality
+#  - :interval: 150
+#    :desc: germany_odenwald
+#    :url: http://www.odenwald.de/fileadmin/odenwald/Webcam/Marktplatz000M.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+
+  - :interval: 300
+    :desc: germany_plauen
+    :url: http://webcam-pl.tc-mw.de/cam3/img01.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :interval: 300
+    :desc: germany_walldurn1
+    :url: http://www.wallduern.de/webcam/wallduern.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :interval: 300
+    :desc: germany_walldurn2
+    :url: http://www.wallduern.de/webcam/hauptstr.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+
+
+
+
+
+
+

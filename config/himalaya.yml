@@ -1,0 +1,11 @@
+---
+- :group: himalaya
+  :array:
+  - :interval: 150
+    :desc: mount_everest
+    :url: http://www.evk2cnr.org/WebCams/PyramidOne/current.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false

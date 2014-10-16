@@ -1,6 +1,14 @@
 ---
 - :group: italy
   :array:
+  - :interval: 240
+    :desc: cannobio
+    :url: http://www.cannobio.net/resizeimgpiazza.asp?dimensioni=800
+    :coord:
+      :lat: 41.897676
+      :lon: 12.495164
+    :use_in_timelapse: true
+
 #  - :interval: 360
 #    :desc: italy_mount1
 #    :url: http://www.ras.bz.it/img_webcams/scheibe/scheibe_P1.jpg

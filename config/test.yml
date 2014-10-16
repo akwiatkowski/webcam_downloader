@@ -1,0 +1,18 @@
+---
+- :group: test
+  :array:
+#  - :url_schema:
+#      #:url_schema: "http://webcams.tenet.net.pl/webcam_1/Snapshot-20141016-133101.jpg"
+#      :url_schema: "http://webcams.tenet.net.pl/webcam_1/Snapshot-%Y%m%d-%H%M01.jpg"
+#      :time_modulo: 1800 # every 10 minutes
+#      :time_offset: -3540
+#    :interval: 300
+#    :desc: sudety_kopa
+
+#  - :url_schema:
+#      #:url_schema: "http://panodata1.panomax.at/cams/531/2014/10/16//17-40-00_default.jpg"
+#      :url_schema: "http://panodata1.panomax.at/cams/531/%Y/%m/%d//%H-%M-00_default.jpg"
+#      :time_modulo: 600 # every 10 minutes
+#      :time_offset: 0
+#    :interval: 600
+#    :desc: switz_arosa_360

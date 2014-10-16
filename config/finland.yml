@@ -1,0 +1,93 @@
+- :group: finland
+  :array:
+#  - :resize: false
+#    :url: http://alk.tiehallinto.fi/alk/kelikamerat/C1453501041645.jpg
+#    :interval: 180
+#    :desc: finland_KILPISJA
+#    :coord:
+#      :lat: 50.288333
+#      :lon: 18.973611
+#    :use_in_timelapse: false
+  - :resize: false
+    :url: http://www.otosservice.net/getimage.php?server=localhost&cam_id=00408C850CEE&uniq=1
+    :interval: 180
+    :desc: finland_Latukamera
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false
+#  - :resize: false
+#    :url: http://alk.tiehallinto.fi/alk/kelikamerat/C1452401041645.jpg
+#    :interval: 180
+#    :desc: finland_Peltovu
+#    :coord:
+#      :lat: 50.288333
+#      :lon: 18.973611
+#    :use_in_timelapse: false
+#  - :resize: false
+#    :url: http://alk.tiehallinto.fi/alk/kelikamerat/C1453507041655.jpg
+#    :interval: 180
+#    :desc: finland_ENONTEKIO
+#    :coord:
+#      :lat: 50.288333
+#      :lon: 18.973611
+#    :use_in_timelapse: false
+#  - :resize: false
+#    :url: http://alk.tiehallinto.fi/alk/kelikamerat/C1451201041658.jpg
+#    :interval: 180
+#    :desc: finland_ROPINSALMI
+#    :coord:
+#      :lat: 50.288333
+#      :lon: 18.973611
+#    :use_in_timelapse: false
+#  - :resize: false
+#    :url: http://alk.tiehallinto.fi/alk/kelikamerat/C1453301041654.jpg
+#    :interval: 180
+#    :desc: finland_Utsjoki
+#    :coord:
+#      :lat: 50.288333
+#      :lon: 18.973611
+#    :use_in_timelapse: false
+#  - :resize: false
+#    :url: http://alk.tiehallinto.fi/alk/kelikamerat/C1454001041654.jpg
+#    :interval: 180
+#    :desc: finland_SODANKYLA
+#    :coord:
+#      :lat: 50.288333
+#      :lon: 18.973611
+#    :use_in_timelapse: false
+
+# laggy
+#  - :url: http://212.86.4.14/camera_image/kauppatori.jpg
+#    :interval: 120
+#    :desc: finland_kauppatori
+  - :interval: 220
+    :desc: finland_koppola
+    :url: http://85.157.217.2/-wvhttp-01-/GetStillImage
+
+  - :interval: 120
+    :desc: finland_Kemijarvi
+    :url: http://www.koillislapinsahko.fi/webcam/current.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :interval: 100
+    :desc: finland_levi
+    :url: http://213.28.111.31/record/current.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+#  - :interval: 300
+#    :desc: finland_posio
+#    :url: http://posiokamera.fns.fi/kuvat/kuva.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false

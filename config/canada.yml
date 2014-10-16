@@ -1,0 +1,10 @@
+- :group: canada
+  :array:
+  - :resize: false
+    :url: http://www.kimmirutweather.com/webcam.jpg
+    :interval: 180
+    :desc: canada_kimmirut
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false

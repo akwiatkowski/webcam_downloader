@@ -35,3 +35,20 @@
 #  - :interval: 450
 #    :desc: antar_neumayer
 #    :url: http://www.awi.de/NM_WebCam/neumayer.last.jpg
+
+  - :resize: false
+    :url: http://ivs.bkg.bund.de/vlbi/ohiggins/ohig-web1.jpg
+    :interval: 150
+    :desc: antarctic_ohig
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false
+  - :resize: false
+    :url: http://antarctica.martingrund.de/ohig-pingi-z.jpg
+    :interval: 150
+    :desc: antarctic_ohig_ping
+    :coord:
+      :lat: 50.288333
+      :lon: 18.973611
+    :use_in_timelapse: false

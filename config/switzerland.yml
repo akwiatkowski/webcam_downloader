@@ -1,0 +1,163 @@
+---
+- :group: switzerland
+  :array:
+  - :url: http://www.monopol-andermatt.ch/cam/webcam.jpg
+    :interval: 180
+    :desc: switz_andermatt
+  - :url: http://camserver.z-online.ch/picture/ar6o_T141016_175501543.jpg
+    :interval: 180
+    :desc: switz_weishorn
+  - :url: http://www.appenzell-ai.ch/appenzell_fotoold.jpg
+    :interval: 200
+    :desc: switz_appenzell
+
+  - :url_schema:
+      #:url_schema: "http://panodata1.panomax.at/cams/531/2014/10/16//17-40-00_default.jpg"
+      :url_schema: "http://panodata1.panomax.at/cams/531/%Y/%m/%d//%H-%M-00_default.jpg"
+      :time_modulo: 600 # every 10 minutes
+      :time_offset: 0
+    :interval: 600
+    :desc: switz_arosa_360
+
+#  - :url: http://www.obergoms.ch/tourismus/service/webcams/obergesteln.php?e_12_14_getimage=1
+#    :interval: 210
+#    :desc: switz_obergoms
+  - :interval: 150
+    :desc: ch_birkli
+    :url: http://www.birkli.ch/webcam/bildgross/aktuell_gross.jpg
+    :coord:
+      :lat: 45.866667
+      :lon: 6.883333
+    :use_in_timelapse: true
+
+  - :interval: 160
+    :desc: arolla_collonx
+    :url: http://www.arolla.com/mt-collon/mtcollonx.jpg
+    :resize: true
+    :jpg_quality_offset: -2
+    :coord:
+      :lat: 45.866667
+      :lon: 6.883333
+    :use_in_timelapse: true
+  - :interval: 180
+    :desc: arolla_widex
+    :url: http://www.arolla.com/webcam_kurhaus/widex.jpg
+    :resize: true
+    :jpg_quality_offset: 2
+    :coord:
+      :lat: 45.866667
+      :lon: 6.883333
+    :use_in_timelapse: true
+
+
+  - :interval: 90
+    :desc: switzerland_costa_borgnome
+    :url: http://www.costa-borgnone.ch/current.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :interval: 120
+    :desc: switzerland_charmey
+    :url: http://fribourg.cam.stpartner.ch/cam/charmey/camera2/current.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :interval: 120
+    :desc: switzerland_lauerz
+    :url: http://lauerz.ch.web1.init0hosting.net/webcam/cam_lauerz-hasen.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :interval: 90
+    :desc: switzerland_martigny
+    :url: http://213.221.142.195:8888/record/current.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :interval: 120
+    :desc: switzerland_ronco
+    :url: http://www.webcamticino.ch/vivereblu/gallery/img/webcam/current.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :interval: 120
+    :desc: switzerland_soglio
+    :url: http://www.webcam.valtline.it/soglio.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+#  # boring
+#  - :interval: 300
+#    :desc: switzerland_susten
+#    :url: http://www.bella-tola.ch/fileadmin/images/webcam.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+
+  - :interval: 90
+    :desc: switzerland_veysonnaz
+    :url: http://www.caboulis.ch/sion.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :interval: 90
+    :desc: switzerland_zermatt_kirche
+    :url: http://www.zermatt.ch/html/bergbahnen/webcams/kirche.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :interval: 120
+    :desc: switzerland_zermatt_bahnhof
+    :url: http://www.zermatt.ch/html/bergbahnen/webcams/bahnhof.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :interval: 300
+    :desc: switzerland_zermatt_matterhorn
+    :url: http://www.zermatt.ch/html/bergbahnen/webcams/matterhorn2.jpg
+    :resize: false
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+#  # boring
+#  - :interval: 200
+#    :desc: switzerland_zermatt_ober
+#    :url: http://www.schonegg.ch/webcam.jpg
+#    :resize: false
+#    :coord:
+#      :lat: 0.0
+#      :lon: 0.0
+#    :use_in_timelapse: false
+
+
