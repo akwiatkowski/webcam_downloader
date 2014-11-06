@@ -684,7 +684,7 @@
 #      :lon: 22.467222
 #    :use_in_timelapse: false
 
-- :group: dalekie_obserwacje
+- :group: d_o
   :array:
   - :resize: true
     :jpg_quality_offset: 10
