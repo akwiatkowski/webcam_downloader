@@ -82,11 +82,6 @@
       :lon: 0.0
     :use_in_timelapse: false
 
----
-- :group: poland_2012_11_27
-  :array:
-
-
 #  # huge
 #  - :interval: 150
 #    :desc: cedry_wielkie_marina2
@@ -343,8 +338,6 @@
       :lon: 0.0
     :use_in_timelapse: false
 
-- :group: tatry
-  :array:
   - :url: http://www.zakopaneonline.eu/webcam/zakopane.jpg
     :pre_url: http://www.zol.pl/webcam/
     :referer: http://www.zol.pl/webcam/
@@ -503,12 +496,6 @@
     :use_in_timelapse: true
 
 
-
-
-
-
-- :group: podhale
-  :array:
   - :resize: false
     :url: http://www.niedzica.pl/uploads/webcam/niedzica2.jpg
     :interval: 150
@@ -603,10 +590,6 @@
 
 
 
-
-- :group: beskids
-  :array:
-
 #  # fail
 #  # http://www.kamerybieszczady.czaszyn.pl/
 #  - :url: http://obsluga-medialna.pl/kamera/kamera_wetlina/index.php
@@ -684,8 +667,7 @@
 #      :lon: 22.467222
 #    :use_in_timelapse: false
 
-- :group: d_o
-  :array:
+
   - :resize: true
     :jpg_quality_offset: 10
     :url: http://www.dalekieobserwacje.eu/wp-content/uploads/webcam_skrzyczne/A-hi.jpg
