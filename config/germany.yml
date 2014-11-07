@@ -6,9 +6,10 @@
     :url: http://tramino.s3.amazonaws.com/s/das-hoechste/webcams/ifen-hahnenkoepfle.jpg
 
   - :url_schema:
-      :url_schema: "http://www.foto-webcam.eu/webcam/kochelsee/%Y/%m/%d/%H%M_la.jpg"
+      :url_schema: "http://www.foto-webcam.eu/webcam/kochelsee/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
     :interval: 300
+    :resize: true
     :desc: germany_kochelsee
     :coord:
       :lat: 0.0
@@ -56,40 +57,40 @@
 
 
   - :url_schema:
-      #:url_schema: "http://www.foto-webcam.eu/webcam/kochelsee/%Y/%m/%d/%H%M_la.jpg"
-      :url_schema: "http://www.foto-webcam.eu/webcam/lienz/%Y/%m/%d/%H%M_la.jpg"
+      :url_schema: "http://www.foto-webcam.eu/webcam/lienz/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
     :interval: 300
+    :resize: true
     :desc: germany_lienz
     :coord:
       :lat: 0.0
       :lon: 0.0
     :use_in_timelapse: false
   - :url_schema:
-      #:url_schema: "http://www.foto-webcam.eu/webcam/kochelsee/%Y/%m/%d/%H%M_la.jpg"
-      :url_schema: "http://www.foto-webcam.eu/webcam/kronplatz/%Y/%m/%d/%H%M_la.jpg"
+      :url_schema: "http://www.foto-webcam.eu/webcam/kronplatz/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
     :interval: 300
+    :resize: true
     :desc: germany_kronplatz
     :coord:
       :lat: 0.0
       :lon: 0.0
     :use_in_timelapse: false
   - :url_schema:
-      #:url_schema: "http://www.foto-webcam.eu/webcam/kochelsee/%Y/%m/%d/%H%M_la.jpg"
-      :url_schema: "http://www.foto-webcam.eu/webcam/bruneck/%Y/%m/%d/%H%M_la.jpg"
+      :url_schema: "http://www.foto-webcam.eu/webcam/bruneck/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
     :interval: 300
+    :resize: true
     :desc: germany_bruneck
     :coord:
       :lat: 0.0
       :lon: 0.0
     :use_in_timelapse: false
   - :url_schema:
-      #:url_schema: "http://www.foto-webcam.eu/webcam/kochelsee/%Y/%m/%d/%H%M_la.jpg"
-      :url_schema: "http://www.foto-webcam.eu/webcam/zellamsee/%Y/%m/%d/%H%M_la.jpg"
+      :url_schema: "http://www.foto-webcam.eu/webcam/zellamsee/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
     :interval: 300
+    :resize: true
     :desc: germany_zellamsee
     :coord:
       :lat: 0.0
@@ -98,46 +99,463 @@
 
 
   - :url_schema:
-      #:url_schema: "http://www.foto-webcam.eu/webcam/kochelsee/%Y/%m/%d/%H%M_la.jpg"
-      :url_schema: "http://www.foto-webcam.eu/webcam/passthurn/%Y/%m/%d/%H%M_la.jpg"
+      :url_schema: "http://www.foto-webcam.eu/webcam/passthurn/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
     :interval: 300
     :desc: germany_passthurn
+    :resize: true
     :coord:
       :lat: 0.0
       :lon: 0.0
     :use_in_timelapse: false
   # it has problems, but sometime works
   - :url_schema:
-      #:url_schema: "http://www.foto-webcam.eu/webcam/kochelsee/%Y/%m/%d/%H%M_la.jpg"
-      :url_schema: "http://www.foto-webcam.eu/webcam/badtoelz/%Y/%m/%d/%H%M_la.jpg"
+      :url_schema: "http://www.foto-webcam.eu/webcam/badtoelz/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
     :interval: 600
     :desc: germany_badtoelz
+    :resize: true
     :coord:
       :lat: 0.0
       :lon: 0.0
     :use_in_timelapse: false
   - :url_schema:
-      #:url_schema: "http://www.foto-webcam.eu/webcam/kochelsee/%Y/%m/%d/%H%M_la.jpg"
-      :url_schema: "http://www.foto-webcam.eu/webcam/herzogstand/%Y/%m/%d/%H%M_la.jpg"
+      :url_schema: "http://www.foto-webcam.eu/webcam/herzogstand/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
     :interval: 300
+    :resize: true
     :desc: germany_herzogstand
     :coord:
       :lat: 0.0
       :lon: 0.0
     :use_in_timelapse: false
   - :url_schema:
-      #:url_schema: "http://www.foto-webcam.eu/webcam/kochelsee/%Y/%m/%d/%H%M_la.jpg"
-      :url_schema: "http://www.foto-webcam.eu/webcam/tegelberg/%Y/%m/%d/%H%M_la.jpg"
+      :url_schema: "http://www.foto-webcam.eu/webcam/tegelberg/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
     :interval: 300
+    :desc: germany_tegelberg
+    :resize: true
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.foto-webcam.eu/webcam/gantkofel/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_gantkofel
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.foto-webcam.eu/webcam/meran/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_meran
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.foto-webcam.eu/webcam/innsbruck/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_innsbruck
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.foto-webcam.eu/webcam/passthurn/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_passthurn
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.foto-webcam.eu/webcam/funtenseetauern/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_funtenseetauern
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.foto-webcam.eu/webcam/jenner-ost/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_jenner_ost
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.foto-webcam.eu/webcam/hochries/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_hochries
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.foto-webcam.eu/webcam/pendling-ost/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_pendling_ost
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.foto-webcam.eu/webcam/pendling-west/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_pendling_west
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.foto-webcam.eu/webcam/wendelstein-ost/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_wendelstein_ost
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.foto-webcam.eu/webcam/wendelstein-west/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_wendelstein_west
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.foto-webcam.eu/webcam/sonnenbichl/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_sonnenbichl
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.foto-webcam.eu/webcam/karwendel/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_karwendel
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.foto-webcam.eu/webcam/meilerhuette/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_meilerhuette
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.foto-webcam.eu/webcam/tegelberg/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
     :desc: germany_tegelberg
     :coord:
       :lat: 0.0
       :lon: 0.0
     :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.foto-webcam.eu/webcam/arbersee/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_arbersee
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.foto-webcam.eu/webcam/arber-sued/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_arber_sued
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.foto-webcam.eu/webcam/arber-nord/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_arber_nord
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.panorama-blick.at/webcam/schwarzenbach/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_schwarzenbach
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.panorama-blick.at/webcam/flattach/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_flattach
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.megacam.at/webcam/amlach/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_amlach
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://foto.pensionweinberg.com/webcam/Raas/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_Raas
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.foto-webcam.org/webcam/wallberg/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_wallberg
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.foto-webcam.org/webcam/prasserbad/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_prasserbad
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.foto-webcam.org/webcam/buchstein/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_buchstein
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :url_schema:
+      :url_schema: "http://www.foto-webcam.com/webcam/Seekar/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_Seekar
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.foto-webcam.com/webcam/BrauneckSpeichersee/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_BrauneckSpeichersee
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.foto-webcam.eu/webcam/BrauneckKarwendel/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_BrauneckKarwendel
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :url_schema:
+      :url_schema: "http://www.asam-live.de/webcam/roedlass1/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_roedlass1
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.asam-live.de/webcam/amberg1/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_amberg1
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :url_schema:
+      :url_schema: "http://www.asam-live.de/webcam/asamnet5/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_asamnet5
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.foto-webcam.com/webcam/hoefen/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_hoefen
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.panorama-blick.at/webcam/burgstalleralm/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_burgstalleralm
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.panorama-blick.at/webcam/wallackhaus/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_wallackhaus
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.panorama-blick.at/webcam/moertschach/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_moertschach
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.panorama-blick.at/webcam/lorenzalm/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_lorenzalm
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :url_schema:
+      :url_schema: "http://www.panorama-blick.at/webcam/kleinfleisskees/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_kleinfleisskees
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.panorama-blick.at/webcam/gletscher-alteck/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_gletscher_alteck
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.panorama-blick.at/webcam/ankogel-sued/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_ankogel_sued
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+  - :url_schema:
+      :url_schema: "http://www.panorama-blick.at/webcam/strohsack/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 600 # every 10 minutes
+    :interval: 300
+    :resize: true
+    :desc: germany_strohsack
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
+  - :url_schema:
+      :url_schema: "http://www.foto-webcam.eu/webcam/chavalatsch/%Y/%m/%d/%H%M_hu.jpg"
+      :time_modulo: 1800 # every 30 minutes
+      :time_offset: -3600
+    :interval: 300
+    :resize: true
+    :desc: germany_chavalatsch
+    :coord:
+      :lat: 0.0
+      :lon: 0.0
+    :use_in_timelapse: false
+
 
 #  - :url_schema:
 #      #:url_schema: "http://www.foto-webcam.eu/webcam/kochelsee/%Y/%m/%d/%H%M_la.jpg"
@@ -151,9 +569,10 @@
 #    :use_in_timelapse: false
   - :url_schema:
       #:url_schema: "http://www.foto-webcam.eu/webcam/kochelsee/%Y/%m/%d/%H%M_la.jpg"
-      :url_schema: "http://www.foto-webcam.eu/webcam/muenchen/%Y/%m/%d/%H%M_la.jpg"
+      :url_schema: "http://www.foto-webcam.eu/webcam/muenchen/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
     :interval: 300
+    :resize: true
     :desc: germany_muenchen
     :coord:
       :lat: 0.0
@@ -163,9 +582,10 @@
 
   - :url_schema:
       #:url_schema: "http://www.foto-webcam.eu/webcam/kochelsee/%Y/%m/%d/%H%M_la.jpg"
-      :url_schema: "http://www.foto-webcam.eu/webcam/grandsberg/%Y/%m/%d/%H%M_la.jpg"
+      :url_schema: "http://www.foto-webcam.eu/webcam/grandsberg/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
     :interval: 300
+    :resize: true
     :desc: germany_grandsberg
     :coord:
       :lat: 0.0
@@ -173,9 +593,10 @@
     :use_in_timelapse: false
   - :url_schema:
       #:url_schema: "http://www.foto-webcam.eu/webcam/kochelsee/%Y/%m/%d/%H%M_la.jpg"
-      :url_schema: "http://www.foto-webcam.eu/webcam/norderney/%Y/%m/%d/%H%M_la.jpg"
+      :url_schema: "http://www.foto-webcam.eu/webcam/norderney/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
     :interval: 300
+    :resize: true
     :desc: germany_norderney
     :coord:
       :lat: 0.0

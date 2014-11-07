@@ -7,3 +7,4 @@ data
 latest
 timelapse.yml
 timelapse_frames.yml
+start_timelapse_local.rb
