@@ -6,3 +6,4 @@ gem 'tzinfo'
 gem 'colorize'
 gem 'fastimage'
 gem 'xxhash' # ultra-fast
+gem 'activesupport'

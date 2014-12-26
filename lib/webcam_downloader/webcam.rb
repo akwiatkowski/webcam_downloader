@@ -297,22 +297,27 @@ module WebcamDownloader
       @storage.set_paths_for_webcam(self)
     end
 
-    def generate_url_if_needed
-      return if @url_schema.nil?
-
-      t = Time.now.to_i
+    def self.generate_url(url_schema, time)
+      t = time.to_i
       # webcams store image every :time_modulo interval
-      if @url_schema[:time_modulo]
-        t -= t % @url_schema[:time_modulo]
+      if url_schema[:time_modulo]
+        t -= t % url_schema[:time_modulo]
       end
 
       # time offset
-      if @url_schema[:time_offset]
-        t += @url_schema[:time_offset].to_i
-        t -= @url_schema[:time_modulo]
+      if url_schema[:time_offset]
+        t += url_schema[:time_offset].to_i
+        t -= url_schema[:time_modulo]
       end
 
-      @url = Time.at(t).strftime(@url_schema[:url_schema])
+      return Time.at(t).strftime(url_schema[:url_schema])
+    end
+
+    def generate_url_if_needed
+      return if @url_schema.nil?
+
+      time = Time.now
+      @url = self.class.generate_url(@url_schema, time)
       @logger.info("#{webcam_logger_prefix}Url generated #{@url.green}")
       return @url
     end

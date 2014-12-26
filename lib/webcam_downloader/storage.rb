@@ -26,8 +26,12 @@ module WebcamDownloader
       end
     end
 
+    def self.monthly_prefix(time)
+      time.strftime('%Y_%m')
+    end
+
     def prepare_monthly_directories
-      mp = Time.now.strftime('%Y_%m')
+      mp = self.class.monthly_prefix(Time.now)
       return if @monthly_prefix == mp
 
       @logger.debug("Prepare monthly directories for #{mp}".on_red)
