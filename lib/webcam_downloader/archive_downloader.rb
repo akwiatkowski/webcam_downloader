@@ -40,6 +40,7 @@ module WebcamDownloader
 
       # just initial
       prepare_path
+      load_results
     end
 
     def start(from_time = Time.now)
@@ -67,7 +68,7 @@ module WebcamDownloader
       end_of_month = time.end_of_month
       beginning_of_month = time.beginning_of_month
       every = 10.minutes
-      t = beginning_of_month
+      t = end_of_month
       max_iteration = (end_of_month.to_f - beginning_of_month.to_f) / every.to_f
       current_iteration = 0
 
@@ -77,38 +78,67 @@ module WebcamDownloader
 
       month_path = prepare_path(time)
 
-      while t < end_of_month
-        image_time = WebcamDownloader::Webcam.adjust_time_for_schema(@url_schema, t)
-        url = WebcamDownloader::Webcam.generate_url(@url_schema, t)
-        destination = File.join(month_path, "#{@desc}_#{image_time.to_i}.jpg")
+      while t >= beginning_of_month
         percentage = 100.0 * current_iteration.to_f / max_iteration.to_f
+        url = WebcamDownloader::Webcam.generate_url(@url_schema, t)
 
-        WebcamDownloader::WgetProxy.instance.download_file(url, destination)
+        if t >= @last_tried
+          @logger.debug("#{"%.1f" % percentage}% - SKIPPING url #{url.green}")
+        else
+          image_time = WebcamDownloader::Webcam.adjust_time_for_schema(@url_schema, t)
+          destination = File.join(month_path, "#{@desc}_#{image_time.to_i}.jpg")
 
-        if File.exists?(destination)
-          image_size = File.size(destination)
-          if image_size == 0
-            File.delete(destination)
-          else
-            total_size += image_size
-            downloaded_count += 1
+          WebcamDownloader::WgetProxy.instance.download_file(url, destination)
 
-            @logger.debug("#{"%.1f" % percentage}% - url #{url.green}, size #{image_size.to_s.red}, total #{total_size.to_s.yellow}")
+          if File.exists?(destination)
+            image_size = File.size(destination)
+            if image_size == 0
+              File.delete(destination)
+              @logger.debug("#{"%.1f" % percentage}% ERROR - url #{url.red} EMPTY")
+
+              @last_tried = t
+              @last_failed = t
+              @stats_image_fail_count += 1
+              @error_array << {
+                image_time: image_time,
+                url: url,
+                destination: destination
+              }
+
+
+              store_results
+              random_sleep(nil)
+            else
+              total_size += image_size
+              downloaded_count += 1
+              @logger.debug("#{"%.1f" % percentage}% - url #{url.green}, size #{image_size.to_s.red}, total #{total_size.to_s.yellow}")
+
+              @last_downloaded = t
+              @last_tried = t
+              @stats_image_count += 1
+              @stats_image_total_size += image_size
+
+              store_results
+              random_sleep(true)
+            end
           end
         end
 
-        random_sleep
 
         # next iteration
-        t += every
+        t -= every
         current_iteration += 1
       end
 
       true
     end
 
-    def random_sleep
-      sleep(10 + rand(40))
+    def random_sleep(is_exists = true)
+      if is_exists
+        sleep(10 + rand(40))
+      else
+        sleep(2 + rand(4))
+      end
     end
 
     def prepare_path(time = Time.now)
@@ -124,6 +154,57 @@ module WebcamDownloader
 
       # put there images
       return f
+    end
+
+    def load_results
+      results = nil
+      if File.exists?(results_path)
+        results = YAML.load_file(results_path)
+      end
+
+      results = Hash.new unless results.kind_of?(Hash)
+      # standard time
+      results[@desc] = Hash.new unless results[@desc].kind_of?(Hash)
+      results[@desc][:last_downloaded] ||= Time.now.end_of_month + 1.day
+      results[@desc][:last_tried] ||= Time.now.end_of_month + 1.day
+      results[@desc][:last_failed] ||= Time.now.end_of_month + 1.day
+      results[@desc][:error_array] ||= Array.new
+      results[@desc][:stats_image_fail_count] ||= 0
+      results[@desc][:stats_image_count] ||= 0
+      results[@desc][:stats_image_total_size] ||= 0
+
+      @last_downloaded = results[@desc][:last_downloaded]
+      @last_tried = results[@desc][:last_tried]
+      @last_failed = results[@desc][:last_failed]
+      @error_array = results[@desc][:error_array]
+      @stats_image_fail_count = results[@desc][:stats_image_fail_count]
+      @stats_image_count = results[@desc][:stats_image_count]
+      @stats_image_total_size = results[@desc][:stats_image_total_size]
+    end
+
+    def store_results
+      results = nil
+      if File.exists?(results_path)
+        results = YAML.load_file(results_path)
+        FileUtils.copy(results_path, results_path(".2"))
+      end
+
+      results = Hash.new unless results.kind_of?(Hash)
+      # standard time
+      results[@desc] = Hash.new unless results[@desc].kind_of?(Hash)
+      results[@desc][:last_downloaded] = @last_downloaded
+      results[@desc][:last_tried] = @last_tried
+      results[@desc][:last_failed] = @last_failed
+      results[@desc][:error_array] = @error_array
+      results[@desc][:stats_image_fail_count] = @stats_image_fail_count
+      results[@desc][:stats_image_count] = @stats_image_count
+      results[@desc][:stats_image_total_size] = @stats_image_total_size
+
+      File.open(results_path, 'w') { |f| f.write results.to_yaml }
+    end
+
+    def results_path(backup_sufix = "")
+      File.join("pix", "archived", "resume.yml#{backup_sufix}")
     end
 
   end
