@@ -81,12 +81,14 @@ module WebcamDownloader
       while t >= beginning_of_month
         percentage = 100.0 * current_iteration.to_f / max_iteration.to_f
         url = WebcamDownloader::Webcam.generate_url(@url_schema, t)
+        image_time = WebcamDownloader::Webcam.adjust_time_for_schema(@url_schema, t)
+        destination = File.join(month_path, "#{@desc}_#{image_time.to_i}.jpg")
 
-        if t >= @last_tried
+        if image_time >= @last_tried or image_time > Time.now or File.exists?(destination)
+          # skip if it was tried before, or it's in future, or it's image exists
           @logger.debug("#{"%.1f" % percentage}% - SKIPPING url #{url.green}")
         else
-          image_time = WebcamDownloader::Webcam.adjust_time_for_schema(@url_schema, t)
-          destination = File.join(month_path, "#{@desc}_#{image_time.to_i}.jpg")
+
 
           WebcamDownloader::WgetProxy.instance.download_file(url, destination)
 
