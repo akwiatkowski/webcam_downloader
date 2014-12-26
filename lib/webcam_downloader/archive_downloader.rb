@@ -84,7 +84,7 @@ module WebcamDownloader
         image_time = WebcamDownloader::Webcam.adjust_time_for_schema(@url_schema, t)
         destination = File.join(month_path, "#{@desc}_#{image_time.to_i}.jpg")
 
-        if image_time >= @last_tried or image_time > Time.now or File.exists?(destination)
+        if image_time >= @last_tried or t > Time.now or File.exists?(destination)
           # skip if it was tried before, or it's in future, or it's image exists
           @logger.debug("#{"%.1f" % percentage}% - SKIPPING url #{url.green}")
         else
