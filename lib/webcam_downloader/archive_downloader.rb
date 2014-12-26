@@ -87,7 +87,7 @@ module WebcamDownloader
 
         if File.exists?(destination)
           image_size = File.size(destination)
-          if image_size  == 0
+          if image_size == 0
             File.delete(destination)
           else
             total_size += image_size
@@ -97,12 +97,18 @@ module WebcamDownloader
           end
         end
 
+        random_sleep
+
         # next iteration
         t += every
         current_iteration += 1
       end
 
       true
+    end
+
+    def random_sleep
+      sleep(10 + rand(40))
     end
 
     def prepare_path(time = Time.now)
