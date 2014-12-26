@@ -88,7 +88,7 @@ module WebcamDownloader
         if File.exists?(destination)
           image_size = File.size(destination)
           if image_size  == 0
-            File.rm(destination)
+            File.delete(destination)
           else
             total_size += image_size
             downloaded_count += 1
