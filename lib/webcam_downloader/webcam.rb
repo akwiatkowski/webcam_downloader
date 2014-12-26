@@ -297,7 +297,7 @@ module WebcamDownloader
       @storage.set_paths_for_webcam(self)
     end
 
-    def self.generate_url(url_schema, time)
+    def self.adjust_time_for_schema(url_schema, time)
       t = time.to_i
       # webcams store image every :time_modulo interval
       if url_schema[:time_modulo]
@@ -310,6 +310,11 @@ module WebcamDownloader
         t -= url_schema[:time_modulo]
       end
 
+      t
+    end
+
+    def self.generate_url(url_schema, time)
+      t = adjust_time_for_schema(url_schema, time)
       return Time.at(t).strftime(url_schema[:url_schema])
     end
 
