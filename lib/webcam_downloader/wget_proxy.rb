@@ -29,6 +29,7 @@ module WebcamDownloader
       @read_timeout_proxy = 25 # --read-timeout
 
       @retries = 3
+      @retries_proxy = 1
 
       @tmp_file = File.join('tmp', 'tmp.tmp')
     end
@@ -88,7 +89,7 @@ module WebcamDownloader
 
       # timeouts
       if current_proxy
-        timeouts_command = "-t #{@retries} --dns-timeout=#{@dns_timeout_proxy} --connect-timeout=#{@connect_timeout_proxy} --read-timeout=#{@read_timeout_proxy}"
+        timeouts_command = "-t #{@retries_proxy} --dns-timeout=#{@dns_timeout_proxy} --connect-timeout=#{@connect_timeout_proxy} --read-timeout=#{@read_timeout_proxy}"
       else
         timeouts_command = "-t #{@retries} --dns-timeout=#{@dns_timeout} --connect-timeout=#{@connect_timeout} --read-timeout=#{@read_timeout}"
       end
@@ -100,7 +101,7 @@ module WebcamDownloader
         quiet_command = " --quiet"
       end
 
-      command = "wget #{add_options} #{timeouts_command} #{proxy} #{current_proxy} --referer=\"#{ref}\" --user-agent=\"#{agent}\" --load-cookies data/cookies.txt --keep-session-cookies --save-cookies data/cookies.txt \"#{url}\" -O#{dest}"
+      command = "wget #{add_options} #{timeouts_command} #{proxy_command} #{current_proxy} --referer=\"#{ref}\" --user-agent=\"#{agent}\" --load-cookies data/cookies.txt --keep-session-cookies --save-cookies data/cookies.txt \"#{url}\" -O#{dest}"
 
       @logger.debug("Wget proxy command - #{command.to_s.green}")
       `#{command}`
