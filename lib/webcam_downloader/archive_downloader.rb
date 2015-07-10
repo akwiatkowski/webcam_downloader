@@ -30,6 +30,10 @@ module WebcamDownloader
       @downloader.defs.select { |d| d[:url_schema] }
     end
 
+    def proxy=(ps)
+      WebcamDownloader::WgetProxy.instance.proxy = ps
+    end
+
     def setup_desc(desc, schema = nil)
       @def = @downloader.defs.select { |d| d[:url_schema] and d[:desc] =~ /#{desc}/ }.first
 
@@ -139,7 +143,7 @@ module WebcamDownloader
       if is_exists
         sleep(10 + rand(40))
       else
-        sleep(2 + rand(4))
+        sleep(2 + rand(15))
       end
     end
 
