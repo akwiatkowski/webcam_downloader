@@ -101,7 +101,7 @@ module WebcamDownloader
         quiet_command = " --quiet"
       end
 
-      command = "wget #{add_options} #{timeouts_command} #{proxy_command} #{current_proxy} --referer=\"#{ref}\" --user-agent=\"#{agent}\" --load-cookies data/cookies.txt --keep-session-cookies --save-cookies data/cookies.txt \"#{url}\" -O#{dest}"
+      command = "wget #{add_options} #{timeouts_command} #{proxy_command} #{quiet_command} #{current_proxy} --referer=\"#{ref}\" --user-agent=\"#{agent}\" --load-cookies data/cookies.txt --keep-session-cookies --save-cookies data/cookies.txt \"#{url}\" -O#{dest}"
 
       @logger.debug("Wget proxy command - #{command.to_s.green}")
       `#{command}`

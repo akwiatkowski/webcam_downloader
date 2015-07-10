@@ -116,6 +116,10 @@
       :url_schema: "http://panodata1.panomax.at/cams/23/%Y/%m/%d//%H-%M-00_default.jpg"
       :time_modulo: 600 # every 20 minutes
       :time_offset: 0 # 12 minutes
+    :referer: "http://www.panomax.at/"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :resize: false
     :coord:
       :lat:

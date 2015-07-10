@@ -16,6 +16,9 @@
       :url_schema: "http://panodata1.panomax.at/cams/531/%Y/%m/%d//%H-%M-00_default.jpg"
       :time_modulo: 600 # every 10 minutes
       :time_offset: 0
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 600
     :desc: switz_arosa_360
 

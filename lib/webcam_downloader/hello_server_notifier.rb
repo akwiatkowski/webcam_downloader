@@ -3,6 +3,8 @@ class HelloServerNotifier
   @@semaphore = Mutex.new
 
   def after_webcam_download(webcam)
+    return # temporary disabled
+
     @@semaphore.synchronize do
       s = HelloServerClient::Notification.find_or_initialize_by_name(NAME)
       s.detail_header = %w{desc data_per_day cost file_size last_attempt count}

@@ -127,6 +127,18 @@ module WebcamDownloader
       @defs = @defs.sort { |a, b| a[:desc] <=> b[:desc] }
     end
 
+    def disable_flag(flag)
+      size_before = @defs.size
+      @defs = @defs.select { |d| d[:flags].nil? or d[:flags][flag].nil? }
+      @logger.info("Filtered from #{size_before.to_s.red} to #{@defs.size.to_s.red} definitions - disabled flag #{flag.to_s.green}")
+    end
+
+    def disable_proxy_aware
+      size_before = @defs.size
+      @defs = @defs.select { |d| not d[:proxy] == true }
+      @logger.info("Filtered from #{size_before.to_s.red} to #{@defs.size.to_s.red} definitions - disabled PROXY")
+    end
+
     def load_definition_file(file = File.join('config', 'defs.yml'))
       defs = YAML::load(File.open(file))
       flat_defs = Array.new

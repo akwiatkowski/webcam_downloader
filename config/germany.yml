@@ -8,6 +8,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.eu/webcam/kochelsee/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.eu/webcam/kochelsee"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_kochelsee
@@ -61,6 +65,8 @@
       :time_modulo: 600 # every 10 minutes
     :referer: "http://www.foto-webcam.eu/webcam/lienz/"
     :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_lienz
@@ -71,6 +77,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.eu/webcam/kronplatz/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.eu/webcam/kronplatz"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_kronplatz
@@ -81,6 +91,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.eu/webcam/bruneck/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.eu/webcam/bruneck"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_bruneck
@@ -91,6 +105,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.eu/webcam/zellamsee/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.eu/webcam/zellamsee"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_zellamsee
@@ -103,6 +121,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.eu/webcam/passthurn/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.eu/webcam/passthurn"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :desc: germany_passthurn
     :resize: true
@@ -114,6 +136,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.eu/webcam/badtoelz/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.eu/webcam/badtoelz"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 600
     :desc: germany_badtoelz
     :resize: true
@@ -124,6 +150,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.eu/webcam/herzogstand/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.eu/webcam/herzogstand"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_herzogstand
@@ -134,6 +164,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.eu/webcam/tegelberg/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.eu/webcam/tegelberg"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :desc: germany_tegelberg
     :resize: true
@@ -144,6 +178,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.eu/webcam/gantkofel/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.eu/webcam/gantkofel"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_gantkofel
@@ -154,6 +192,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.eu/webcam/meran/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.eu/webcam/meran"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_meran
@@ -164,6 +206,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.eu/webcam/innsbruck/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.eu/webcam/innsbruck"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_innsbruck
@@ -174,6 +220,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.eu/webcam/funtenseetauern/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.eu/webcam/funtenseetauern"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_funtenseetauern
@@ -184,6 +234,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.eu/webcam/jenner-ost/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.eu/webcam/jenner-ost"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_jenner_ost
@@ -194,6 +248,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.eu/webcam/hochries/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.eu/webcam/hochries"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_hochries
@@ -204,6 +262,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.eu/webcam/pendling-ost/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.eu/webcam/pendling-ost"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_pendling_ost
@@ -214,6 +276,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.eu/webcam/pendling-west/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.eu/webcam/pendling-west"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_pendling_west
@@ -224,6 +290,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.eu/webcam/wendelstein-ost/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.eu/webcam/wendelstein-ost"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_wendelstein_ost
@@ -234,6 +304,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.eu/webcam/wendelstein-west/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.eu/webcam/wendelstein-west"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_wendelstein_west
@@ -244,6 +318,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.eu/webcam/sonnenbichl/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.eu/webcam/sonnenbichl"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_sonnenbichl
@@ -254,6 +332,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.eu/webcam/karwendel/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.eu/webcam/karwendel"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_karwendel
@@ -264,6 +346,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.eu/webcam/meilerhuette/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.eu/webcam/meilerhuette"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_meilerhuette
@@ -274,6 +360,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.eu/webcam/arbersee/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.eu/webcam/arbersee"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_arbersee
@@ -284,6 +374,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.eu/webcam/arber-sued/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.eu/webcam/arber-sued"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_arber_sued
@@ -294,6 +388,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.eu/webcam/arber-nord/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.eu/webcam/arber-nord"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_arber_nord
@@ -304,6 +402,10 @@
   - :url_schema:
       :url_schema: "http://www.panorama-blick.at/webcam/schwarzenbach/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.panorama-blick.at/webcam/schwarzenbach"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_schwarzenbach
@@ -314,6 +416,10 @@
   - :url_schema:
       :url_schema: "http://www.panorama-blick.at/webcam/flattach/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.panorama-blick.at/webcam/flattach"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_flattach
@@ -324,6 +430,10 @@
   - :url_schema:
       :url_schema: "http://www.megacam.at/webcam/amlach/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.megacam.at/webcam/amlach"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_amlach
@@ -334,6 +444,10 @@
   - :url_schema:
       :url_schema: "http://foto.pensionweinberg.com/webcam/Raas/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://foto.pensionweinberg.com/webcam/Raas"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_Raas
@@ -344,6 +458,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.org/webcam/wallberg/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.org/webcam/wallberg"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_wallberg
@@ -354,6 +472,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.org/webcam/prasserbad/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.org/webcam/prasserbad"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_prasserbad
@@ -364,6 +486,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.org/webcam/buchstein/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.org/webcam/buchstein"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_buchstein
@@ -375,6 +501,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.com/webcam/Seekar/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.com/webcam/Seekar"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_Seekar
@@ -385,6 +515,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.com/webcam/BrauneckSpeichersee/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.com/webcam/BrauneckSpeichersee"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_BrauneckSpeichersee
@@ -395,6 +529,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.eu/webcam/BrauneckKarwendel/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.eu/webcam/BrauneckKarwendel"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_BrauneckKarwendel
@@ -406,6 +544,10 @@
   - :url_schema:
       :url_schema: "http://www.asam-live.de/webcam/roedlass1/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.asam-live.de/webcam/roedlass1"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_roedlass1
@@ -416,6 +558,10 @@
   - :url_schema:
       :url_schema: "http://www.asam-live.de/webcam/amberg1/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.asam-live.de/webcam/amberg1"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_amberg1
@@ -427,6 +573,10 @@
   - :url_schema:
       :url_schema: "http://www.asam-live.de/webcam/asamnet5/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.asam-live.de/webcam/asamnet5"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_asamnet5
@@ -437,6 +587,10 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.com/webcam/hoefen/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.com/webcam/hoefen"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_hoefen
@@ -447,6 +601,10 @@
   - :url_schema:
       :url_schema: "http://www.panorama-blick.at/webcam/burgstalleralm/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.panorama-blick.at/webcam/burgstalleralm"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_burgstalleralm
@@ -457,6 +615,10 @@
   - :url_schema:
       :url_schema: "http://www.panorama-blick.at/webcam/wallackhaus/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.panorama-blick.at/webcam/wallackhaus"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_wallackhaus
@@ -467,6 +629,10 @@
   - :url_schema:
       :url_schema: "http://www.panorama-blick.at/webcam/moertschach/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.panorama-blick.at/webcam/moertschach"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_moertschach
@@ -477,6 +643,10 @@
   - :url_schema:
       :url_schema: "http://www.panorama-blick.at/webcam/lorenzalm/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.panorama-blick.at/webcam/lorenzalm"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_lorenzalm
@@ -488,6 +658,10 @@
   - :url_schema:
       :url_schema: "http://www.panorama-blick.at/webcam/kleinfleisskees/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.panorama-blick.at/webcam/kleinfleisskees"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_kleinfleisskees
@@ -498,6 +672,10 @@
   - :url_schema:
       :url_schema: "http://www.panorama-blick.at/webcam/gletscher-alteck/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.panorama-blick.at/webcam/gletscher-alteck"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_gletscher_alteck
@@ -508,6 +686,10 @@
   - :url_schema:
       :url_schema: "http://www.panorama-blick.at/webcam/ankogel-sued/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.panorama-blick.at/webcam/ankogel-sued"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_ankogel_sued
@@ -518,6 +700,10 @@
   - :url_schema:
       :url_schema: "http://www.panorama-blick.at/webcam/strohsack/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.panorama-blick.at/webcam/strohsack"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_strohsack
@@ -530,6 +716,10 @@
       :url_schema: "http://www.foto-webcam.eu/webcam/chavalatsch/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 1800 # every 30 minutes
       :time_offset: -3600
+    :referer: "http://www.foto-webcam.eu/webcam/chavalatsch"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_chavalatsch
@@ -550,9 +740,12 @@
 #      :lon: 0.0
 #    :use_in_timelapse: false
   - :url_schema:
-      #:url_schema: "http://www.foto-webcam.eu/webcam/kochelsee/%Y/%m/%d/%H%M_la.jpg"
       :url_schema: "http://www.foto-webcam.eu/webcam/muenchen/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.eu/webcam/muenchen"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_muenchen
@@ -566,6 +759,10 @@
       #:url_schema: "http://www.foto-webcam.eu/webcam/kochelsee/%Y/%m/%d/%H%M_la.jpg"
       :url_schema: "http://www.foto-webcam.eu/webcam/grandsberg/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.eu/webcam/grandsberg"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_grandsberg
@@ -574,9 +771,12 @@
       :lon: 0.0
     :use_in_timelapse: false
   - :url_schema:
-      #:url_schema: "http://www.foto-webcam.eu/webcam/kochelsee/%Y/%m/%d/%H%M_la.jpg"
       :url_schema: "http://www.foto-webcam.eu/webcam/norderney/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.eu/webcam/norderney"
+    :proxy: true
+    :flags:
+      :big_archive: true
     :interval: 300
     :resize: true
     :desc: germany_norderney

@@ -9,4 +9,6 @@ options = {
 
 wd = WebcamDownloader::Downloader.new(options)
 wd.load_all_definition_files
+wd.disable_flag(:big_archive)
+wd.disable_proxy_aware
 wd.make_it_so
