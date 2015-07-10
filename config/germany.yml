@@ -59,6 +59,8 @@
   - :url_schema:
       :url_schema: "http://www.foto-webcam.eu/webcam/lienz/%Y/%m/%d/%H%M_hu.jpg"
       :time_modulo: 600 # every 10 minutes
+    :referer: "http://www.foto-webcam.eu/webcam/lienz/"
+    :proxy: true
     :interval: 300
     :resize: true
     :desc: germany_lienz

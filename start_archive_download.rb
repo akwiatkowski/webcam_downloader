@@ -6,6 +6,9 @@ options = {
 }
 
 b = WebcamDownloader::ArchiveDownloader.new(options)
-#b.proxy = "666.666.666.666" # :)
+# use one proxy
+#b.proxy = "666.666.666.666"
+# or use multiproxy
+b.load_and_use_proxies('config/proxies.txt')
 b.setup_desc("lienz")
 b.start

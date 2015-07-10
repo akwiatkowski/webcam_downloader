@@ -34,6 +34,10 @@ module WebcamDownloader
       WebcamDownloader::WgetProxy.instance.proxy = ps
     end
 
+    def load_and_use_proxies(file)
+      WebcamDownloader::WgetProxy.instance.load_and_use_proxies(file)
+    end
+
     def setup_desc(desc, schema = nil)
       @def = @downloader.defs.select { |d| d[:url_schema] and d[:desc] =~ /#{desc}/ }.first
 
@@ -41,6 +45,10 @@ module WebcamDownloader
 
       @desc = @def[:desc]
       @url_schema = @def[:url_schema]
+
+      @wget_options = {
+        referer: @def[:referer]
+      }
 
       # just initial
       prepare_path
@@ -92,9 +100,7 @@ module WebcamDownloader
           # skip if it was tried before, or it's in future, or it's image exists
           @logger.debug("#{"%.1f" % percentage}% - SKIPPING url #{url.green}")
         else
-
-
-          WebcamDownloader::WgetProxy.instance.download_file(url, destination)
+          WebcamDownloader::WgetProxy.instance.download_file(url, destination, @wget_options)
 
           if File.exists?(destination)
             image_size = File.size(destination)
