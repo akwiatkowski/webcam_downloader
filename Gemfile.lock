@@ -35,8 +35,8 @@ GEM
       hiredis
     stal (0.1.0)
       redic
-    thread_safe (0.3.5)
-    tzinfo (1.2.2)
+    thread_safe (0.3.6)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     xxhash (0.3.0)
 
